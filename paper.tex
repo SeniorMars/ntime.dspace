@@ -1,0 +1,868 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[noend]{algpseudocode}
+\algrenewcommand\textproc{\texttt}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{introthm}{Theorem}
+\renewcommand{\theintrothm}{\arabic{introthm}}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\NTIME}{\mathrm{NTIME}}
+\newcommand{\coNTIME}{\mathrm{coNTIME}}
+\newcommand{\DTIME}{\mathrm{DTIME}}
+\newcommand{\BPTIME}{\mathrm{BPTIME}}
+\newcommand{\PPTIME}{\mathrm{PPTIME}}
+\newcommand{\PTIME}{\oplus\mathrm{TIME}}
+\newcommand{\DSPACE}{\mathrm{DSPACE}}
+\newcommand{\NSPACE}{\mathrm{NSPACE}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\bad}{\mathrm{bad}}
+\newcommand{\poly}{\mathrm{poly}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\GF}{\mathrm{GF}}
+\newcommand{\code}{\mathrm{code}}
+
+\title{Nondeterministic Linear Time Is Strictly Contained\\ in Deterministic Linear Space}
+\author{Charlie Cruz\thanks{Draft prepared through conversations with LLMs. Section~\ref{sec:status} explains what the results depend on, and the Acknowledgments explain how the paper was prepared.}}
+\date{November 1, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	Paul, Pippenger, Szemer\'edi and Trotter proved in 1983 that, for multitape Turing machines, nondeterministic linear time is more powerful than deterministic linear time. We prove that it is less powerful than deterministic linear space: $\NTIME(n)\subsetneq\DSPACE(n)$. More precisely, some language in $\DSPACE(n)$ requires nondeterministic time $\Omega\bigl(n\sqrt{\log n}/(\log\log n)^2\bigr)$ at every large input length. The proof simulates nondeterministic time $t$ in deterministic space $O\bigl(t(\log\log t)^2/\sqrt{\log t}\bigr)$ and applies the space hierarchy theorem. To our knowledge this is the first simulation of nondeterministic time in space $o(t)$, deterministic or nondeterministic. Known simulations of time in small space recompute parts of the computation. For a nondeterministic machine, a recomputed part would have to repeat guesses that were never stored, so our simulation counts the accepting computations instead. To count them, we fix the moves of the work heads between blocks of cells. The computations of length $t$ that make these moves then correspond to the satisfying assignments of a system of local constraints of logarithmic arity on $O(t)$ Boolean variables, each variable in at most two constraints. We show that the counting algorithm behind the recent refutations of the Exponential Time Hypothesis, in Kintali's formulation, counts the satisfying assignments of such a system with $N$ variables in space $O\bigl(N(\log\log N)^2/\sqrt{\log N}\bigr)$, and we reprove the construction it uses, so that the paper is self-contained. We also obtain $\NTIME\bigl(t\sqrt{\log t}/(\log\log t)^2\bigr)\subseteq\DSPACE(t)$, partial progress on a question of Hopcroft, Paul and Valiant. The author will be working in the coming weeks to rewrite the argument and strengthen the claims of this draft.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+For multitape Turing machines, linear time and linear space are related by the chain of inclusions
+\[
+	\DTIME(n)\subseteq\NTIME(n)\subseteq\DSPACE(n)\subseteq\NSPACE(n).
+\]
+Paul, Pippenger, Szemer\'edi and Trotter proved in 1983 that the first inclusion is strict \cite{PPST83}. We prove that the second one is strict as well:
+\[
+	\NTIME(n)\subsetneq\DSPACE(n).
+\]
+Since $\DSPACE(n)$ and $\NSPACE(n)$ are the classes of deterministic and of all context-sensitive languages \cite{Kur64}, this means that some deterministic context-sensitive language cannot be accepted by any nondeterministic multitape machine in linear time.
+
+The usual way to prove such a separation is to simulate time $t$ in space $o(t)$ and then apply the space hierarchy theorem. For deterministic machines this has been possible since 1975. Hopcroft, Paul and Valiant \cite{HPV77} simulated deterministic time $t$ in space $O(t/\log t)$, which separates $\DTIME(n)$ from $\DSPACE(n)$, and Williams \cite{Wil25}, building on the tree evaluation algorithm of Cook and Mertz \cite{CM24}, recently improved the space to $O(\sqrt{t\log t})$. Both simulations save space by recomputation: they keep a few intermediate results and recompute the others when they are needed. Hopcroft, Paul and Valiant pointed out that recomputation breaks down for nondeterministic machines. A recomputed part of a nondeterministic computation has to repeat the guesses of the original, and ``we cannot be sure that the same sequence of choices is made the second time'' \cite[\S2]{HPV75}, while storing the guesses costs as much space as the computation itself. They left open whether $\NTIME(t\log t)\subseteq\NSPACE(t)$. Santhanam \cite{San01} related the question whether $\NTIME(t)=\NSPACE(t)$ to separators of certain graphs, but no simulation of nondeterministic time $t$ in space $o(t)$, deterministic or nondeterministic, was known.
+
+Nor do translational arguments settle the question. Padding arguments in the style of Book \cite{Boo74} show that $\mathrm{P}$ and $\mathrm{NP}$ both differ from $\DSPACE(n)$, without deciding which inclusions fail, because $\mathrm{P}$ and $\mathrm{NP}$ are closed under polynomial-time reductions and $\DSPACE(n)$ is not. The closure properties that these arguments use are the same for $\NTIME(n)$ and $\DSPACE(n)$: both classes are closed under reductions computable in linear time with output of linear length, and neither is closed under polynomial-time reductions. The equality $\NTIME(n)=\DSPACE(n)$ would translate upward to $\NTIME(T)=\DSPACE(T)$ for time-constructible $T(n)\ge n$, and, since alternating time is contained in deterministic space of the same order \cite{CKS81}, it would collapse the linear-time alternating hierarchy to $\NTIME(n)$ and make $\NTIME(n)$ closed under complement. To our knowledge, none of these consequences was known to be false, and no proof of $\NTIME(n)\ne\DSPACE(n)$ had appeared.
+
+We avoid the obstacle that Hopcroft, Paul and Valiant pointed out by counting the accepting computations instead of following them, with an algebraic algorithm whose intermediate objects are much smaller than a computation. The algorithm comes from the recent refutations of the Exponential Time Hypothesis. OpenAI \cite[Theorem~1.1]{OpenAI26} showed that the satisfying assignments of a $k$-CNF with $N$ variables and a linear number of clauses can be counted in time $2^{O(N/\sqrt{\log N})}$, Anthropic \cite{Anth26} independently gave a $2^{o(n)}$-time algorithm for 3-SAT, and Kintali \cite{Kin26} gave a simplified, self-contained proof of the construction of \cite{OpenAI26}. As written, these algorithms use space polynomial in $N$, but Kintali's algorithm never needs an assignment to all $N$ variables at once. After a deformation of the constraints, the variables split into groups that interact only through a few linear measurements, and the count becomes a sum, over the values of the measurements and over small sets of variables, of products of sums over single groups. We show that the whole algorithm can be run while storing little more than the indices of this sum, which take $o(N)$ bits, and that it applies to constraints of logarithmic arity as well as to clauses. A computation of length $t$, once the moves of its work heads between blocks of cells are fixed, is described by such a system of constraints on $O(t)$ variables. These moves can be written with $O(t/\log t)$ bits, so all of them can be tried in turn, and acceptance can be decided in space $o(t)$.
+
+\subsection{Results}
+
+\begin{introthm}[Main Theorem]\label{thm:main}
+	$\NTIME(n)\subsetneq\DSPACE(n)$. More precisely, let
+	\[
+		\rho(n)=\frac{n\sqrt{\log n}}{(\log\log n)^2}.
+	\]
+	There is a language $L\in\DSPACE(n)$ such that every nondeterministic multitape machine that decides $L$, or its complement, runs for at least $c\,\rho(n)$ steps on some input of length $n$, for some $c>0$ and all large $n$. In particular $L$ is in neither $\NTIME(T)$ nor $\coNTIME(T)$ for any $T=o(\rho)$.
+\end{introthm}
+
+Theorem~\ref{thm:main} follows from the next theorem and the space hierarchy theorem. Write
+\[
+	\kappa(N)=\frac{N(\log\log N)^2}{\sqrt{\log N}},
+\]
+with harmless adjustments for small arguments, so that $\kappa(N)=o(N)$.
+
+\begin{introthm}[Simulation]\label{thm:sim-intro}
+	For every function $T(n)\ge n$,
+	\[
+		\NTIME(T)\cup\coNTIME(T)\subseteq\DSPACE\bigl(\kappa(T)\bigr).
+	\]
+	The simulating machine runs in time $2^{O(\kappa(T))}$.
+\end{introthm}
+
+The simulation rests on the following theorem, the main technical result of the paper. Constraint systems, and what it means for one to be given in logarithmic space, are defined in Section~\ref{sec:prelim}.
+
+\begin{introthm}[Counting in sublinear space]\label{thm:count-intro}
+	Let $c$ and $c_0$ be constants, and consider constraint systems on $N$ Boolean variables that are given in logarithmic space by a fixed transducer (Section~\ref{sec:prelim}), in which every variable lies in at most three scopes and every scope has at most $c\log_2N$ variables. Given the input of the transducer and a prime $p$ with $4N^2<p\le N^{c_0}$, the number of satisfying assignments modulo $p$ can be computed in deterministic space $O(\kappa(N))$, with the constant depending on $c$, $c_0$ and the transducer. In particular, the satisfiability of a 3-CNF with $N$ variables and $O(N)$ clauses, in which every variable occurs in at most three clauses, can be decided in deterministic space $O(\kappa(N))$.
+\end{introthm}
+
+The same algorithm computes sums of products of integer-valued tables (Remark~\ref{rem:weights}).
+
+Theorem~\ref{thm:sim-intro} has further consequences, which Section~\ref{sec:main} proves. The separation holds at every space bound: for every space-constructible $S(n)\ge n$,
+\[
+	\NTIME(S)\subsetneq\DSPACE(S)\quad\text{and}\quad\NTIME(S)\subsetneq\NSPACE(S),
+\]
+and $\NTIME(n)$ is even strictly contained in $\DSPACE\bigl(n/(\log n)^{1/2-\varepsilon}\bigr)$ for every rational ${\varepsilon>0}$ (Theorem~\ref{thm:sep}). For every $t(n)\ge n$ we obtain $\NTIME\bigl(t\sqrt{\log t}/(\log\log t)^2\bigr)\subseteq\DSPACE(t)$ (Corollary~\ref{cor:hpv}). Hopcroft, Paul and Valiant asked for the factor $\log t$, in nondeterministic space; we obtain the factor $\sqrt{\log t}$, up to $\log\log$ factors, in deterministic space, and their question remains open. Since the simulation counts, it applies equally to probabilistic time with bounded or unbounded error and to parity time, and the language of Theorem~\ref{thm:main} is in none of these classes for time $o(\rho)$ (Corollary~\ref{cor:modes}). For deterministic time, Williams's simulation already gives much more: the language of Theorem~\ref{thm:main} is not in $\DTIME(o(n^2/\log n))$.
+
+\subsection{Proof overview}\label{sec:overview}
+
+The proof has three steps:
+\begin{center}\small
+	\begin{tabular}{@{}r@{\ \ }c@{\ \ }>{\raggedright\arraybackslash}p{0.56\textwidth}@{\qquad}l@{}}
+		$\NTIME(t)$ & $\Longrightarrow$ & counting the satisfying assignments of $2^{O(t/\log t)}$ constraint systems, each with $O(t)$ variables, logarithmic arity and bounded occurrence & Section~\ref{sec:machines}                        \\[3pt]
+		            & $\Longrightarrow$ & deterministic space $O(\kappa(t))=o(t)$, by counting in sublinear space                                                                           & Sections~\ref{sec:deformation}, \ref{sec:counter} \\[3pt]
+		            & $\Longrightarrow$ & $\NTIME(n)\subsetneq\DSPACE(n)$, by the space hierarchy theorem                                                                                   & Section~\ref{sec:main}
+	\end{tabular}
+\end{center}
+
+\paragraph{Step 1: computations as constraint systems (Section~\ref{sec:machines}).} Following the block decomposition of Hopcroft, Paul and Valiant \cite{HPV77}, we cut a computation of length $t$ into intervals of $b\approx\log t$ steps and every work tape into blocks of $b$ cells. During one interval a head moves at most $b$ cells, so it ends the interval in its block or in a neighboring one, and a \emph{head schedule} records these moves between blocks, for every interval and every work tape. A head schedule has $O(t/\log t)$ bits, so all of them can be enumerated within our space bound. Once the head schedule is fixed, each interval works on blocks that are known in advance. It reads its $b$ choice bits and the $O(b)$ bits of data with which it enters, namely the state, the head positions and the contents of the blocks around the work heads, and these determine the data with which it leaves. Each interval therefore becomes one constraint of logarithmic arity, and each piece of data that an interval leaves behind is read by at most one later interval (Figure~\ref{fig:windows}). The result is a constraint system with $O(t)$ Boolean variables, each in at most two constraints, whose satisfying assignments correspond one-to-one to the choice strings whose computation follows the head schedule and accepts. Summed over all head schedules, these counts give the number of choice strings that lead to acceptance, which is positive if and only if the machine accepts.
+
+\paragraph{Step 2: counting in sublinear space (Sections~\ref{sec:deformation} and~\ref{sec:counter}).} It remains to count the satisfying assignments of a bounded-occurrence constraint system with $N=O(t)$ variables in space $o(N)$, which rules out exhaustive search: the current assignment alone takes $N$ bits. Kintali's algorithm replaces the sum over $\{0,1\}^N$ by sums over much smaller objects. It deforms the inputs of the constraints by polynomials in a new variable $T$, so that the count is $H(0)$ for a polynomial $H$, and so that at each of $Q$ nodes $T=1,\dots,Q$ the variables split into $r$ groups that interact only through integer linear measurements, each reading a single group, whose values take $o(N/r)$ bits in all. Fixing the values of the measurements decouples the groups, and the sum over all assignments becomes a sum, over the values of the measurements, of products of sums over single groups of $O(N/r)$ variables. The values of $H$ at the nodes do not determine $H(0)$, because the degree of $H$ is much larger than $Q$, but the Taylor expansions of $H$ at the nodes do, and they have the same decoupled form, with an extra sum over small sets of variables called supports. A constraint enters the construction only through the multilinear extension of its table, so the constraints need not be clauses.
+
+Implemented directly, the algorithm stores objects of at least linear size: the group schedules, which assign the variables and the constraints to groups at all nodes, the coefficients of the deformed forms, the Taylor coefficients from which $H(0)$ is recovered by Hermite interpolation, and the supports. We avoid all of them. A pairwise independent hash function generates the group schedules from a seed of $O(\log^2N)$ bits, every coefficient is computed from an explicit formula when it is needed, a finite-field identity recovers $H(0)$ from values of polynomials whose low-order coefficients are the Taylor data, and supports are written in a compact code. The count modulo a prime then becomes a single explicit formula (Proposition~\ref{prop:master}), whose summation indices are a node, a field element, a support, a tuple of measurement values and an assignment to one group, and whose terms can each be computed in polylogarithmic space. Evaluated by nested loops, the formula needs only the space to write down its indices. A support has $O(N/r)$ elements, written with $O(\log r)$ bits each, the measurement values take $o(N/r)$ bits, and a group has $O(N/r)$ variables, so the indices take $O(N\log r/r)$ bits, which is $O(\kappa(N))$ for the $r\approx\sqrt{\log N}/\log\log N$ groups that our choice of parameters allows.
+
+\paragraph{Step 3: the space hierarchy (Section~\ref{sec:main}).} Enumerating the head schedules and counting for each of them, with a doubling search for the running time, gives $\NTIME(t)\subseteq\DSPACE(\kappa(t))$ (Theorem~\ref{thm:sim-intro}). Since $\kappa(t)=o(t)$, the space hierarchy theorem yields a language in $\DSPACE(n)$ outside $\NTIME(n)$, and its almost-everywhere form (Lemma~\ref{fact:hier}) yields Theorem~\ref{thm:main}.
+
+\medskip
+Sections~\ref{sec:deformation} and~\ref{sec:counter} do not depend on Section~\ref{sec:machines}, and they come first because they contain the new part. Section~\ref{sec:prelim} collects preliminaries. Appendix~\ref{app:construction} gives Kintali's construction explicitly and proves Proposition~\ref{fact:construction} and Lemma~\ref{lem:access}, Appendix~\ref{app:pseudo} gives the counting algorithm as pseudocode, with the lifetime of every buffer, and Appendix~\ref{app:checks} lists finite checks of the algebra.
+
+\subsection{Relation to prior work}\label{sec:status}
+
+Our counting algorithm is Kintali's \cite{Kin26}, a simplification of the construction of OpenAI \cite{OpenAI26}. Kintali states his construction for 3-CNFs and for parameters that do not depend on $N$; letting his parameters grow with $N$ gives time $2^{N/(\log N)^{1/4-o(1)}}$. Following his arguments, we prove the construction for constraints of any arity and for all parameters (Section~\ref{sec:deformation} and Appendix~\ref{app:construction}). The new part is its implementation in sublinear space (Section~\ref{sec:counter} and Appendix~\ref{app:pseudo}), together with the choice of parameters, which also improves the running time to $2^{O(\kappa(N))}$, and the extension from clauses to constraints of logarithmic arity, which Section~\ref{sec:machines} needs. Apart from this, the paper uses only classical facts: the space hierarchy theorem, which we reprove in the form we need (Lemma~\ref{fact:hier}), Hoeffding's inequality, the prime number theorem, and Chinese remaindering in logarithmic space.
+
+Together with the sparsification lemma of Impagliazzo, Paturi and Zane \cite{IPZ01}, the paper therefore contains a self-contained refutation of the Exponential Time Hypothesis. For every $\varepsilon>0$, that lemma writes a 3-CNF on $n$ variables, in time $2^{\varepsilon n}\poly(n)$, as a disjunction of at most $2^{\varepsilon n}$ 3-CNFs in each of which every variable occurs $O_\varepsilon(1)$ times. Replacing every variable with $d$ occurrences by $d$ copies joined by a path of equality constraints turns each of them into a bounded-occurrence constraint system with $O_\varepsilon(n)$ variables, whose satisfiability Corollary~\ref{cor:sat} decides in space $O_\varepsilon(\kappa(n))$, and hence in time $2^{O_\varepsilon(\kappa(n))}=2^{o(n)}$ (Section~\ref{sec:prelim}). Consequently, for every $\varepsilon>0$ there is an algorithm that decides 3-SAT on $n$ variables in time $2^{2\varepsilon n}$ for all large $n$.
+
+All results are asymptotic, with very large constants. Section~\ref{sec:limits} discusses what remains to be checked, shows that the main theorem, like the separations of \cite{HPV77} and \cite{PPST83}, does not relativize, and explains what does not follow.
+
+\section{Preliminaries}\label{sec:prelim}
+
+\paragraph{Machines.} Machines are multitape Turing machines with a read-only input tape and $K$ one-way infinite work tapes, and space counts work-tape cells. Every tape has a left endmarker in cell $0$, which is never overwritten and from which no head moves left, and the input tape holds the input followed by a right endmarker, from which the input head does not move right. A configuration is \emph{halting} if its state is accepting or rejecting; we assume that every other configuration has an applicable transition.
+
+\paragraph{Nondeterminism.} A nondeterministic machine has at most two applicable transitions in each configuration (every machine can be brought into this form with a constant-factor slowdown), and its \emph{running time} $T(n)$ is the largest number of steps of a computation on an input of length $n$. If all its computations halt, it \emph{decides} the set of inputs on which some computation accepts, and then $T(n)$ is finite, by K\"onig's lemma. A \emph{choice string} $w\in\{0,1\}^{\ell}$ determines a computation of length $\ell$: at step $i$, if two transitions are applicable, bit $w_i$ selects one, and otherwise $w_i$ is ignored; a halted machine stays in its halting configuration. $\NTIME(T)$ is the class of languages decided by nondeterministic machines with running time at most $T$, and $\coNTIME(T)$ consists of their complements. Thus every computation, not only every accepting one, has length at most $T(n)$; for time-constructible $T$, such as $T(n)=n$, bounding only the accepting computations gives the same class.
+
+\paragraph{Constraint systems.} A \emph{constraint system} $F$ on $N$ Boolean variables is a list of constraints $e$, each with a scope $I_e\subseteq[N]$ and a table $\gamma_e:\{0,1\}^{I_e}\to\{0,1\}$. An assignment $x\in\{0,1\}^N$ \emph{satisfies} $F$ if $\gamma_e(x|_{I_e})=1$ for every $e$, and
+\[
+	\#F=\sum_{x\in\{0,1\}^N}\ \prod_e\gamma_e\bigl(x|_{I_e}\bigr)
+\]
+is the number of satisfying assignments. The \emph{arity} of $F$ is the largest size of a scope, and $F$ has \emph{bounded occurrence} if every variable lies in at most three scopes. A 3-CNF in which every variable occurs in at most three clauses is a bounded-occurrence constraint system: each clause is a constraint whose scope is the set of its variables and whose table is its truth table, so that an empty clause has empty scope and table $0$. A constraint system is \emph{given in logarithmic space} by a deterministic transducer if the transducer, from an input of length polynomial in $N$, outputs $N$, the number of constraints, the scope of a given constraint and the value of its table at a given argument, in space $O(\log N)$, and the number of constraints is polynomial in $N$.
+
+\begin{lemma}[Space hierarchy, almost-everywhere form]\label{fact:hier}
+	Let $S(n)\ge\log_2n$ be space-constructible. There is a language $L_S\in\DSPACE(S)$ such that every deterministic machine that decides $L_S$ uses more than $c\,S(n)$ work cells on some input of length $n$, for some $c>0$ and all large $n$. In particular, $L_S\notin\DSPACE(S')$ for every function $S'$ with $\liminf_{n\to\infty}S'(n)/S(n)=0$.
+\end{lemma}
+
+This is the classical theorem of Stearns, Hartmanis and Lewis \cite{SHL65}; we include the proof because we use the almost-everywhere form.
+
+\begin{proof}
+	Fix an encoding of deterministic machines by binary strings $\langle\mathcal M\rangle$ that lists the states, so that $\mathcal M$ has at most $|\langle\mathcal M\rangle|$ states. The machine $\mathcal D$ works as follows on an input $w$ of length $n$. It rejects unless $w=\langle\mathcal M\rangle10^j$ for a machine $\mathcal M$ and some $j\ge0$. It marks $S(n)$ cells on each of its work tapes, which is possible in space $O(S(n))$ because $S$ is space-constructible, rejects if $|\langle\mathcal M\rangle|>S(n)$, and otherwise copies $\langle\mathcal M\rangle$ to a work tape. Then it simulates $\mathcal M$ on $w$. Its own input head plays the role of the input head of $\mathcal M$; the current state of $\mathcal M$ is kept on a work tape; and the work tapes of $\mathcal M$, with a mark at the position of each head, are stored on tracks of one work tape, $c_{\mathcal M}$ cells of $\mathcal D$ for each cell of $\mathcal M$, where $c_{\mathcal M}$ depends only on the number of work tapes and the alphabet of $\mathcal M$. $\mathcal D$ rejects if the stored tapes would leave the $S(n)$ marked cells of that tape. A binary counter of $C_0S(n)$ bits counts the simulated steps, and $\mathcal D$ rejects if it overflows. Here $C_0=3+\lceil\log_2|\Sigma|\rceil$, where $\Sigma$ is the work alphabet of $\mathcal D$, which does not depend on $\mathcal M$. This is large enough: as long as the stored tapes fit, a configuration of $\mathcal M$ on $w$ is determined by its state, the position of its input head, and the contents of the $S(n)$ marked cells that hold the stored tapes, head marks included; so, for $n>4$, there are at most
+	\[
+		|\langle\mathcal M\rangle|\,(n+2)\,|\Sigma|^{S(n)}\le2^{S(n)}\cdot2^{S(n)+2}\cdot|\Sigma|^{S(n)}<2^{C_0S(n)}
+	\]
+	such configurations, because $|\langle\mathcal M\rangle|\le S(n)$ and $\log_2n\le S(n)$. If the simulated computation halts, $\mathcal D$ accepts if and only if $\mathcal M$ rejects. Altogether $\mathcal D$ uses space $O(S(n))$, and $L_S=L(\mathcal D)\in\DSPACE(S)$.
+
+	Let $\mathcal M$ decide $L_S$, and let $n$ be so large that $n>\max(|\langle\mathcal M\rangle|,4)$ and $S(n)\ge|\langle\mathcal M\rangle|$. Suppose that $\mathcal M$ uses at most $S(n)/c_{\mathcal M}$ work cells on every input of length $n$, and let $w=\langle\mathcal M\rangle10^{n-|\langle\mathcal M\rangle|-1}$. On $w$ the stored tapes fit, and the simulation ends before the counter overflows, because $\mathcal M$ halts, a halting deterministic computation never repeats a configuration, and fewer than $2^{C_0S(n)}$ configurations have stored tapes that fit. Then $\mathcal D$ answers the opposite of $\mathcal M$ on $w$, which is impossible. Hence $\mathcal M$ uses more than $S(n)/c_{\mathcal M}$ work cells on some input of length $n$, for all such $n$.
+\end{proof}
+
+\paragraph{Composition and time.} When a procedure that uses space $s_1$ reads its input through an oracle whose answers can be computed in space $s_2$, the two together run in space $O(s_1+s_2)$, recomputing each answer when it is needed; we use this throughout without further mention. Such compositions can cost time, unavoidably in general \cite{PT25}, but we bound only space. A deterministic machine that halts and uses space $s\ge\log n$ never repeats a configuration, so it runs in time $2^{O(s)}$, and each of our space bounds $S$ therefore comes with the time bound $2^{O(S)}$.
+
+\section{Kintali's construction}\label{sec:deformation}
+
+This section presents Kintali's construction \cite{Kin26} through the properties that the counting algorithm needs, and proves them in the generality we need: constraints of any arity, and parameters that grow with $N$. The explicit construction and the proof of Proposition~\ref{fact:construction} are in Appendix~\ref{app:construction}.
+
+\paragraph{The idea.} Let $\Phi_e$ be the multilinear extension of the table of constraint $e$, so that $\#F=\sum_x\prod_e\Phi_e\bigl(x|_{I_e}\bigr)$. The construction replaces every input $x_v$ of every constraint $e$ by a linear form $L_{e,v}(T;x)$ in the variables, whose coefficients are polynomials of degree less than $R$ in a new variable $T$, with $L_{e,v}(0;x)=x_v$. Then $H(T)=\sum_x\prod_e\Phi_e\bigl((L_{e,v}(T;x))_v\bigr)$ is a polynomial with $H(0)=\#F$. The forms are chosen so that at each node $T=t\in[Q]$ the system decouples into $r$ groups, up to integer linear measurements, each of which reads a single group (Section~\ref{sec:taylor}); for our parameters the values of all measurements take only $o(N/r)$ bits (Lemma~\ref{lem:params}). Fixing the values of the measurements turns the sum over $x$ into a sum, over these values, of products of sums over single groups (Lemma~\ref{fact:grouped}). This computes the values $H(t)$, but $H$ has degree less than $3NR$, far more than the number $Q$ of nodes. What determines $H(0)$ is the Taylor expansion of $H$ to order $J\approx3NR/Q$ at every node, and these expansions have the same decoupled form, with an additional sum over sets of at most $J-1$ variables (Lemma~\ref{fact:taylor}). Section~\ref{sec:construction} records how the forms are obtained from two group schedules, which assign the variables and the constraints to groups at every node (Proposition~\ref{fact:construction}). In Sections~\ref{sec:deformation} and~\ref{sec:counter} the letter $t$ always denotes a node and $T$ the variable of the deformation; elsewhere they denote time bounds.
+
+\subsection{The counting polynomial}
+
+Let $F$ be a bounded-occurrence constraint system on $[N]$ whose scopes are nonempty. Following \cite[\S2.1]{Kin26}, add a dummy constraint, with scope $\{v\}$ and table constantly $1$, for each variable $v$ that lies in no scope. Let $\cF$ be the set of constraints, and call a pair $(e,v)$ with $v\in I_e$ an \emph{incidence}; let $M$ be the number of incidences. Each variable lies in between one and three scopes, so $N\le M\le3N$. For each constraint let
+\[
+	\Phi_e\bigl((X_v)_{v\in I_e}\bigr)=\sum_{a\in\{0,1\}^{I_e}}\gamma_e(a)\prod_{v\in I_e}\bigl(a_vX_v+(1-a_v)(1-X_v)\bigr)
+\]
+be the multilinear extension of its table; it agrees with $\gamma_e$ on Boolean arguments and has degree at most one in each variable. For a clause it is the polynomial used in \cite{Kin26}. Then
+\begin{equation}\label{eq:count}
+	\#F=\sum_{x\in\{0,1\}^N}\prod_{e\in\cF}\Phi_e\bigl((x_v)_{v\in I_e}\bigr).
+\end{equation}
+
+\subsection{Deformations and their Taylor data}\label{sec:taylor}
+
+Fix integers $r\ge2$ and $Q,R,D\ge1$. \emph{Deformation data} consist of a form $L_{e,v}(T;X)=\sum_{i\in[N]}p_{e,v,i}(T)X_i$ for each incidence, with $p_{e,v,i}\in\Q[T]$, such that $L_{e,v}(0;X)=X_v$ and $\deg_TL_{e,v}\le R-1$, and, for each node $t\in[Q]$:
+\begin{enumerate}[label=(D\arabic*),nosep]
+	\item a partition $[N]=S_{t,1}\sqcup\dots\sqcup S_{t,r}$ into groups with $|S_{t,g}|\le2N/r$;
+	\item an assignment $\sigma_t:\cF\to[r]$;
+	\item integer linear forms (\emph{measurements}), each assigned to a group $g$ and supported on $S_{t,g}$, each with coefficient $\ell_1$-norm at most $D$;
+	\item for every incidence $(e,v)$, a representation of $L_{e,v}(t;X)$ as a rational linear combination of the variables in $S_{t,\sigma_t(e)}$ and the measurements.
+\end{enumerate}
+In words, at node $t$ every deformed input $L_{e,v}(t;x)$ of constraint $e$ is determined by the variables of its group $\sigma_t(e)$ and by the values of the measurements. Let
+\[
+	H(T)=\sum_{x\in\{0,1\}^N}\prod_e\Phi_e\bigl((L_{e,v}(T;x))_{v\in I_e}\bigr).
+\]
+Then $H(0)=\#F$, and $\deg H\le M(R-1)<3NR$ because each $\Phi_e$ has degree at most one in each of its $|I_e|$ inputs. Put $q=\lfloor3NR/Q\rfloor$ and $J=q+1$, so that $QJ>\deg H$.
+
+\begin{lemma}[Grouped sums {\cite[eq.~(2.4)]{Kin26}}]\label{fact:grouped}
+	Fix $t\in[Q]$, $E\subseteq[N]$ and polynomials $b_{e,v}(z)$ not depending on $x$. For a group $g$ let $C_g$ be the integer matrix of the measurements assigned to group $g$. For $y=(y_1,\dots,y_r)$, where $y_g$ is a vector with one entry in $\{-D,\dots,D\}$ for each measurement of group $g$, let $\lambda_{e,v}(x_g;y)$ be the representation (D4) of $L_{e,v}(t;x)$ with the measurement values replaced by $y$, where $g=\sigma_t(e)$. Then, as polynomials in $z$,
+	\[
+		\sum_{\substack{x\in\{0,1\}^N\\ x_i=1\,(i\in E)}}\prod_e\Phi_e\bigl((L_{e,v}(t;x)+b_{e,v}(z))_v\bigr)
+		=\sum_y\prod_{g=1}^r\ \sum_{\substack{x_g\in\{0,1\}^{S_{t,g}}\\ C_gx_g=y_g,\ x_i=1\,(i\in E\cap S_{t,g})}}A_g(x_g;y,z),
+	\]
+	where $A_g(x_g;y,z)=\prod_{e:\sigma_t(e)=g}\Phi_e\bigl((\lambda_{e,v}(x_g;y)+b_{e,v}(z))_v\bigr)$.
+\end{lemma}
+
+\begin{proof}
+	Every $x\in\{0,1\}^N$ determines the tuple $y$ of its measurement values, $y_g=C_gx_g$ with $x_g=x|_{S_{t,g}}$, and these values lie in $\{-D,\dots,D\}$ by (D3). Group the sum on the left by $y$. For an $x$ with measurement values $y$, (D4) gives $L_{e,v}(t;x)=\lambda_{e,v}(x_g;y)$ with $g=\sigma_t(e)$, so the product over $e$ equals $\prod_gA_g(x_g;y,z)$; and the conditions $C_gx_g=y_g$ and $x_i=1$ for $i\in E$ are conditions on the groups separately. So, for fixed $y$, the sum over $x$ is the product over $g$ of the sums over $x_g$.
+\end{proof}
+
+Kintali states this identity modulo $z^J$; the same argument proves it in $\Q[z]$, which is the form we use.
+
+The second identity writes the Taylor expansion of $H$ at a node to order $J$ in the decoupled form of Lemma~\ref{fact:grouped}: each term fixes a small set $E$ of variables to $1$ and adds to every form a correction $b^U_{e,v}(z)$ that depends on a subset $U\subseteq E$. The terms are indexed by \emph{marked supports}, vectors $\eta\in\{0,+,-\}^N$. Write $E(\eta)=\{i:\eta_i\ne0\}$, $U(\eta)=\{i:\eta_i=+\}$, $|\eta|=|E(\eta)|$ and $\eta^-=E(\eta)\setminus U(\eta)$; marked supports correspond to pairs $U\subseteq E$.
+
+\begin{lemma}[Low-order Taylor data {\cite[\S2.3, eq.~(2.9)]{Kin26}}]\label{fact:taylor}
+	For $t\in[Q]$ and $U\subseteq[N]$ let $b^U_{e,v}(z)=L_{e,v}(t+z;\one_U)-L_{e,v}(t;\one_U)$, and define the polynomial
+	\begin{equation}\label{eq:Y}
+		Y_t(z)=\sum_{|\eta|\le q}(-1)^{|\eta^-|}\sum_{\substack{x\in\{0,1\}^N\\x_i=1\,(i\in E(\eta))}}\prod_e\Phi_e\bigl((L_{e,v}(t;x)+b^{U(\eta)}_{e,v}(z))_v\bigr).
+	\end{equation}
+	Then $Y_t(z)\equiv H(t+z)\pmod{z^J}$, and $\deg_zY_t\le M(R-1)<3NR$.
+\end{lemma}
+
+\begin{proof}
+	The congruence is \cite[eq.~(2.9)]{Kin26}, written with marked supports; we give the short argument, since we use the untruncated polynomial, which Section~\ref{sec:scalar} evaluates at points of $\Fp^\times$, while Kintali truncates it modulo $z^J$. Fix $x\in\{0,1\}^N$ and let $X=(X_1,\dots,X_N)$ be indeterminates. Each correction $L_{e,v}(t+z;X)-L_{e,v}(t;X)$ is linear in $X$ with coefficients divisible by $z$. Hence in
+	\[
+		F_x(X,z)=\prod_e\Phi_e\bigl((L_{e,v}(t;x)+L_{e,v}(t+z;X)-L_{e,v}(t;X))_v\bigr)
+	\]
+	every monomial of degree $d$ in $X$ carries the factor $z^d$, and $H(t+z)=\sum_xF_x(x,z)$. For $E\subseteq[N]$ put $\Delta_EF_x=\sum_{U\subseteq E}(-1)^{|E|-|U|}F_x(\one_U,z)$. A monomial in $X$ contributes to $\Delta_EF_x$ only if its set of variables is exactly $E$, so $z^{|E|}$ divides $\Delta_EF_x$; and M\"obius inversion on the Boolean lattice gives $F_x(x,z)=\sum_{E\subseteq\{i:x_i=1\}}\Delta_EF_x$. Modulo $z^J$ only the sets with $|E|\le q$ remain. Since $F_x(\one_U,z)=\prod_e\Phi_e\bigl((L_{e,v}(t;x)+b^U_{e,v}(z))_v\bigr)$, summing over $x$ and writing the pairs $U\subseteq E$ as marked supports gives $H(t+z)\equiv Y_t(z)\pmod{z^J}$. For the degree bound, each $b^U_{e,v}$ has degree at most $R-1$ in $z$ and each $\Phi_e$ is multilinear in its $|I_e|$ inputs, so $\deg_zY_t\le\sum_e|I_e|(R-1)=M(R-1)$.
+\end{proof}
+
+\subsection{The construction}\label{sec:construction}
+
+\emph{Group schedules} are maps $a:[N]\to[r]^Q$, for the variables, and $d:\cF\to[r]^Q$, for the constraints. Incidence $(e,v)$ gets the \emph{label} $u(e,v)=((a_v(t),d_e(t)))_{t\in[Q]}\in([r]\times[r])^Q$. Let $c_u$ be the number of incidences with label $u$, and $n_{t,g}=|\{v:a_v(t)=g\}|$. Let $D=r^{2Q}$ be the number of labels. The construction stores each incidence at the coordinate given by its label, in one of $\max_uc_u$ copies of the space of labels, and each measurement reads one copy; so the coefficient $\ell_1$-norm of a measurement is at most $D$, as in (D3), and the first condition in \eqref{eq:balance} below keeps the number of copies, and hence of measurements, small (Appendix~\ref{app:construction}).
+
+\begin{proposition}[Kintali's construction {\cite[Proposition~3.1]{Kin26}}]\label{fact:construction}
+	Let $r\ge2$, $Q\ge1$ and $R\ge2$ be integers. With every pair of group schedules, Appendix~\ref{app:construction} associates forms $L_{e,v}$ and, at each node $t$, the groups $S_{t,g}=\{v:a_v(t)=g\}$, the assignment $\sigma_t(e)=d_e(t)$ and measurements. If the group schedules satisfy
+	\begin{equation}\label{eq:balance}
+		c_u\le 2M/D\ \ \text{for every label }u\qquad\text{and}\qquad n_{t,g}\le 2N/r\ \ (t\in[Q],\,g\in[r]),
+	\end{equation}
+	then these are deformation data, with at most $4Mr\,e^{-R^2/(8Q)}$ measurements at each node.
+\end{proposition}
+
+Kintali states this as \cite[Proposition~3.1]{Kin26} for 3-CNFs and for parameters that do not depend on $N$, with additional hypotheses that are used only to construct group schedules satisfying \eqref{eq:balance}, which Lemma~\ref{lem:seed} below does in our setting. Appendix~\ref{app:construction} proves the proposition as stated, following his argument: clauses enter it only through their incidences, and $M\le3N$ follows from bounded occurrence alone.
+
+\section{Counting in sublinear space}\label{sec:counter}
+
+Kintali's algorithm evaluates the decoupled sums of Lemmas~\ref{fact:grouped} and~\ref{fact:taylor} at every node, stores the resulting Taylor coefficients, and recovers $H(0)$ by Hermite interpolation. This section turns it into an algorithm that runs in space $O(\kappa(N))$. We fix the parameters first (Section~\ref{sec:params} and Table~\ref{tab:params}). Section~\ref{sec:scalar} replaces Hermite interpolation by an identity that recovers $H(0)$ from the values, at the points of $\Fp^\times$, of the untruncated polynomials $Y_t$ of Lemma~\ref{fact:taylor}, which Lemma~\ref{fact:grouped} evaluates without computing their coefficients, and Section~\ref{sec:master} combines it with Lemmas~\ref{fact:grouped} and~\ref{fact:taylor} into a single formula for $\#F\bmod p$. The rest of the section shows that this formula can be evaluated by nested loops in space $O(\kappa(N))$: Section~\ref{sec:seed} generates the group schedules from a short seed, Section~\ref{sec:access} computes the coefficients of the construction on demand and writes the supports compactly, and Section~\ref{sec:algorithm} puts the pieces together.
+
+Throughout this section, $c_0$ and $c_1$ are constants, $F$ is a bounded-occurrence constraint system on $N$ variables with arity $\Delta\le c_1\log_2N$, and $p$ is a prime with $4N^2<p\le N^{c_0}$. The system is given in logarithmic space by a fixed transducer (Section~\ref{sec:prelim}); its input has length polynomial in $N$, so a pointer into it takes $O(\log N)$ bits. We may assume that all scopes are nonempty: a constraint with empty scope is a constant factor of $\#F$. For the parameters below $p>\max(Q,R)$, and every rational number in the construction has a denominator that is a product of powers of $2$ and of nodes $t\le Q$ (Appendix~\ref{app:construction}). Everything can therefore be reduced modulo $p$, and Lemmas~\ref{fact:grouped} and~\ref{fact:taylor} remain true after reduction.
+
+\subsection{Parameters}\label{sec:params}
+
+Let $k$ be the largest integer with $16\cdot4^kk^2\le\lfloor\log_2N\rfloor$. For $N$ so large that $k\ge6$, set
+\begin{equation}\label{eq:params}
+	s=2^k,\qquad r=s,\qquad Q=s^2k,\qquad R=8sk,\qquad D=r^{2Q}=2^{2s^2k^2}.
+\end{equation}
+In terms of $N$, there are $r\asymp\sqrt{\log N}/\log\log N$ groups and $Q\asymp\log N/\log\log N$ nodes, the forms have degree less than $R\asymp\sqrt{\log N}$ in $T$, and $q\le24N/s$. For smaller $N$, brute force suffices.
+
+\begin{table}[t]
+	\centering\small
+	\begin{tabular}{@{}lll@{}}
+		\hline
+		symbol                  & meaning                                           & size                             \\
+		\hline
+		$r=s=2^k$               & number of groups                                  & $\asymp\sqrt{\log N}/\log\log N$ \\
+		$Q=s^2k$                & number of nodes                                   & $\asymp\log N/\log\log N$        \\
+		$R=8sk$                 & the forms have degree less than $R$ in $T$        & $\asymp\sqrt{\log N}$            \\
+		$D=r^{2Q}$              & number of labels; bound on the measurement values & $\le N^{1/8}$                    \\
+		$q=\lfloor3NR/Q\rfloor$ & largest size $|\eta|$ of a marked support         & $\le24N/s$                       \\
+		$J=q+1$                 & order of the Taylor data                          &                                  \\
+		$p$                     & prime modulus                                     & $4N^2<p\le N^{c_0}$              \\
+		\hline
+	\end{tabular}
+	\caption{The parameters of the counting algorithm; $k$ is the largest integer with $16\cdot4^kk^2\le\lfloor\log_2N\rfloor$.}\label{tab:params}
+\end{table}
+
+\begin{lemma}\label{lem:params}
+	For $N$ above a threshold that depends only on $c_1$, the parameters \eqref{eq:params} satisfy $4D^2\le M$, $(\Delta+1)r^{-Q}\le1$ and $2Qr^2\le N$. Moreover $D\le N^{1/8}$, $q\le24N/s$, there are at most $12N/s^7$ measurements at each node, their values can be written with at most $30Nk^2/s^5$ bits, and $Nk/s=O(\kappa(N))$.
+\end{lemma}
+
+\begin{proof}
+	From $16s^2k^2\le\log_2N$ we get $D=2^{2s^2k^2}\le N^{1/8}$, so $4D^2\le4N^{1/4}\le N\le M$, and $2Qr^2=2s^4k\le N$. The maximality of $k$ gives $\log_2N<16\cdot4^{k+1}(k+1)^2=64s^2(k+1)^2\le100s^2k^2$, as $k\ge6$; so $r^Q=2^{s^2k^2}\ge N^{1/100}$ and $(\Delta+1)r^{-Q}\le(c_1\log_2N+1)N^{-1/100}\le1$ once $N$ is large enough in terms of $c_1$. By definition $q\le3NR/Q=24N/s$. Since $R^2/(8Q)=8k$, Proposition~\ref{fact:construction} gives at most $4Mre^{-8k}\le12Ns\cdot2^{-8k}=12N/s^7$ measurements per node, each with a value in $\{-D,\dots,D\}$, written with $\lceil\log_2(2D+1)\rceil\le2s^2k^2+2$ bits, and $12N(2s^2k^2+2)/s^7\le30Nk^2/s^5$. Finally, $s>\sqrt{\log_2N}/(8(k+1))$ by the maximality of $k$, and $k\le\log_2\log_2N$; hence $k/s=O\bigl((\log\log N)^2/\sqrt{\log N}\bigr)$.
+\end{proof}
+
+Kintali states his result for fixed parameters; letting $s$ grow with $N$, his choice $Q=s^4$, $R=s^3$ \cite[\S4]{Kin26} gives the running time $2^{N/(\log N)^{1/4-o(1)}}$. With \eqref{eq:params}, $R/\sqrt Q=8\sqrt k$ is just large enough for the number of measurements in Proposition~\ref{fact:construction}, which carries the factor $e^{-R^2/(8Q)}=e^{-8k}$, to be small (see Section~\ref{sec:limits}).
+
+\subsection{Recovering \texorpdfstring{$H(0)$}{H(0)} without interpolation}\label{sec:scalar}
+
+Kintali recovers $H(0)$ from the Taylor coefficients $[z^i]Y_t$, $i<J$, by Hermite interpolation. There are $QJ>3NR$ of them, too many to store. The following identity obtains $H(0)$ from values of the polynomials $Y_t$ instead. For $t\in[Q]$ and $p>Q$ let
+\[
+	G_t(z)=\frac1{t+z}\prod_{t'\in[Q]\setminus\{t\}}\frac1{(t-t'+z)^J}\in\Fp[[z]],
+\]
+a power series because $t$ and $t-t'$ are nonzero modulo $p$, and let $G_t^{<J}$ be the polynomial formed by its terms of degree less than $J$.
+
+\begin{lemma}\label{lem:scalar}
+	Let $p$ be a prime and $Q,J\ge1$ with $Q<p$ and $J<p$. Let $H\in\Fp[X]$ with $\deg H<QJ$, and let $Y_1,\dots,Y_Q\in\Fp[z]$ satisfy $Y_t(z)\equiv H(t+z)\pmod{z^J}$ and $\deg Y_t\le p-2$. With $\Omega(X)=\prod_{t'=1}^Q(X-t')^J$,
+	\begin{equation}\label{eq:scalar}
+		H(0)=\Omega(0)\sum_{t=1}^Q\ \sum_{z\in\Fp^\times}z^{p-J}\,G_t^{<J}(z)\,Y_t(z).
+	\end{equation}
+	The coefficients of $G_t^{<J}$ can each be computed in space $O((1+\log Q)\log(pJ))$.
+\end{lemma}
+
+Conceptually, \eqref{eq:scalar} is the residue theorem for the rational function $H(X)/(X\Omega(X))$: its residue at $0$ is $H(0)/\Omega(0)$, its residues at the nodes are determined by the Taylor data, and the sum over $\Fp^\times$ extracts the coefficient that is needed. We give a direct proof.
+
+\begin{proof}
+	\emph{Partial fractions.} Since $p>Q$, the factors $(X-t')^J$ are pairwise coprime, and $\deg H<\deg\Omega$. Hence $H/\Omega=\sum_{t=1}^Q\sum_{j=1}^Jc_{t,j}(X-t)^{-j}$ for some $c_{t,j}\in\Fp$, and evaluating at $X=0$ gives $H(0)=\Omega(0)\sum_{t,j}c_{t,j}(-t)^{-j}$.
+
+	\emph{Taylor data at $t$.} Fix $t$ and put $X=t+z$. In the ring $\Fp((z))$ of Laurent series, $H(t+z)/\Omega(t+z)=\sum_jc_{t,j}z^{-j}+B_t(z)$ with $B_t\in\Fp[[z]]$, because the terms for $t'\ne t$ have no pole at $z=0$. Multiply by $1/(t+z)=\sum_{i\ge0}(-1)^it^{-i-1}z^i$ and take the coefficient of $z^{-1}$. On the right this gives $\sum_jc_{t,j}(-1)^{j-1}t^{-j}=-\sum_jc_{t,j}(-t)^{-j}$. On the left, since $\Omega(t+z)=z^J\prod_{t'\ne t}(t-t'+z)^J$, we have $H(t+z)/\bigl((t+z)\Omega(t+z)\bigr)=z^{-J}H(t+z)G_t(z)$, whose coefficient of $z^{-1}$ is $[z^{J-1}]\bigl(H(t+z)G_t(z)\bigr)$. This coefficient depends only on the terms of degree less than $J$ of the two factors, so it equals $[z^{J-1}]\bigl(Y_tG_t^{<J}\bigr)$. Hence $\sum_jc_{t,j}(-t)^{-j}=-[z^{J-1}]\bigl(Y_tG_t^{<J}\bigr)$.
+
+	\emph{Projector.} For $P\in\Fp[z]$ and $0\le i<p-1$ we have $\sum_{z\in\Fp^\times}z^{p-1-i}P(z)=-\sum_\ell[z^\ell]P$, the sum over all $\ell\equiv i\pmod{p-1}$, because $\sum_{z\in\Fp^\times}z^{\ell'}$ equals $-1$ if $(p-1)\mid\ell'$ and $0$ otherwise. Take $P=Y_tG_t^{<J}$ and $i=J-1<p-1$. Since $\deg P\le\deg Y_t+J-1<(J-1)+(p-1)$, the only index in this sum that can contribute is $\ell=J-1$, so $[z^{J-1}]\bigl(Y_tG_t^{<J}\bigr)=-\sum_{z\in\Fp^\times}z^{p-J}G_t^{<J}(z)Y_t(z)$. Combining the three steps proves \eqref{eq:scalar}.
+
+	\emph{Computation.} $G_t$ is a product of $Q$ series of the form $(c+z)^{-m}$ with $m\in\{1,J\}$, and $[z^i](c+z)^{-m}=(-1)^i\binom{m+i-1}{i}c^{-m-i}$, where the binomial coefficient is computed modulo $p$ from the multiplicative formula (for $i<J<p$, $i!$ is invertible modulo $p$). A coefficient of a product of series is computed by divide and conquer: split the factors into two halves and sum, over the ways of splitting the degree, the products of the corresponding coefficients of the two halves. The recursion has depth $\lceil\log_2Q\rceil$, and each level stores a degree, the current split of it, the value of the left half and an accumulator, in $O(\log(pJ))$ bits.
+\end{proof}
+
+\subsection{The master formula}\label{sec:master}
+
+We now combine Lemmas~\ref{fact:grouped} and~\ref{fact:taylor} with Lemma~\ref{lem:scalar}. Recall the notation of Lemma~\ref{fact:grouped}: at node $t$, $C_g$ is the matrix of the measurements of group $g$, $y=(y_1,\dots,y_r)$ is a tuple of values of all measurements, and $\lambda_{e,v}(x_g;y)$ is the deformed input $L_{e,v}(t;x)$ computed from its representation (D4), with the measurement values replaced by $y$.
+
+\begin{proposition}[Master formula]\label{prop:master}
+	Let the parameters be as in \eqref{eq:params}, let the group schedules satisfy \eqref{eq:balance} (such group schedules exist by Lemma~\ref{lem:seed}), and take the deformation data of Proposition~\ref{fact:construction}. Then, modulo $p$,
+	\[
+		\#F\equiv\Omega(0)\sum_{t=1}^Q\ \sum_{z\in\Fp^\times}z^{p-J}G_t^{<J}(z)\sum_{|\eta|\le q}(-1)^{|\eta^-|}\sum_y\ \prod_{g=1}^r\ \sum_{x_g}A^\eta_g(x_g;y,z),
+	\]
+	where $y=(y_1,\dots,y_r)$ ranges over the tuples of Lemma~\ref{fact:grouped}, $x_g$ over the assignments to $S_{t,g}$ with $C_gx_g=y_g$ and $x_i=1$ for $i\in E(\eta)\cap S_{t,g}$, and $A^\eta_g(x_g;y,z)=\prod_{e:\sigma_t(e)=g}\Phi_e\bigl((\lambda_{e,v}(x_g;y)+b^{U(\eta)}_{e,v}(z))_v\bigr)$.
+\end{proposition}
+
+\begin{proof}
+	By Lemma~\ref{lem:params} and Proposition~\ref{fact:construction} we have deformation data, and Lemmas~\ref{fact:grouped} and~\ref{fact:taylor} hold modulo $p$. By Lemma~\ref{fact:grouped}, with $E=E(\eta)$ and $b=b^{U(\eta)}$, the sum over $y$ is the inner sum over $x$ in \eqref{eq:Y}; so the sum over $\eta$ is $Y_t(z)\bmod p$. By Lemma~\ref{fact:taylor}, $Y_t(z)\equiv H(t+z)\pmod{z^J}$ and $\deg Y_t<3NR$; also $\deg H<3NR<QJ$, and $3NR+J<4N^2<p$, so $J<p$ and $\deg Y_t\le p-2$. Lemma~\ref{lem:scalar} and $H(0)=\#F$ give the claim.
+\end{proof}
+
+\subsection{Group schedules from a short seed}\label{sec:seed}
+
+Since $r=2^k$, an element of $[r]^Q$ is a string of $Qk$ bits, $k$ bits per node. Let $\ell=\lceil\log_2(N+|\cF|+1)\rceil$, and identify the variables and the constraints with distinct nonzero vectors in $\GF(2)^\ell$ by binary representation. A \emph{seed} is a tuple $(\Gamma,\theta,\Gamma',\theta')$ of matrices $\Gamma,\Gamma'\in\GF(2)^{Qk\times\ell}$ and vectors $\theta,\theta'\in\GF(2)^{Qk}$. It defines the group schedules
+\[
+	a_v=\Gamma v+\theta,\qquad d_e=\Gamma'e+\theta'.
+\]
+A seed has $2Qk(\ell+1)=O(\log^2N)$ bits, because $Qk=s^2k^2\le\log_2N$.
+
+\begin{lemma}\label{lem:seed}
+	\begin{enumerate}[label=(\roman*),nosep]
+		\item Some seed yields group schedules satisfying \eqref{eq:balance}.
+		\item The first seed in lexicographic order whose group schedules satisfy \eqref{eq:balance} can be found in space $O(\log^2N)$.
+		\item Given a seed, the number $|\cF|$ of constraints, including the dummy constraints of Section~\ref{sec:deformation}, the values $a_v(t)$, $d_e(t)$ and $u(e,v)$, the counts $c_u$ and $n_{t,g}$, whether $v\in S_{t,g}$, and the position of $v$ in $S_{t,g}$ can be computed in space $O(\log^2N)$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	(i) Choose the seed uniformly at random. For distinct variables $v\ne v'$ the vector $v+v'$ is nonzero, so $\Gamma(v+v')$ is uniform on $\GF(2)^{Qk}$; since $\theta$ is uniform and independent of $\Gamma$, the pair $(\Gamma v+\theta,\Gamma(v+v'))$ is uniform, and hence so is $(a_v,a_{v'})=(\Gamma v+\theta,\,\Gamma v+\theta+\Gamma(v+v'))$. Thus the variable schedule is pairwise independent with uniform values. The same holds for the constraint schedule, and the two group schedules are independent.
+
+	Let $\Theta=\sum_u(c_u-M/D)^2$ and $\Theta'=\sum_{t,g}(n_{t,g}-N/r)^2$. Expanding as in \cite[Lemma~3.4]{Kin26}, $\Theta=\sum\one[u(e,v)=u(e',v')]-M^2/D$, where the sum is over ordered pairs of incidences, equal pairs included. Equal labels have probability $1$ for the $M$ equal pairs; probability $r^{-Q}$ for the $n_1$ pairs of distinct incidences that share their variable or their constraint (they cannot share both), since then the labels agree if and only if the two constraints, or the two variables, get the same group schedule; and probability $\Pr[a_v=a_{v'}]\Pr[d_e=d_{e'}]=1/D$ for the remaining $n_0\le M^2$ pairs. Each incidence shares its variable with at most two other incidences and its constraint with at most $\Delta-1$, so $n_1\le(\Delta+1)M$, and
+	\[
+		\mathbb E\Theta=M+n_1r^{-Q}+\frac{n_0-M^2}{D}\le M\bigl(1+(\Delta+1)r^{-Q}\bigr)\le2M
+	\]
+	by Lemma~\ref{lem:params}. Similarly $\mathbb E\Theta'=QN(1-1/r)\le QN$, using only pairwise independence. Hence $\mathbb E[\Theta/(2M)+\Theta'/(QN)]\le2$, and some seed has $\Theta\le4M$ and $\Theta'\le2QN$. For this seed $c_u\le M/D+2\sqrt M\le2M/D$, because $4D^2\le M$, and $n_{t,g}\le N/r+\sqrt{2QN}\le2N/r$, because $2Qr^2\le N$.
+
+	(ii) Run through the seeds in lexicographic order. For each seed, compute the counts $c_u$ one label at a time (there are $D\le N^{1/8}$ labels) and the counts $n_{t,g}$ one pair $(t,g)$ at a time, each by streaming over the incidences or the variables with a counter of $O(\log N)$ bits, and stop at the first seed that satisfies \eqref{eq:balance}. Part (iii) is immediate from the definitions.
+\end{proof}
+
+\subsection{Computing the terms and writing the supports}\label{sec:access}
+
+\begin{lemma}\label{lem:access}
+	Fix a seed satisfying \eqref{eq:balance}. Each of the following can be computed in space $O(\log^2N)$, with no stored tables:
+	\begin{enumerate}[label=(\alph*),nosep]
+		\item modulo $p$, the coefficients of the representation (D4) of $L_{e,v}(t;X)$, for an incidence $(e,v)$ and a node $t$;
+		\item the value of a measurement at $x$, an integer in $\{-D,\dots,D\}$ computed exactly, where $x$ is given by an oracle;
+		\item modulo $p$, the correction $b^U_{e,v}(z)$ for $z\in\Fp$, where $U$ is given by a membership oracle.
+	\end{enumerate}
+\end{lemma}
+
+The proof, in Appendix~\ref{app:construction}, uses an explicit formula for the entries of the matrix $A$ of Appendix~\ref{app:construction}, so that no matrix arithmetic and no preprocessing is needed.
+
+\paragraph{Writing the supports.} Divide $[N]$ into $\lceil N/s\rceil$ consecutive segments of at most $s=2^k$ positions. The \emph{code} of a marked support $\eta$ treats the segments in order: for each segment it writes, for every $i$ in the segment with $\eta_i\ne0$, in increasing order, a bit $1$, the offset of $i$ in its segment in $k$ bits, and the bit $\one[\eta_i=+]$; and then it writes a bit $0$. Thus $|\code(\eta)|=\lceil N/s\rceil+(k+2)|\eta|$. Reading a code from the left is deterministic (a bit $0$ ends a segment, and a bit $1$ is followed by the $k+1$ bits of an entry), so the marked supports with $|\eta|\le q$ are enumerated, each exactly once, by running through all binary strings of length at most $\Lambda=\lceil N/s\rceil+(k+2)q$ and keeping those that consist of exactly $\lceil N/s\rceil$ segments, with offsets strictly increasing within each segment and lying inside it, and with at most $q$ entries. Given $\code(\eta)$ and $i\in[N]$, the value $\eta_i$ is found by reading the code, in space $O(\log N)$.
+
+\subsection{The algorithm}\label{sec:algorithm}
+
+\begin{theorem}\label{thm:counter}
+	There is a deterministic algorithm that, given $p$ and the input of the transducer that gives $F$, outputs $\#F\bmod p$ in space $O(\kappa(N))$, with the constant depending on $c_0$, $c_1$ and the transducer.
+\end{theorem}
+
+\begin{proof}
+	If $N$ is below the threshold of Lemma~\ref{lem:params}, use brute force. Otherwise compute the parameters, find the seed of Lemma~\ref{lem:seed}, and evaluate the right side of Proposition~\ref{prop:master} by nested loops over $t$, $z$, $\eta$, $y$, $g$ and $x_g$, accumulating sums and products modulo $p$, with $\eta$ enumerated through its code. The conditions on $x_g$ are checked with Lemma~\ref{lem:access}(b) and the code of $\eta$. Each factor of $A^\eta_g$ is a value $\Phi_e(\xi)$ at the point with coordinates $\xi_v=\lambda_{e,v}(x_g;y)+b^{U(\eta)}_{e,v}(z)$, which are computed from $x_g$, $y$ and Lemma~\ref{lem:access}(a),(c), reading $U(\eta)$ from the code; and $\Phi_e(\xi)$ is the sum, over the $2^{|I_e|}\le N^{c_1}$ rows $a$ of the table, of $\gamma_e(a)\prod_{v\in I_e}(a_v\xi_v+(1-a_v)(1-\xi_v))$, computed in space $O(\log^2N)$. The coefficients of $G_t^{<J}$ come from Lemma~\ref{lem:scalar}.
+
+	Besides $O(\log^2N)$ bits for the seed, for a coefficient of $G_t^{<J}$ and for evaluating the terms, the algorithm stores only the current values of the loop variables; the product over $g$ is formed one group at a time, so only one assignment $x_g$ is stored:
+	\begin{center}\small
+		\begin{tabular}{@{}lll@{}}
+			loop variable & range                              & bits                                     \\
+			\hline
+			$t$, $z$, $g$ & $[Q]$, $\Fp^\times$, $[r]$         & $O(\log N)$                              \\
+			$\code(\eta)$ & marked supports with $|\eta|\le q$ & $\le\Lambda\le(24k+49)N/s+1$             \\
+			$y$           & measurement values at node $t$     & $\le30Nk^2/s^5$ (Lemma~\ref{lem:params}) \\
+			$x_g$         & assignments to the group $S_{t,g}$ & $\le2N/s$
+		\end{tabular}
+	\end{center}
+	By Lemma~\ref{lem:params} the total is $O(Nk/s+\log^2N)=O(\kappa(N))$. All subroutines read the loop variables $\code(\eta)$, $y$ and $x_g$ in place on the work tape, through pointers of $O(\log N)$ bits, and never copy them. Appendix~\ref{app:pseudo} gives the algorithm as pseudocode, with the writer and the lifetime of each of these three buffers.
+\end{proof}
+
+\begin{remark}[Integer tables]\label{rem:weights}
+	The algorithm of Theorem~\ref{thm:counter} uses the tables only through their residues modulo $p$, and neither its proof nor the results it relies on use that the tables take values in $\{0,1\}$. Hence, for integer-valued tables $\gamma_e:\{0,1\}^{I_e}\to\Z$, given modulo $p$, the same algorithm computes $\sum_x\prod_e\gamma_e(x|_{I_e})\bmod p$ in the same space.
+\end{remark}
+
+\begin{corollary}\label{cor:sat}
+	Whether a bounded-occurrence constraint system on $N$ variables, given as above, is satisfiable can be decided in space $O(\kappa(N))$.
+\end{corollary}
+
+\begin{proof}
+	For $N$ below a constant threshold use brute force. Otherwise $0\le\#F\le2^N$, and the interval $(4N^2,8N^2]$ contains at least $N$ primes, by the prime number theorem, whose product exceeds $2^N$. Hence $\#F>0$ if and only if $\#F\not\equiv0$ modulo one of them. Find these primes by trial division and apply Theorem~\ref{thm:counter} to each, with $c_0=3$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:count-intro}]
+	The counting statement is Theorem~\ref{thm:counter}. Consider a 3-CNF with $N$ variables and $O(N)$ clauses, written out as a list of clauses, in which every variable occurs in at most three clauses. Every nonempty clause contains a variable, so there are at most $3N$ nonempty clauses, and the hypothesis on the number of clauses only bounds the number of empty clauses. If there is an empty clause, the formula is unsatisfiable, which a scan of the input detects. Otherwise the formula, with each clause as a constraint whose scope is the set of its variables and whose table is its truth table, is a bounded-occurrence constraint system of arity at most $3$, given in logarithmic space by the transducer that reads the list of clauses (Section~\ref{sec:prelim}), and Corollary~\ref{cor:sat} applies.
+\end{proof}
+
+\section{From computations to constraint systems}\label{sec:machines}
+
+We now represent the computations of a nondeterministic machine by bounded-occurrence constraint systems, using the block decomposition of Hopcroft, Paul and Valiant \cite{HPV77}. Each interval of the computation is a single constraint with its own choice bits, and only the work heads are scheduled.
+
+\paragraph{Intervals, blocks and head schedules.} Fix a nondeterministic machine $\mathcal M$ with $K$ work tapes, an input $x$ and an integer $t\ge\max(|x|,4)$, and put $b=\lceil\log_2t\rceil$, $m=\lceil t/b\rceil$ and $\bar t=mb$, so that $t\le\bar t<2t$. We divide the first $\bar t$ steps of a computation into $m$ \emph{intervals} of $b$ steps, and every work tape into \emph{blocks} of $b$ consecutive cells, block $0$ starting at cell $0$. During an interval a work head moves at most $b$ cells, so if it starts the interval in block $B$, it stays within blocks $B-1$, $B$ and $B+1$ and ends the interval in one of them. A \emph{head schedule} is an array $\pi\in\{-1,0,1\}^{K\times m}$ in which, for every work tape $j$, all partial sums $\pi_{j,1}+\dots+\pi_{j,i}$ are nonnegative. The head schedule of a computation records, for every interval $i$ and every work tape $j$, the change $\pi_{j,i}$ of the block of head $j$ during interval $i$; it is a head schedule, since no head visits a negative cell. Each choice string determines a computation, and hence exactly one head schedule. Given $\pi$, the block of each work head at the start of each interval is a partial sum, computable in space $O(\log t)$. The \emph{window} of a head in an interval consists of the blocks $B-1$, $B$ and $B+1$ that have nonnegative index, where $B$ is the block of the head at the start of the interval.
+
+\begin{figure}[t]
+	\centering
+	\begin{tikzpicture}[x=0.95cm,y=0.62cm,font=\scriptsize]
+		\foreach \b in {0,...,5} \node at (\b+0.5,0.45) {\b};
+		\node[anchor=east] at (-0.15,0.45) {block};
+		\foreach \i/\B in {1/0,2/1,3/2,4/3,5/3,6/2,7/1} {
+				\node[anchor=east] at (-0.15,-\i+0.5) {interval \i};
+				\foreach \b in {0,...,5} \draw[black!25] (\b,-\i) rectangle ++(1,1);
+				\pgfmathtruncatemacro{\lo}{max(\B-1,0)}
+				\pgfmathtruncatemacro{\hi}{\B+2}
+				\fill[blue!10] (\lo,-\i) rectangle (\hi,-\i+1);
+				\draw[blue!55!black] (\lo,-\i) rectangle (\hi,-\i+1);
+				\fill[blue!55!black] (\B+0.2,-\i+0.5) circle (1.8pt);
+			}
+		\foreach \b/\f/\t in {0/1/2,0/2/7,1/1/2,1/2/3,1/3/6,1/6/7,2/2/3,2/3/4,2/4/5,2/5/6,2/6/7,3/3/4,3/4/5,3/5/6,4/4/5}
+		\draw[-{Stealth[length=3.6pt]},thick,black!80] (\b+0.55,-\f+0.3) -- (\b+0.55,-\t+0.7);
+	\end{tikzpicture}
+	\caption{The windows of one work head during seven intervals, for a head schedule whose entries for this tape begin with $(+1,+1,+1,0,-1,-1)$. Row $i$ shades the window of interval $i$, and the dot marks the block of the head at the start of the interval. The contents of the blocks are variables of the constraint system: interval $i$ reads the latest version of each block in its window and writes a new version. An arrow joins the interval that writes a version to the only interval that reads it, the next interval whose window contains the block; in between, the block keeps its contents. The first interval whose window contains a block reads its initial contents, which are constants. Hence every variable lies in at most two scopes.}\label{fig:windows}
+\end{figure}
+
+\begin{lemma}\label{lem:virtual}
+	There is a constant $C$, depending only on $\mathcal M$, such that for every $\chi\in\{\mathrm{acc},\mathrm{rej},\mathrm{run}\}$ and every head schedule $\pi$ there is a constraint system $F^\chi_\pi=F^\chi_{x,t,\pi}$ on between $t$ and $Ct$ variables, in which every variable lies in at most two scopes and every scope has at most $C\log_2t$ variables, with the following properties.
+	\begin{enumerate}[label=(\alph*),nosep]
+		\item A deterministic transducer that depends only on $\mathcal M$, given $x$, $t$, $\chi$ and $\pi$, outputs the number of variables of $F^\chi_\pi$ and its number $m$ of constraints; given also the index of a constraint, it outputs its scope, and, given also an argument, the value of its table there; all in space $O(\log t)$. Thus $F^\chi_\pi$ is given in logarithmic space, from an input of length $O(t)$.
+		\item $\sum_\pi\#F^\chi_\pi$ is the number of choice strings $w\in\{0,1\}^{\bar t}$ such that, after $\bar t$ steps, the computation of $\mathcal M$ on $x$ determined by $w$ is in an accepting configuration (if $\chi=\mathrm{acc}$), in a rejecting configuration (if $\chi=\mathrm{rej}$), or not in a halting configuration (if $\chi=\mathrm{run}$).
+	\end{enumerate}
+	If the constraints also require every choice bit to be $0$ at a step with a single applicable transition or after halting, then (b) holds with computations of length $\bar t$ in place of choice strings.
+\end{lemma}
+
+\begin{proof}
+	\emph{Interval constraints.} The \emph{entering data} of an interval are the state, the position of the input head, the offsets of the work heads within their blocks, and the contents of the blocks in the windows of the work heads at the start of the interval; the \emph{leaving data} are the state, the input-head position, the offsets, and the contents of the same blocks at its end. They are encoded in binary with fixed lengths, so they have $O(b)$ bits each, as the input head stays within the first $\bar t+1<2t+1$ cells. The constraint of interval $i$ has as arguments the entering data, $b$ choice bits $u_i$, and the leaving data. It is satisfied if the $b$ steps of $\mathcal M$ that start from the entering data, read the input $x$ and use the choice bits $u_i$ produce the leaving data and change the blocks of the work heads as prescribed by $\pi$; for the last interval we also require that the final state be accepting ($\chi=\mathrm{acc}$), rejecting ($\chi=\mathrm{rej}$), or neither ($\chi=\mathrm{run}$). Invalid encodings do not satisfy it. It is evaluated by simulating $b$ steps on the $O(b)$ work cells concerned, reading input symbols from $x$, in space $O(\log t)$.
+
+	\emph{The constraint system.} The variables are the choice bits and the bits of the leaving data of all intervals; there are at least $mb\ge t$ and at most $Ct$ of them, for a suitable $C$. The entering state, input-head position and offsets of interval $i$ are the leaving ones of interval $i-1$, or the initial ones if $i=1$. The entering contents of a block are the leaving contents of the last earlier interval in whose windows the block lies; if there is no such interval, they are its initial contents (the endmarker and blanks), which are substituted into the table as constants. Thus every choice bit lies in one scope, and every other variable lies in the scope of the constraint that produces it and of at most one constraint that reads it: for block contents, the next interval whose windows contain the block (Figure~\ref{fig:windows}); for the state, the input-head position and the offsets, the next interval.
+
+	\emph{Counting.} Let $x'$ be a satisfying assignment, and let $w=u_1\cdots u_m$ be its choice bits. By induction over $i$, the entering data of interval $i$ are the true data of the computation determined by $w$ after $(i-1)b$ steps, and this computation has followed $\pi$ so far. For $i=1$ the entering data are the initial ones. If the claim holds for $i$, the constraint of interval $i$ forces its leaving data to be the true data after $ib$ steps and the change of blocks to agree with $\pi$; and the entering data of interval $i+1$ are true because a block keeps its contents between two visits. Hence $x'$ is determined by $w$, and the computation determined by $w$ has head schedule $\pi$ and meets the final requirement. Conversely, for every such $w$ the true data give a satisfying assignment. Therefore $\#F^\chi_\pi$ is the number of these choice strings that have head schedule $\pi$, and summing over $\pi$ proves (b). In particular, $F^\chi_\pi$ has no satisfying assignment if no computation has head schedule $\pi$. With the additional requirement on the choice bits, choice strings correspond bijectively to computations, which proves the last statement.
+
+	\emph{Locality.} The scope of a constraint and the source of each of its arguments are determined by $\pi$ and by the last earlier visit to each block, and the index of a variable and the number of variables are sums of lengths of data, all computable in space $O(\log t)$; the tables are evaluated as above. This proves (a), with $C$ depending only on $\mathcal M$.
+\end{proof}
+
+\section{Proofs of the main results}\label{sec:main}
+
+We now combine the counting algorithm, through Corollary~\ref{cor:sat}, with Lemma~\ref{lem:virtual}.
+
+\begin{theorem}\label{thm:sim}
+	Let $\mathcal M$ be a nondeterministic machine that decides a language $L$, with running time $T(n)$. A deterministic machine decides $L$, and its complement, in space $O(\kappa(T^*(n)))$, where $T^*(n)=\max(T(n),n)$. In particular $\NTIME(T)\cup\coNTIME(T)\subseteq\DSPACE(\kappa(T))$ for every $T(n)\ge n$.
+\end{theorem}
+
+\begin{proof}
+	Let $x$ be an input of length $n$. For an integer $t\ge\max(n,4)$ and $\chi\in\{\mathrm{acc},\mathrm{run}\}$, let $P^\chi_t$ be the statement that $F^\chi_{x,t,\pi}$ is satisfiable for some head schedule $\pi$. By Lemma~\ref{lem:virtual}(b), $P^{\mathrm{run}}_t$ holds if and only if some computation of $\mathcal M$ on $x$ has not halted after $\bar t$ steps, and $P^{\mathrm{acc}}_t$ holds if and only if some computation is in an accepting configuration after $\bar t$ steps.
+
+	\emph{Testing $P^\chi_t$.} Enumerate the head schedules $\pi$ and apply Corollary~\ref{cor:sat} to each $F^\chi_{x,t,\pi}$, whose number of variables, scopes and tables are supplied by the transducer of Lemma~\ref{lem:virtual}; it has $N\ge t$ variables and arity at most $C\log_2t\le C\log_2N$. This uses space $O(t/\log t)$ for $\pi$, $O(\kappa(Ct))=O(\kappa(t))$ for Corollary~\ref{cor:sat}, and $O(\log t)$ for the transducer, so $O(\kappa(t))$ in all.
+
+	\emph{Doubling.} For $t=t_0,2t_0,4t_0,\dots$, where $t_0=\max(n,4)$, test $P^{\mathrm{run}}_t$; at the first $t$ for which it fails, accept if $P^{\mathrm{acc}}_t$ holds and reject otherwise. At that point every computation of $\mathcal M$ on $x$ has halted after $\bar t$ steps, and a halted computation stays halted, so $P^{\mathrm{acc}}_t$ holds if and only if some computation accepts, that is, if and only if $\mathcal M$ accepts $x$. Since $\bar t\ge t$ and every computation halts within $T(n)$ steps, the loop stops at the latest when $t\ge T(n)$, so the final $t$ is at most $2\max(T^*(n),4)$. The stages reuse the same space, so the total space is $O(\kappa(T^*))$, using $\kappa(2T)=O(\kappa(T))$. For the complement, the deterministic machine gives the opposite answer.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:sim-intro}]
+	This is Theorem~\ref{thm:sim}.
+\end{proof}
+
+Let $\delta(x)=(\log\log x)^2/\sqrt{\log x}$, so that $\kappa(x)=x\,\delta(x)$ and $\rho(x)=x/\delta(x)$. The function $\delta$ is eventually decreasing and tends to $0$, and $\kappa$ is eventually increasing. Hence, for all sufficiently large $S$ and $T$,
+\begin{equation}\label{eq:ineq}
+	\frac{\kappa(T)}{S}\le\delta(S)+\frac{T}{\rho(S)},
+\end{equation}
+because $\kappa(T)\le\kappa(S)=S\,\delta(S)$ if $T\le S$, and $\kappa(T)=T\,\delta(T)\le T\,\delta(S)=S\,T/\rho(S)$ if $T>S$.
+
+\begin{theorem}\label{thm:sep}
+	Let $S(n)\ge n$ be space-constructible, and let $\mathcal M$ be a nondeterministic machine that decides $L_S$ or its complement, with running time $T(n)$. Then $T(n)\ge c\,\rho(S(n))$ for some $c>0$ and all large $n$. In particular $L_S\notin\NTIME(T)\cup\coNTIME(T)$ for every $T=o(\rho\circ S)$, and $\NTIME(S)\subsetneq\DSPACE(S)$ and $\NTIME(S)\subsetneq\NSPACE(S)$. Moreover $\NTIME(n)\subsetneq\DSPACE(S')$ for every space-constructible $S'$ with $\kappa(n)=o(S'(n))$, for example $S'(n)=\lfloor n/(\log n)^{1/2-\varepsilon}\rfloor$ with $\varepsilon>0$ rational.
+\end{theorem}
+
+\begin{proof}
+	Otherwise $T(n)/\rho(S(n))\to0$ along a sequence of lengths $n$. Along it, $T^*(n)=\max(T(n),n)$ also satisfies $T^*(n)/\rho(S(n))\to0$, because $n/\rho(S(n))\le\delta(S(n))\to0$; and $T^*(n)\ge n$ and $S(n)\ge n$ tend to infinity. By \eqref{eq:ineq}, $\kappa(T^*(n))/S(n)\le\delta(S(n))+T^*(n)/\rho(S(n))\to0$ along the sequence. By Theorem~\ref{thm:sim}, $L_S$ is decided in space $O(\kappa(T^*(n)))$, which contradicts Lemma~\ref{fact:hier}. Next, Theorem~\ref{thm:sim} gives $\NTIME(S)\subseteq\DSPACE(\kappa(S))\subseteq\DSPACE(S)$, and $L_S\notin\NTIME(S)$ because $S=o(\rho\circ S)$; since $\DSPACE(S)\subseteq\NSPACE(S)$, both inclusions are strict. Finally, $\NTIME(n)\subseteq\DSPACE(\kappa(n))\subseteq\DSPACE(S')$, and $L_{S'}\in\DSPACE(S')$ is not in $\DSPACE(\kappa(n))$ by Lemma~\ref{fact:hier}, so it is not in $\NTIME(n)$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+	Take $S(n)=n$ in Theorem~\ref{thm:sep} and $L=L_n$.
+\end{proof}
+
+\begin{corollary}[Toward the question of Hopcroft, Paul and Valiant]\label{cor:hpv}
+	For every $t(n)\ge n$,
+	\[
+		\NTIME\Bigl(\frac{t\sqrt{\log t}}{(\log\log t)^2}\Bigr)\subseteq\DSPACE(t).
+	\]
+\end{corollary}
+
+\begin{proof}
+	Let $T=t\sqrt{\log t}/(\log\log t)^2$. For large $t$ we have $t\le T\le t\sqrt{\log t}$, so $\log t\le\log T\le2\log t$ and $\log\log T\le\log\log t+1$. Hence
+	\[
+		\kappa(T)=\frac{T(\log\log T)^2}{\sqrt{\log T}}\le t\Bigl(\frac{\log\log t+1}{\log\log t}\Bigr)^2=O(t),
+	\]
+	and $\kappa(\max(T,n))=O(t)$ because $\kappa(n)\le\kappa(t)\le t$ for large $n$. Theorem~\ref{thm:sim} gives $\NTIME(T)\subseteq\DSPACE(O(t))=\DSPACE(t)$.
+\end{proof}
+
+\subsection{Probabilistic and parity time}\label{sec:exact}
+
+A probabilistic machine tosses a fair coin at every step and ignores it when only one transition is applicable; if all its computations on $x$ halt within $\bar t$ steps, it accepts $x$ with probability $2^{-\bar t}$ times the number of coin sequences in $\{0,1\}^{\bar t}$ that lead to acceptance. $\BPTIME(T)$ and $\PPTIME(T)$ are defined by bounded two-sided error and by acceptance probability greater than $1/2$, and $\PTIME(T)$ consists of the languages of inputs on which a nondeterministic machine running in time $T$ has an odd number of accepting computations.
+
+We use the following classical fact.
+
+\begin{fact}[Chinese remaindering in logarithmic space {\cite{CDL01,HAB02}}]\label{fact:crt}
+	Let $a$ and $b$ be constants. There is a deterministic transducer that, given distinct primes $p_1,\dots,p_L$ with $L\le u^a$ and $p_i\le u^b$, and the residues modulo $p_i$ of an integer $0\le X<\prod_ip_i$, on a read-only input tape, writes the binary representation of $X$ on a write-only output tape in space $O(\log u)$.
+\end{fact}
+
+\begin{corollary}\label{cor:modes}
+	For $T(n)\ge n$, the classes $\BPTIME(T)$, $\PPTIME(T)$ and $\PTIME(T)$ are contained in $\DSPACE(\kappa(T))$. None of them contains the language of Theorem~\ref{thm:main} when $T=o(\rho)$.
+\end{corollary}
+
+\begin{proof}
+	Find the final $t$ of the doubling loop of Theorem~\ref{thm:sim}; then every computation halts within $\bar t$ steps. By Lemma~\ref{lem:virtual}, the numbers $\alpha$ and $\varrho$ of accepting and rejecting choice strings in $\{0,1\}^{\bar t}$ (for $\PTIME$: of accepting computations, using the requirement on choice bits) are sums $\sum_\pi\#F^\chi_\pi$, and both are at most $2^{\bar t}<4^t$. If $t$ is below a constant threshold, compute $\alpha$ and $\varrho$ by brute force. Otherwise let $p_1,\dots,p_t$ be the $t$ smallest primes larger than $4C^2t^2$; they lie in $(4C^2t^2,8C^2t^2]$, by the prime number theorem, so they are admissible in Theorem~\ref{thm:counter} for every $F^\chi_\pi$, which has between $t$ and $Ct$ variables; and their product exceeds $4^t$. The residues of $\alpha$ and $\varrho$ modulo each $p_i$ are therefore computed by summing the outputs of Theorem~\ref{thm:counter} over all head schedules, and the bits of $\alpha$ and $\varrho$ are obtained from these residues by the transducer of Fact~\ref{fact:crt}, with $u=t$, recomputing each residue when it is requested. Accept if $\alpha>\varrho$, comparing bit by bit from the top (for $\BPTIME$ and $\PPTIME$), or if $\alpha$ is odd (for $\PTIME$). The last statement follows as in the proof of Theorem~\ref{thm:sep}.
+\end{proof}
+
+\section{Limits and open questions}\label{sec:limits}
+
+The proofs have not been independently verified. The part that most needs checking is Section~\ref{sec:counter}, in particular Lemma~\ref{lem:access} and the space accounting of Theorem~\ref{thm:counter}, which Appendix~\ref{app:pseudo} spells out. Next comes Proposition~\ref{fact:construction}, which Kintali states for fixed parameters and we prove for parameters that grow with $N$. The checks of Appendix~\ref{app:checks} test only the finite algebra, at toy sizes.
+
+The exponent $\tfrac12$ in $\kappa$ comes from the construction. We do not see how to reduce the space below $N/\sqrt{\log N}$, up to lower-order factors, by retuning the construction while enumerating marked supports as we do. In our analysis the number of measurements carries the factor $e^{-R^2/(8Q)}$, so $R$ must exceed $\sqrt Q$ for it to be small. The marked supports then have up to a fraction $3R/Q\gtrsim1/\sqrt Q$ of the variables, and since $D=r^{2Q}\le N$ forces $Q=O(\log N)$, this fraction is of order at least $1/\sqrt{\log N}$. A counting algorithm with space $N/(\log N)^{\alpha}$ and the same interface would give the separations up to time $n(\log n)^{\alpha-o(1)}$. Corollary~\ref{cor:hpv} stops at $t\sqrt{\log t}$, up to $\log\log$ factors, so the question of Hopcroft, Paul and Valiant, whether $\NTIME(t\log t)\subseteq\NSPACE(t)$, remains open.
+
+Of the two factors $\log\log N$ in $\kappa(N)$, one comes from writing the supports, which costs $k$ bits per element, and the other from the ratio $R/Q$. The time bound of \cite[Theorem~1.1]{OpenAI26}, for formulas with a linear number of clauses, has no such factor, but the tensor-network recursion behind it \cite[Theorem~D.1]{OpenAI26} works with a $2$-adic precision larger than the number of wires. At a call on a network with $W$ wires that retains $u$ valuation levels, the precision at the interpolation nodes it uses is at least $24W\,2^u/u$ \cite[Lemma~D.5 and the proof of (D.11)]{OpenAI26}, so a single intermediate value already exceeds sublinear space. A small-space version of that recursion would remove $(\log\log)^2$ from all our bounds and give $\NTIME(t\sqrt{\log t})\subseteq\DSPACE(t)$.
+
+Theorem~\ref{thm:main} does not relativize. Let $\mathsf{BSA}$ be the set of strings $\langle\mathcal M\rangle\#x\#1^b$ such that the deterministic machine $\mathcal M$, which has one binary work tape, accepts $x$ without using more than $b$ work cells. Then $\mathsf{BSA}\in\DSPACE(n)$, and every language in $\DSPACE(n)$ reduces to it by a map computable in linear time with linear output length. With $\mathsf{BSA}$ as an oracle, written on a query tape that counts toward space, $\DSPACE^{\mathsf{BSA}}(n)=\DSPACE(n)\subseteq\DTIME^{\mathsf{BSA}}(n)$, so $\DTIME^{\mathsf{BSA}}(n)=\NTIME^{\mathsf{BSA}}(n)=\DSPACE^{\mathsf{BSA}}(n)$. The same oracle shows that the separations of \cite{HPV77} and \cite{PPST83} do not relativize. Like them, our proof uses the locality of multitape computations, through Lemma~\ref{lem:virtual}.
+
+Strictness at every polynomial scale does not separate $\mathrm{NP}$ from $\mathrm{PSPACE}$, since the witness language depends on the exponent, and nothing here bears on $\DSPACE(n)$ versus $\NSPACE(n)$. The simulation needs acceptance to be a function of a single count, which fails under unrestricted alternation, including $\Sigma_2$-time and Arthur--Merlin protocols. It would also need the computations to be described by a bounded-occurrence constraint system with $O(T\,\poly\log\log T)$ variables, and we know no such description for machines with random access to their memory.
+
+\appendix
+
+\section{Kintali's construction and the proof of Proposition~\ref{fact:construction}}\label{app:construction}
+
+This appendix gives Kintali's construction \cite[\S3]{Kin26} with all definitions, proves Proposition~\ref{fact:construction} along the lines of \cite[\S3]{Kin26}, for constraints of any arity and for all parameters, and proves Lemma~\ref{lem:access}. Fix integers $r\ge2$, $Q\ge1$ and $R\ge2$.
+
+\paragraph{The matrix.} Let $\cB=([r]\times[r])^Q$, so $D=|\cB|=r^{2Q}$, and write $u\in\cB$ as $((a_u(t),d_u(t)))_{t\in[Q]}$. For $t\in[Q]$ let $\Pi_t$ be the permutation matrix on $\Q^{\cB}$ that swaps the two entries of pair $t$, and put $V=\prod_t\Pi_t$ and $W=\frac12\sum_t(I-\Pi_t)$. For one pair, an orthogonal eigenbasis of the swap consists of the $r$ vectors $e_{aa}$, the $\binom r2$ symmetric vectors $e_{ab}+e_{ba}$ and the $\binom r2$ antisymmetric vectors $e_{ab}-e_{ba}$, for $a<b$; tensor products of one-pair basis vectors form an orthogonal basis $\Psi$ of $\Q^{\cB}$, with $|\Psi|=D$ and entries in $\{0,\pm1\}$. If $\psi\in\Psi$ has $j(\psi)$ antisymmetric factors then $W\psi=j(\psi)\psi$ and $V\psi=(-1)^{j(\psi)}\psi$, and $\langle\psi,\psi\rangle$ is $2$ to the number of its factors that are not of the form $e_{aa}$.
+
+Let $\mu=Q(r-1)/(2r)$, $b_0=\lfloor\mu-(R-1)/2\rfloor$ and $I_0=\{b_0,\dots,b_0+R-1\}$, and let
+\[
+	f(y)=(-1)^{b_0}\sum_{a=0}^{R-1}(-2)^a\binom{y-b_0}a .
+\]
+This polynomial has degree at most $R-1$, and $f(b_0+i)=(-1)^{b_0}\sum_{a\le i}\binom ia(-2)^a=(-1)^{b_0+i}$ for $0\le i<R$; so it is the interpolation polynomial of the signs $(-1)^j$ on $I_0$. Let $A=Vf(W)$, let $\Psi_\bad=\{\psi\in\Psi:j(\psi)\notin I_0\}$, and
+\[
+	\beta_{u,\psi}=\frac{\bigl(1-(-1)^{j(\psi)}f(j(\psi))\bigr)\psi_u}{\langle\psi,\psi\rangle}.
+\]
+Since $A\psi=(-1)^{j(\psi)}f(j(\psi))\psi$, which is $\psi$ when $j(\psi)\in I_0$, the expansion of $I-A$ in the orthogonal basis $\Psi$ gives
+\begin{equation}\label{eq:Aentry}
+	A[u,w]=\one[u=w]-\sum_{\psi\in\Psi_\bad}\beta_{u,\psi}\psi_w .
+\end{equation}
+For $u,w\in\cB$ let $E_{u,w}=\{t:a_w(t)\ne d_u(t)\}$ and $\phi_{u,w}(T)=\prod_{t\in E_{u,w}}(1-T/t)$, and define
+\[
+	P_u(T;\zeta)=\sum_{\psi\in\Psi_\bad}\beta_{u,\psi}\langle\psi,\zeta\rangle+\sum_{w\in\cB}A[u,w]\,\phi_{u,w}(T)\,\zeta_w .
+\]
+The denominators occurring here are powers of two and the nodes $t\in[Q]$ (the polynomial $f$ takes integer values at integers), so all these numbers are $p$-integral for every prime $p>\max(Q,R)$.
+
+\begin{lemma}[{\cite[Lemma~3.2]{Kin26}}]\label{lem:tail}
+	$|\Psi_\bad|\le2D\,e^{-R^2/(8Q)}$.
+\end{lemma}
+
+\begin{proof}
+	If $\psi$ is chosen uniformly from $\Psi$, its $Q$ factors are independent and uniform among the $r^2$ one-pair basis vectors, of which $\binom r2$ are antisymmetric. So $j(\psi)$ is a sum of $Q$ independent Bernoulli variables with mean $(r-1)/(2r)$, and its mean is $\mu$. By the choice of $b_0$, every integer $j<b_0$ satisfies $\mu-j\ge(R+1)/2$, and every integer $j\ge b_0+R$ satisfies $j-\mu>(R-1)/2$; as $R\ge2$, every $j\notin I_0$ thus has $|j-\mu|\ge R/4$. Hoeffding's inequality \cite{Hoe63} gives
+	\[
+		\frac{|\Psi_\bad|}{D}=\Pr\bigl[j(\psi)\notin I_0\bigr]\le\Pr\bigl[|j(\psi)-\mu|\ge R/4\bigr]\le2e^{-2(R/4)^2/Q}=2e^{-R^2/(8Q)}.\qedhere
+	\]
+\end{proof}
+
+\begin{lemma}[{\cite[Lemma~3.3]{Kin26}}]\label{lem:local}
+	If $A[u,w]\ne0$, then $|E_{u,w}|\le R-1$.
+\end{lemma}
+
+\begin{proof}
+	The matrices $\Pi_t$ commute and satisfy $\Pi_t^2=I$; for $S\subseteq[Q]$ put $\Pi_S=\prod_{t\in S}\Pi_t$. Expanding the product shows that $W^i$ is a linear combination of matrices $\Pi_{S'}$ with $|S'|\le i$. Since $\deg f\le R-1$, $f(W)$ is a linear combination of matrices $\Pi_{S'}$ with $|S'|\le R-1$, and $A=Vf(W)$ is a linear combination of the matrices $V\Pi_{S'}=\Pi_{[Q]\setminus S'}$. Now $\Pi_S[u,w]\ne0$ means that $u$ arises from $w$ by swapping the two entries of every pair $t\in S$; then $d_u(t)=a_w(t)$ for $t\in S$, so $E_{u,w}\subseteq[Q]\setminus S$. Hence $A[u,w]\ne0$ implies $E_{u,w}\subseteq S'$ for some $|S'|\le R-1$.
+\end{proof}
+
+\paragraph{Labels, copies and forms.} Given group schedules $a$ and $d$, incidence $(e,v)$ has label $u(e,v)$, and $c_u$ incidences have label $u$. With $h=\max_uc_u$ copies of $\cB$, place every incidence at position $u(e,v)$ in a copy $j(e,v)\in[h]$ not used by another incidence with the same label; we use the copy given by the rank of the incidence, in lexicographic order, among the incidences with the same label. Let $O_j\subseteq\cB$ be the occupied positions of copy $j$, $\nu_j(w)$ the variable stored at $w\in O_j$, and $\zeta^{(j)}(X)$ the vector with $\zeta^{(j)}_w=X_{\nu_j(w)}$ for $w\in O_j$ and $0$ otherwise. Define
+\[
+	L_{e,v}(T;X)=P_{u(e,v)}\bigl(T;\zeta^{(j(e,v))}(X)\bigr),\qquad S_{t,g}=\{v:a_v(t)=g\},\qquad\sigma_t(e)=d_e(t),
+\]
+and the measurements $m_{t,j,\psi,g}(X)=\sum_{w\in O_j,\ a_w(t)=g}\psi_wX_{\nu_j(w)}$ for $j\in[h]$, $\psi\in\Psi_\bad$ and $g\in[r]$.
+
+\begin{proof}[Proof of Proposition~\ref{fact:construction}]
+	Fix an incidence $(e,v)$ and put $u=u(e,v)$ and $j=j(e,v)$. The incidence is stored at position $u$ of copy $j$, so $\zeta^{(j)}_u(X)=X_v$.
+
+	\emph{Value at $0$ and degree.} Since $\phi_{u,w}(0)=1$, \eqref{eq:Aentry} gives, for every vector $\zeta$,
+	\[
+		P_u(0;\zeta)=\sum_{\psi\in\Psi_\bad}\beta_{u,\psi}\langle\psi,\zeta\rangle+\sum_{w\in\cB}\Bigl(\one[u=w]-\sum_{\psi\in\Psi_\bad}\beta_{u,\psi}\psi_w\Bigr)\zeta_w=\zeta_u,
+	\]
+	so $L_{e,v}(0;X)=X_v$. The measurement part of $P_u$ does not depend on $T$, and $\phi_{u,w}$ has degree $|E_{u,w}|\le R-1$ whenever $A[u,w]\ne0$, by Lemma~\ref{lem:local}; so $\deg_TL_{e,v}\le R-1$.
+
+	\emph{The data at a node.} (D1) and (D2) hold by definition and \eqref{eq:balance}. Fix a node $t$. By the definitions,
+	\[
+		L_{e,v}(t;X)=\sum_{\psi\in\Psi_\bad}\beta_{u,\psi}\langle\psi,\zeta^{(j)}(X)\rangle+\sum_{w\in O_j}A[u,w]\,\phi_{u,w}(t)\,X_{\nu_j(w)}.
+	\]
+	Every $w\in O_j$ is the label of an incidence $(e',\nu_j(w))$, so $a_w=a_{\nu_j(w)}$, that is, $\nu_j(w)\in S_{t,a_w(t)}$. Hence $\langle\psi,\zeta^{(j)}(X)\rangle=\sum_gm_{t,j,\psi,g}(X)$, where $m_{t,j,\psi,g}$ is supported on $S_{t,g}$ and has integer coefficients with $\ell_1$-norm at most $|O_j|\le D$, because $\psi$ has entries in $\{0,\pm1\}$; this is (D3). In the second sum $\phi_{u,w}(t)=0$ unless $a_w(t)=d_u(t)=d_e(t)=\sigma_t(e)$, and then $\nu_j(w)\in S_{t,\sigma_t(e)}$. This proves (D4), in the form
+	\begin{equation}\label{eq:noderep}
+		L_{e,v}(t;X)=\sum_{\psi\in\Psi_\bad}\beta_{u,\psi}\sum_{g=1}^rm_{t,j,\psi,g}(X)+\sum_{w\in O_j,\ a_w(t)=d_e(t)}A[u,w]\,\phi_{u,w}(t)\,X_{\nu_j(w)}.
+	\end{equation}
+	The measurements at node $t$ are indexed by $(g,j,\psi)\in[r]\times[h]\times\Psi_\bad$, and $h=\max_uc_u\le2M/D$ by \eqref{eq:balance}. With Lemma~\ref{lem:tail}, there are at most $rh|\Psi_\bad|\le4Mr\,e^{-R^2/(8Q)}$ of them.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:access}]
+	The seed is stored once, in $O(\log^2N)$ bits. Each item below computes its quantity from indices of $O(\log N)$ bits (incidences, nodes, labels, copies, groups, elements of $\Psi$) and the seed, with $O(\log N)$ bits of workspace besides the workspace of the earlier items that it calls. Calls are nested to a depth bounded by a constant, so every quantity is computed in space $O(\log^2N)$, and nothing else is stored.
+	\begin{enumerate}[label=(P\arabic*),nosep,leftmargin=*]
+		\item \emph{Constraints and incidences.} Number the constraints of $F$ as the transducer does, followed by the dummy constraints of Section~\ref{sec:deformation} in the order of their variables; whether a variable lies in no scope is checked by scanning the scopes. This gives the index, scope and table of every constraint, the numbers $|\cF|$ and $M$, and the incidences in lexicographic order.
+		\item \emph{Group schedules and labels.} The values $a_v(t)$ and $d_e(t)$ are $k$ bits of the affine maps of Section~\ref{sec:seed}, computed from the seed and the binary vector of $v$ or $e$; the label $u(e,v)$ has $2Qk\le2\log_2N$ bits. Membership $v\in S_{t,g}$ is a comparison; the position of $v$ in $S_{t,g}$ is the number of $v'<v$ with $a_{v'}(t)=g$, and $n_{t,g}$ is computed by one scan over the variables.
+		\item \emph{Counts and copies.} The count $c_u$ is computed by one scan over the incidences, and $h=\max_uc_u$ by a loop over the $D\le N^{1/8}$ labels. The copy $j(e,v)$ is one plus the number of lexicographically earlier incidences with label $u(e,v)$. The variable $\nu_j(w)$, or the fact that $w\notin O_j$, is found by a scan over the incidences with label $w$, computing their copies.
+		\item \emph{Basis vectors.} An element $\psi\in\Psi$ is given by its $Q$ one-pair factors, in $O(Q\log r)=O(\log N)$ bits. The entry $\psi_w$ is a product of $Q$ one-pair entries in $\{0,\pm1\}$; $j(\psi)$ and $\langle\psi,\psi\rangle$ are read off from the factors.
+		\item \emph{Spectral coefficients.} The value $f(j)\bmod p$ is a sum of $R$ terms of the explicit formula, each binomial coefficient computed modulo $p$ by the multiplicative formula, as $a<R<p$. Then $\beta_{u,\psi}\bmod p$ follows from its definition, and $A[u,w]\bmod p$ from \eqref{eq:Aentry}, by a loop over the $D$ elements of $\Psi$ that skips those with $j(\psi)\in I_0$.
+		\item \emph{Deformation factors.} The value $\phi_{u,w}(\tau)\bmod p$ at a point $\tau\in\Fp$ is a product over the nodes in $E_{u,w}$.
+		\item \emph{Measurements.} The measurements at node $t$ are indexed by $(g,j,\psi)\in[r]\times[h]\times\Psi_\bad$, in lexicographic order, so that the values $y_g$ of the measurements of each group are consecutive; the tuple $y$ stores the values in this order, each plus $D$ in a field of $\lceil\log_2(2D+1)\rceil$ bits, and the position of the field of $(g,j,\psi)$ is computed by counting the earlier indices. The value $m_{t,j,\psi,g}(x)$ is the sum of $\psi_wx_{\nu_j(w)}$ over the $w\in O_j$ with $a_w(t)=g$, an integer in $\{-D,\dots,D\}$ accumulated exactly by a loop over the pairs $(w,\nu_j(w))$, $w\in O_j$, which (P3) generates by a scan of the incidences; the bit $x_{\nu_j(w)}$ is read from the oracle for $x$ (in Theorem~\ref{thm:counter}, from the stored assignment $x_g$, at the position of $\nu_j(w)$ in $S_{t,g}$).
+	\end{enumerate}
+	Now (a): by \eqref{eq:noderep}, the coefficient of the measurement $m_{t,j',\psi,g}$ in $L_{e,v}(t;X)$ is $\beta_{u,\psi}$ if $j'=j$ and $0$ otherwise, and the coefficient of a variable $X_i$ of the group $S_{t,\sigma_t(e)}$ is the sum of $A[u,w]\,\phi_{u,w}(t)$ over the $w\in O_j$ with $a_w(t)=d_e(t)$ and $\nu_j(w)=i$, where $u=u(e,v)$ and $j=j(e,v)$; items (P3)--(P6) compute them. Part (b) is item (P7). For (c), the measurement part of $P_u$ does not depend on $T$, so
+	\[
+		b^U_{e,v}(z)=\sum_{w\in O_j}A[u,w]\bigl(\phi_{u,w}(t+z)-\phi_{u,w}(t)\bigr)\one[\nu_j(w)\in U],\qquad u=u(e,v),\ j=j(e,v),
+	\]
+	which is computed by a loop over the pairs $(w,\nu_j(w))$, $w\in O_j$, generated as in (P3), that calls items (P5), (P6) and the membership oracle for $U$.
+\end{proof}
+
+\section{The counting algorithm in pseudocode}\label{app:pseudo}
+
+This appendix writes out the algorithm of Theorem~\ref{thm:counter}, so that the call chain
+\[
+	\mathtt{MOD\_COUNT}\ \to\ \mathtt{GROUP\_SUM}\ \to\ \mathtt{CONSTRAINT\_VALUE}\ \to\ \mathtt{NODEVALUE},\ \mathtt{CORRECTION}
+\]
+and the lifetime of every buffer can be checked line by line. A direct transcription into Python, with the same routines, agrees with brute-force counts on toy systems (Appendix~\ref{app:checks}, item~7). The parameters are those of Section~\ref{sec:params}, and the notation is that of Section~\ref{sec:counter} and Appendix~\ref{app:construction}.
+
+\paragraph{Input.} The transducer gives $N$, the constraints, their scopes and their tables modulo $p$ (Section~\ref{sec:prelim}). Constraints with empty scope are constant factors: $\mathtt{MOD\_COUNT}$ multiplies their values first and ignores them afterwards. The other constraints, followed by the dummy constraints of Section~\ref{sec:deformation}, are numbered $1,\dots,|\cF|$ as in (P1); $\mathrm{SCOPE}(e,i)$ is the $i$th element of $I_e$ in increasing order, and $\mathrm{TABLE}(e,a)=\gamma_e(a)\bmod p$. The incidences are the pairs $(e,i)$ with $i\le|I_e|$, in lexicographic order. The seed is stored once and defines $a_v(t)$, $d_e(t)$ and $\mathrm{LABEL}(e,v)=u(e,v)$ (Section~\ref{sec:seed}).
+
+\paragraph{Buffers.} Three objects are large. Each occupies a fixed region of a work tape and is written only by the routines named below.
+\begin{itemize}[nosep,leftmargin=*]
+	\item $\mathsf{ETA}$ holds $\code(\eta)$ for the current marked support, and its length in a separate counter of $O(\log N)$ bits. Its writer is the loop over supports in $\mathtt{MOD\_COUNT}$, which runs through all binary strings of length at most $\Lambda$ by incrementing $\mathsf{ETA}$ in place.
+	\item $\mathsf Y$ holds the current tuple $y$: $n_y=rh|\Psi_\bad|$ fields of $w_y=\lceil\log_2(2D+1)\rceil$ bits, in the order of (P7); the field of the measurement $(g,j,\psi)$ is the field number $\bigl((g-1)h+j-1\bigr)|\Psi_\bad|+\mathrm{rank}(\psi)$, where $\mathrm{rank}(\psi)$ is the position of $\psi$ in $\Psi_\bad$, and it holds the value plus $D$. It is written only by $\mathtt{MOD\_COUNT}$, which sets it to zeros for each support, and by $\mathtt{NEXT\_Y}$, which advances it.
+	\item $\mathsf X$ holds the assignment $x_g$ to the current group $S_{t,g}$, the bit of $v$ at the position of $v$ in $S_{t,g}$. Its writer is $\mathtt{GROUP\_SUM}$, and at most one group assignment exists at any time.
+\end{itemize}
+All other routines receive these buffers as read-only arguments, which a multitape machine realizes by moving a head to an offset kept in $O(\log N)$ bits and back. No routine copies more than $O(\log N)$ bits of a buffer: $\mathtt{YGET}$, $\mathtt{ETAGET}$ and $\mathtt{XGET}$ return a single field or bit.
+
+\paragraph{The main routines.} Arithmetic is modulo $p$, except in $\mathtt{MEASVAL}$, which computes an integer in $\{-D,\dots,D\}$ exactly.
+
+	{\small
+		\begin{algorithmic}
+			\Function{MOD\_COUNT}{\,}\Comment{returns $\#F\bmod p$}
+			\State $c_\emptyset\gets\prod_{e:\,I_e=\emptyset}\gamma_e(\emptyset)$;\ \textbf{if} $c_\emptyset=0$ \textbf{return} $0$
+			\State \textbf{if} $N$ is below the threshold of Lemma~\ref{lem:params} \textbf{return} $\#F\bmod p$ by brute force
+			\State compute the parameters;\ $\mathit{seed}\gets\textproc{FIND\_SEED}()$;\ $h\gets\textproc{MAX\_COPIES}()$;\ $n_y\gets rh|\Psi_\bad|$
+			\State $\mathit{acc}\gets0$
+			\For{$t=1,\dots,Q$ and $z=1,\dots,p-1$}
+			\State $\omega\gets\textproc{WEIGHT}(t,z)$;\ $\mathit{sum}\gets0$\Comment{the recursion of $\mathtt{COEFF}$ ends here}
+			\For{every binary string $\mathsf{ETA}$ of length at most $\Lambda$}
+			\If{$\textproc{VALID\_ETA}(\mathsf{ETA})$}
+			\State $\mathsf Y\gets0^{n_yw_y}$\Comment{every field encodes the value $-D$}
+			\Repeat
+			\State $\mathit{prod}\gets(-1)^{\textproc{NEGCOUNT}(\mathsf{ETA})}$
+			\For{$g=1,\dots,r$}
+			\State $\mathit{prod}\gets\mathit{prod}\cdot\textproc{GROUP\_SUM}(t,z,g,\mathsf{ETA},\mathsf Y)$
+			\EndFor
+			\State $\mathit{sum}\gets\mathit{sum}+\mathit{prod}$
+			\Until{\textbf{not} $\textproc{NEXT\_Y}(\mathsf Y)$}
+			\EndIf
+			\EndFor
+			\State $\mathit{acc}\gets\mathit{acc}+\omega\cdot\mathit{sum}$
+			\EndFor
+			\State \Return $c_\emptyset\,\Omega(0)\,\mathit{acc}$\Comment{$\Omega(0)=\prod_{t'=1}^Q(-t')^J$}
+			\EndFunction
+			\Statex
+			\Function{GROUP\_SUM}{$t,z,g,\mathsf{ETA},\mathsf Y$}\Comment{the sum over $x_g$ in Proposition~\ref{prop:master}}
+			\State $\mathsf X\gets0^{n_{t,g}}$;\ $\mathit{tot}\gets0$\Comment{the only writer of $\mathsf X$}
+			\Loop
+			\If{$\textproc{VALID\_GROUP}(t,g,\mathsf{ETA},\mathsf Y,\mathsf X)$}
+			\State $\mathit{prod}\gets1$
+			\For{$e=1,\dots,|\cF|$ with $d_e(t)=g$}
+			\State $\mathit{prod}\gets\mathit{prod}\cdot\textproc{CONSTRAINT\_VALUE}(e,t,z,g,\mathsf{ETA},\mathsf Y,\mathsf X)$
+			\EndFor
+			\State $\mathit{tot}\gets\mathit{tot}+\mathit{prod}$
+			\EndIf
+			\State \textbf{if} $\mathsf X=1^{n_{t,g}}$ \textbf{return} $\mathit{tot}$
+			\State increment $\mathsf X$ in binary, in place
+			\EndLoop
+			\EndFunction
+			\Statex
+			\Function{VALID\_GROUP}{$t,g,\mathsf{ETA},\mathsf Y,\mathsf X$}\Comment{the conditions on $x_g$}
+			\For{$v\in[N]$ with $a_v(t)=g$}
+			\State \textbf{if} $\textproc{ETAGET}(\mathsf{ETA},v)\ne0$ and $\textproc{XGET}(\mathsf X,t,g,v)=0$ \textbf{return} false\Comment{$x_v=1$ on $E(\eta)$}
+			\EndFor
+			\For{$j\in[h]$ and $\psi\in\Psi_\bad$}
+			\State \textbf{if} $\textproc{MEASVAL}(t,g,j,\psi,\mathsf X)\ne\textproc{YGET}(\mathsf Y,g,j,\psi)$ \textbf{return} false\Comment{$C_gx_g=y_g$}
+			\EndFor
+			\State \Return true
+			\EndFunction
+			\Statex
+			\Function{CONSTRAINT\_VALUE}{$e,t,z,g,\mathsf{ETA},\mathsf Y,\mathsf X$}\Comment{$\Phi_e(\xi)$ with $\xi_v=\lambda_{e,v}(x_g;y)+b^{U(\eta)}_{e,v}(z)$}
+			\State $\mathit{val}\gets0$
+			\For{$a\in\{0,1\}^{|I_e|}$}\Comment{a counter of $|I_e|\le c_1\log_2N$ bits}
+			\State $\mathit{prod}\gets\mathrm{TABLE}(e,a)$
+			\For{$i=1,\dots,|I_e|$}
+			\State $\xi\gets\textproc{NODEVALUE}(e,i,t,g,\mathsf X,\mathsf Y)+\textproc{CORRECTION}(e,i,t,z,\mathsf{ETA})$
+			\State $\mathit{prod}\gets\mathit{prod}\cdot\bigl(a_i\xi+(1-a_i)(1-\xi)\bigr)$
+			\EndFor
+			\State $\mathit{val}\gets\mathit{val}+\mathit{prod}$
+			\EndFor
+			\State \Return $\mathit{val}$
+			\EndFunction
+			\Statex
+			\Function{NODEVALUE}{$e,i,t,g,\mathsf X,\mathsf Y$}\Comment{$\lambda_{e,v}(x_g;y)$ by \eqref{eq:noderep}; here $g=d_e(t)$}
+			\State $v\gets\mathrm{SCOPE}(e,i)$;\ $u\gets\mathrm{LABEL}(e,v)$;\ $j\gets\textproc{COPYRANK}(e,i)$;\ $\lambda\gets0$
+			\For{$\psi\in\Psi_\bad$}
+			\State $\lambda\gets\lambda+\textproc{BETA}(u,\psi)\cdot\sum_{g'=1}^r\textproc{YGET}(\mathsf Y,g',j,\psi)$
+			\EndFor
+			\For{$(w,v')\in\textproc{OCCUPIED}(j)$ with $a_{v'}(t)=g$}
+			\State $\lambda\gets\lambda+\textproc{AENTRY}(u,w)\cdot\textproc{PHILOC}(u,w,t)\cdot\textproc{XGET}(\mathsf X,t,g,v')$
+			\EndFor
+			\State \Return $\lambda$
+			\EndFunction
+			\Statex
+			\Function{CORRECTION}{$e,i,t,z,\mathsf{ETA}$}\Comment{$b^{U(\eta)}_{e,v}(z)$, as in the proof of Lemma~\ref{lem:access}(c)}
+			\State $v\gets\mathrm{SCOPE}(e,i)$;\ $u\gets\mathrm{LABEL}(e,v)$;\ $j\gets\textproc{COPYRANK}(e,i)$;\ $b\gets0$
+			\For{$(w,v')\in\textproc{OCCUPIED}(j)$ with $\textproc{ETAGET}(\mathsf{ETA},v')=+$}
+			\State $b\gets b+\textproc{AENTRY}(u,w)\cdot\bigl(\textproc{PHILOC}(u,w,t+z)-\textproc{PHILOC}(u,w,t)\bigr)$
+			\EndFor
+			\State \Return $b$
+			\EndFunction
+			\Statex
+			\Function{MEASVAL}{$t,g,j,\psi,\mathsf X$}\Comment{$m_{t,j,\psi,g}(x)$, an integer in $\{-D,\dots,D\}$}
+			\State $m\gets0$
+			\For{$(w,v)\in\textproc{OCCUPIED}(j)$ with $a_v(t)=g$}
+			\State $m\gets m+\psi_w\cdot\textproc{XGET}(\mathsf X,t,g,v)$
+			\EndFor
+			\State \Return $m$
+			\EndFunction
+			\Statex
+			\Function{NEXT\_Y}{$\mathsf Y$}\Comment{increment in base $2D+1$, the last field fastest}
+			\For{$o=n_y,n_y-1,\dots,1$}
+			\State \textbf{if} field $o$ of $\mathsf Y$ is less than $2D$: increase it by $1$, set fields $o+1,\dots,n_y$ to $0$, \textbf{return} true
+			\EndFor
+			\State \Return false
+			\EndFunction
+			\Statex
+			\Function{WEIGHT}{$t,z$}\Comment{$z^{p-J}G_t^{<J}(z)$}
+			\State \Return $z^{p-J}\sum_{d=0}^{J-1}\textproc{COEFF}(1,Q,d,t)\,z^d$\Comment{one term at a time}
+			\EndFunction
+			\Statex
+			\Function{COEFF}{$\mathit{lo},\mathit{hi},d,t$}\Comment{$[Z^d]$ of the product of the factors $\mathit{lo},\dots,\mathit{hi}$ of $G_t$}
+			\State \textbf{if} $\mathit{lo}=\mathit{hi}$ \textbf{return} $\textproc{LEAF\_COEFF}(\mathit{lo},t,d)$
+			\State $\mathit{mid}\gets\lfloor(\mathit{lo}+\mathit{hi})/2\rfloor$
+			\State \Return $\sum_{a=0}^{d}\textproc{COEFF}(\mathit{lo},\mathit{mid},a,t)\cdot\textproc{COEFF}(\mathit{mid}+1,\mathit{hi},d-a,t)$\Comment{one term at a time}
+			\EndFunction
+		\end{algorithmic}
+	}
+
+\paragraph{The remaining routines.} Each of them keeps $O(1)$ scalars of $O(\log N)$ bits (indices, labels, elements of $\Psi$, field elements) besides its arguments, and the loops in the column on the right are scans of the incidences, the variables, $\Psi$ or the labels.
+
+	{\small
+		\begin{longtable}{@{}>{\ttfamily}l>{\raggedright\arraybackslash}p{0.66\textwidth}@{}}
+			\hline
+			\normalfont routine        & value, and how it is computed                                                                                                                                        \\
+			\hline
+			\endhead
+			\hline
+			\endfoot
+			\hline
+			\endlastfoot
+			YGET($\mathsf Y,g,j,\psi$) & the field of $(g,j,\psi)$ in $\mathsf Y$, minus $D$; $\mathrm{rank}(\psi)$ (\texttt{BADRANK}) by a scan of $\Psi$                                                    \\
+			XGET($\mathsf X,t,g,v$)    & the bit of $\mathsf X$ at the position of $v$ in $S_{t,g}$, which is $|\{v'<v:a_{v'}(t)=g\}|$, counting from $0$ as in (P2)                                          \\
+			VALID\_ETA($\mathsf{ETA}$) & whether $\mathsf{ETA}=\code(\eta)$ for a marked support with $|\eta|\le q$, by the test of Section~\ref{sec:access}                                                  \\
+			ETAGET($\mathsf{ETA},v$)   & $\eta_v\in\{0,+,-\}$, by reading $\mathsf{ETA}$ from the left                                                                                                        \\
+			NEGCOUNT($\mathsf{ETA}$)   & $|\eta^-|$, by reading $\mathsf{ETA}$ from the left                                                                                                                  \\
+			COPYRANK($e,i$)            & the copy $j(e,v)$ of the incidence $(e,i)$: the number of incidences $(e',i')\le(e,i)$ with the same label (P3)                                                      \\
+			OCCUPIED($j$)              & generates the pairs $(w,\nu_j(w))$, $w\in O_j$: the pairs $(u(e,v),v)$ for the incidences $(e,i)$ with $\mathtt{COPYRANK}(e,i)=j$                                    \\
+			MAX\_COPIES()              & $h=\max_uc_u$, by a loop over the $D$ labels                                                                                                                         \\
+			FVALUE($i$)                & $f(i)=(-1)^{b_0}\sum_{a<R}\tau_a$, where $\tau_0=1$ and $\tau_{a+1}=\tau_a\cdot(-2)(i-b_0-a)/(a+1)$ (P5)                                                             \\
+			BETA($u,\psi$)             & $\beta_{u,\psi}=\bigl(1-(-1)^{j(\psi)}\mathtt{FVALUE}(j(\psi))\bigr)\psi_u/\langle\psi,\psi\rangle$ (P4, P5)                                                         \\
+			AENTRY($u,w$)              & $A[u,w]=\one[u=w]-\sum_{\psi\in\Psi_\bad}\mathtt{BETA}(u,\psi)\psi_w$, by \eqref{eq:Aentry}                                                                          \\
+			PHILOC($u,w,\tau$)         & $\phi_{u,w}(\tau)=\prod(1-\tau/t')$ over the nodes $t'$ with $a_w(t')\ne d_u(t')$ (P6)                                                                               \\
+			LEAF\_COEFF($a,t,d$)       & $[Z^d](c+Z)^{-m}=(-1)^d\binom{m+d-1}{d}c^{-m-d}$, where $(c,m)=(t,1)$ if $a=t$ and $(c,m)=(t-a,J)$ otherwise                                                         \\
+			FIND\_SEED()               & the first seed, in lexicographic order, whose group schedules satisfy \eqref{eq:balance}; each $c_u$ and each $n_{t,g}$ is computed by a scan (Lemma~\ref{lem:seed}) \\
+		\end{longtable}
+	}
+
+\paragraph{Correctness.} For fixed $t$, $z$, $\eta$ and $y$, $\mathtt{GROUP\_SUM}(t,z,g,\mathsf{ETA},\mathsf Y)$ returns the sum over $x_g$ in Proposition~\ref{prop:master}: $\mathtt{VALID\_GROUP}$ tests the conditions on $x_g$, and $\mathtt{CONSTRAINT\_VALUE}$ returns the factor of $A^\eta_g$ that belongs to $e$, because $\mathtt{NODEVALUE}$ and $\mathtt{CORRECTION}$ return $\lambda_{e,v}(x_g;y)$ and $b^{U(\eta)}_{e,v}(z)$, by \eqref{eq:noderep} and the proof of Lemma~\ref{lem:access}. The strings accepted by $\mathtt{VALID\_ETA}$ are the codes of the marked supports with $|\eta|\le q$, each once (Section~\ref{sec:access}), and $\mathtt{NEXT\_Y}$ runs through all tuples $y$ with entries in $\{-D,\dots,D\}$. Hence $\mathtt{MOD\_COUNT}$ returns $c_\emptyset$ times the right side of Proposition~\ref{prop:master} for the system without its constraints of empty scope, which is $\#F\bmod p$.
+
+\paragraph{Space.} At any time the following regions are live:
+\begin{center}\small
+	\begin{tabular}{@{}llll@{}}
+		\hline
+		region                        & writer                                    & lifetime                          & bits                \\
+		\hline
+		$\mathsf{ETA}$ and its length & loop over supports                        & one pair $(t,z)$                  & $\Lambda+O(\log N)$ \\
+		$\mathsf Y$                   & $\mathtt{MOD\_COUNT}$, $\mathtt{NEXT\_Y}$ & one support                       & $n_yw_y$            \\
+		$\mathsf X$                   & $\mathtt{GROUP\_SUM}$                     & one call of $\mathtt{GROUP\_SUM}$ & $n_{t,g}$           \\
+		seed, scalars, call stack     & --                                        & throughout                        & $O(\log^2N)$        \\
+		\hline
+	\end{tabular}
+\end{center}
+The call stack has constant depth, except during the recursion of $\mathtt{COEFF}$, which has depth $\lceil\log_2Q\rceil$, keeps $O(\log(pJ))$ bits per level, and ends before the loop over supports begins. Since $\Lambda\le(24k+49)N/s+1$, $n_yw_y\le30Nk^2/s^5$ and $n_{t,g}\le2N/s$ (Section~\ref{sec:access}, Lemma~\ref{lem:params} and \eqref{eq:balance}), the total is $(24k+51)N/s+30Nk^2/s^5+O(\log^2N)=O(\kappa(N))$. For each pair $(t,z)$ the loops visit at most $2^{\Lambda+1}$ strings, $(2D+1)^{n_y}\le2^{n_yw_y}$ tuples for each support and $r2^{2N/s}$ group assignments for each tuple, and every routine takes time polynomial in $N$, except $\mathtt{WEIGHT}$, which takes time $J^{O(\log Q)}=2^{O(\log N\log\log N)}$, and $\mathtt{FIND\_SEED}$, which takes time $2^{O(\log^2N)}$; so the running time is $2^{O(\kappa(N))}$.
+
+\section{Finite checks}\label{app:checks}
+
+The following exact-arithmetic checks test the finite algebra, not the asymptotic claims. The scripts accompany this draft, with a README that gives the command, the parameters and the expected output of each check.
+\begin{enumerate}[nosep]
+	\item \emph{Recovery.} The projector $[z^h]P=-\sum_{z\in\Fp^\times}z^{p-1-h}P(z)$ for random $P$ with $\deg P<p-1$; identity \eqref{eq:scalar} for random $H$ and $Y_t$ with $(Q,J)\in\{(1,3),(2,4),(3,5),(4,3),(5,6)\}$, exact up to $\deg Y_t=p-2$ and failing in random trials for $\deg Y_t\in\{p-1,p\}$, so the hypothesis $\deg Y_t\le p-2$ is sharp; and Kintali's four-variable example \cite[\S2.4]{Kin26}, for which \eqref{eq:scalar} returns $\#F=9$.
+	\item \emph{The construction at toy sizes.} An independent re-implementation ($D\le1024$) confirmed \eqref{eq:noderep}, the formula for $b^U_{e,v}$ and Lemma~\ref{fact:grouped} with the actual measurements. End to end, on a 3-CNF with $N=9$ variables and on systems of integer tables of arity up to $6$ on $N\le8$ variables, with the smallest $J$ such that $QJ>M(R-1)$ and with nontrivial deformations ($\deg Y_t>J$), the untruncated Taylor sums and Lemma~\ref{lem:scalar} returned the count modulo $p$, while cutting the supports one size lower gave wrong values. The master formula of Proposition~\ref{prop:master}, evaluated literally by its nested sums, returned $\#F\bmod p$ on three systems with $N=6$ variables (two with tables in $\{0,1\}$, one with signed integer tables), both with $q$ as in Section~\ref{sec:deformation} and with the smallest $q$ such that $Q(q+1)>M(R-1)$, and again failed with the supports cut one size lower. The explicit $f$ agrees with Lagrange interpolation in $200$ random cases, and \eqref{eq:Aentry} agrees with $A=Vf(W)$ on all $87{,}106$ entries at six toy sizes.
+	\item \emph{Appendix~\ref{app:construction}.} The bound of Lemma~\ref{lem:tail}, computed exactly from the binomial law of $j(\psi)$, holds for all $r\le8$ and $2\le R\le Q\le60$ ($12{,}390$ cases; the largest ratio to the bound is $0.40$). With explicit matrices at five toy sizes, $A=Vf(W)$ agrees with \eqref{eq:Aentry}, its nonzero entries satisfy Lemma~\ref{lem:local}, and $P_u(0;\zeta)=\zeta_u$.
+	\item \emph{Parameters and buffers.} The parameters \eqref{eq:params} satisfy $R^2/(8Q)=8k$ for $s=2^6,\dots,2^{11}$; the buffers of Theorem~\ref{thm:counter} (the code of $\eta$, the tuple $y$ and one assignment $x_g$) take at most $(24k+51)/s+12(2s^2k^2+2)/s^7$ bits per variable, which is below $1$ from $s=2^8$ on ($0.95$, $0.52$, $0.28$ for $s=2^8,2^9,2^{10}$).
+	\item \emph{Group schedules and supports.} The hash family of Section~\ref{sec:seed} is exactly pairwise uniform at small sizes, and averaging over all seeds gives exactly the value of $\mathbb E\Theta$ in the proof of Lemma~\ref{lem:seed}. The strings of length at most $\Lambda$ that are codes are exactly the codes of the marked supports with $|\eta|\le q$, each once ($4290$ marked supports, six sizes).
+	\item \emph{Lemma~\ref{lem:virtual}.} On $43$ random nondeterministic machines with one or two work tapes, the constraint systems, summed over all head schedules, agree with direct counts of choice strings and of computations in all $172$ cases, and every variable lies in at most two scopes; an independent check that builds the systems explicitly agreed in $150$ further comparisons, for the final requirements accepting, rejecting and running.
+	\item \emph{Appendix~\ref{app:pseudo}.} A direct transcription of the pseudocode into Python, with the same routines and with a guard that rejects every write to $\mathsf{ETA}$, $\mathsf Y$ or $\mathsf X$ by a routine other than those named in Appendix~\ref{app:pseudo}, returned $\#F\bmod p$, equal to a brute-force count, on five toy systems: without measurements ($\Psi_\bad=\emptyset$) and with measurements ($|\Psi_\bad|=1$, up to $n_y=4$ fields in $\mathsf Y$), with one and with two copies of $\cB$, with tables in $\{0,1\}$ and with signed integer tables, and with an isolated variable, a constraint with empty scope and a group with no variables. The first condition of \eqref{eq:balance} cannot hold at these sizes, so a seed with the desired number of copies replaces $\mathtt{FIND\_SEED}$; that condition bounds sizes and is not used in the identities.
+\end{enumerate}
+
+\section*{Acknowledgments}
+This draft was prepared through conversations with large language models (Anthropic's Claude and OpenAI's ChatGPT), which proposed and checked parts of the argument and wrote the scripts of Appendix~\ref{app:checks}. Responsibility for the claims rests with the author.
+
+\begin{thebibliography}{99}\small
+
+	\bibitem{Anth26} Claude (Anthropic). A $2^{o(n)}$ time algorithm for 3-SAT. Manuscript, 27 October 2026. \url{https://github.com/anthropics/formal-math/tree/main/eth}.
+
+	\bibitem{Boo74} R.~V.~Book. Comparing complexity classes. \emph{J.\ Comput.\ System Sci.} 9(2):213--229, 1974.
+
+	\bibitem{CKS81} A.~K.~Chandra, D.~C.~Kozen, and L.~J.~Stockmeyer. Alternation. \emph{J.\ ACM} 28(1):114--133, 1981.
+
+	\bibitem{CDL01} A.~Chiu, G.~Davida, and B.~Litow. Division in logspace-uniform $\mathrm{NC}^1$. \emph{RAIRO Theoretical Informatics and Applications} 35(3):259--275, 2001.
+
+	\bibitem{CM24} J.~Cook and I.~Mertz. Tree evaluation is in space $O(\log n\cdot\log\log n)$. In \emph{Proc.\ 56th ACM STOC}, 2024.
+
+	\bibitem{HAB02} W.~Hesse, E.~Allender, and D.~A.~Mix Barrington. Uniform constant-depth threshold circuits for division and iterated multiplication. \emph{J.\ Comput.\ System Sci.} 65(4):695--716, 2002.
+
+	\bibitem{Hoe63} W.~Hoeffding. Probability inequalities for sums of bounded random variables. \emph{J.\ Amer.\ Statist.\ Assoc.} 58(301):13--30, 1963.
+
+	\bibitem{HPV75} J.~Hopcroft, W.~Paul, and L.~Valiant. On time versus space and related problems. In \emph{Proc.\ 16th IEEE Symposium on Foundations of Computer Science}, pages 57--64, 1975.
+
+	\bibitem{HPV77} J.~Hopcroft, W.~Paul, and L.~Valiant. On time versus space. \emph{J.\ ACM} 24(2):332--337, 1977.
+
+	\bibitem{IPZ01} R.~Impagliazzo, R.~Paturi, and F.~Zane. Which problems have strongly exponential complexity? \emph{J.\ Comput.\ System Sci.} 63(4):512--530, 2001.
+
+	\bibitem{Kin26} S.~Kintali. A simplified proof of ETH is false. Manuscript, October 26, 2026.
+
+	\bibitem{Kur64} S.-Y.~Kuroda. Classes of languages and linear-bounded automata. \emph{Information and Control} 7(2):207--223, 1964.
+
+	\bibitem{OpenAI26} OpenAI. The Exponential Time Hypothesis is false. Manuscript, 17 October 2026; revised 25 October 2026. \url{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf}.
+
+	\bibitem{PPST83} W.~J.~Paul, N.~Pippenger, E.~Szemer\'edi, and W.~T.~Trotter. On determinism versus non-determinism and related problems. In \emph{Proc.\ 24th IEEE FOCS}, pages 429--438, 1983.
+
+	\bibitem{PT25} E.~Pyne and R.~Tell. Composing low-space algorithms. ECCC TR25-140, 2025.
+
+	\bibitem{San01} R.~Santhanam. On separators, segregators and time versus space. In \emph{Proc.\ 16th IEEE Conference on Computational Complexity}, 2001. ECCC TR01-022.
+
+	\bibitem{SHL65} R.~E.~Stearns, J.~Hartmanis, and P.~M.~Lewis~II. Hierarchies of memory limited computations. In \emph{Proc.\ 6th Annual Symposium on Switching Circuit Theory and Logical Design}, pages 179--190, 1965.
+
+	\bibitem{Wil25} R.~Williams. Simulating time with square-root space. In \emph{Proc.\ 57th ACM STOC}, 2025. arXiv:2502.17779.
+
+\end{thebibliography}
+\end{document}
