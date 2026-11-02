@@ -1,0 +1,12 @@
+{
+  "challenge_module": "ChallengeHermiteCoefficientCorrectness",
+  "solution_module": "NtimeDspace.HermiteCoefficientCorrectness",
+  "theorem_names": [
+    "NtimeDspace.HermiteCoefficientCorrectness.weightCoefficient_simultaneous_bounds"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

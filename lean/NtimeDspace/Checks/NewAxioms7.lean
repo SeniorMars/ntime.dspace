@@ -1,0 +1,2 @@
+import NtimeDspace.CounterAssemblyEq
+#print axioms NtimeDspace.ProgTerm.systemCounterT_eq

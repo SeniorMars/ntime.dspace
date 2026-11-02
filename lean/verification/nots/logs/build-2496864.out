@@ -1,0 +1,3376 @@
+host=bb4u19c1 start=2026-11-02T04:24:04Z job=2496864
+Lean (version 4.36.0-rc2, x86_64-unknown-linux-gnu, commit b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a, Release)
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+Decompressing 9080 already-cached file(s) (1 already decompressed)
+No files to download
+Decompressed 9080 already-cached file(s)
+Completed successfully in 239892 ms!
+✔ [3522/3810] Built Cslib.Foundations.Lint.Basic (17s)
+✔ [5302/5700] Built Cslib.Tactic.GrindAttrs (20s)
+✔ [7873/9090] Built Cslib.Init (49s)
+✔ [7875/9090] Built NtimeDspace.PolynomialFacts (87s)
+✔ [7877/9090] Built Cslib.Foundations.Control.Monad.IsMonadHom (57s)
+✔ [7879/9090] Built Cslib.Foundations.Data.BitString (57s)
+✔ [7881/9090] Built Cslib.Foundations.Relation.Defs (57s)
+✔ [7883/9090] Built Complexity.Init (56s)
+✔ [7885/9090] Built Cslib.Foundations.Data.Fin.Tuple (57s)
+✔ [7887/9090] Built Cslib.Foundations.Data.StackTape (58s)
+✔ [7889/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Configuration (58s)
+✔ [7891/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.WordEquality (57s)
+✔ [7893/9090] Built NtimeDspace.Polylog (89s)
+✔ [7895/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Frame.Basic (57s)
+✔ [7897/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.BinaryCounter (68s)
+✔ [7899/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.BigOLe (68s)
+✔ [7901/9090] Built Cslib.Foundations.Data.Nat.PolynomialBound (79s)
+✔ [7903/9090] Built Cslib.Foundations.Data.Nat.Asymptotics (79s)
+✔ [7905/9090] Built Cslib.Probability.PMF (89s)
+⚠ [7907/9090] Built NtimeDspace.PrimeProduct (135s)
+warning: NtimeDspace/PrimeProduct.lean:122:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [7909/9090] Built NtimeDspace.CanonicalPlacement (142s)
+⚠ [7911/9090] Built NtimeDspace.BooleanMobius (143s)
+warning: NtimeDspace/BooleanMobius.lean:124:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/BooleanMobius.lean:189:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/BooleanMobius.lean:191:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [7913/9090] Built NtimeDspace.Counting (143s)
+✔ [7915/9090] Built NtimeDspace.GroupedCounting (143s)
+✔ [7917/9090] Built NtimeDspace.CoefficientRecursion (143s)
+⚠ [7919/9090] Built NtimeDspace.SupportEncoding (140s)
+warning: NtimeDspace/SupportEncoding.lean:33:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SupportEncoding.lean:48:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SupportEncoding.lean:50:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [7921/9090] Built NtimeDspace.SpectralDeformation (143s)
+warning: NtimeDspace/SpectralDeformation.lean:82:36: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [7923/9090] Built NtimeDspace.Parameters (143s)
+⚠ [7925/9090] Built NtimeDspace.HashSchedules (144s)
+warning: NtimeDspace/HashSchedules.lean:61:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: NtimeDspace/HashSchedules.lean:83:71: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+✔ [7927/9090] Built Complexity.Foundations.Data.List.Fold (70s)
+✔ [7929/9090] Built Complexity.Computability.Reduction.ManyOne (70s)
+✔ [7931/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.WordsCfg (70s)
+✔ [7933/9090] Built Cslib.Foundations.Control.Monad.IsMonadHom.List (71s)
+✔ [7935/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.List.Index (70s)
+✔ [7937/9090] Built Complexity.Foundations.Data.List.Append (70s)
+✔ [7939/9090] Built Complexity.Foundations.Data.Nat.Log (70s)
+✔ [7941/9090] Built Complexity.Foundations.Data.BitString.Counter (71s)
+✔ [7943/9090] Built Complexity.Foundations.Data.StackTape (70s)
+✔ [7945/9090] Built Cslib.Foundations.Data.BiTape (71s)
+✔ [7947/9090] Built Complexity.Foundations.Control.Monad.IsMonadHom.StateT (71s)
+✔ [7949/9090] Built Complexity.Foundations.Data.Fin.Tuple (71s)
+✔ [7951/9090] Built Cslib.Foundations.Semantics.LTS.Basic (72s)
+✔ [7953/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Nondeterministic (72s)
+✔ [7955/9090] Built Complexity.Foundations.Data.BitString.Block (72s)
+✔ [7957/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Bool (72s)
+✔ [7959/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.Basic (73s)
+✔ [7961/9090] Built Complexity.Tactic.PolyTime.Init (73s)
+✔ [7963/9090] Built Complexity.Computability.Machines.Turing.MultiTape.OutView (73s)
+✔ [7965/9090] Built Complexity.Foundations.Data.Nat.ResidueSum (73s)
+✔ [7967/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Configuration (73s)
+✔ [7969/9090] Built Complexity.Foundations.Data.List.Lookup (74s)
+✔ [7971/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine (73s)
+✔ [7973/9090] Built Complexity.Foundations.Data.Nat.Bits (74s)
+✔ [7975/9090] Built Complexity.Foundations.Combinatorics.FiniteCover.Basic (75s)
+✔ [7977/9090] Built Cslib.Foundations.Data.PFunctor.Free (78s)
+✔ [7979/9090] Built Complexity.Foundations.Combinatorics.Multigraph (78s)
+✔ [7981/9090] Built Complexity.Foundations.Data.BitString.Basic (83s)
+✔ [7983/9090] Built Complexity.Foundations.Data.Nat.BinarySize (83s)
+⚠ [7985/9090] Built NtimeDspace.Projector (176s)
+warning: NtimeDspace/Projector.lean:88:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+✔ [7987/9090] Built Complexity.Foundations.Data.Nat.CeilDiv (85s)
+✔ [7989/9090] Built Complexity.Foundations.Data.BitString.Weight (91s)
+✔ [7991/9090] Built Complexity.Foundations.Data.Nat.PolynomialBound.Exponential (85s)
+✔ [7993/9090] Built Complexity.Foundations.Data.Nat.PolynomialBound.Closure (87s)
+✔ [7995/9090] Built Complexity.Computability.Complexity.Reduction.ManyOne (61s)
+✔ [7997/9090] Built Complexity.Probability.PMF (100s)
+✔ [7999/9090] Built Complexity.Foundations.Data.BitString.List (59s)
+✔ [8001/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Nondeterministic (59s)
+✔ [8003/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Space (60s)
+✔ [8005/9090] Built Complexity.Foundations.Data.BitString.List.Binary (57s)
+✔ [8007/9090] Built Complexity.Foundations.Data.BiTape (63s)
+✔ [8009/9090] Built Complexity.Computability.Circuit.Frontier.Multigraph (57s)
+✔ [8011/9090] Built Complexity.Foundations.Combinatorics.MajorityVote (62s)
+✔ [8013/9090] Built NtimeDspace.FiniteProductTail (230s)
+✔ [8015/9090] Built Complexity.Foundations.Data.BitString.Enumeration (58s)
+✔ [8017/9090] Built Complexity.Foundations.Data.Nat.SqrtLog (62s)
+✔ [8019/9090] Built Complexity.Foundations.Data.BitString.Threshold (65s)
+✔ [8021/9090] Built Complexity.Computability.Machines.Turing.MultiTape.ResourceBounds.Polynomial (77s)
+✔ [8023/9090] Built Complexity.Foundations.Data.Nat.PolynomialBound.Log (77s)
+✔ [8025/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Deterministic (58s)
+✔ [8027/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Space (58s)
+✔ [8029/9090] Built Complexity.Foundations.Data.BiTape.OfCells (57s)
+✔ [8031/9090] Built Complexity.Computability.Machines.Turing.MultiTape.FiniteConfiguration (57s)
+✔ [8033/9090] Built Complexity.Computability.Circuit.Frontier.TensorNetwork (57s)
+✔ [8035/9090] Built NtimeDspace.DeformationConstruction (202s)
+✔ [8037/9090] Built Complexity.Foundations.Data.BitString.Binary (62s)
+✔ [8039/9090] Built Complexity.Foundations.Data.BitString.WordCount (59s)
+✔ [8041/9090] Built NtimeDspace.ParityInterpolation (154s)
+✔ [8043/9090] Built NtimeDspace.FormulaInput (157s)
+✔ [8045/9090] Built NtimeDspace.CountingPolynomial (157s)
+✔ [8047/9090] Built NtimeDspace.TaylorTruncation (157s)
+⚠ [8049/9090] Built NtimeDspace.HashVariance (156s)
+warning: NtimeDspace/HashVariance.lean:139:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/HashVariance.lean:144:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [8051/9090] Built NtimeDspace.AssignmentLoop (157s)
+✔ [8053/9090] Built NtimeDspace.ParameterChoice (157s)
+✔ [8055/9090] Built NtimeDspace.TensorBasisField (157s)
+✔ [8057/9090] Built Complexity.Probability.PMF.Uniform (76s)
+✔ [8059/9090] Built Complexity.Languages.Probabilistic.Basic (76s)
+✔ [8061/9090] Built NtimeDspace.BoundedSupportParser (158s)
+✔ [8063/9090] Built Complexity.Probability.PMF.Bind (77s)
+✔ [8065/9090] Built Complexity.Foundations.Data.BitString.List.Operations (64s)
+✔ [8067/9090] Built NtimeDspace.SupportBounds (176s)
+✔ [8069/9090] Built Cslib.Computability.Machines.Turing.MultiTape.TapeLemmas (46s)
+✔ [8071/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Combinators.Id (46s)
+✔ [8073/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Deterministic (46s)
+✔ [8075/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.Equivalence (46s)
+✔ [8077/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Combinators.AlmostConstant (47s)
+✔ [8079/9090] Built Complexity.Computability.Circuit.Frontier.TensorNetwork.Binarize (49s)
+✔ [8081/9090] Built Complexity.Computability.Circuit.Frontier.TensorNetwork.Explicit (50s)
+✔ [8083/9090] Built Complexity.Computability.Machines.Turing.MultiTape.ResourceBounds.Degree (65s)
+✔ [8085/9090] Built Complexity.Computability.Complexity.AcceptCount (59s)
+✔ [8087/9090] Built Complexity.Probability.PMF.Map (78s)
+✔ [8089/9090] Built Complexity.Probability.PMF.Event (78s)
+✔ [8091/9090] Built Complexity.Probability.BitString (78s)
+✔ [8093/9090] Built Complexity.Languages.Probabilistic.Sum (80s)
+✔ [8095/9090] Built Complexity.Languages.Probabilistic.Simulation (94s)
+✔ [8097/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.InputFromTape (68s)
+✔ [8099/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.RewindWork (69s)
+✔ [8101/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.ForwardWork (69s)
+✔ [8103/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.OutputToTape (69s)
+✔ [8105/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.MarkWork (68s)
+✔ [8107/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.TransformsTapes (69s)
+✔ [8109/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Map (68s)
+✔ [8111/9090] Built Complexity.Computability.Machines.Turing.MultiTape.TapeLemmas (69s)
+✔ [8113/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Locality (69s)
+✔ [8115/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.Id (69s)
+✔ [8117/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting (70s)
+✔ [8119/9090] Built Cslib.Computability.Machines.Turing.MultiTape.ConfigBound (75s)
+✔ [8121/9090] Built NtimeDspace.ScalarRecovery (232s)
+✔ [8123/9090] Built Complexity.Computability.Complexity.Classes.CountingSimulation.Admissible (75s)
+✔ [8125/9090] Built Complexity.Computability.Machines.Turing.MultiTape.PolyTime (87s)
+✔ [8127/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.Program (99s)
+✔ [8129/9090] Built Complexity.Computability.Machines.Turing.MultiTape.ResourceBounds (92s)
+✔ [8131/9090] Built NtimeDspace.MatrixLocality (173s)
+✔ [8133/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.Tidy.Defs (61s)
+✔ [8135/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.ExtendTapes (61s)
+✔ [8137/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.Sequential (61s)
+✔ [8139/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.ResourceFacts (60s)
+✔ [8141/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.TransformsTapes (60s)
+✔ [8143/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.RepeatUntilBlank (61s)
+✔ [8145/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.RewindWork (61s)
+✔ [8147/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Run (61s)
+✔ [8149/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.Certificate (60s)
+✔ [8151/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.Correct (62s)
+✔ [8153/9090] Built NtimeDspace.WHashVariance (166s)
+✔ [8155/9090] Built NtimeDspace.DeformationTaylor (167s)
+⚠ [8157/9090] Built NtimeDspace.SpectralPairCount (166s)
+warning: NtimeDspace/SpectralPairCount.lean:2:0: 'Mathlib.Data.Real.Basic' has been deprecated: please replace this import by
+
+import Mathlib.Basic.Real.Basic
+⚠ [8159/9090] Built NtimeDspace.CenteredWindow (169s)
+warning: NtimeDspace/CenteredWindow.lean:2:0: 'Mathlib.Data.Real.Archimedean' has been deprecated: please replace this import by
+
+import Mathlib.Algebra.Order.Archimedean.Real.Basic
+✔ [8161/9090] Built NtimeDspace.SupportAssignment (165s)
+✔ [8163/9090] Built NtimeDspace.ParityEvaluation (170s)
+✔ [8165/9090] Built Complexity.Languages.Probabilistic.BitString (94s)
+✔ [8167/9090] Built Complexity.Languages.Probabilistic.Semantics (82s)
+✔ [8169/9090] Built Complexity.Languages.Probabilistic.Transcript (84s)
+⚠ [8171/9090] Built NtimeDspace.ParserFold (181s)
+warning: NtimeDspace/ParserFold.lean:208:16: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ParserFold.lean:210:12: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ParserFold.lean:227:16: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ParserFold.lean:227:30: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ParserFold.lean:229:18: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ParserFold.lean:229:33: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ParserFold.lean:229:48: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ParserFold.lean:231:18: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ParserFold.lean:231:33: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ParserFold.lean:232:16: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ParserFold.lean:232:30: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ParserFold.lean:233:12: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [8173/9090] Built NtimeDspace.SupportBudget (174s)
+✔ [8175/9090] Built Complexity.Computability.Complexity.Classes.FunctionTime (60s)
+✔ [8177/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Degree.Primitives (60s)
+✔ [8179/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Capabilities (60s)
+✔ [8181/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.BigO.Bounds (60s)
+✔ [8183/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.Halting (76s)
+✔ [8185/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.Program (76s)
+✔ [8187/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic (76s)
+✔ [8189/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.Simulation (79s)
+✔ [8191/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.Tidy.Defs (51s)
+✔ [8193/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.Branch (51s)
+✔ [8195/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.ClearWork (52s)
+✔ [8197/9090] Built Cslib.Computability.Machines.Turing.MultiTape.Plumbing.RewindInput (52s)
+✔ [8199/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.Sequential (52s)
+✔ [8201/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.RepeatUntilBlank (51s)
+✔ [8203/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.Shadow (52s)
+✔ [8205/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.ExtendTapes (52s)
+✔ [8207/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Halting.Computable.Defs (52s)
+✔ [8209/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Halting.Basic (51s)
+✔ [8211/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.Binary (51s)
+✔ [8213/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.Reverse (53s)
+✔ [8215/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.KernelZipTransducer (54s)
+✔ [8217/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Feature (58s)
+✔ [8219/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Bounds (61s)
+✔ [8221/9090] Built NtimeDspace.ParameterAsymptotics (224s)
+✔ [8223/9090] Built Complexity.Languages.Probabilistic.Oracle (75s)
+✔ [8225/9090] Built Complexity.Languages.Probabilistic.QueryCount (73s)
+✔ [8227/9090] Built Complexity.Languages.Probabilistic.Iteration (76s)
+✔ [8229/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.Tidy.Run (49s)
+✔ [8231/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.PrepareInput (48s)
+✔ [8233/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.KernelZeroSpace (48s)
+✔ [8235/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.TransformsWords (49s)
+✔ [8237/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.KernelFacts (49s)
+✔ [8239/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.ExtendTapesView (49s)
+✔ [8241/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.OutputToTape (49s)
+✔ [8243/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.InputFromTape (50s)
+✔ [8245/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.ClearShadowed (50s)
+✔ [8247/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Degree.Bounds (67s)
+✔ [8249/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Deterministic (72s)
+✔ [8251/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.InputFromTape (70s)
+✔ [8253/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.OutputPrefix (70s)
+✔ [8255/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.ExtendTapes (70s)
+✔ [8257/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.Sequential (70s)
+✔ [8259/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.Execution (74s)
+✔ [8261/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.Clock (71s)
+✔ [8263/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.Guess (74s)
+✔ [8265/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.OutputToTape (73s)
+⚠ [8267/9090] Built NtimeDspace.HermiteRecovery (180s)
+warning: NtimeDspace/HermiteRecovery.lean:55:4: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+✔ [8269/9090] Built NtimeDspace.MatrixSpectralBridge (144s)
+✔ [8271/9090] Built NtimeDspace.SupportEnumeration (149s)
+✔ [8273/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.KernelOnWords (51s)
+✔ [8275/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.KernelAppend (52s)
+✔ [8277/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.Tidy.Basic (52s)
+✔ [8279/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.Cursor (52s)
+✔ [8281/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.KernelTransducer (53s)
+✔ [8283/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.KernelComp (52s)
+✔ [8285/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.TidyZeroSpace (53s)
+✔ [8287/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.KernelNormalForm (56s)
+✔ [8289/9090] Built Complexity.Languages.Probabilistic.Oracle.Simulation (75s)
+✔ [8291/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.Finite (74s)
+⚠ [8293/9090] Built NtimeDspace.SpectralTail (173s)
+warning: NtimeDspace/SpectralTail.lean:42:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [8295/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.ExtendTapes (72s)
+✔ [8297/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Clock (71s)
+✔ [8299/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.Deterministic (71s)
+✔ [8301/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.Composition (69s)
+✔ [8303/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.OutputToTape (69s)
+✔ [8305/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.ExtendTapes (72s)
+✔ [8307/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.InputFromTape (72s)
+✔ [8309/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Oracle (73s)
+✔ [8311/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.Sequential (72s)
+✔ [8313/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Sequential (80s)
+✔ [8315/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.OnWords (54s)
+✔ [8317/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.Transducer (54s)
+✔ [8319/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.Append (54s)
+✔ [8321/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.WhileInput (54s)
+✔ [8323/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.CopyWord (55s)
+✔ [8325/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.FrameMachines (55s)
+✔ [8327/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.Comp (55s)
+✔ [8329/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.ReadInput (55s)
+✔ [8331/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.KernelIte (55s)
+✔ [8333/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.TidyNormalForm (56s)
+✔ [8335/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.NormalForm (65s)
+⚠ [8337/9090] Built NtimeDspace.PackedParser (208s)
+warning: NtimeDspace/PackedParser.lean:109:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:109:33: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:109:45: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:109:57: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:113:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:113:40: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:113:52: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:113:64: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:114:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:114:38: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:114:50: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:115:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:115:34: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:124:45: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/PackedParser.lean:124:55: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/PackedParser.lean:126:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:126:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:127:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:127:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:129:25: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/PackedParser.lean:129:47: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/PackedParser.lean:131:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:131:21: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:133:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:133:23: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:134:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:134:23: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:135:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:135:21: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:145:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:145:27: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:145:39: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:148:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:148:23: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:150:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:150:23: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:151:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:151:36: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:151:48: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:152:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:152:34: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:165:64: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/PackedParser.lean:167:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:167:24: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:169:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:169:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:177:45: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/PackedParser.lean:177:55: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/PackedParser.lean:186:75: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/PackedParser.lean:186:85: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/PackedParser.lean:197:10: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackedParser.lean:205:10: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackedParser.lean:199:35: This simp argument is unused:
+  show c ≠ 0 by omega
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [show ¬c < 2 by omega]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/PackedParser.lean:201:14: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/PackedParser.lean:203:10: Unused tactic linter: `(rw [Nat.testBit_zero];
+  cases hb : c.bodd <;> simp [Nat.bodd] at hb ⊢ <;> omega)` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/PackedParser.lean:204:10: Unused tactic linter: `rfl` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/PackedParser.lean:203:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: NtimeDspace/PackedParser.lean:204:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: NtimeDspace/PackedParser.lean:201:14: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [8339/9090] Built Complexity.Languages.Probabilistic.Oracle.Support (69s)
+✔ [8341/9090] Built Complexity.Languages.Probabilistic.Oracle.Transcript (70s)
+✔ [8343/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.DecoderWordMachines (37s)
+✔ [8345/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.CodecWordMachines (37s)
+✔ [8347/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.UnaryMachines (37s)
+✔ [8349/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.WordPredicates (38s)
+⚠ [8351/9090] Built NtimeDspace.HermiteGlobal (122s)
+warning: NtimeDspace/HermiteGlobal.lean:213:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+✔ [8353/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.Ite (37s)
+✔ [8355/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.StreamFold (38s)
+✔ [8357/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.KernelIterateWhile (40s)
+✔ [8359/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.ConditionalMachine (41s)
+✔ [8361/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.OutputPrefix (59s)
+✔ [8363/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.Composition (60s)
+✔ [8365/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Closed (54s)
+✔ [8367/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.RunsWords (56s)
+⚠ [8369/9090] Built NtimeDspace.ReciprocalCoefficients (131s)
+warning: NtimeDspace/ReciprocalCoefficients.lean:84:49: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ReciprocalCoefficients.lean:213:59: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+✔ [8371/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.DegreeComposition (41s)
+✔ [8373/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.LinearPrimitives (41s)
+✔ [8375/9090] Built NtimeDspace.FiniteFieldDeformation (125s)
+✔ [8377/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.MultiPass (47s)
+✔ [8379/9090] Built NtimeDspace.SupportCardinality (144s)
+✔ [8381/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.IterateWhile (48s)
+✔ [8383/9090] Built Complexity.Languages.Probabilistic.Oracle.QueryCount (61s)
+✔ [8385/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.OPrimitives (52s)
+✔ [8387/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.CoinTape (56s)
+✔ [8389/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.OutputPrefix (56s)
+✔ [8391/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Composition (57s)
+✔ [8393/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Sampling (56s)
+✔ [8395/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Tidy.Redirect (56s)
+✔ [8397/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.LinearCodecPrimitives (52s)
+✔ [8399/9090] Built NtimeDspace.TailParameters (153s)
+⚠ [8401/9090] Built NtimeDspace.PackBound (112s)
+warning: NtimeDspace/PackBound.lean:30:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackBound.lean:33:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackBound.lean:90:43: Variable name `hM` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hM
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/PackBound.lean:98:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PackBound.lean:101:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PackBound.lean:121:10: Unused tactic linter: `exact good_pack hM (by norm_num) hc hr hf hz (by omega) hrc` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/PackBound.lean:121:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+✔ [8403/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.QueryBounds (46s)
+✔ [8405/9090] Built NtimeDspace.AlgebraicCounter (103s)
+✔ [8407/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.Nondeterministic (42s)
+✔ [8409/9090] Built NtimeDspace.BalancedCoefficients (97s)
+✔ [8411/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Replay (43s)
+✔ [8413/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Words (35s)
+✔ [8415/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.FoldCompiler (52s)
+✔ [8417/9090] Built NtimeDspace.ModularBinomial (134s)
+✔ [8419/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Padding (36s)
+✔ [8421/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Option (36s)
+✔ [8423/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.Encoding (37s)
+✔ [8425/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Unary (37s)
+✔ [8427/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Sum (38s)
+✔ [8429/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.List (38s)
+✔ [8431/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Pair (39s)
+✔ [8433/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Frame (39s)
+✔ [8435/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Blocks (44s)
+✔ [8437/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.AcceptCount (50s)
+✔ [8439/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.Foldl (47s)
+✔ [8441/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Basic (47s)
+✔ [8443/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.DegreeOptionPrimitives (48s)
+✔ [8445/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.DecoderPrimitives (47s)
+✔ [8447/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.DegreeUnaryPrimitives (48s)
+✔ [8449/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.List.Size (47s)
+✔ [8451/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.LinearPairPrimitives (46s)
+✔ [8453/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Combinators.ZipTransducer (46s)
+✔ [8455/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.DegreePrimitives (46s)
+✔ [8457/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Nat.Bits (47s)
+✔ [8459/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.DegreeClosure (47s)
+✔ [8461/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.PreparePair (49s)
+✔ [8463/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimePrimitives (47s)
+✔ [8465/9090] Built NtimeDspace.IntegerWindow (121s)
+⚠ [8467/9090] Built NtimeDspace.FormulaCounter (145s)
+warning: NtimeDspace/FormulaCounter.lean:120:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NtimeDspace/FormulaCounter.lean:124:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [8469/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Pi (66s)
+✔ [8471/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.BinarySizeFacts (65s)
+✔ [8473/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Nat.Words (65s)
+✔ [8475/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeOptionPrimitives (65s)
+✔ [8477/9090] Built Complexity.Computability.GenericRAM.Native.Certificate (65s)
+✔ [8479/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Nat (66s)
+✔ [8481/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeLoops (65s)
+✔ [8483/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Decoder.Basic (65s)
+✔ [8485/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.OCombinators (66s)
+✔ [8487/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Nat.Subtraction (66s)
+✔ [8489/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Nat.Division (66s)
+✔ [8491/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Nat.Arithmetic (66s)
+✔ [8493/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.StreamFold (74s)
+✔ [8495/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.BinaryNormalization (53s)
+✔ [8497/9090] Built Complexity.Computability.Complexity.Classes.CountingSimulation.Interfaces (53s)
+✔ [8499/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.NatLength (53s)
+✔ [8501/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.IntBinary (53s)
+✔ [8503/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeListPrimitives (53s)
+✔ [8505/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime (54s)
+✔ [8507/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.OLoops (55s)
+✔ [8509/9090] Built NtimeDspace.IntervalCoefficients (179s)
+✔ [8511/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.MultiPass (61s)
+⚠ [8513/9090] Built NtimeDspace.FormulaIncidences (101s)
+warning: NtimeDspace/FormulaIncidences.lean:87:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/FormulaIncidences.lean:95:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/FormulaIncidences.lean:127:54: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+✔ [8515/9090] Built NtimeDspace.IncidenceDeformation (103s)
+⚠ [8517/9090] Built NtimeDspace.WeightedSystem (104s)
+warning: NtimeDspace/WeightedSystem.lean:181:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/WeightedSystem.lean:183:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/WeightedSystem.lean:187:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/WeightedSystem.lean:189:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/WeightedSystem.lean:191:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [8519/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeListToBits (41s)
+✔ [8521/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Decoder.Nat (41s)
+✔ [8523/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimePiPrimitives (41s)
+✔ [8525/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Plain (41s)
+✔ [8527/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Nondeterministic (41s)
+✔ [8529/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.BinaryPrimitives (40s)
+✔ [8531/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.EqualityPrimitives (40s)
+✔ [8533/9090] Built Complexity.Computability.Probabilistic.Oracle (51s)
+✔ [8535/9090] Built NtimeDspace.GroupedDeformation (149s)
+✔ [8537/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Decoder (47s)
+✔ [8539/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeListLookup (47s)
+✔ [8541/9090] Built Complexity.Computability.Complexity.Classes.NP (48s)
+✔ [8543/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeNatFrontends (47s)
+✔ [8545/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Degree (48s)
+✔ [8547/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.BinaryAddition (48s)
+✔ [8549/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.BinaryComparison (48s)
+✔ [8551/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.OCountedIteration (50s)
+✔ [8553/9090] Built Complexity.Computability.Probabilistic.PPT (52s)
+✔ [8555/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.ReplayInput (52s)
+✔ [8557/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Machine.ChoiceTable (53s)
+⚠ [8559/9090] Built NtimeDspace.HermiteTuple (115s)
+warning: NtimeDspace/HermiteTuple.lean:76:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/HermiteTuple.lean:78:51: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/HermiteTuple.lean:80:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/HermiteTuple.lean:84:35: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/HermiteTuple.lean:110:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/HermiteTuple.lean:111:45: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+✔ [8561/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.LinearSpaceArith (40s)
+✔ [8563/9090] Built Complexity.Computability.Complexity.Classes.SharpP (41s)
+✔ [8565/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeListMap (41s)
+✔ [8567/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeBinaryPrimitives (41s)
+✔ [8569/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Fold (41s)
+✔ [8571/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeListBinaryLookup (42s)
+✔ [8573/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.NatPower (42s)
+✔ [8575/9090] Built NtimeDspace.FiniteFieldCounter (99s)
+✔ [8577/9090] Built NtimeDspace.WIncidenceDeformation (101s)
+✔ [8579/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.ChoiceTable (48s)
+✔ [8581/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.IntervalTensor (51s)
+✔ [8583/9090] Built NtimeDspace.NetworkSystem (140s)
+✔ [8585/9090] Built NtimeDspace.RestrictedMeasurements (107s)
+✔ [8587/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeBinaryPower (57s)
+✔ [8589/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Internal.PolyTimeBinaryDivision (57s)
+✔ [8591/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Primitives (57s)
+✔ [8593/9090] Built NtimeDspace.MeasurementEnumeration (109s)
+✔ [8595/9090] Built Complexity.Computability.Complexity.Classes.SharpP.Probability (64s)
+✔ [8597/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.IntervalSimulation (56s)
+✔ [8599/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.BlockNetwork (60s)
+✔ [8601/9090] Built NtimeDspace.WGroupedDeformation (145s)
+✔ [8603/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Arith (46s)
+✔ [8605/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Finite (46s)
+✔ [8607/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Basic (47s)
+✔ [8609/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Lists (47s)
+✔ [8611/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.QueryTake (56s)
+✔ [8613/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.IntervalCount (61s)
+✔ [8615/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.ExplicitBlockNetwork (60s)
+✔ [8617/9090] Built NtimeDspace.WFiniteFieldCounter (136s)
+✔ [8619/9090] Built Complexity.Computability.Complexity.Classes.P (47s)
+✔ [8621/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Finite (47s)
+✔ [8623/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Fold (48s)
+✔ [8625/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Length (47s)
+✔ [8627/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Option (47s)
+✔ [8629/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Tape (48s)
+✔ [8631/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.BigO (49s)
+✔ [8633/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Tidy (48s)
+✔ [8635/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.Loop (57s)
+✔ [8637/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.ExplicitBlockNetwork.Graph (82s)
+✔ [8639/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.InSpace (69s)
+✔ [8641/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Iteration (71s)
+✔ [8643/9090] Built Complexity.Computability.Complexity.Classes.Promise.Basic (72s)
+✔ [8645/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.BigO.Plain (70s)
+✔ [8647/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Nat (72s)
+✔ [8649/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolySpace (70s)
+✔ [8651/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Halting.Computable (70s)
+✔ [8653/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Encodings.Configuration (73s)
+✔ [8655/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Streaming (72s)
+✔ [8657/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.Input (73s)
+✔ [8659/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Translate (77s)
+⚠ [8661/9090] Built NtimeDspace.ConcreteGroupedDeformation (178s)
+warning: NtimeDspace/ConcreteGroupedDeformation.lean:140:95: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+✔ [8663/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.IterateWhile (98s)
+✔ [8665/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Halting.Reduction (56s)
+✔ [8667/9090] Built Complexity.Computability.Complexity.Classes.BPP (57s)
+✔ [8669/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Int (57s)
+✔ [8671/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.InSpace.Plain (57s)
+✔ [8673/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.List (57s)
+✔ [8675/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.Quantitative (56s)
+✔ [8677/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.ExplicitBlockNetwork.Table (67s)
+✔ [8679/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Nat.Div (65s)
+✔ [8681/9090] Built Complexity.Computability.Complexity.Classes.PP (48s)
+✔ [8683/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Window (47s)
+✔ [8685/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Pi (47s)
+✔ [8687/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Tape (47s)
+✔ [8689/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.BigO.FunProp (47s)
+✔ [8691/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolySpace.Plain (48s)
+✔ [8693/9090] Built Complexity.Computability.Complexity.Reduction (48s)
+✔ [8695/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Plumbing.PrepareClock (48s)
+✔ [8697/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Nat.Binary (48s)
+✔ [8699/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.BigO.Lists (48s)
+✔ [8701/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.Verifier (55s)
+✔ [8703/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Nat.Fin (48s)
+✔ [8705/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Nat.Log (49s)
+✔ [8707/9090] Built NtimeDspace.WConcreteGroupedDeformation (108s)
+✔ [8709/9090] Built NtimeDspace.GroupedCounter (175s)
+✔ [8711/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.BigO.Sum (88s)
+✔ [8713/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Nat.BinaryLog (87s)
+✔ [8715/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Nat.BinaryDiv (88s)
+✔ [8717/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.BitString (88s)
+✔ [8719/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.InSpaceLib (88s)
+✔ [8721/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Int.Binary (90s)
+✔ [8723/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.PolynomialClock (95s)
+✔ [8725/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.ExplicitBlockNetwork.GraphPolyTime (95s)
+✔ [8727/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.Complexity (95s)
+⚠ [8729/9090] Built NtimeDspace.LocalTape (187s)
+warning: NtimeDspace/LocalTape.lean:64:31: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/LocalTape.lean:215:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalTape.lean:225:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalTape.lean:225:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalTape.lean:227:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalTape.lean:227:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [8731/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.InSpace.Bit (51s)
+✔ [8733/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.PolyTime.Configuration (52s)
+✔ [8735/9090] Built Complexity.Computability.GenericRAM.Native.Combinators (54s)
+✔ [8737/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.Decode (50s)
+✔ [8739/9090] Built Complexity.Computability.Probabilistic.Oracle.Tidy (57s)
+✔ [8741/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.Bound (51s)
+✔ [8743/9090] Built Complexity.Computability.Probabilistic.PPT.Clock (55s)
+✔ [8745/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.IntervalCount.PolyTime (63s)
+✔ [8747/9090] Built NtimeDspace.WGroupedCounter (166s)
+✔ [8749/9090] Built Complexity.Computability.GenericRAM.Native.IndexFold (45s)
+✔ [8751/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.BigO.Constructible (45s)
+✔ [8753/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.Machine (45s)
+✔ [8755/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.Space (46s)
+✔ [8757/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Counting.Checker (53s)
+✔ [8759/9090] Built Complexity.Computability.Probabilistic.Oracle.Iteration (53s)
+✔ [8761/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Probabilistic.ExplicitBlockNetwork.TablePolyTime (58s)
+✔ [8763/9090] Built NtimeDspace.SchedulePlacement (178s)
+✔ [8765/9090] Built Complexity.Computability.GenericRAM.Native.BooleanFold (69s)
+✔ [8767/9090] Built Complexity.Computability.Complexity.Classes.CountingSimulation.Accumulate (72s)
+✔ [8769/9090] Built Complexity.Computability.Complexity.Classes.Hierarchy.ShortDesc (69s)
+✔ [8771/9090] Built Complexity.Computability.Complexity.Classes.SharpP.Machine (67s)
+✔ [8773/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.InPlace (74s)
+✔ [8775/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.ResourceBound (81s)
+✔ [8777/9090] Built Complexity.Computability.Probabilistic.Oracle.Normalization (90s)
+✔ [8779/9090] Built Complexity.Computability.Circuit.Frontier.TensorNetwork.DirectContraction (61s)
+⚠ [8781/9090] Built NtimeDspace.LocalRun (186s)
+warning: NtimeDspace/LocalRun.lean:37:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalRun.lean:48:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalRun.lean:244:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalRun.lean:250:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalRun.lean:250:17: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalRun.lean:249:70: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/LocalRun.lean:249:70: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [8783/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.SpaceBudget (58s)
+✔ [8785/9090] Built Complexity.Computability.Complexity.Classes.SharpP.Characterization (68s)
+✔ [8787/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.Compose (66s)
+✔ [8789/9090] Built Complexity.Computability.Probabilistic.Oracle.Composition (71s)
+✔ [8791/9090] Built NtimeDspace.WSchedulePlacement (146s)
+✔ [8793/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.LogSpace (64s)
+✔ [8795/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Universal.PolyTime (64s)
+✔ [8797/9090] Built Complexity.Computability.Complexity.Classes.SharpP.Time (75s)
+✔ [8799/9090] Built Complexity.Computability.Probabilistic.PPT.Composition (76s)
+✔ [8801/9090] Built NtimeDspace.LocalAssignmentLoop (192s)
+✔ [8803/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.SpaceInTime (52s)
+✔ [8805/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.LogSpace.QueryMachine (56s)
+✔ [8807/9090] Built Complexity.Computability.Complexity.Classes.Hierarchy (64s)
+⚠ [8809/9090] Built NtimeDspace.LocalPacked (171s)
+warning: NtimeDspace/LocalPacked.lean:51:67: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalPacked.lean:52:4: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalPacked.lean:52:19: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalPacked.lean:56:53: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalPacked.lean:112:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalPacked.lean:123:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+✔ [8811/9090] Built Complexity.Computability.Probabilistic.PPT.Capture (62s)
+✔ [8813/9090] Built Complexity.Computability.Complexity.Classes.Space.Basic (58s)
+✔ [8815/9090] Built Complexity.Computability.Complexity.Classes.Constructible (60s)
+✔ [8817/9090] Built Complexity.Computability.Machines.Turing.MultiTape.Complexity.LogSpace.CounterProgram (58s)
+⚠ [8819/9090] Built NtimeDspace.NetFacts (178s)
+warning: NtimeDspace/NetFacts.lean:86:23: This simp argument is unused:
+  List.getElem_map
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toSystem, vertexConstraint, List.length_map]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/NetFacts.lean:86:41: This simp argument is unused:
+  vertexConstraint
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toSystem, List.getElem_map, List.length_map]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/NetFacts.lean:86:59: This simp argument is unused:
+  List.length_map
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toSystem, List.getElem_map, vertexConstraint]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [8821/9090] Built Complexity.Computability.Complexity.Classes.Space (68s)
+✔ [8823/9090] Built Complexity.Computability.Probabilistic.Sampling (80s)
+✔ [8825/9090] Built Complexity.Computability.Complexity.Classes.CountingSimulation.Assembly (71s)
+✔ [8827/9090] Built NtimeDspace.SpectralIndexing (143s)
+✔ [8829/9090] Built NtimeDspace.GroupedAssignmentEvaluation (145s)
+✔ [8831/9090] Built Complexity.Computability.Complexity.Classes.LogSpace (50s)
+✔ [8833/9090] Built Complexity.Computability.Complexity.Classes.NP.GuessVerify (66s)
+✔ [8835/9090] Built NtimeDspace.WGroupedAssignmentEvaluation (221s)
+✔ [8837/9090] Built Complexity.Computability.Complexity.Classes.NP.Nondeterministic (67s)
+✔ [8839/9090] Built NtimeDspace.GroupedInnerLoop (128s)
+✔ [8841/9090] Built NtimeDspace.BadCountBridge (132s)
+✔ [8843/9090] Built NtimeDspace.SparseCorrection (176s)
+✔ [8845/9090] Built Complexity.Computability.Complexity.Classes.Time (54s)
+✔ [8847/9090] Built NtimeDspace.WGroupedInnerLoop (131s)
+✔ [8849/9090] Built NtimeDspace.WScalarRecoveryLoop (161s)
+✔ [8851/9090] Built Complexity.Computability.Complexity.Classes.Time.AcceptCount (61s)
+✔ [8853/9090] Built Complexity.Computability.Complexity.Classes.Space.Time (62s)
+✔ [8855/9090] Built Complexity.Computability.Complexity.Classes.PP.Time (64s)
+✔ [8857/9090] Built NtimeDspace.TensorEvaluation (151s)
+⚠ [8859/9090] Built NtimeChallengeWrong (112s)
+warning: NtimeChallengeWrong.lean:9:8: declaration uses `sorry`
+✔ [8862/9090] Built Complexity.Computability.Complexity.Classes.CountingSimulation.Count (55s)
+✔ [8864/9090] Built Complexity.Computability.Complexity.Classes.Hierarchy.Space (56s)
+⚠ [8866/9090] Built NtimeChallenge (120s)
+warning: NtimeChallenge.lean:14:8: declaration uses `sorry`
+✔ [8869/9090] Built NtimeDspace.SupportSubsetLoop (124s)
+✔ [8871/9090] Built NtimeDspace.WSparseCorrection (145s)
+✔ [8873/9090] Built Complexity.Computability.Complexity.Classes.CountingSimulation.Containments (62s)
+✔ [8875/9090] Built NtimeDspace.WGroupedFormulaLoop (173s)
+✔ [8877/9090] Built NtimeDspace.DeformationEvaluation (132s)
+✔ [8879/9090] Built Complexity.Computability.Complexity.Classes.CountingSimulation.BlockNetworks (53s)
+✔ [8881/9090] Built NtimeDspace.ComplexityReuse (168s)
+✔ [8883/9090] Built NtimeDspace.WCompressedTaylorLoop (123s)
+✔ [8885/9090] Built NtimeDspace.SemanticReduction (111s)
+✔ [8887/9090] Built NtimeDspace.WIncidenceEvaluation (142s)
+✔ [8889/9090] Built NtimeDspace.BigCounterProgram (134s)
+✔ [8891/9090] Built NtimeDspace.WCompressedRecoveryLoop (146s)
+✔ [8893/9090] Built NtimeDspace.WGroupedAccessorEvaluation (133s)
+⚠ [8895/9090] Built NtimeDspace.StructuredProgram (163s)
+warning: NtimeDspace/StructuredProgram.lean:254:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/StructuredProgram.lean:257:8: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/StructuredProgram.lean:262:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/StructuredProgram.lean:264:38: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+✔ [8897/9090] Built NtimeDspace.WConcreteCountingLoop (149s)
+⚠ [8899/9090] Built NtimeDspace.ProgLang (195s)
+warning: NtimeDspace/ProgLang.lean:415:60: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ProgLang.lean:421:60: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ProgLang.lean:588:10: `List.sum_le_card_nsmul` has been deprecated: Use `List.sum_le_length_nsmul` instead
+
+Hint: Replace the deprecated name:
+  L̵i̵s̵t̵.̵s̵u̵m̵_̵l̵e̵_̵c̵a̵r̵d̵_̵n̵s̵m̵u̵l̵L̲i̲s̲t̲.̲s̲u̲m̲_̲l̲e̲_̲l̲e̲n̲g̲t̲h̲_̲n̲s̲m̲u̲l̲
+⚠ [8901/9090] Built NtimeDspace.ProgTerm (115s)
+warning: NtimeDspace/ProgTerm.lean:146:37: This simp argument is unused:
+  Nat.add_sub_cancel_left
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [denote_lvl, Nat.add_assoc, Nat.add_sub_add_left, ih, pow_succ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/ProgTerm.lean:158:57: This simp argument is unused:
+  Nat.le_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [denote_lvl_cons, List.length_cons, le_refl, ite_true, denote_const, foldAcc_pow2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8903/9090] Built NtimeDspace.ProgLength (196s)
+warning: NtimeDspace/ProgLength.lean:25:36: This simp argument is unused:
+  List.getElem?_set
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [List.getD_eq_getElem?_getD, Ne.symm h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/ProgLength.lean:28:69: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/ProgLength.lean:48:32: This simp argument is unused:
+  r1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [List.getD_eq_getElem?_getD, List.getElem?_set, show 1 < r.length by omega]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/ProgLength.lean:48:64: This simp argument is unused:
+  List.getElem?_set
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [r1, List.getD_eq_getElem?_getD, show 1 < r.length by omega]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/ProgLength.lean:62:44: This simp argument is unused:
+  List.getElem?_set
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [r1, List.getD_eq_getElem?_getD, show 0 < r.length by omega]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/ProgLength.lean:118:52: This simp argument is unused:
+  List.getElem?_set
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [r1, r0, List.getD_eq_getElem?_getD, List.getElem?_replicate, R]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/ProgLength.lean:118:71: This simp argument is unused:
+  List.getElem?_replicate
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [r1, r0, List.getD_eq_getElem?_getD, List.getElem?_set, R]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/ProgLength.lean:119:52: This simp argument is unused:
+  List.getElem?_set
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [r1, r0, List.getD_eq_getElem?_getD, R]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8905/9090] Built NtimeDspace.ProgPieces (227s)
+warning: NtimeDspace/ProgPieces.lean:122:35: This simp argument is unused:
+  Nat.add_sub_cancel_left
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [denote_lvl, Nat.add_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8907/9090] Built NtimeDspace.CounterLocal (88s)
+warning: NtimeDspace/CounterLocal.lean:67:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/CounterLocal.lean:53:5: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/CounterLocal.lean:77:44: This simp argument is unused:
+  Nat.add_sub_cancel_left
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Term.denote_lvl, Nat.add_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [8909/9090] Built NtimeDspace.Tame (153s)
+⚠ [8911/9090] Built NtimeDspace.ArithTerm (192s)
+warning: NtimeDspace/ArithTerm.lean:92:11: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ArithTerm.lean:94:11: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [8913/9090] Built NtimeDspace.WeightTerm (276s)
+warning: NtimeDspace/WeightTerm.lean:138:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/WeightTerm.lean:138:24: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/WeightTerm.lean:139:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/WeightTerm.lean:157:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/WeightTerm.lean:157:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/WeightTerm.lean:155:44: This simp argument is unused:
+  Nat.add_sub_cancel_left
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Term.denote_lvl, Nat.add_assoc, Nat.add_sub_add_left]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8915/9090] Built NtimeDspace.LocalTerm (134s)
+warning: NtimeDspace/LocalTerm.lean:38:20: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/LocalTerm.lean:38:45: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/LocalTerm.lean:76:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalTerm.lean:76:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalTerm.lean:76:44: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalTerm.lean:76:63: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalTerm.lean:83:40: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalTerm.lean:104:75: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalTerm.lean:128:18: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/LocalTerm.lean:158:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalTerm.lean:181:25: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+✔ [8917/9090] Built NtimeDspace.TameLib (135s)
+⚠ [8919/9090] Built NtimeDspace.ParserTerm (136s)
+warning: NtimeDspace/ParserTerm.lean:55:22: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/ParserTerm.lean:55:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NtimeDspace/ParserTerm.lean:77:47: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [h3, h4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/ParserTerm.lean:74:49: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/ParserTerm.lean:74:49: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NtimeDspace/ParserTerm.lean:95:18: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/ParserTerm.lean:95:18: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NtimeDspace/ParserTerm.lean:126:12: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [h2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/ParserTerm.lean:151:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ParserTerm.lean:151:80: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ParserTerm.lean:152:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ParserTerm.lean:152:82: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8921/9090] Built NtimeDspace.RecoverTerm (225s)
+warning: NtimeDspace/RecoverTerm.lean:99:77: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/RecoverTerm.lean:100:86: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/RecoverTerm.lean:106:38: This simp argument is unused:
+  ZMod.natCast_self
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/RecoverTerm.lean:123:53: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/RecoverTerm.lean:135:56: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/RecoverTerm.lean:188:22: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/RecoverTerm.lean:237:24: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/RecoverTerm.lean:237:38: This simp argument is unused:
+  hzv'
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [inner, dif_pos hnd']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/RecoverTerm.lean:241:23: This simp argument is unused:
+  Nat.add_sub_cancel_left
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Term.denote_add, Term.denote_const, Term.denote_lvl, env1, List.length_cons, Nat.add_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [8923/9090] Built NtimeDspace.TameV (132s)
+⚠ [8925/9090] Built NtimeDspace.SupportQueryTerm (134s)
+warning: NtimeDspace/SupportQueryTerm.lean:109:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SupportQueryTerm.lean:109:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SupportQueryTerm.lean:110:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SupportQueryTerm.lean:110:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [8927/9090] Built NtimeDspace.LocalCount (182s)
+⚠ [8929/9090] Built NtimeDspace.InnerLoopTerm (141s)
+warning: NtimeDspace/InnerLoopTerm.lean:120:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:120:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:120:35: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:138:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:138:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:138:41: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:152:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:152:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:152:60: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:153:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:153:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:154:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: NtimeDspace/InnerLoopTerm.lean:311:20: Variable name `hrows` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hrows
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/InnerLoopTerm.lean:526:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:526:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:526:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:526:58: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:540:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:540:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:540:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:540:76: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:542:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:542:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopTerm.lean:542:63: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [8931/9090] Built NtimeDspace.TameTac (154s)
+⚠ [8933/9090] Built NtimeDspace.LocalStart (168s)
+warning: NtimeDspace/LocalStart.lean:67:15: This simp argument is unused:
+  Fin.val_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/LocalStart.lean:87:39: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/LocalStart.lean:87:61: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/LocalStart.lean:95:25: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/LocalStart.lean:100:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalStart.lean:103:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalStart.lean:103:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalStart.lean:109:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalStart.lean:109:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalStart.lean:109:37: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalStart.lean:118:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalStart.lean:118:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalStart.lean:118:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8935/9090] Built NtimeDspace.InnerLoopSpec (135s)
+warning: NtimeDspace/InnerLoopSpec.lean:51:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:70:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:114:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:116:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:116:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:119:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:119:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:125:15: This simp argument is unused:
+  Fin.val_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/InnerLoopSpec.lean:152:27: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:157:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:159:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:159:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:162:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:162:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:175:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:252:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:252:22: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:255:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:257:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:257:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:265:10: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:274:12: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:276:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:276:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:277:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/InnerLoopSpec.lean:277:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8937/9090] Built NtimeDspace.ArithHelpers (173s)
+warning: NtimeDspace/ArithHelpers.lean:33:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: NtimeDspace/ArithHelpers.lean:49:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ArithHelpers.lean:49:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ArithHelpers.lean:51:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ArithHelpers.lean:51:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ArithHelpers.lean:107:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ArithHelpers.lean:107:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ArithHelpers.lean:109:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ArithHelpers.lean:109:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ArithHelpers.lean:142:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ArithHelpers.lean:142:62: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ArithHelpers.lean:143:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ArithHelpers.lean:143:83: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ArithHelpers.lean:145:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ArithHelpers.lean:147:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ArithHelpers.lean:148:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/ArithHelpers.lean:149:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ArithHelpers.lean:150:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ArithHelpers.lean:151:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/ArithHelpers.lean:151:29: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8939/9090] Built NtimeDspace.TameIte (130s)
+warning: NtimeDspace/TameIte.lean:24:13: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TameIte.lean:25:29: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TameIte.lean:29:13: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/TameIte.lean:30:29: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8941/9090] Built NtimeDspace.SmallTable (132s)
+warning: NtimeDspace/SmallTable.lean:42:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SmallTable.lean:52:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SmallTable.lean:54:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SmallTable.lean:54:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SmallTable.lean:55:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SmallTable.lean:55:23: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SmallTable.lean:56:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SmallTable.lean:56:54: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SmallTable.lean:64:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SmallTable.lean:65:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SmallTable.lean:65:29: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SmallTable.lean:61:50: This simp argument is unused:
+  List.getElem?_append_right
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [denote_lvl, List.getD_eq_getElem?_getD]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8943/9090] Built NtimeDspace.TameLocal (172s)
+warning: NtimeDspace/TameLocal.lean:36:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.tm_stepT`:
+  [DecidableEq State]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq State] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/TameLocal.lean:38:58: Variable name `hkck` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hkck
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8945/9090] Built NtimeDspace.LocalStartTerm (139s)
+warning: NtimeDspace/LocalStartTerm.lean:20:72: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/LocalStartTerm.lean:20:76: Unused tactic linter: `omega` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/LocalStartTerm.lean:20:76: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: NtimeDspace/LocalStartTerm.lean:61:25: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/LocalStartTerm.lean:61:63: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/LocalStartTerm.lean:61:50: This simp argument is unused:
+  zero_lt_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [h0, h1, h2, if_false, Nat.lt_irrefl, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/LocalStartTerm.lean:61:63: This simp argument is unused:
+  if_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [h0, h1, h2, if_false, Nat.lt_irrefl, zero_lt_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/LocalStartTerm.lean:63:14: This simp argument is unused:
+  hposv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [f0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/LocalStartTerm.lean:65:10: This simp argument is unused:
+  f0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [f1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/LocalStartTerm.lean:67:10: This simp argument is unused:
+  f0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [f1, f2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/LocalStartTerm.lean:67:14: This simp argument is unused:
+  f1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [f0, f2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8947/9090] Built NtimeDspace.FormulaLoopTerm (191s)
+warning: NtimeDspace/FormulaLoopTerm.lean:95:5: Variable name `hgroups` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgroups
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/FormulaLoopTerm.lean:129:13: This simp argument is unused:
+  List.append_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.cons_append, List.nil_append] at hmc hrn
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/FormulaLoopTerm.lean:194:5: Variable name `hwidth` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hwidth
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/FormulaLoopTerm.lean:194:38: Variable name `hwidthv` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hwidthv
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/FormulaLoopTerm.lean:347:52: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/FormulaLoopTerm.lean:349:10: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [8949/9090] Built NtimeDspace.LocalInterval (150s)
+warning: NtimeDspace/LocalInterval.lean:36:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalInterval.lean:36:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalInterval.lean:39:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalInterval.lean:39:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8951/9090] Built NtimeDspace.TaylorLoopTerm (159s)
+warning: NtimeDspace/TaylorLoopTerm.lean:41:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:42:23: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:42:48: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/TaylorLoopTerm.lean:49:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:59:19: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:65:40: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:75:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:136:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:136:32: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:139:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:139:32: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:159:80: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:171:11: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopTerm.lean:234:61: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/TaylorLoopTerm.lean:235:24: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/TaylorLoopTerm.lean:234:32: This simp argument is unused:
+  Nat.lt_one_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bool.toNat_true, zero_lt_one, if_true, denote_mod, denote_add, denote_sub, hpv', if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8953/9090] Built NtimeDspace.LocalIntervalTerm (162s)
+warning: NtimeDspace/LocalIntervalTerm.lean:29:60: This simp argument is unused:
+  denote_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [denote_ite, denote_eqT, denote_lt, denote_mod, denote_const,
+    divPowT_denote _ _ _ _ (stableAt_const _ _), denote_sub]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/LocalIntervalTerm.lean:42:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalIntervalTerm.lean:42:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LocalIntervalTerm.lean:43:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalIntervalTerm.lean:43:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LocalIntervalTerm.lean:73:29: Variable name `hJp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/LocalIntervalTerm.lean:73:56: Variable name `hJm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8955/9090] Built NtimeDspace.TaylorLoopEq (168s)
+warning: NtimeDspace/TaylorLoopEq.lean:58:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopEq.lean:60:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopEq.lean:63:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/TaylorLoopEq.lean:181:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopEq.lean:265:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopEq.lean:270:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TaylorLoopEq.lean:283:13: This simp argument is unused:
+  Fin.val_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [8957/9090] Built NtimeDspace.LocalIntervalCount (166s)
+✔ [8959/9090] Built NtimeDspace.CounterTerm (180s)
+⚠ [8961/9090] Built NtimeDspace.NetGraphTerm (183s)
+warning: NtimeDspace/NetGraphTerm.lean:40:55: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+⚠ [8963/9090] Built NtimeDspace.LabelTerm (161s)
+warning: NtimeDspace/LabelTerm.lean:106:19: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/LabelTerm.lean:109:19: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/LabelTerm.lean:111:21: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/LabelTerm.lean:117:21: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/LabelTerm.lean:149:53: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LabelTerm.lean:152:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LabelTerm.lean:218:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LabelTerm.lean:218:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LabelTerm.lean:219:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LabelTerm.lean:219:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LabelTerm.lean:249:52: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LabelTerm.lean:257:49: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LabelTerm.lean:297:53: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LabelTerm.lean:300:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LabelTerm.lean:313:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LabelTerm.lean:313:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/LabelTerm.lean:313:40: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LabelTerm.lean:315:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LabelTerm.lean:315:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/LabelTerm.lean:315:42: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [8965/9090] Built NtimeDspace.NetPortTerm (154s)
+warning: NtimeDspace/NetPortTerm.lean:61:19: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/NetPortTerm.lean:179:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetPortTerm.lean:179:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [8967/9090] Built NtimeDspace.DeformTerm (181s)
+warning: NtimeDspace/DeformTerm.lean:86:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:86:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:97:86: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:103:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/DeformTerm.lean:106:23: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:162:52: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/DeformTerm.lean:170:49: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/DeformTerm.lean:175:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/DeformTerm.lean:175:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:176:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:176:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/DeformTerm.lean:208:29: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/DeformTerm.lean:211:48: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:211:59: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/DeformTerm.lean:213:31: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:213:42: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:277:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/DeformTerm.lean:277:84: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/DeformTerm.lean:278:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:279:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/DeformTerm.lean:322:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/DeformTerm.lean:322:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [8969/9090] Built NtimeDspace.NetIntervalData (181s)
+warning: NtimeDspace/NetIntervalData.lean:73:19: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/NetIntervalData.lean:75:19: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/NetIntervalData.lean:78:21: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: NtimeDspace/NetIntervalData.lean:79:21: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: NtimeDspace/NetIntervalData.lean:74:22: Unused tactic linter: `rfl` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/NetIntervalData.lean:74:57: Unused tactic linter: `rfl` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/NetIntervalData.lean:74:89: Unused tactic linter: `trivial` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/NetIntervalData.lean:80:30: Unused tactic linter: `trivial` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/NetIntervalData.lean:80:59: Unused tactic linter: `rfl` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/NetIntervalData.lean:80:91: Unused tactic linter: `trivial` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/NetIntervalData.lean:74:89: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: NtimeDspace/NetIntervalData.lean:80:30: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: NtimeDspace/NetIntervalData.lean:80:91: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+✔ [8971/9090] Built NtimeDspace.IncScanTerm (165s)
+⚠ [8973/9090] Built NtimeDspace.NetIntervalTerm (157s)
+warning: NtimeDspace/NetIntervalTerm.lean:80:16: This simp argument is unused:
+  denote_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [contCellT, contCell, denote_ite, denote_lt, denote_ccountT hb, denote_const, denote_mod,
+    denote_sub, divPowT_denote _ _ _ _ (stableAt_const _ _)]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8975/9090] Built NtimeDspace.FiniteFieldTerm (147s)
+warning: NtimeDspace/FiniteFieldTerm.lean:96:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/FiniteFieldTerm.lean:96:46: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/FiniteFieldTerm.lean:100:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/FiniteFieldTerm.lean:100:60: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/FiniteFieldTerm.lean:125:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/FiniteFieldTerm.lean:125:41: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/FiniteFieldTerm.lean:126:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/FiniteFieldTerm.lean:126:55: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8977/9090] Built NtimeDspace.NetIntervalEntry (174s)
+warning: NtimeDspace/NetIntervalEntry.lean:145:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetIntervalEntry.lean:145:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetIntervalEntry.lean:145:39: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetIntervalEntry.lean:175:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetIntervalEntry.lean:175:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetIntervalEntry.lean:175:41: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8979/9090] Built NtimeDspace.RowTerm (174s)
+warning: NtimeDspace/RowTerm.lean:43:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/RowTerm.lean:60:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/RowTerm.lean:60:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/RowTerm.lean:83:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/RowTerm.lean:85:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8981/9090] Built NtimeDspace.NetTable (140s)
+warning: NtimeDspace/NetTable.lean:195:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetTable.lean:195:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetTable.lean:196:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetTable.lean:196:31: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetTable.lean:200:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetTable.lean:200:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetTable.lean:200:68: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetTable.lean:202:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetTable.lean:202:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetTable.lean:202:86: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetTable.lean:223:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetTable.lean:223:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetTable.lean:227:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetTable.lean:227:33: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetTable.lean:230:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetTable.lean:230:33: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetTable.lean:231:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetTable.lean:231:31: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetTable.lean:246:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetTable.lean:247:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8983/9090] Built NtimeDspace.GroupedTerm (151s)
+warning: NtimeDspace/GroupedTerm.lean:107:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/GroupedTerm.lean:107:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/GroupedTerm.lean:112:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/GroupedTerm.lean:112:30: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/GroupedTerm.lean:149:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/GroupedTerm.lean:149:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/GroupedTerm.lean:150:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/GroupedTerm.lean:150:41: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/GroupedTerm.lean:244:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/GroupedTerm.lean:244:46: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/GroupedTerm.lean:251:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/GroupedTerm.lean:251:60: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/GroupedTerm.lean:276:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/GroupedTerm.lean:276:41: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/GroupedTerm.lean:278:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/GroupedTerm.lean:278:55: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [8985/9090] Built NtimeDspace.NetAccess (180s)
+⚠ [8987/9090] Built NtimeDspace.SignTerm (198s)
+warning: NtimeDspace/SignTerm.lean:55:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:57:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: NtimeDspace/SignTerm.lean:59:61: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SignTerm.lean:73:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:73:62: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:74:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SignTerm.lean:76:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:76:60: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SignTerm.lean:77:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:79:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SignTerm.lean:79:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SignTerm.lean:79:51: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SignTerm.lean:160:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:160:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:160:60: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:161:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SignTerm.lean:161:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SignTerm.lean:162:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: NtimeDspace/SignTerm.lean:166:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/SignTerm.lean:191:71: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:195:51: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:196:24: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:202:59: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/SignTerm.lean:204:52: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [8989/9090] Built NtimeDspace.NetSystemTerm (183s)
+warning: NtimeDspace/NetSystemTerm.lean:36:85: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/NetSystemTerm.lean:36:85: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NtimeDspace/NetSystemTerm.lean:54:28: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetSystemTerm.lean:65:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/NetSystemTerm.lean:67:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/NetSystemTerm.lean:78:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8991/9090] Built NtimeDspace.MeasTerm (154s)
+warning: NtimeDspace/MeasTerm.lean:213:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/MeasTerm.lean:213:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/MeasTerm.lean:213:51: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/MeasTerm.lean:216:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/MeasTerm.lean:216:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/MeasTerm.lean:217:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [8993/9090] Built NtimeDspace.NetSystemSpec (104s)
+⚠ [8995/9090] Built NtimeDspace.NetValueBound (104s)
+warning: NtimeDspace/NetValueBound.lean:84:0: automatically included section variable(s) unused in theorem `NtimeDspace.LocalSim.intervalEntryT_le`:
+  [DecidableEq State]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq State] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [8997/9090] Built NtimeDspace.TameNet (169s)
+⚠ [8999/9090] Built NtimeDspace.PlacementNum (174s)
+warning: NtimeDspace/PlacementNum.lean:76:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementNum.lean:82:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementNum.lean:82:25: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementNum.lean:87:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementNum.lean:89:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementNum.lean:99:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementNum.lean:109:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementNum.lean:133:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementNum.lean:138:4: Unused tactic linter: `change
+  _ =
+    labelN Q bits s (inputBits S) (incidenceVariable S inc) inc.1 / (2 ^ bits * 2 ^ bits) ^ (node : ℕ) %
+        (2 ^ bits * 2 ^ bits) /
+      2 ^ bits` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/PlacementNum.lean:146:4: Unused tactic linter: `change
+  _ =
+    labelN Q bits s (inputBits S) (incidenceVariable S inc) inc.1 / (2 ^ bits * 2 ^ bits) ^ (node : ℕ) %
+        (2 ^ bits * 2 ^ bits) %
+      2 ^ bits` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9001/9090] Built NtimeDspace.TameNetParts (163s)
+✔ [9003/9090] Built NtimeDspace.PlacementTerm (174s)
+⚠ [9005/9090] Built NtimeDspace.TameGraph (116s)
+warning: NtimeDspace/TameGraph.lean:23:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.tm_edgeTargetT`:
+  hm
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hm in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/TameGraph.lean:36:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.tm_explicitTgtT`:
+  hσ
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hσ in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9007/9090] Built NtimeDspace.TameStart (188s)
+✔ [9009/9090] Built NtimeDspace.TameParts (126s)
+⚠ [9011/9090] Built NtimeDspace.PlacementRank (143s)
+warning: NtimeDspace/PlacementRank.lean:46:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: NtimeDspace/PlacementRank.lean:62:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementRank.lean:62:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementRank.lean:63:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementRank.lean:65:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementRank.lean:65:54: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementRank.lean:85:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementRank.lean:85:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementRank.lean:86:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementRank.lean:88:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementRank.lean:88:54: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [9013/9090] Built NtimeDspace.TameArity (181s)
+warning: NtimeDspace/TameArity.lean:27:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.tm_arityNT1`:
+  hb
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hb in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/TameArity.lean:40:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.tm_portAtT1`:
+  hb
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hb in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9015/9090] Built NtimeDspace.TameInterval (139s)
+warning: NtimeDspace/TameInterval.lean:19:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.tm_intervalCountT`:
+  [DecidableEq State]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq State] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9017/9090] Built NtimeDspace.TameParser (144s)
+⚠ [9019/9090] Built NtimeDspace.PlacementBalance (192s)
+warning: NtimeDspace/PlacementBalance.lean:64:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementBalance.lean:65:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementBalance.lean:68:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementBalance.lean:68:23: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementBalance.lean:92:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementBalance.lean:92:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementBalance.lean:93:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementBalance.lean:93:73: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementBalance.lean:66:8: Unused tactic linter: `change
+  (incidenceLabel S bits (seedOf S Q bits s) inc : TensorEvaluation.Label (2 ^ bits) Q) = _` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/PlacementBalance.lean:129:35: Variable name `hh` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hh
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/PlacementBalance.lean:172:50: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementBalance.lean:180:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementBalance.lean:186:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementBalance.lean:186:24: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementBalance.lean:190:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementBalance.lean:190:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementBalance.lean:195:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/PlacementBalance.lean:195:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementBalance.lean:199:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/PlacementBalance.lean:199:31: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [9021/9090] Built NtimeDspace.TameIntervalEntry (208s)
+⚠ [9023/9090] Built NtimeDspace.TameGroup (137s)
+warning: NtimeDspace/TameGroup.lean:32:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/TameGroup.lean:65:40: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [9025/9090] Built NtimeDspace.PlacementSearch (213s)
+warning: NtimeDspace/PlacementSearch.lean:254:59: This simp argument is unused:
+  denote_lvl_acc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [denote_add, denote_const, denote_lvl_index]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9027/9090] Built NtimeDspace.TameWeight (204s)
+warning: NtimeDspace/TameWeight.lean:55:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.tm_letterBitsT`:
+  [DecidableEq State]
+  hL
+  hR
+  hRpos
+  hN
+  hq
+  hbv
+  hbpos
+  hbp
+  hσ
+  hinit
+  hwk
+  hW
+  hpowR
+  h3
+  h3b
+  hcr
+  hcc
+  h2b
+  hrun
+  hlet
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq
+  State] hL hR hRpos hN hq hbv hbpos hbp hσ hinit hwk hW hpowR h3 h3b hcr hcc h2b hrun hlet in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9029/9090] Built NtimeDspace.TameSeed (108s)
+warning: NtimeDspace/TameSeed.lean:21:70: Variable name `hdl` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hdl
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9031/9090] Built NtimeDspace.AssemblyPrep (215s)
+✔ [9033/9090] Built NtimeDspace.CounterAssembly (123s)
+⚠ [9035/9090] Built NtimeDspace.SeedSpec (210s)
+warning: NtimeDspace/SeedSpec.lean:105:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9037/9090] Built NtimeDspace.CounterAssemblyEq (127s)
+✔ [9039/9090] Built NtimeDspace.TameBadCount (130s)
+✔ [9041/9090] Built NtimeDspace.NetworkCounter (129s)
+⚠ [9043/9090] Built NtimeDspace.ParamTerm (121s)
+warning: NtimeDspace/ParamTerm.lean:59:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.denote_clockT`:
+  hx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/ParamTerm.lean:60:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.StableAt.clockT`:
+  hxv
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hxv in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/ParamTerm.lean:79:6: Unused tactic linter: `ring` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/ParamTerm.lean:89:42: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+✔ [9045/9090] Built NtimeDspace.DeciderTerm (113s)
+✔ [9047/9090] Built NtimeDspace.ParamLarge (114s)
+✔ [9049/9090] Built NtimeDspace.DeciderValues (138s)
+✔ [9051/9090] Built NtimeDspace.Budget (111s)
+⚠ [9053/9090] Built NtimeDspace.DeciderCorrect (113s)
+warning: NtimeDspace/DeciderCorrect.lean:81:22: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/DeciderCorrect.lean:81:26: Unused tactic linter: `rfl` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/DeciderCorrect.lean:81:26: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [9055/9090] Built NtimeDspace.MainCorrect (120s)
+warning: NtimeDspace/MainCorrect.lean:78:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/MainCorrect.lean:78:29: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/MainCorrect.lean:78:41: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/MainCorrect.lean:80:43: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/MainCorrect.lean:80:65: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/MainCorrect.lean:81:16: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/MainCorrect.lean:82:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/MainCorrect.lean:83:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/MainCorrect.lean:83:29: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/MainCorrect.lean:83:71: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/MainCorrect.lean:85:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/MainCorrect.lean:85:27: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/MainCorrect.lean:85:70: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/MainCorrect.lean:93:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.contraction_lt_two_pow`:
+  [DecidableEq State]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq State] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/MainCorrect.lean:141:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [9057/9090] Built NtimeDspace.TameCounter (1009s)
+warning: NtimeDspace/TameCounter.lean:25:55: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/TameCounter.lean:25:77: Variable name `hCap` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hCap
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/TameCounter.lean:26:5: Variable name `hLb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hLb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/TameCounter.lean:26:51: Variable name `hK` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hK
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/TameCounter.lean:27:28: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/TameCounter.lean:27:54: Variable name `hIB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hIB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/TameCounter.lean:27:79: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/TameCounter.lean:33:5: Variable name `hr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/TameCounter.lean:33:38: Variable name `hrpos` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hrpos
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/TameCounter.lean:35:5: Variable name `hls` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hls
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9059/9090] Built NtimeDspace.MainLarge (148s)
+✔ [9061/9090] Built NtimeDspace.BudgetAsymptotics (235s)
+✔ [9063/9090] Built NtimeDspace.FinalSeeds (186s)
+✔ [9065/9090] Built NtimeDspace.UniformSpace (224s)
+✔ [9067/9090] Built NtimeDspace.Domination (241s)
+✔ [9069/9090] Built NtimeDspace.BudgetBasic (187s)
+✔ [9071/9090] Built NtimeDspace.BudgetValues (189s)
+⚠ [9073/9090] Built NtimeDspace.TameParams (179s)
+warning: NtimeDspace/TameParams.lean:49:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.six_le_kN`:
+  hL
+  hn
+  hcube
+  hconst
+  hc
+  hN72
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hL hn hcube hconst hc hN72 in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/TameParams.lean:51:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.lgN_le_N`:
+  hL
+  hn
+  hcube
+  hconst
+  hc
+  hlarge
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hL hn hcube hconst hc hlarge in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/TameParams.lean:56:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.kN_le_lgN`:
+  hL
+  hn
+  hcube
+  hconst
+  hc
+  hlarge
+  hN72
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hL hn hcube hconst hc hlarge hN72 in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/TameParams.lean:69:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.N_sq_le`:
+  hL
+  hn
+  hcube
+  hconst
+  hc
+  hlarge
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hL hn hcube hconst hc hlarge in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/TameParams.lean:88:38: This simp argument is unused:
+  kp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [NN, tN, lgN, kN] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/TameParams.lean:99:34: This simp argument is unused:
+  kN
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [NN, tN, lgN, kp] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/TameParams.lean:99:38: This simp argument is unused:
+  kp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [NN, tN, lgN, kN] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/TameParams.lean:102:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.lgN_lt_L`:
+  hL
+  hn
+  hconst
+  hc
+  hlarge
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hL hn hconst hc hlarge in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/TameParams.lean:113:30: This simp argument is unused:
+  kp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [NN, tN, lgN, kN] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/TameParams.lean:182:84: This simp argument is unused:
+  kp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [NN, tN, lgN, kN] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NtimeDspace/TameParams.lean:184:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.verticesN_le`:
+  hL
+  hn
+  hcube
+  hconst
+  hc
+  hlarge
+  hN72
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hL hn hcube hconst hc hlarge hN72 in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: NtimeDspace/TameParams.lean:336:65: This simp argument is unused:
+  kp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [NN, tN, kN] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9075/9090] Built NtimeDspace.TameSeedAt (184s)
+warning: NtimeDspace/TameSeedAt.lean:71:22: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/TameSeedAt.lean:71:26: Unused tactic linter: `rfl` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/TameSeedAt.lean:74:22: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/TameSeedAt.lean:74:26: Unused tactic linter: `rfl` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NtimeDspace/TameSeedAt.lean:71:26: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: NtimeDspace/TameSeedAt.lean:74:26: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [9077/9090] Built NtimeDspace.TameCounterAt (203s)
+warning: NtimeDspace/TameCounterAt.lean:50:5: Variable name `hσ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hσ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NtimeDspace/TameCounterAt.lean:254:45: This simp argument is unused:
+  Parameters.s
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [NN, tN, kN, kp] at hgroup ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9079/9090] Built NtimeDspace.TameAccessors (202s)
+warning: NtimeDspace/TameAccessors.lean:33:0: automatically included section variable(s) unused in theorem `NtimeDspace.ProgTerm.tables_le`:
+  [DecidableEq State]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq State] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9081/9090] Built NtimeDspace.TameMain (235s)
+✔ [9083/9090] Built NtimeDspace.MainFacts (232s)
+✔ [9085/9090] Built NtimeDspace.FinalBounds (241s)
+⚠ [9087/9090] Built NtimeDspace.Final (201s)
+warning: NtimeDspace/Final.lean:59:13: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/Final.lean:61:29: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/Final.lean:66:13: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/Final.lean:68:29: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/Final.lean:116:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/Final.lean:116:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: NtimeDspace/Final.lean:121:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: NtimeDspace/Final.lean:121:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+ℹ [9089/9090] Built NtimeDspace.Checks.FinalAxioms (205s)
+info: NtimeDspace/Checks/FinalAxioms.lean:5:0: NtimeDspace.ntime_ssubset_dspace : (Cslib.Complexity.NTIME Turing.MultiTapeTM.encBits fun n => n) ⊂
+  Cslib.Complexity.DSPACE Turing.MultiTapeTM.encBits fun n => n
+info: NtimeDspace/Checks/FinalAxioms.lean:6:0: 'NtimeDspace.ntime_ssubset_dspace' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NtimeDspace/Checks/FinalAxioms.lean:7:0: 'NtimeDspace.ntime_subset_dspace' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9090 jobs).
+build done 2026-11-02T07:54:07Z

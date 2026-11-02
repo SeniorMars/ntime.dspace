@@ -1,0 +1,6 @@
+{
+  "challenge_module": "NtimeChallenge",
+  "solution_module": "NtimeDspace.Final",
+  "theorem_names": ["NtimeDspace.ntime_ssubset_dspace"],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

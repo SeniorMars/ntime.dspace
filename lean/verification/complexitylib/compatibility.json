@@ -1,0 +1,1569 @@
+{
+  "checked_at_utc": "2026-11-01T07:20:25.499598+00:00",
+  "success": true,
+  "revision": "a696d7b149f95e241251ed0f575645d6468a9ccc",
+  "manifest_sha256": "b3ce722a61524caf7f8b53362577a1e74562295e87499f780f22e1e282c4f142",
+  "compiler_githash": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "cslib_revision": "82db31eec215b6843be6df283304cc02e736ddef",
+  "mathlib_revision": "69552756cd8a2d2d48763cf7279fd814d6a1224d",
+  "roots": [
+    "Complexity/Computability/Machines/Turing/MultiTape/Complexity/LogSpace/QueryMachine.lean",
+    "Complexity/Computability/Machines/Turing/MultiTape/Complexity/LogSpace/CounterProgram.lean",
+    "Complexity/Computability/Machines/Turing/MultiTape/Complexity/SpaceInTime.lean",
+    "Complexity/Computability/Complexity/Classes/Hierarchy/Space.lean"
+  ],
+  "modules": [
+    {
+      "path": "Complexity/Computability/Complexity/AcceptCount.lean",
+      "source_sha256": "d24ff1dc9581f985cc4b6743387f63d0f0ac8152caebcb51690b29f0f457f9be",
+      "olean_sha256": "56a63cc113fb40d654245ae67d1b1424c659f4f34e00068980d4e390ec1de8a7"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/BPP.lean",
+      "source_sha256": "50e5e8f3aab2515fb8bdf1bf1fe7be05cb9a32f30878006361d830b3449ee2ef",
+      "olean_sha256": "cb39102e8fe9bf501027220f00ad4de1f00aa27eb0143f2bd0d5a476bde688aa"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/Constructible.lean",
+      "source_sha256": "266e7446b3f563ed51c5c81379d6c6c2aa4c35abf9318b164cde29aadadd51ab",
+      "olean_sha256": "fe5adaecf9887aaa8ad17916f22f3fa377fb3b9bf843f6d084c77a507836b924"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/Hierarchy.lean",
+      "source_sha256": "ae90138cfb94d6a81b0fa313382580ad0b510cd9a4acd48c7f5c0a4265ece0c3",
+      "olean_sha256": "80f76e6cc7d51f024594a9eed06c46456b655d70c9785bd25366940756d0aacd"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/Hierarchy/ShortDesc.lean",
+      "source_sha256": "7719bd757766378c32dcfded92d3d186d6d88f84540d56ea4111ec4c8b049f7d",
+      "olean_sha256": "4d0533d2e505804b2658e0dca9483ea0071f64f1505aab65a4bf34ad2b3eeb91"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/Hierarchy/Space.lean",
+      "source_sha256": "8c6d1b47da6c16e2d26a40859c80f0f82658983316e9d64f594fdbc779d72718",
+      "olean_sha256": "ad867a5bc21a7f4871ac708e80a3af661179f040c90091cc7582fe0ffec4643a"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/LogSpace.lean",
+      "source_sha256": "8319f01d549fb4e31fe3316eb0f52321c4042e2837c3c029a790cd49f39edfdc",
+      "olean_sha256": "e734fb1d4b62fd5dac0f2463370f466fd55e0b8af79fb85c0df4f7031241e252"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/NP.lean",
+      "source_sha256": "bd7e319f1ef272787994bb5ff5b682c3fc81b6931e76329db3b99a64597e5230",
+      "olean_sha256": "9fc60d47c76e276447e69bffd9333e002ece374892a693b22dbd475202cc3933"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/NP/GuessVerify.lean",
+      "source_sha256": "f1c4d6181b6085bd8c06a49dfe886804030444cb61befc41cb0a052ddd9bd5cf",
+      "olean_sha256": "435a1fe8fa88b840b71c95bbd17ea03ba3917fd7b2796cdd9272fb67d57e9a2d"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/NP/Nondeterministic.lean",
+      "source_sha256": "738dadea756f7ec89ccd7d812e5a07f7fd53d923f4ae58d5d30047a3ca0a07ae",
+      "olean_sha256": "f0880ffcdd8b1e41bb6dd656841fa150d16e842ac7b1235e12acf7e6d12c5d09"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/P.lean",
+      "source_sha256": "21cdc3b8555dcd6bbd2e9aaa04f0bbc66a04c1c9cf9fcf345ebac14be0c5a123",
+      "olean_sha256": "2b7d51189e6832b442817f060c3f6990718ac039d20b66594aff150568f7315a"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/Promise/Basic.lean",
+      "source_sha256": "29537721c2040d56137562eb1d96a309e954214e0aa14c615716f4fee202455f",
+      "olean_sha256": "a2dba4ffa07f45f9d13d12b2d2a2d7f2ed1268e104fe799da4544c69dd153253"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/SharpP.lean",
+      "source_sha256": "71330a5b6731fc3a7481eb9a1e881a676bb1dad0ee1a62870fa286b010b2cffa",
+      "olean_sha256": "86a5e7f6ac7187405fec81409dac8e53d63c83da8b28abf0390c93d97392e6c2"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/SharpP/Probability.lean",
+      "source_sha256": "c5cc516f8c85e9263e785e689cb2f8c4c8a0024527c319e80f00409c39d6d524",
+      "olean_sha256": "834811e2252f4ec7b088bb5764862dbf4dd234f6204cc09d0197f95cde1fdc91"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/Space.lean",
+      "source_sha256": "4f90db46434b8bbc43218377bf0c03a9f967549566b8107cf8eb775b87a2acd0",
+      "olean_sha256": "7fba5e5c3389262ea28a89bb26ef25ea65e9ee6c7a5ad8a238819323a6c5c330"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/Space/Basic.lean",
+      "source_sha256": "0f7b4bba045d88e8c57f5ff6f9d857916e8a8c75de1ecb10a9bd81c9db056ceb",
+      "olean_sha256": "fec19692233c150c7a962cb0ca799445e2ee6b69f4706af5e03932708469dc77"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/Space/Time.lean",
+      "source_sha256": "f9872157df6c8fbd8e1818e95e34c1db05d8b4eac99c1e1c5b5b35933db9d5ff",
+      "olean_sha256": "4c5b089aa6dae601a8a950dc0964794b510ee2f5ad4c72ff1fbc6dac9de24fa8"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Classes/Time.lean",
+      "source_sha256": "f827c2730b61104034f5064fdbb0a432a4694433ee2d3eabd9b188d0c23bc527",
+      "olean_sha256": "c3a5809af4555afc357cf5d14806aafa3c86adcdec2e148ae57391c34857db75"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Reduction.lean",
+      "source_sha256": "9470505751c42abd37c8be11f5961e8272dbc7b52e6080bd09d66c14761f25d0",
+      "olean_sha256": "89a6723e5685bf99f34657fc3309eacc3b7e49ba63bf200546a84c61b06c2867"
+    },
+    {
+      "path": "Complexity/Computability/Complexity/Reduction/ManyOne.lean",
+      "source_sha256": "9bf3391167a5eeb3c45944969367ac00447997d54bd29ca79878ad6f9245b9af",
+      "olean_sha256": "90d3289242eaa014397b62282d5c114291a8171a2f4ea0ec82b5c19acc9585d2"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/Append.lean",
+      "source_sha256": "4b0a9902731aaf8ab0367a2ad3f3a8b101fa27577b03d4e5130b0cc5b42108e1",
+      "olean_sha256": "90e55fb0ebc626540812474717507282717dab13661ffe81e7176c06fc943146"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/Comp.lean",
+      "source_sha256": "b53262a460b37da6eef9bd43a35bb064d650c738da87a2df314bd380af34c14f",
+      "olean_sha256": "a32dd6b8fa57c4d9560d680fcaa01987d949fb9b94b3dc4ad2136316d1e36ace"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/CopyWord.lean",
+      "source_sha256": "9d83bd5974fb7e86962379ca47e699be8e179abc2553f44e40b490a38afe9909",
+      "olean_sha256": "a753077f91cb7ca285b8eeb601be9cc24ea73ae0f346140744fe75b128e5df9a"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/Encoding.lean",
+      "source_sha256": "28d7f7be10808119631593cdf64c8ff3cb1adcca672a76b2ae00c9f06b1e829a",
+      "olean_sha256": "4b22a19440f24c68831a5cb1ab7326e05ff923b0038abf0b157f42eaa0f5201c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/Foldl.lean",
+      "source_sha256": "ba9c3e34de1011d666b2de1e969a0969d05b33ad2f6a16ce2e316d1f02539886",
+      "olean_sha256": "3606fd68eb1810cab049b3786e0c1d759a3ce48b02abd7e217efbd99f87cbcb4"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/Id.lean",
+      "source_sha256": "d58c5abe940a203a657ec5af812d46f04972f6d9533c4e92a357d4b8226d9fc8",
+      "olean_sha256": "485b7e6b5e0ee629ceb636604b9ad308657390a5f6ebbdbbaa640a9c68b22efe"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/Ite.lean",
+      "source_sha256": "57b88564c1f993043935689b98faa278340be30e663c5581f40f30e14b4f3dc3",
+      "olean_sha256": "6d3a530ad793de3f7e3d69ba5cc7882fcde1ed861960b3d7e0867f84fe5d23db"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/IterateWhile.lean",
+      "source_sha256": "4ddb09057b0270b760d130f24756210f70c9e701b9ebc707a7108f0c0b767d68",
+      "olean_sha256": "586547a60362b67a200a2a598f22ea46ae70f662ee5d63343c5d0959f160e2ff"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/MultiPass.lean",
+      "source_sha256": "24bcdeaf1aaa5dd7d03192245599e67611bc7111b048c38af96516299e20cf3c",
+      "olean_sha256": "3626699b48a221e61b4d8816456b54c7fb48653c6803e6f912613974e277cc18"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/Reverse.lean",
+      "source_sha256": "6c284e2a424b0cd645cb40438f41576616375465bef5598bcbd21497d1248a8c",
+      "olean_sha256": "19523757a133d815b66d49b7bdca6fce86d18892bfffff54ed9e3c2a071411cf"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/StreamFold.lean",
+      "source_sha256": "5a17e5c86a6da4e2314026d7dfe7bdea0e57c1fff5127f5741b12dac7d66b140",
+      "olean_sha256": "b0a2ce9ac112c80392abe134847ac125ad7ba77845dcc7f9c0ce41adc347e301"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/TidyNormalForm.lean",
+      "source_sha256": "6fb90145bc53a770475862b3c2abdcca6328248eaa42b2fc04ed456b64ae4955",
+      "olean_sha256": "5baa90a1424d1e11ffe637fa177ba34c2fd986a07f5bea7b4b98fed3651351c7"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/TidyZeroSpace.lean",
+      "source_sha256": "2dd2650b0a896665d9e4fac8fccaabbb75391cc03556adef794e96dc5f692a45",
+      "olean_sha256": "412ff947a6e0824f0feaef78e8f5116ce5d9710223a22fd423c5a293416258f9"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/Transducer.lean",
+      "source_sha256": "af58a69d8d09eeeb5629a8d11cfba307da02416a6b4b8de054d5ae4b6750617f",
+      "olean_sha256": "f33149fb013977fabb2ab1a046af2a5afb13b9b6bcb14d9a49fcb532f48d2379"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Combinators/ZipTransducer.lean",
+      "source_sha256": "3500d3876879bcd53a161d4c657665920cfac41429474f3bb2b70569c91daf61",
+      "olean_sha256": "aec7660d5c349c0ac46daee82fc8f73b5635e0b685196923b14fec3ad5c79fc5"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Arith.lean",
+      "source_sha256": "4e1e273247e21a1a6b5283bf96cba99a2884cfa514b6fb6e1b6928b364823303",
+      "olean_sha256": "3a940f3e2580639e4c2a4c631a52d488e14ed0dbcfa01a37c62a36e735214e83"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/BigO.lean",
+      "source_sha256": "6820bace97e8b27d1632dbdd1b643bdadb5dfd447c2b52f87e57576f5e70db9f",
+      "olean_sha256": "c241be8f9bb739acbc249aebe109d6ebd7958460e5e1b0f13d276bfb1b3c9399"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/BigO/Bounds.lean",
+      "source_sha256": "8af883de605774200a3582bcb7359e6a7e6c7db8e4bbb1819c1dac5d769f77d1",
+      "olean_sha256": "675545fa69b1129569174aefbbb41452b5405277ea06905b638c936bdf000796"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/BigO/Constructible.lean",
+      "source_sha256": "5b2a8fd77f2fb6feb3d8a883289c70f434713ba0b3b54bdb6d90b228f97efc89",
+      "olean_sha256": "587199c19674e41d0ea1ec8275de7017555cf85e7c117940e6889c4eb6e620da"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/BigO/Lists.lean",
+      "source_sha256": "97c4369dd46e92a0852e1a62454224ae65ed1c44e173977dc522f666db0be5c7",
+      "olean_sha256": "6b6300e3b27c16965ba4fdf7543907d1345d9d0181ef03b4dc0d1679a88d3f55"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/BigO/Plain.lean",
+      "source_sha256": "c6bd2634a823e7a085c4caf7a1efcb2e212067f75ec3d80012145da13129c902",
+      "olean_sha256": "89ade93154c6e3d3274052f0be964ea28b065107f637584553cf5831bf672e3c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/BigOLe.lean",
+      "source_sha256": "0a55e7314745a720681e4597713708edc2086faeea5d6d0d04e4a5e00dbae787",
+      "olean_sha256": "d83338072a8ea80a9a439e2cfe7fd12c2c1a6954b8f41a5df2a2f8afe85957fd"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Degree.lean",
+      "source_sha256": "0040664a07896d0177a121096a234669c22ae49e680553c2336fdb49b5659513",
+      "olean_sha256": "f812a8aca013e5a69a0894c1483e014b97539fde22b208a90405f0d8c97ab60b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Degree/Bounds.lean",
+      "source_sha256": "62c26cdd3a02073760114393c57201ecad8ede1e6c5b8af6f8189da567d55613",
+      "olean_sha256": "ec9391dfbe999eb22ac8fdbe6d6d07434f0e4516c5b8ed4fd559ff453649f132"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Degree/Primitives.lean",
+      "source_sha256": "e7dde5bd65f4211512257e233e0e3e96a66fd4b11f8e863b685d11f514157944",
+      "olean_sha256": "9ab932879ecb559d227df095c45b05b2db618da3d4b0aa4c1dfc5b4807660507"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Fold.lean",
+      "source_sha256": "81b6fe48dab9ea6624c419af3a281f0d9cc677ab0069cf278a2207885d22b130",
+      "olean_sha256": "5ddb6ecd720cae750ac370241f0b0fc1bb8301f922608e6e4079ef514ef7b31e"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/InSpace.lean",
+      "source_sha256": "565e03c72b68f9c2a9e7c19596bc4e1cdb0558263bf2474423293d296400602d",
+      "olean_sha256": "384867d6714529b4d5f03909a512e9738b3deeb4fc97ed5d10d100a1e5b29444"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/InSpace/Bit.lean",
+      "source_sha256": "e34372103c840ee04f2a5805897f142b5b293b38c27ce49fd4dd513c81406a6f",
+      "olean_sha256": "dcea0998934ee048eec6e863d8f9c01c6af19abae8bb81d033bf2112f875f0b4"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/InSpace/Plain.lean",
+      "source_sha256": "9d3e8c21f2fbe399709a3913bfcd830c6aaeeccf3355e504bd2c2990572fd337",
+      "olean_sha256": "4ee3a1b9b85d1e018d28abf9ed6846c53fd044a493e49ab260369784a7da3c46"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/InSpaceLib.lean",
+      "source_sha256": "0bb44a05298d8167a3079bc7a03a59f7e45c95c2fad9d39cd09b26d2d7d63ae6",
+      "olean_sha256": "1d678258681114a0996f75d510ee104213a840027882261960178b7ab2685600"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/LinearSpaceArith.lean",
+      "source_sha256": "78f9c2ec5d1b6683df46015f524c0735514922959fd6d90d816de0e0e46976ca",
+      "olean_sha256": "952c917ae7134373ac20bb5774dc7a248d323a5f9a653626c7b6622b8449b00c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Lists.lean",
+      "source_sha256": "d378d0e7caf211de27fdcd239ae0441650f4435891b14c74e3d59b40a3736ab2",
+      "olean_sha256": "d80ba67c20e96ff2a7089b7e92882b69ee3c0dc9f243a8a382b7d398b4429cf4"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/LogSpace.lean",
+      "source_sha256": "52a082f0b558c6622db746dc402bc9d4fe1216c08730889676121837d09afb5a",
+      "olean_sha256": "79b06d4efa948fb9833e4e916e2be2195f0f4ca85ca4ee40e1f46af7923ff9c9"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/LogSpace/CounterProgram.lean",
+      "source_sha256": "dc2c3aedf852bdc8b08df3f6adbd713d1fbc30611c3b354d5c842ff9c2d6aeb1",
+      "olean_sha256": "13e2f5c9ae9e5fa6800f920079654ca0ad19611f2aa83d15ebb63e83faa9a04b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/LogSpace/QueryMachine.lean",
+      "source_sha256": "766856a5c15eb743e89232dfbeb9259cd5c7dd30eeddaef9a3cc037ba1032575",
+      "olean_sha256": "8331521efcf31fd256ac6e76b81140833406c080a6e4aa4f97d521cbd530bf90"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Nondeterministic.lean",
+      "source_sha256": "365fff81ddb1be22e77d7bb48cee1da1c2a657be413300736b83c2d6438874a8",
+      "olean_sha256": "d223e57acbd7b750e44dbbdfc97d0654dc6aba4a3a9ebff0d30444fdaffc1f41"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolySpace.lean",
+      "source_sha256": "13a368c1b0262fb28a46184e21f3b55b5d0b3c7051a1866e1ce0e1f7096c1f59",
+      "olean_sha256": "98ccf777ae5b14a78fe78c4fb2e9c22ecbd32c56ba29efd19d47eadb1354a8d8"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolySpace/Plain.lean",
+      "source_sha256": "aa30f5bb69c505892ea6e3c3f4f7e1b1aa49545c811f108fa476f5799cf78d4d",
+      "olean_sha256": "ef9d810f0a151ee981193e5cfc6b9471d2cf8bd82a329991f65f8837111b225c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime.lean",
+      "source_sha256": "5c7c2f57c42e85fcb2fc22a4b8fcc1bbfc60aa31277edae6a477cd9f306ecdf9",
+      "olean_sha256": "774456d5657cf0f18f76e4da5eeb474e8940dea65d79209206d856fb1ea17b10"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Basic.lean",
+      "source_sha256": "5ebf7d88cad563f5b98f75543bfe66a7bd4c289a696222a82e983ddb3159d2dd",
+      "olean_sha256": "048c23074d9b4282139aa905d16281c12d3ab15efc0dfbc48abfced51f0e1160"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/BitString.lean",
+      "source_sha256": "c5f98dcf3660b30bea1074d6e95cf83521af2eac022cf6f79cc8887725a3240f",
+      "olean_sha256": "3c2a0cfa4a22850c78631185b9be57663aa5e6d25b7813e64708eecd0855bb5f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Bounds.lean",
+      "source_sha256": "5ba63e828bb91ab78d8f1a776bdf626b9c6c667c7a02bc941f2c2a7d4238c501",
+      "olean_sha256": "1b8535d6a6b1ef33b3993c3b3b5e994b14a2f6bbdc27d4e0712571b53563348c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Configuration.lean",
+      "source_sha256": "81a2f5e9789a92cc3dedfa88543b598e2507573368bd40d9e095313a79030c3d",
+      "olean_sha256": "6c4869a9a7cb31fcb004e637cc42f1e99d8f91c36d9aaa380472554d91b1120c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Finite.lean",
+      "source_sha256": "2216b5d13b3aafa68ecd29a36d332b37df5ce239d8550818d8e7557946027dd8",
+      "olean_sha256": "fbacb2e9a7f1f5e8f9a961bac28bb18c59c7bfe595d0cf1403c2191e46ee0b66"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Fold.lean",
+      "source_sha256": "33d172d5bdf78014012532cc9a50dbc3dde5a4b19fdcd15809a2385cf8d8fafd",
+      "olean_sha256": "909888c992576926b79a79da65c0802c09e55e6a7767b6a5788093574449e68b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Iteration.lean",
+      "source_sha256": "60f5d997dcff47cdfba9fcaad3afff9d1eabc90324d28e93f88374c3d5b5b386",
+      "olean_sha256": "42d6cda4b2ec34da45c3f2867c755bf5f654c2900102964b95d9fea1410b2405"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/List.lean",
+      "source_sha256": "54873d061a800b8b883aec6a9f6739d970dc857f9fcb32a3f0884721fe7250aa",
+      "olean_sha256": "69860b6e87b1b37c8733fed80adf01b29f91285263e1b56c56374347bfe9d20f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Nat.lean",
+      "source_sha256": "cdd991e0f1f46961cab482832da24f42e95254ec2f57e38af2ae06380a1f5e63",
+      "olean_sha256": "4890cb9213688d81b9074382e4d3d0068f0870253222b81afcf4e106d6f878de"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Nat/Binary.lean",
+      "source_sha256": "07ff9745cd8cbfb77cd34ae4d35371a8a7416205284ce0a4730e00394b73079b",
+      "olean_sha256": "8153f5531c253538b6e417543c9b701039dd947657ab25984ce1c24bb34c1fb0"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Option.lean",
+      "source_sha256": "76a04ec36e2769972895e13387ff333df5cc885aa0ed7c1cad48144c4c03c0bb",
+      "olean_sha256": "81a6471aa3b474af52b20dcd1ec54a3958755b16c2c78d9d27ba94965150a485"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Pi.lean",
+      "source_sha256": "865ef15b2c952e0a4e69a7bb0334fe947c7198a6da0dad218930c6af4980f8aa",
+      "olean_sha256": "e951c18d784132d1b0313aa1e9468bdc5cf029ba99dc5919f9e09577c6e4d768"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Plain.lean",
+      "source_sha256": "1c0bf28ba5aef5a14385472df0e2b3290ee6c243aadd75c139084728b49dfd1e",
+      "olean_sha256": "ac5a240532f61598d1c85bf3dd5c86b3a0f229450d1600b14cdde4c24fe9c756"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/PolyTime/Tape.lean",
+      "source_sha256": "c6482c23cf13fe8de1507c00678c6132066a338a234cdfbbb08904194481fa9e",
+      "olean_sha256": "7761bb1c51d4f393a0b8f2886af82f91e7753549be26634652b62860a66b4374"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Primitives.lean",
+      "source_sha256": "494eddf42a58a1f872506a902285f73440771d4fc4cb5d68a3489d31f77401c3",
+      "olean_sha256": "c91a9ba0ae5653c7aa71748d2552ba1707fe3d2b9ae7f5e4b14b30746718d803"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Quantitative.lean",
+      "source_sha256": "af47c2571a6ae350b152879f63526454a685ac70c07aaec2d0347defc7aeffd5",
+      "olean_sha256": "3cb8c9f344848d423921e7aca387fc96ab27d80ed4aeb7ab7b85ffb0d12d472e"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/SpaceInTime.lean",
+      "source_sha256": "a378357c866eab898c071bb73f246bbc75a20c09c41704a3cb9f0b7c07ec7527",
+      "olean_sha256": "204cdc38c833636b499031b75c67e70ec47d72168b8bd04e3ee7a089f6c092c3"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Streaming.lean",
+      "source_sha256": "711ab0bb927454a0f5070d2b56ae6c96df9a146978a45aa570f734dd257a5b83",
+      "olean_sha256": "5ac2ea4138299b5c319984ddec7cdefabc8493675f407f2a4bf8762f13e4219e"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Complexity/Translate.lean",
+      "source_sha256": "392e44ba78003f5465d0b0fa47d2baed00b11963716ebbf187fbdfc3c9d03fb8",
+      "olean_sha256": "f6617a55beeb4074a2c579082f035354f9250fdf007f0082d9a475bca977cd9e"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Configuration.lean",
+      "source_sha256": "e7490aa91913bad937f36d6c0333487b99cf49969ef8279ff594d13ec7d78b9c",
+      "olean_sha256": "da3ccbfbe8e1276084ff8dd0d8bc70b17c91bab6be5b983133077b6a7d588cfd"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Deterministic.lean",
+      "source_sha256": "f9fd2f7010033633f371075af06559ab5310699b83cbad7239a538eddb44b144",
+      "olean_sha256": "dbfed1f19a67c228fee8909fb42b3d60c3feffa6cf4b2383aedeb81de6241423"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Basic.lean",
+      "source_sha256": "576bceaa036479e685583c90335e4438eb1ce11e552dc74496c192102b1b12d7",
+      "olean_sha256": "e3ae9d255371d2278b6b5f8f8267014e286ce7e4bc79826cd51ef2e717dbe590"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Bool.lean",
+      "source_sha256": "7d3d0fc44712c34103611992e9d8f494e434a97bf32c30ebd586a5292acfe122",
+      "olean_sha256": "221c72372d8def13b31f4d0580b0ab94e10e86c47dce31f833be096419ff81d8"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Capabilities.lean",
+      "source_sha256": "88a792026015053074f2ee90a9b5f8de62969d7a982d67fabf411433c45dcf57",
+      "olean_sha256": "6e1bbd2cfdbb92efda0144350d78740f5b8264a2d7e0afe61c09e6cf44dc9533"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Configuration.lean",
+      "source_sha256": "ccceb058d095c32501966ba94b3e3fd2acd8c027c0f5e8858fe2ca002e043336",
+      "olean_sha256": "65952de28166647a040ffe4a79ae4cf887a58d830d1912ddee13eee8364b0d67"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Decoder.lean",
+      "source_sha256": "1d569c8a765bbf74c71f09ab2823cebec1de58ac01819122105bc0b52e3d53ae",
+      "olean_sha256": "d1719d627a06baa71dd10f012534c17c936b6b3f7569ea1bc5c903e26687cf18"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Decoder/Basic.lean",
+      "source_sha256": "c95c1076ffdcb5eff3d64b0467fadf894bf030ee5f75e0f6a846b998de35e586",
+      "olean_sha256": "9f038c5e31fd0baa7464940e2b5066630274664592dbb11bf11cb2581563e4e0"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Decoder/Nat.lean",
+      "source_sha256": "829755a3e04628816669c37c9fac4231775ac71e6ab6637d51035f3b4442d97f",
+      "olean_sha256": "2750fdb65c9fbec97dfdd13f0ce541ccbc516a76b17a1a0d37540832eeab9c14"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Finite.lean",
+      "source_sha256": "3e95277701cd26bd2f61bdad62cf18bc546e8a432cc169363b6d2ce99e1e5e97",
+      "olean_sha256": "950eda6b603349f6db47e1ffe75b1345412e14db307479e599f9776823587edb"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Frame.lean",
+      "source_sha256": "59483ff4ca6254a0ce45cd9496d038e9707ffba3ab15da761c1f51b88d4c9fd3",
+      "olean_sha256": "8cc70d1043d5838208ed55705e68980682f3b82778b30a1873539e182350ebb9"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Frame/Basic.lean",
+      "source_sha256": "4b02ab349ad14ed0d5f7c715e244c86aa0a33652e1d4469bd06fd1576962d3cd",
+      "olean_sha256": "fb53ae072fdb87b8a49c49ccdc526a0fba90e8c83e6179e1c36d71a0d407fc4e"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Length.lean",
+      "source_sha256": "150459a0b3ef779860111cdab0b287a8c9df3830a82ece6888676e8e68bda4f2",
+      "olean_sha256": "2c406d76f1c9b7f85c435a34a4ece37014504079b68aba0d8ac7b45b002218c3"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/List.lean",
+      "source_sha256": "26cb9abee7cf0216eb2336d439dabbc7f53d54f638367f433e19d8383e96032a",
+      "olean_sha256": "631a0821a286767d2c19b4594a35c207129cb029c49f615f6fc623112e6c0d30"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/List/Index.lean",
+      "source_sha256": "1a5d484a78b6cf66e6e229b3d4e6488d582787a822810bcbff4adce561785ff2",
+      "olean_sha256": "8c70b61eb6631a1c0661f19f446ff4dc3443089b3abfa92f9cb9da9ea2f06482"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/List/Size.lean",
+      "source_sha256": "bd67843683eb8a7b37510692a865aab3aa647fb602b87e6fce1fdaec25b65a67",
+      "olean_sha256": "da4d42a52c81f6f1a4bc6c0a4146320970b845be1378bdbb9d77c7d53a8f6497"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/MultiPass.lean",
+      "source_sha256": "e7217028cb157f7550a1d4f25bbda814ee07c68ecc55a5b5d9b780602886ba6b",
+      "olean_sha256": "714851d914e39153df452d9807d735937ea2d41aca56caed6a6e66a523a69eb6"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Nat.lean",
+      "source_sha256": "7c9f21cc92ec0474d5d94a052a9afd3fc9e57b9332a65e50caa92cb43bfa5c69",
+      "olean_sha256": "bf40ef142841be8a7e475267548a6fc3f3129f861566fa20eab44fbc16113478"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Nat/Arithmetic.lean",
+      "source_sha256": "91e51abb9c9f5bd5dbdb5e3158eb01dafd9f3d48331a794ad529203e71b0e832",
+      "olean_sha256": "c190a220414aad8b76a7e409afc25fc84b692c8971fa8be681532d194eb3b6bf"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Nat/Bits.lean",
+      "source_sha256": "f38ce7d08e1c25c2f634c5e77f4488249b287764c00476878edc2655b420dc04",
+      "olean_sha256": "dc57b0c2c19277838c27a4fd9bc60cea902139b723ee47fb54c692adf4fbd728"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Nat/Division.lean",
+      "source_sha256": "877bb8e398b8f47a1fcc4aa310c8f07103a9c40871917545794b3a10f74a6f2c",
+      "olean_sha256": "b3008cf0bbc10388b8a24c644846a780b72c96c4351281a8eb144e55719f4581"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Nat/Subtraction.lean",
+      "source_sha256": "cc723c75bd80bad8da2fa8c08eebeb3ab3fd62c8e4b398d7fc73cb2c820c58d4",
+      "olean_sha256": "1296954331091f08574e1834d929f709503fc501a52aa0e14b4f9befde25591f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Nat/Words.lean",
+      "source_sha256": "e18d236fb35cabac7cc38a89e072b4aec4c59f0277af1f712e8a3772a40d4f3e",
+      "olean_sha256": "144f62a2f22eee8f897194b99c6b7d035c06110827233b83c63a95a0b026a710"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/NatLength.lean",
+      "source_sha256": "f50120c8dc17003637305572375b1344ca58edfb449050bc8c1e1ac230b1c98e",
+      "olean_sha256": "2aaf6075c0b0911e2a87a652d7eed3f80a98df8fc2aa5b31334c0e28ba0b5cc4"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/NatPower.lean",
+      "source_sha256": "21d328bcae6d858f7506b11a8f8927a267aa95aa6220bdb548d9e549f9c6ea82",
+      "olean_sha256": "52446facbd3f29cc3895eca01ae8201eb2e291c57903fc645b41c5a6a9c979a1"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Option.lean",
+      "source_sha256": "f6b8c5fe662b0b69cac81892d5c624628a02a72a9735ae0b2c5f76fc27f94bcc",
+      "olean_sha256": "83a091b601e7c3fd0858c6112a29f8640e6f719e9fb0b87c179a61ccce386fba"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Padding.lean",
+      "source_sha256": "b8a6380a4d4ac0f179bcc61c3fec93b3c3ae864381d19cf8f8496f7e5d75fbe2",
+      "olean_sha256": "9b8f0dcaf2b39cb8d6302e7bd1755e89d0cf696ecb437cc3208c9ca733ad7610"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Pair.lean",
+      "source_sha256": "56cce4b0b261676646e27b75220f3a13b3fa6fd6a22fe2010e2183c3aff378bd",
+      "olean_sha256": "4d29fceaaed5d22c4a569dde3b6ea1bb0e5d06dbc24b726993c2d3eba9f1775d"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Pi.lean",
+      "source_sha256": "74e5a3208b7d974631d7d99bacc83181919ce1d4627f1eefc8b3c9bad51b7c10",
+      "olean_sha256": "ced063299b4963646d46892609bbf1333e27f236f564578603a18b4f79fea5de"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/StreamFold.lean",
+      "source_sha256": "2f27fffe332e956b0c8aa575f8d5d4a9845caaf99af25e98293530d7808411de",
+      "olean_sha256": "82a8f7950434461b843cbb04a5e9d178ba33bd4488c5b9f4faaaa454e1d8f7da"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Tape.lean",
+      "source_sha256": "93bca04af6f8ac14bad68af9a15e4486228ce767ebea683787ae72cfc8e1351f",
+      "olean_sha256": "c403c47d09246c8bf320396e1513025a2875ced1559e9b861ad5bda3c5daa883"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Unary.lean",
+      "source_sha256": "f83b3c7506e4ffeb746aab1fc93a50f0f145763a7f419124542486d82eddd073",
+      "olean_sha256": "0ea7110dfb27b38c7c947df1d191267e6711d45a9b6e405525484e0707b36303"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/WordEquality.lean",
+      "source_sha256": "8570bca931ea1817055ab0743c74c71540f06806d77fdf74a9b6c1b8dfc72bb6",
+      "olean_sha256": "a7cf8bb433b314d0a761a62f8fa1b8efd4f0a3e1e89f8a5b26a993a1efb37c75"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Encodings/Words.lean",
+      "source_sha256": "ca521e6cbf9acdc72fd57c1b0afbd37cc749af63fc31629030c47160915606a5",
+      "olean_sha256": "e12de3041bcf2fb78fad8c68b85882d4225e14429f4e61c548de1ed368dd11bb"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/FiniteConfiguration.lean",
+      "source_sha256": "4232766d8523e1f52c3309a2e3c56031efb8ecc2c076dda0c42d004592cb911f",
+      "olean_sha256": "f25e1ebc2679f55c691eb163dff6edc8b54e3013df1a4f6a53942f4a6cfd845d"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Halting/Basic.lean",
+      "source_sha256": "1ff55eab63ee1a9a8bf9937da195e355095ca52e5001b8746f7a11a42df81cac",
+      "olean_sha256": "5adf3824fde697098a0ed1f03e4cd8a442a868e42632c513c147e6a1573ae9e3"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Halting/Computable.lean",
+      "source_sha256": "b39a772685c59eb756c1d02ead8c42101c01ebcfbb0240b8cd49d6191c524f3b",
+      "olean_sha256": "a4a69650887adff556ba1ad3f6439542edfb5b3c0f9a41af94593e205953f58d"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Halting/Computable/Defs.lean",
+      "source_sha256": "18c98f719c9228655c886854e972583300b9acd4bc514132422b9e861768feda",
+      "olean_sha256": "3a66f365fdc2ea2dc893f1df7058e38fbcddbaf4aef67f5c0f497ff32ec1c102"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Halting/Reduction.lean",
+      "source_sha256": "e3e47e26f5042f97b096ac5097e882ba8d765508287809566c6435acea8833d9",
+      "olean_sha256": "c140697d54d43e880a8ba9910dd2e2e3d65a9dc6699ec15db84e3dafb97e39b8"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/BinaryAddition.lean",
+      "source_sha256": "a51c90c44b113323d66b75ef8475163e2a687e53145096e05c10e05c4a952a2f",
+      "olean_sha256": "1af8ec115ac65a6d84c32c87a364dd09371573dea7ad5f166d4333d8fb941657"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/BinaryComparison.lean",
+      "source_sha256": "2cf01ab6b5ed0286a8fe51db7e569a5d5de8293f85186caa16c684985dd24e9e",
+      "olean_sha256": "f5bb4241cccd98c951c5b47e11f31d9c6b1d35b37f0ed1431b4ecd1ad031f59f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/BinaryCounter.lean",
+      "source_sha256": "8a18198910a180d82563d5e33ed868d9e6ab3d840b6b959f96bab0b07e1ffaab",
+      "olean_sha256": "e001b7e847bc8576f6cdc51a4b54470646636ba3e4243ec7adb9a5a2047ad34c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/BinaryNormalization.lean",
+      "source_sha256": "5f204312b64558a9c8c28e38e1de1cd8962ac20f449f2fcb9777e6fa02ce620c",
+      "olean_sha256": "49af857cdac9dffb37f4383ee4a049118a873ce2582d4505bc734759ba44b1a9"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/BinaryPrimitives.lean",
+      "source_sha256": "0b0d4a7b3772840f03b6ef675163f7c8b1fc221703c0e9c62c6df1177d49b701",
+      "olean_sha256": "a885818af171a7e62b086df7fb6c2b7e1cd34ded9ba0ece23e90382b99077ee1"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/BinarySizeFacts.lean",
+      "source_sha256": "9535b33431a13f604cca3da1565bbe7cd883d0f7072b96198d586eb11d1e6552",
+      "olean_sha256": "299d2aab6fd2f81da98852026132e11518c68f70f20d4bfe23a8aac312451abc"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/CodecWordMachines.lean",
+      "source_sha256": "8ed0980e00e0096c289e28020dc1d7bdad019f91090e10aa8c884e97a5e00a62",
+      "olean_sha256": "95726bb500abb9045a5d9a127857af09ac53340b97a2b411c63d70cc95d40268"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/ConditionalMachine.lean",
+      "source_sha256": "cb240f154f7433fe0d5a05e69de58680111e758716b5e06fd3709f6da78969b6",
+      "olean_sha256": "72896c26a013aa0dc7832db0fe3817271822d9c4b42671b3282d581996c680cb"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/DecoderPrimitives.lean",
+      "source_sha256": "daba1e0e9cd0cd4a9f547fc77ca26d2148430c5e41eff5837a237244c072f4ce",
+      "olean_sha256": "255eacdd563e1e0e69d517d74177a2afab9a4fa19f836407b7ef2c95c3ab4277"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/DecoderWordMachines.lean",
+      "source_sha256": "99accf38be19118b26f3fa139549d55f7b874295a4141f84eb4492528817311b",
+      "olean_sha256": "866727004f27a3996663b2d64cebd6fdf921b2692a9a8078be79e7c232788708"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/DegreeClosure.lean",
+      "source_sha256": "d15427986711f39f4ddc5685183e5952601dab0606ea7b0b9c8fb3087c6a1aa2",
+      "olean_sha256": "d1363cdb28884c8131b5358625c637cf6b36af14f418e88b5fc446e032881177"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/DegreeComposition.lean",
+      "source_sha256": "28ec7e605e09be7c8c30d0c8757343ddb48924af24aeb872f48dec96b407f528",
+      "olean_sha256": "70cf371c13c242380e1be6ed5fe66b40570fdf9cfc9546e38d79129162a5088c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/DegreeOptionPrimitives.lean",
+      "source_sha256": "f3c23f4823d686c70562cf5fd6ff5fff97141056a6f2619eb734a4557e87eca4",
+      "olean_sha256": "418d7f69e9625e9e0f2a76c888298580baa576a31871ff280c0ae8dc1943e7df"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/DegreePrimitives.lean",
+      "source_sha256": "bd07c378cb200cc5a94dd8866f61933bc1598d4dcb1873eb6c90bc47edab6615",
+      "olean_sha256": "dc75489e083194c8c7d7e7633c1b061ee84241c3ebf33baffb7a6b23bb8255b9"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/DegreeUnaryPrimitives.lean",
+      "source_sha256": "52bc3eebc45d80cf79e37b2cfdf528a4a881baf956bbc65c1af349fc374698e5",
+      "olean_sha256": "917032fd5a710cb782b15c51c0021de912d823485063b26fdffdc411b45b4ead"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/EqualityPrimitives.lean",
+      "source_sha256": "e3aeb5c9ca7bd729e8d4a5191b9bfd5f1ca77011254838a37a103bad3bd9d7a7",
+      "olean_sha256": "5d41f5e13c2b6c2b1253e9faafec8b3cbf5cf578a078c002850d208d297606e5"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/FoldCompiler.lean",
+      "source_sha256": "b08427156909f701efbcc900efd685bb1b1bf940646cd4353d1966e8ffef2190",
+      "olean_sha256": "3da53ff91a9830d0227c07bf8ba01cb5d11ee8591f7b5a2e2bf3ed2ff2ffcf48"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/FrameMachines.lean",
+      "source_sha256": "0aafa2fd5fceb5fd45345f3b6b71f98e853fa4aedff4ef88a0efc9d3e8b4ce9a",
+      "olean_sha256": "b0f39c773fb942e42bb4957b6685d4ca099a1f289ab8139d10219eff49457341"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/KernelAppend.lean",
+      "source_sha256": "a001130a9856831f9e761c3937875b514d85867ff23161845875f7770a33b36d",
+      "olean_sha256": "bc41464786ec922410c5980cdc62c86e5d2448d1770ffc8562f7fe1f7fab3b8b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/KernelComp.lean",
+      "source_sha256": "8b2ccd7d972ba76b08b66c09a0e219a963649622fede7eb5635df499fff0cd67",
+      "olean_sha256": "99f1ddd2c04b308ab469ae1cd0c4ba852aedc7c84ca598d9c707f2b63559c07a"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/KernelFacts.lean",
+      "source_sha256": "4032485fff141d9b206f686a3de0047ceebef4a4696dc2a4d2a5657fd1a3f34d",
+      "olean_sha256": "0a1d7cb9d09afc1f8a3fabe3c8a4191a216c67540490ea233541a4f4f4918df5"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/KernelIte.lean",
+      "source_sha256": "a6480eb974a2e65527084da052679852c315bd1449b45b67e29a12a0c34d6736",
+      "olean_sha256": "f6dd93c7a659fff65eff2f67351b4fce97ae630164516c124c40cb422b5d7d46"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/KernelIterateWhile.lean",
+      "source_sha256": "4a3cc88f6e3ea94573280ea36e4eddaae2f58ab63cd4cc2000812054bbb6f1b2",
+      "olean_sha256": "b129069965ce905e43b7a2fff959fe7de605090526747a7bfd0a29dc7a128cff"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/KernelNormalForm.lean",
+      "source_sha256": "6d3d2cbb68ecf305bfaf5f2126aba2da4c8da7e3c8bc3c9dd49bd3473d467fcc",
+      "olean_sha256": "ee0c5e9d44d981680f9128eb0859a8f35a2d8c158dd7b0639843e5dc01f16e2e"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/KernelOnWords.lean",
+      "source_sha256": "b4df1d73c5c0dc1d67ddc9db6fc765915a36dcb87a4fa39f11508ab6483cacba",
+      "olean_sha256": "b38e3713759a2b3c8ca70702ef6c1e66b378eba88281d6362aa344929d234ab2"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/KernelTransducer.lean",
+      "source_sha256": "d190ff4863ccbe2f406506df9609d7cdb7e325b1914f656abb224830847ca029",
+      "olean_sha256": "8d9d5f41e6013bdfe55cff0a832b5f2d8a7c5cdbb5124e50fd8c4e6fc733c799"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/KernelZeroSpace.lean",
+      "source_sha256": "ed4306ea7962ebb907561d9d39b85f5a0abdcabaecc98468009f020a23f5752b",
+      "olean_sha256": "0e95297e51f3295f2f053ca035766e4ebcc02cf1307ac8c6b1ce636939909b32"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/KernelZipTransducer.lean",
+      "source_sha256": "a3bb92fba057c5ef37b430ee2771a643bda9d0acb672e36bc33fc2ab72f1a32c",
+      "olean_sha256": "04e80e06937203c3f289fe6aca0d23d99304ec2d11dd0be74af23040403a03bb"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/LinearCodecPrimitives.lean",
+      "source_sha256": "55b2425a7f823f3a6555eb8cd19297293c0d79052c63d39c1315ea30d2015cc2",
+      "olean_sha256": "5c2696273adc5998070d9cd32d8c89cb8eb828e4b4eb195920386becb7c7b3f1"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/LinearPairPrimitives.lean",
+      "source_sha256": "68d22589be72a17881eef4cf81c9f419299446c3d53654a1299d9e86a12e2af4",
+      "olean_sha256": "90b7d23b216bc82cc63559032703e64e1ef4a6422f020a3371820855791ce1a5"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/LinearPrimitives.lean",
+      "source_sha256": "87b4501fb8a28b8f7540ee09f66576b556434e2caccbb26ff9c70e934c109583",
+      "olean_sha256": "5e433e37c8e3754038bad77736743949766737754791e49836da998c8c9e620b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/NormalForm.lean",
+      "source_sha256": "5e24bef34f76a110c7d4ba33a640c4455b2ddee5c86206f0bd630714175bf8ac",
+      "olean_sha256": "910e407364afa9664c10c983ea240af7cffdf6eba29ac9c320446aab5500de99"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/OCombinators.lean",
+      "source_sha256": "86da3cfc267b520ce8e645b4ff454f9554034ba3a1cbefa30615bf032fb15aec",
+      "olean_sha256": "381126893864710cc516094b9d79782351b276af64207b370580988bff59a10e"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/OCountedIteration.lean",
+      "source_sha256": "3f8b05213e80fe9cfd890efadad5a64874daae8eb46df9a25aa8d030018d2ffb",
+      "olean_sha256": "a942d8819d4b23d91490319694f5b4e6057c43eea9be36bccfd71f2fb9043e1c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/OLoops.lean",
+      "source_sha256": "7381faca3fc83fa7b4dcae16435610442e0bb60b6ad5a075ae6d490bb939603d",
+      "olean_sha256": "a4d48cda11aba74ae736f968a0fa75af27b76cb85149d4f1ec64f2bee669aa68"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/OPrimitives.lean",
+      "source_sha256": "954988d630c6a96c44e92583dc9fe76b7609c709911e1c47ff9ea78a5af2ed0c",
+      "olean_sha256": "4e71544d9fd96d9ff2a0bb398ec4da944cce0c6d99f0b50c7a920f5438956359"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimeBinaryDivision.lean",
+      "source_sha256": "323e8a1b2276645b964d2760e7f33787463bdb5b2a745673ec612ffe2784642e",
+      "olean_sha256": "dd5cf2ab6cb3354f871ba1e26d600844bf6c70e6c8f2c38babdd1536285f7704"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimeBinaryPrimitives.lean",
+      "source_sha256": "0f71784c046ea440cfcf642c04cfb16e6ac31774842881541e62eb1d3b23b8f3",
+      "olean_sha256": "4e807b31c1811be87e087b9600f718ac8dfc7ac199ca2fdfeabf5b9a481f0e45"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimeListBinaryLookup.lean",
+      "source_sha256": "dc1935bb2c8774252c62896c1d9a8e5fdc5898e13c785217bd0b92f00ec9e76a",
+      "olean_sha256": "5d61fdeacabf33a1b1f49b75fad310127f83013076cd088652ad506d51d3f45c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimeListLookup.lean",
+      "source_sha256": "1dae9816991c1a60208650c10f100034ae641e41b85e474e48a06f1cdddd1ebe",
+      "olean_sha256": "bbeeffab789ee3bf02115166eeeca090a7b7bda575584ed6b62ffd945f8c4e7d"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimeListMap.lean",
+      "source_sha256": "9feab001457e7b2ea5ad984f3b13b71c64da79af8c088572a94d058da3f69127",
+      "olean_sha256": "741fc85946c4c011e2fe48194bc60ef888b05c8458deef403ecad3c98029c1a3"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimeListPrimitives.lean",
+      "source_sha256": "4927583073f5eee2db9a283af48365f510c2026fd1681f0733f9662908407058",
+      "olean_sha256": "75bc2e033ed3a07ea8cc264e49a23fe75e3dce94b4780fd91a2af661b25e03bb"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimeListToBits.lean",
+      "source_sha256": "9d8f61678c3836c4efe90a6150d94d3c0e6a83f7760c362d1f142f1e2d77e0f8",
+      "olean_sha256": "c265b334bba8b16180fcd264635cdc63b789ed8e3cc3c55668b92aaeb736a204"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimeLoops.lean",
+      "source_sha256": "c0b19b92b470f5f3f1704067269493c0bcc18c3fadda02188bc52980dee43722",
+      "olean_sha256": "156ee20b3e44f3c62bdceccde3953190ec87a1b73ca85c709095d9936498da9b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimeNatFrontends.lean",
+      "source_sha256": "f73b347b6c629b4822890530516f3c2783282d43bb4631ddeab7abfdab511cb2",
+      "olean_sha256": "39aadefacaa1b619916067ccb097c115e306bed8763175d7e70a7ceb4ba5d8d3"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimeOptionPrimitives.lean",
+      "source_sha256": "9da10f5c85a7b7b59c72436fdb98bc7273fa105af0273e4aa64f8d7931368949",
+      "olean_sha256": "0fc24118fe3a0cb891a3faf8489905685b9e2360d664aa744b59201f7eb086b4"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimePiPrimitives.lean",
+      "source_sha256": "203c294b39b190d687023e9211d27e33c8de9120d62e811008ba2e768a8e8ae4",
+      "olean_sha256": "3e405262bd1dc29f47d5608766605e7c763b876a99ac86c7b02390a3a19882cf"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/PolyTimePrimitives.lean",
+      "source_sha256": "ddfd4bd8dce54d0aa90d57d5fe6f09e90bce38bd0d0cc69e92db2dc6f1a7f4a8",
+      "olean_sha256": "8891fd5e1c953883f953a7701c8adfb46a9344facb384952e638f173c75c5d9f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/ResourceFacts.lean",
+      "source_sha256": "3f2e2b7d5de6b3eb884045abf26e807a3c411336b4761a6910ef7d167002926d",
+      "olean_sha256": "3adf95e18757402329ff9f209b8980e16ceaa17a6ddb902d7c5b0fb00f3b57df"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/UnaryMachines.lean",
+      "source_sha256": "4bc0dca995a11aa36eed6aa3df355bf7c0e36fe5f0bf14592b5250014c11d5d2",
+      "olean_sha256": "ccba42de10e3c45af99470a76e596bdebd3f3a4cb4fa7d509aaccfa77e27c21f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Internal/WordPredicates.lean",
+      "source_sha256": "78960105ae27d75c76696cc0d422674a18e08db5bf7bc8de501e18d993afef1f",
+      "olean_sha256": "3ad48af3d7370dd6be98a928abc4d24cefbd5d79bcbdfe60e3f04fc829991bd0"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine.lean",
+      "source_sha256": "396a7621c27dacc34198f444b330dad7a62f53c00eabb1e2f1499b1aba37cb47",
+      "olean_sha256": "bc274aac942529ef5a768b919f1a02ec2b38a149455a8ab5c6d82bd4fb774a28"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/ChoiceTable.lean",
+      "source_sha256": "5bb7096b9a9e33dfb792da16b5a87232311e0627c3ce7f10aeaaebf0ad50a4c8",
+      "olean_sha256": "9996cff93ebe4a9be8b9da5a86f5f004fb4a22a95b3a1c60391838b08857e486"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/Clock.lean",
+      "source_sha256": "0071357e272c35523eb54546cf2cb5fd77971deda942924841c344a13b77a54b",
+      "olean_sha256": "be9c816b176b3a8b3cff918c0af093c4d21bd9fdd08ff3fe36cdcd1be8417a9e"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/Composition.lean",
+      "source_sha256": "27b55a678aaf00858f270ab9193f50523d06a73ff3c69c82f9d4208d3877d99b",
+      "olean_sha256": "cd33f57decbeeaad4967ae6d11373be1d0d535f7d08bcacc4042c1954c6b55b5"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/Equivalence.lean",
+      "source_sha256": "984683d63907bcc6e2988598c0b962776846805c3998c2d29954a3ea81000748",
+      "olean_sha256": "8e6b71b937db661d4c679b66333a1fda0a5d2721e464c72933d0f5aca08deec0"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/ExtendTapes.lean",
+      "source_sha256": "8807d701b3cf303f900763917f0dfd633e498cd11e3535bf1288415f10c7d073",
+      "olean_sha256": "65d112a25bfa618444eb34c2aa9ce49540de2092e50cc2913c9656e7f7f75694"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/Finite.lean",
+      "source_sha256": "58faa5c8eb5ca1fce53019f0890cacf79f7ba70ecf0a3c6e93693bf0fb5d42f8",
+      "olean_sha256": "690a1a06469278f92f11a0f2a29a206a1c15fdf10bd9698988ef3d7212ec5ea8"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/Halting.lean",
+      "source_sha256": "14461168396c38081022eed0dda425c902432c8b04689632c205fd0d22dc15a6",
+      "olean_sha256": "74edcb9afae0f99533b79b3373f232b33cba5db89b653317684d2ef22c843d5b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/InputFromTape.lean",
+      "source_sha256": "8e503a54eb76c6588eb8c1b74605eae24d56dd23e748da62298b89fe52a7026c",
+      "olean_sha256": "f23c5a1809653b4d91054823b9441f42e8e68caa8ebf4f2fa6b6c27e3d1f5efe"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/Nondeterministic.lean",
+      "source_sha256": "82a386ecd6ac49bcd98066ed7a8952ba0610c5260688d1d4d773b7d3e5c46771",
+      "olean_sha256": "d7c0097740f90c976900d4f74f2ef83af4bfb49d99cc09fb3e08f4c5e5428134"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/OutputPrefix.lean",
+      "source_sha256": "538c2f8d2ce1234040575a9e8304d3c000821284c221f35063667ec5bff2e41d",
+      "olean_sha256": "7257b107f1514573f5ce17faca82e9584ea8fa8afefc9768a716d5ea94653616"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/OutputToTape.lean",
+      "source_sha256": "1df180cb5783cc6383f06718815b11c2a279786df31b8e88c9ecc3d9a90298c4",
+      "olean_sha256": "29b1c6719e5feb8ce7ea2b45611c92df97812f07e3e3f20c3dc8221833c3ce6f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/Program.lean",
+      "source_sha256": "29642863063f3a64a57def2dc2645e24b65cb2ff166937840a10eda4bd26c9ad",
+      "olean_sha256": "4dfbd122b6d025d89150f9079244ade9af47b9da92f4e733038c7c99d8f25b65"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/Sequential.lean",
+      "source_sha256": "63fb04a3e9243c7586e6b6b766c3b75948fa6576155f813c3ba9f38f0edb6bf5",
+      "olean_sha256": "6df1943cfd5c9a647f2c9604f8f9053f244c00d1e05ccb3110a4c5f0fa6f675c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Machine/Simulation.lean",
+      "source_sha256": "c5fd8173d0b0cd4bde810c1a1964a5d4e7c3e61760f8b9064c419c4adba21191",
+      "olean_sha256": "f1be2987b69721fdd1864a4fe42475ccdaa76a3849024dd50b573b83840cd143"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Map.lean",
+      "source_sha256": "ec566093611c5763b5fc459c276eea2f1eef22b6f68b726706227e2f0060cd15",
+      "olean_sha256": "98f901af3d2910ab083cfd41ab9387de3526607c44aabd0885cc0e63c49a7b8f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Nondeterministic.lean",
+      "source_sha256": "7cc49c27d4fa0087fb1179bad1e96aeb55ef2034150d548cbb584432a3085b36",
+      "olean_sha256": "c71a761b8bf2329af3690fa28c963e04ec22db48b09f41b76ee1950456aa52b5"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/Branch.lean",
+      "source_sha256": "03d1057d5742616b3273e8276dfc0356f32dcbf55a62322782af2db841b409a7",
+      "olean_sha256": "9d134176daffd9fe5c7a1920ccb4c355876929cd65e89397079227987d40778f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/ClearShadowed.lean",
+      "source_sha256": "5b79cba77bd78fbba8cda3662f3cb274144f589e1f81fba7173f4b0e9ada7343",
+      "olean_sha256": "c14e046bc504ad7594633588d22b1af4a8aa80dfe03c9d21dbc0d17e08c73387"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/Cursor.lean",
+      "source_sha256": "04ffde7715ca8a17a8173911c7293442a530b4e1b37468208a4bdd8eb7762758",
+      "olean_sha256": "e1ac057acd55c217b70cbf59de41abd94516247c0a256b46dd019beba8637f9e"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/ExtendTapes.lean",
+      "source_sha256": "3f224e6275394faf50abd60b6b6d12f49aacab139dff17e378540350055904ac",
+      "olean_sha256": "2abd5ace34da282ac5f762125f75ec9e16fcb50843a30630efeaa2b8e76a253c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/ExtendTapesView.lean",
+      "source_sha256": "0ab3fcdbb9c6f4412c506188cedd7fccf1e154becaa87d0b209a52b8fc5908b6",
+      "olean_sha256": "eb8d460abf698ede69445e86801a004b1752cafd3d9933634fad4f2d1093a62f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/InputFromTape.lean",
+      "source_sha256": "0d697c0590d97bc41ec7541ed65d998a07b7ea227da6b08c0eef26b52197d34a",
+      "olean_sha256": "aecfc907968f2bb4e4da798225419469d683f895c93cf2c666dbc7df85340e70"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/MarkWork.lean",
+      "source_sha256": "8cfc6af940ff77730a19e1e256e0616192590d953659c9a6f1ba224d8f4794af",
+      "olean_sha256": "3e955d2f5a8a3537fd32fec4dbc48aadb0376f122b324d9812f261e97e1f9a09"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/OnWords.lean",
+      "source_sha256": "9240d084377de4978aa3e2ed3f802334902b6dee4f3303ac195654a0fe7ebbf7",
+      "olean_sha256": "f7c74314be891d05e390c3e603a7d61c2e1ac250da1812d4bde7da74875a8b80"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/OutputToTape.lean",
+      "source_sha256": "948aab3236221ad48bd38b7890e42eac209fdfd16eecfaba1da80a6e25417b89",
+      "olean_sha256": "0cf32c3963fc6ea9b55ac2c4aed19a420c94c44d59293ab77312c40224874652"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/PrepareClock.lean",
+      "source_sha256": "193a4fc27a1c976b52771fe7800d7bab09e8e22f28bf8aa99dd04e4b9ae30c97",
+      "olean_sha256": "3c5f937c88147c92a510cba82650e37308c57a39420158eed913897606ea43b1"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/PrepareInput.lean",
+      "source_sha256": "970a52c8728ad0e2cf6fb27ae0560bf97768c8d42333fd19b87d95f92ea41432",
+      "olean_sha256": "3f32e16ae64aa9c38e713b76d8dc31310027c03b4b4e679c6adf5712a9cce849"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/PreparePair.lean",
+      "source_sha256": "a4044fc5a2164632e53e3af401e8298294b5968c35841109ba0e527a245b69ce",
+      "olean_sha256": "89c7c917ca0de5ae44f8e72fe106c96512093177d6f590d90f638749c8d2e493"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/ReadInput.lean",
+      "source_sha256": "2922610809c377f3c73653424483b8895835291c841421337781c3ecaafa7a4d",
+      "olean_sha256": "290c06f5bf07752f80dcaf833b0dded4809ebf0a8cae21f53dcef155135fe433"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/RepeatUntilBlank.lean",
+      "source_sha256": "12a5fcc4b288d2d1d543e6528b758d12328f4d465fad39f14e9b0dbe62cafe5f",
+      "olean_sha256": "f88394abba4f1bed173f4a2299e5a3bbff5439e8e8899aab84aeabdb42d5aabe"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/RewindWork.lean",
+      "source_sha256": "2bd27f22efb0cb4455d830136fdc65dd97a9532020256f124e5d09b2d95218db",
+      "olean_sha256": "b3950dc2c7417ed1a4b55089b5fc94f73f1e2689e18e7d72a2f013ff303efe6b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/Sequential.lean",
+      "source_sha256": "5d2ac6729ef8d218f1dc77e22b76d5b4c14cd67fc92da364c043ee061d027cb0",
+      "olean_sha256": "a25b5e69f3acfd06febc67f9f3427c9e39b2919412f8f02755a19fe655830860"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/Shadow.lean",
+      "source_sha256": "cb3cadc1f983ff94ee0e33961f8f5b4465b1fbe0c098af2dac00a843a0dd936d",
+      "olean_sha256": "f3604d529c90e1ebd313f114f6f396b87e4647b3b7a9c9a5bc8a8b4c850d8e8f"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/Tidy/Basic.lean",
+      "source_sha256": "ef4664c6f65dc3a2971e422af06edc323af25c817b6e77cc1c9d001fd668ad04",
+      "olean_sha256": "b2e8914f3cd22e79c04fdc5b3f18eabca67ea29ea87d6576e984ced963f80375"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/Tidy/Defs.lean",
+      "source_sha256": "3e6838dfd99f59d1a71c058f6ad0e9a275effabbf286736ccb30be2eed66849a",
+      "olean_sha256": "e12a5cbb84911208290cbfce009f206e525490204e4e879e29783afc02fd2c58"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/Tidy/Run.lean",
+      "source_sha256": "f234daa7ef0ee0cde0c64ae60c67112b9a698bc369988c95a299eac3f68738e4",
+      "olean_sha256": "c96166e79b9ee7f3194ccab641ffe0fb53b0d2dc7e93520e591345d1803e5062"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/TransformsTapes.lean",
+      "source_sha256": "7e1a5c6db472517dba0b9928f6024955e29d6f64bfb8ba2ccc27afdb7c880000",
+      "olean_sha256": "d8fe37369f68ca15bb8773e19d7322d96bfeb8bf3e5dd5f13cf3eb2336967a03"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/TransformsWords.lean",
+      "source_sha256": "daa3b41e3d72f0ba3a8c3f598ca96d1ce19449a55f161cc03bed21d069308a61",
+      "olean_sha256": "158fff74bef90ccde6f65a81d3e4fdfba17a9845ebf1f0366b1288241a6f75e4"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Plumbing/WhileInput.lean",
+      "source_sha256": "f8d5e7f36df75bd3370548dae44f16456a1c9e8ff1931d15bd7d09c04cc5b7f0",
+      "olean_sha256": "bf92f75b38b64dfbc254dce46440e3a3b6499c9b6cb1c5e4673dffcf75b01faf"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/PolyTime.lean",
+      "source_sha256": "9533012202016dea5aad244e4c59e4f81eb0c10d864683c61fbfdc420810df8b",
+      "olean_sha256": "503da69b725dea824d635ee820a4b881c6d105401b0ef034ae07077ad6dda7a9"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic.lean",
+      "source_sha256": "d3e1e9b293a918c12617dbbf238bc1183170774dc066542e10c82c6a5ba4222a",
+      "olean_sha256": "242a7d005c9d5c4c29f31bdfaff4d03965a988fb319e3c5c4797af959564df92"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Clock.lean",
+      "source_sha256": "ca5d89a5837041d6f7f1913a89ac3a9a2904ea9718dfe509a2bcaf31b91f757b",
+      "olean_sha256": "42972b23d30efccb37d48b0f52ee39784b37410224d4b891b6e74ee60a887439"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Closed.lean",
+      "source_sha256": "9cf4a7ebc185b3a50c55b58d3a4f3dcbdc93687ca47fd300d263a7034511d884",
+      "olean_sha256": "eff4ee55b9fd948c857b48c19fbdb37a9176901b5d5e7496d1e0fbed7ad734f8"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/CoinTape.lean",
+      "source_sha256": "65aca1077e2ebf1ca92b996d3a10eb33124c9b7924c926d87a0232564f262bfb",
+      "olean_sha256": "b46e830cdfb50b099105f30cbd3e626b5d8c4772e0b7e13deba10f6dbcd381b7"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Composition.lean",
+      "source_sha256": "44ad8e8411e61e3e8cb9db26016dd3e1098483fb3448a994a7c5da3542858dc9",
+      "olean_sha256": "3353cea9816b67e8fb63534bbdbba45e76a9945e7418d385d46860a2cf21b99b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Deterministic.lean",
+      "source_sha256": "d9ffa0a464614a75ffd0e8ffb91d258f37b4ec90bdfcbb46168d058b5be4d0ca",
+      "olean_sha256": "c46d252dcd0f6540467e87c640b3a7996af208bc634eef92bcba888e6ccd9956"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/ExtendTapes.lean",
+      "source_sha256": "a24b7a2f08ed4e88416e1fce779b2aeb21c32be189f218b794ef0ebd5e6b9e9f",
+      "olean_sha256": "df82b71603195601732f28b9207fb94af8118c2303361e5dd01a09d2af03b7f4"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/InputFromTape.lean",
+      "source_sha256": "7725d94203d7f6097ce26506a3a18663baead2b9ba477c2d25ff3948d9ee2794",
+      "olean_sha256": "040b32910c365b75bbc174b45eab97bf111a0cb42e91e80d0b901f5092cda59b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/IterateWhile.lean",
+      "source_sha256": "3b83720d5ecf6d81b64c85590887579c627853b62893a9c9500864de4f87bdb7",
+      "olean_sha256": "4b172efd890f470d852983de5abbd07dec0d8e6374e142334e93f949639f2746"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Loop.lean",
+      "source_sha256": "bb07ed66f0fda460e4ed6ec07a65339f473be3fa016c268e071e2caa67e03ff2",
+      "olean_sha256": "165f62302ac1824c34963eb4668767757c274172a65a364d912dd2f64b296a1a"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Oracle.lean",
+      "source_sha256": "1d8cdca9098b0fe67a34288371d61199cfedf96b580cbb70082de13b0dde804f",
+      "olean_sha256": "2b1e4279e7c75f3f91d734279ed46203bd2ee2aadcec9434c62cf52de0ca27f1"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/OutputPrefix.lean",
+      "source_sha256": "30e7cd996ad73b733f7d30b984b66de737e39a7523cc4192535d743c4dfb59be",
+      "olean_sha256": "712c2d1f06836edc4df7c5d9748423eb015aec12f7f6adbffa510768fdd288bf"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/OutputToTape.lean",
+      "source_sha256": "42f4d59b1b3882bb352a16b4580a375f28df9492b2b8fb472b17df44b202c5a5",
+      "olean_sha256": "94c84afe46225157206a9f37790eb8ce403f24fbc1fba5d0a1b0e9c7e8df68e6"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/PolynomialClock.lean",
+      "source_sha256": "79798cbecb7e8d7c5ee90a8beb2a5fdbd496a6022992caf18fec9911589c3c8e",
+      "olean_sha256": "8d32291fde56deabfb1dce6e063aa062ecaae79f8f3a525f80a7ac6ce08b08b5"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/QueryBounds.lean",
+      "source_sha256": "06c92414f5e3069598310afb4726b9eab91e5fb1c6f836bd68df5bf02c1f87f7",
+      "olean_sha256": "370559ab34f4e44cddef3f7ae2eeca63fef4f37d769c31b34d8d97d5f842b6de"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/QueryTake.lean",
+      "source_sha256": "fb5bc3b0a564f7c5b69c2294f855a9f3e1b2a61488030a9214a1d721e946935c",
+      "olean_sha256": "e8d50778126fd291be32a14d87c06b3d296f844726bd0187f71fa03854bbc900"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Replay.lean",
+      "source_sha256": "0e498891e8abe7615b1220d717dea77e90f1ba23ca24733ce256ffede26db9b4",
+      "olean_sha256": "7fae718700cc9b633f19cbf17e0d5004db91f0988bfa7a3558cfa5aa7b446cbd"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/ReplayInput.lean",
+      "source_sha256": "7d6f541cb2fdf378bdd0ae42d3ba402831c9ba2a3cb6a3341ec712655673f01b",
+      "olean_sha256": "b4345b5b4d7066c6e0bca0cdef664e84658ee50323da16edca74f5a119394ea4"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/RunsWords.lean",
+      "source_sha256": "92a1bc4738ff383d4d63b9bae7b6ece2e35b239a799572982f1775c0f242c69f",
+      "olean_sha256": "621be4439887735625b390ba8f82b9000b12857e92b68de106db557ead163435"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Sampling.lean",
+      "source_sha256": "3e44f5282705f7cc1d2cde7f3558c717f73c868bf88f3c6aa492e9e4f9756473",
+      "olean_sha256": "2b273cc8aab5473e2eb4d2ebca30a0a57a6876d7360e8904a5749ffb91546373"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Sequential.lean",
+      "source_sha256": "ad237a4065136c055ce72b38999fd476932fe69ad81977426765ebd7aaac6366",
+      "olean_sha256": "4333d11aaea6c6fb67691679e8c086c74695db4a1f6a2b021c551b432da58105"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Tidy.lean",
+      "source_sha256": "6e7611b6d5695699abc95b7c7be0257955bd6dc857f8915cb0218e6847b8f8a7",
+      "olean_sha256": "a003e8a98d687addffeeeba977bf03d0a4cf61cb37b59b6645fb2dc8ed80a66b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Probabilistic/Tidy/Redirect.lean",
+      "source_sha256": "db1847beadf1cd6d9e42d38c3fc86813fd244b6927e060f66050c8ab72d10ee8",
+      "olean_sha256": "fbab959555fd26faebbf0ab25e2f73c5da29651a185d9bc94d16c70d71c79287"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/ResourceBounds.lean",
+      "source_sha256": "77e9a5e65043ee7a1f28202ba49ce0c88099b010cda62c6c96e685b860af79d2",
+      "olean_sha256": "18175a99c9a1f414157edffdef5804ce14f93937acca2a5a98b4ff98ca6c8e85"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/ResourceBounds/Degree.lean",
+      "source_sha256": "384d65d9e377a6f80356fb4e3f6e52ace5f317786589dcd049ee41c509edecdf",
+      "olean_sha256": "6ef04eb91abff5f32b3d61278c21ded8338a9683197ca9a029fff880bae72d0b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/ResourceBounds/Polynomial.lean",
+      "source_sha256": "6ec99523c586c352ff5ce85cce3ea28698cc0b28bc7967bc5f2c1eb0f8195c90",
+      "olean_sha256": "ea435c9a371289b8c24f68f2539e013879981274db29f3ff93ee5d8f6868ad47"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Run.lean",
+      "source_sha256": "df0f54dfb3452228fa7cf01685bf44943086ce4910ab20b7eb214dc43cb4f895",
+      "olean_sha256": "5fbdb49948b6a8a3720bcc5907a77e88b70bcb55369955797d05cc27e72a9356"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Space.lean",
+      "source_sha256": "7a701f5bc99e71019d1357d81fff72d9e57c7a0999a4f639fbb57c21eccbbf23",
+      "olean_sha256": "d2798369f24930a442b36aee622ee5d6bf961dc6f3ea6df2ab56e9c721b97e99"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/TapeLemmas.lean",
+      "source_sha256": "055ee079e64b1e399a008836187ad98c4e2a5bd630889e68e6e1709da5cae459",
+      "olean_sha256": "d27015cd37190bd874907e044363e93899d59d6606e2cce42f65f5fb8d0ec89c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/Basic.lean",
+      "source_sha256": "5390951195e6c646e8ed58eb24a5bec0d8272740e17a8205b2ae7fc1d8df0f40",
+      "olean_sha256": "a2872ca351ed20f8c1a69633b27593865397469ac8d20786864acbefeafaec37"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/Bound.lean",
+      "source_sha256": "f920bf894b8898a6fca67df0003ed82eea3e1597afd50addcf7f77abbdcd477e",
+      "olean_sha256": "309b304bc50e4e54595cf9c7a701e56003e0d888c7cebc45c6c8b51ee164bb65"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/Complexity.lean",
+      "source_sha256": "817fcaad4d3ac116249520b85cb96da59102c6ed2ec98443da89e3f7569af31d",
+      "olean_sha256": "2ed60268af11cd1cefe6b5608330a85ae871aeaf4a43d95a58a58bd5fa522943"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/Compose.lean",
+      "source_sha256": "c1ece371e3d59100b6717126a5380ab311a744b5e2b51f9b62ca41f7542ded8d",
+      "olean_sha256": "b681e228eb5a9df3a5b0f0cdb6a87b5623e557ffd62380d34703ccee42e028df"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/Correct.lean",
+      "source_sha256": "7083acdfe43675af314daf7dc89f24ff8e567045cbbb76e2954433d6ea7c1a29",
+      "olean_sha256": "2ff0a77944beee4c4bcd03375007124470a6a94d549ecc8362d6e7cafd18c412"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/Decode.lean",
+      "source_sha256": "1e458f7862392f1356ef5efa39103b34749eb4041303c542b0b127e00696ae40",
+      "olean_sha256": "cc30f15904a543b5410fb4291b5d26dc53fb5095fe32166a0461e0b1a00b3fd7"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/InPlace.lean",
+      "source_sha256": "e480b8e093eae5020e428823d4c379f6f4c351c8c362933978617caa3f18b92a",
+      "olean_sha256": "05ee8db6081cc4b72290f7428c8074b466aa6cdc8ca0b78e200a3b0f8d7f4f88"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/Input.lean",
+      "source_sha256": "7e04c60b1da46822aa296ae14acc15baa320633d7d7dd372a2149bad1d86f4a9",
+      "olean_sha256": "65bc9444fc3409c4eeacab9179ccd6a87b3ab06d5d25da6d78bbb43d1a664e64"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/Machine.lean",
+      "source_sha256": "ca7949ebe1aca5f922ef01794ee3816356ecebc29a07a035f5f6219dfe23f1ab",
+      "olean_sha256": "e85b94a475e99d54f4f12652323598a2bc93a264ced4fe271b0d98dba1f5ee09"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/PolyTime.lean",
+      "source_sha256": "1cbf22a7727b7b19767a7e0d13566ae5f9f5ee3f875b38e8083e93f98672b295",
+      "olean_sha256": "24b85c7b0c7226d41f195de85b6d8f6d5cc0954c18fcf5ffc57d07e483e06a8c"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/ResourceBound.lean",
+      "source_sha256": "7a27cc9d9076dedf9caba37d92dbcc450db433e38c1d0f40cd9df58e7a56f67b",
+      "olean_sha256": "e534df6aab8d64e11b9c3a0c00d9fb91d13319dbdf0acb477cb80d8bac04bce7"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/Space.lean",
+      "source_sha256": "7928be4813a4802379839442dd5ad7bdffc074a9ff51aac370879f18b1b53a76",
+      "olean_sha256": "1b5ba8bc363e2938b0fae165d19d14be880aa86d5639672b2e83836803adeb3b"
+    },
+    {
+      "path": "Complexity/Computability/Machines/Turing/MultiTape/Universal/SpaceBudget.lean",
+      "source_sha256": "52c925b91a8dc805648f0077b46601190b03ce39f97dcbc63ac4eae16cad64cf",
+      "olean_sha256": "9d96f3ec83b532c8855fb8d614855042a0776655699165ed3961f5f4839ce7f6"
+    },
+    {
+      "path": "Complexity/Computability/Probabilistic/Oracle.lean",
+      "source_sha256": "546143a5d31a5b11aecc50a3dbd4cbb0e191be4d77b327720ef7c6449960f29f",
+      "olean_sha256": "535c33419953d87dd925c0b7359d936fe0012808ce444155f3889695ca4fff5c"
+    },
+    {
+      "path": "Complexity/Computability/Probabilistic/Oracle/Composition.lean",
+      "source_sha256": "10d56319adb4facbdf2b653eaf3db9fb139d97ced9aa5cf5dc506caebec5ee19",
+      "olean_sha256": "ec560b4f45cfc7dc716494f747f1f9567f310e054889be8bf42bd69437312a7c"
+    },
+    {
+      "path": "Complexity/Computability/Probabilistic/Oracle/Iteration.lean",
+      "source_sha256": "1cc04de10cf2e88f7123ac38eaf025bd50c0877cf95913600dae989db9e594f1",
+      "olean_sha256": "46eaebff56309f9b852848c690a9e1080e2c8b557346768a3d44e5329804cc82"
+    },
+    {
+      "path": "Complexity/Computability/Probabilistic/Oracle/Normalization.lean",
+      "source_sha256": "5d03390a86187d82c52ba04e81c272fcd83fd72b09d6b2d535d4693d04ad80c9",
+      "olean_sha256": "35af17f686ac3972cfb33dbad19249a3446b3e768374065fa9bc5f9590390ea5"
+    },
+    {
+      "path": "Complexity/Computability/Probabilistic/Oracle/Tidy.lean",
+      "source_sha256": "84204c1b306ee0ed99ab29df569e4c61d35c5c304772f36221a0ff0d2c99ea1e",
+      "olean_sha256": "6d0c551746880941cc1f8baeaaa94773680e1b42b78b1372f32a48bde5f71c39"
+    },
+    {
+      "path": "Complexity/Computability/Probabilistic/PPT.lean",
+      "source_sha256": "31c8a19ffe196cced5bfa117a2bea125d46bd83d369ddc2a4632decc539a1b7f",
+      "olean_sha256": "7d82c7b3940a62033eb7f5b627b2e9794c69f47d0fc15ce4e547fcb28c6b0c2f"
+    },
+    {
+      "path": "Complexity/Computability/Probabilistic/PPT/Capture.lean",
+      "source_sha256": "2e030e8b3410c4214851f88f0806b123c3c4cdb6444f46e7605ec7c84de614cd",
+      "olean_sha256": "db24d7925a8e13873393544e1495accb101edc31acbba1f58a6f2e2a76ffe3b7"
+    },
+    {
+      "path": "Complexity/Computability/Probabilistic/PPT/Clock.lean",
+      "source_sha256": "b487dfa807b6ef6d5055f363976c6f9b236da564f765a49150aba5124778bf7f",
+      "olean_sha256": "271493547381e3d05273ec425c6d875688870c75d40eb718065b2245e573bddb"
+    },
+    {
+      "path": "Complexity/Computability/Probabilistic/PPT/Composition.lean",
+      "source_sha256": "a980a5d8c0492fc704e90dfc145b362dab2f2c49c5d2971820dca4d7d08fb896",
+      "olean_sha256": "02f742a3f521379f26ce4def729321fc494341443d4d1f95ee726f67a9232bd8"
+    },
+    {
+      "path": "Complexity/Computability/Probabilistic/Sampling.lean",
+      "source_sha256": "7a840d8bdd9d78abff42dad6892402d3fee7de713819415570dfd0907a2f6654",
+      "olean_sha256": "4c714eff3da01320cfa87a33f0223933e6fe26b5a219a34f76a007b97bc33eb3"
+    },
+    {
+      "path": "Complexity/Computability/Reduction/ManyOne.lean",
+      "source_sha256": "82f5cf60e7fa8fb5844721c2916ca25ae5deaaefa8fb7caa9e5dbc7a3beb1911",
+      "olean_sha256": "c39b4b880559a66ec4e2e309c5d0bf8ae95c442d9f5440ccc8e126ab6438fa49"
+    },
+    {
+      "path": "Complexity/Foundations/Combinatorics/FiniteCover/Basic.lean",
+      "source_sha256": "412f70019caf10bed6422500243d2eaadf7aa0744c8dd02507d939c7e747674d",
+      "olean_sha256": "2ed915489cb57f5a1969dcf32df522db1e800bc3221adfa016d18e851204c0e4"
+    },
+    {
+      "path": "Complexity/Foundations/Combinatorics/MajorityVote.lean",
+      "source_sha256": "b77a9f0bd290754f57e11ad36043f6b0f7731581e952281ee11dd3bd4bb27001",
+      "olean_sha256": "89939d10ac4daf56da93a9157ca08a83702210cc3aa7d4c86dbeea8c56b215e4"
+    },
+    {
+      "path": "Complexity/Foundations/Control/Monad/IsMonadHom/StateT.lean",
+      "source_sha256": "46a026cc3c1ea1eb593a0beedcf3a734fbaf56fbd5079cdfd94b2a18a3279e2b",
+      "olean_sha256": "1c0af07b1b69007e7cc2970a88ee37f2143bde2dd6582235ff986d088961ac67"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BiTape.lean",
+      "source_sha256": "8ccc1d0b4624a24605caa64cbe594a2fc5b29345e1cd95f6b203e69063e73a22",
+      "olean_sha256": "231493efaa983064ba72547780355208450c3d0b67e9bd0aca98de74d7797666"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/Basic.lean",
+      "source_sha256": "be573f4779a24849e66d3f63a86271b74f12db3586647ae10c141be2c54dc7f4",
+      "olean_sha256": "509d6a428065dbc916de8368315add228a9e928247b56c879c0ae5b2fb7a56ff"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/Binary.lean",
+      "source_sha256": "9ce6d6c159c4261a84259c19b72e7ab70a2581212e99f6631cee36eab3e1452c",
+      "olean_sha256": "8f16a382d2ccaca2e929e802bff582e129e82c311fa0c401b4ce691234d32ef9"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/Block.lean",
+      "source_sha256": "db93c31242ef3378460105549011e666c1dcd17b99aac1b79a6791c311d01e6b",
+      "olean_sha256": "0ca4cd372c420e85ce232d0abdddb1de7c4423748c87cf2383bbe07c59bc7d3b"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/Counter.lean",
+      "source_sha256": "19b180d4fc80b29c464b0a723ec90bb1f3d2a020387dd094b196776930de3ac6",
+      "olean_sha256": "5a750d62a8d411c210ea63e00d50d8423e7cb6ee6cc6f5e67da68e1a9bb709aa"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/Enumeration.lean",
+      "source_sha256": "da02e2024b0fae67db94dc2fbc93e9dda33c862966c57761c9f56451f4c2e1ea",
+      "olean_sha256": "910071aff2207bc3db9b24a9f4455c91456bd2056b957cdda43a25baf8d57365"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/List.lean",
+      "source_sha256": "bcb38264988654d081ed3a7f578712c26091d46c9a0594947ed5a044b024d618",
+      "olean_sha256": "3ada4f9ba8fbd6eba7b14b1d17922739adaea7eb3d59ef6967e3b967da3e8a8a"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/List/Binary.lean",
+      "source_sha256": "1d86e838e77aab96d4b4adc059524d7dcd1367e36a7cedaba1d7e295e5190a41",
+      "olean_sha256": "30d4ec699655bfbed2335428ced3e8056f2ff6299c55b0edb371e9a5b8a16436"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/List/Operations.lean",
+      "source_sha256": "b79d0a2bbf6578e1accb2df1f67fe36cdbdf446d7ebb0a1b97a24b026dee69e9",
+      "olean_sha256": "bc0bb3ab5c60f2cb806c6ec909c537583dc2aa40956657081ceb15304965582c"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/Threshold.lean",
+      "source_sha256": "b9f35862fcf05f6b5ef5fa7022d5ad1309b04513ec95a77be113362595501468",
+      "olean_sha256": "3e06582b5cad2b3c87fbf12b84282b8ad5821a31521a8fb6f4dc680d07338e61"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/Weight.lean",
+      "source_sha256": "d8980c777ff62c00c04aac3b8d56b3464c37f02b707a4657d209b40b4a2f349d",
+      "olean_sha256": "7a2e6f1f50a286ca946e9e3e090f1bf5add1a9db3e7ad86095d606f4f278c733"
+    },
+    {
+      "path": "Complexity/Foundations/Data/BitString/WordCount.lean",
+      "source_sha256": "861a16594d766911db042b32c8f91b0188af590f0fa133fa47a87c36801fd486",
+      "olean_sha256": "1433c652563f894ab856aa80697b8ec750aaa0a375443be84468803dd388ef99"
+    },
+    {
+      "path": "Complexity/Foundations/Data/Fin/Tuple.lean",
+      "source_sha256": "a9060b47d829b189ab4cb19fe6a80143d41a01fb8a9d1b094a898f81d46b7aa8",
+      "olean_sha256": "1d629f827be469378ef463f107db0541b5bb78f1ae89c620fec832db670f9d47"
+    },
+    {
+      "path": "Complexity/Foundations/Data/List/Append.lean",
+      "source_sha256": "f1a0bd5b5f7d43a19380848643058315590b29615e40a6ccb48d933de79962c7",
+      "olean_sha256": "2f15940c4922c5f20d394c0f3303bf3e82046ced9e8f213a335e4899c2551882"
+    },
+    {
+      "path": "Complexity/Foundations/Data/List/Fold.lean",
+      "source_sha256": "1c2e0ad0eac4abb52996f92e5f32a4f97708494edaf95bb34accba87cf8edb1d",
+      "olean_sha256": "b3fab5a7c144eb534915686cbb29ce8af75176cf440cd47fcd873f533dfe4f68"
+    },
+    {
+      "path": "Complexity/Foundations/Data/List/Lookup.lean",
+      "source_sha256": "8ffa25bb59a65a1dccbf35cc9fd873a066f93d03d332d394f2050f316227df0e",
+      "olean_sha256": "79308004933c93697bbc48f0dc8e86e8226649037c2894c25d051eec82170dcb"
+    },
+    {
+      "path": "Complexity/Foundations/Data/Nat/BinarySize.lean",
+      "source_sha256": "0b9f9a1fe7879e0e47e7d7d458c120f0d60fc841193d5558680e637f6f71729c",
+      "olean_sha256": "98e782e2773251d823fd5412a248cd51b1724a77678d4b4158e1449b26ecfe80"
+    },
+    {
+      "path": "Complexity/Foundations/Data/Nat/Bits.lean",
+      "source_sha256": "da3410ca7f312317e2d0d5938fe9e659fd9dd4766f10880f5991320de58c6508",
+      "olean_sha256": "259aa90761d10a5bb079e9dea83aaff326ea9b0965781ae82083823644574318"
+    },
+    {
+      "path": "Complexity/Foundations/Data/Nat/Log.lean",
+      "source_sha256": "c31687e92de43c82d00e31dd17c48a4f4a5bde9a6c3f0f006edd168b0433f43e",
+      "olean_sha256": "ad005d5063aa96ca87bc8d51de8c210729c9e4423708272957732604041d6d48"
+    },
+    {
+      "path": "Complexity/Foundations/Data/Nat/PolynomialBound/Closure.lean",
+      "source_sha256": "a07965f7caa0d7ccd08f5a0497ee93cd093d9270483c203f7603de8194bf7b4d",
+      "olean_sha256": "50b0d402edac4130046e67e65b8843cd28d315819a5cca046031023b771f5d2b"
+    },
+    {
+      "path": "Complexity/Foundations/Data/Nat/PolynomialBound/Exponential.lean",
+      "source_sha256": "724b1cd26004d83b593d3aefb4eab94f5aacc6c08927631b85bf3fb2c0d86c17",
+      "olean_sha256": "c91ccc93b9e7aa2530e90e6618000131d7c6c4caba63f8f5b9f59440fa46f564"
+    },
+    {
+      "path": "Complexity/Foundations/Data/Nat/PolynomialBound/Log.lean",
+      "source_sha256": "8cd45604f1372dd0de1ec670f29cafc67b19c6fd80d18bb9a674815386ccfc61",
+      "olean_sha256": "24b75c675ffe0049f5406421bda10e2f1cbb5767e96d8633bb591c805a4ee1ed"
+    },
+    {
+      "path": "Complexity/Foundations/Data/StackTape.lean",
+      "source_sha256": "94d074c9f88ac3c9f9b307e314de238a641f373cf2a657d4652385e9b29a756e",
+      "olean_sha256": "30e6d69403cc1c9da521e7ffc47f7ecd1ebd26f01c6c63faac7382ba6316791d"
+    },
+    {
+      "path": "Complexity/Init.lean",
+      "source_sha256": "043661c5d95ebb78df6706682808529a13bed0386bceaff34736c2aee5a150c2",
+      "olean_sha256": "afc9fdf721adba75df398fde79804f0dfcf6a25f82b8e4af614d062a47f1f6f5"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Basic.lean",
+      "source_sha256": "b70238b12d707d25d557d69b989da2060eb094b577d6ab164587db4d9accd979",
+      "olean_sha256": "6c44f7960cf78023ee7264e8bf2016357319bb82bfdb800386125a4aa1a65b2f"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/BitString.lean",
+      "source_sha256": "c9eeb56c23b46e25a5bd20dc2d24b4ed39e0fc2f6deaaea7f0efccce89ae6a20",
+      "olean_sha256": "a0064d39be34979f0cf7283b3e1bb1bb699f1d95e1173cef03cafa3a76867c43"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Iteration.lean",
+      "source_sha256": "cb5b13d0499ab74cfbc0c4a3381777b4c093b5059e8be7643efef8b910affb5b",
+      "olean_sha256": "a363f2bd15d47473323c96b01cd0d79558c472e5691d03a7881a8e6d4c60a38f"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Oracle.lean",
+      "source_sha256": "bff70497bc034f674759f4ac0bf026ff7eadfa9f101beb0fb0c3831c315a53eb",
+      "olean_sha256": "90367899de0b54debadf1356b4b9588b0635f2483c54fa5cccb4a741702aa2e4"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Oracle/QueryCount.lean",
+      "source_sha256": "b2ba86ae85e3da2341ee752e8726b1b718ef991133ab1ed4d8ecda8df72f76fa",
+      "olean_sha256": "031dfde8a5d985b0893eec4168bcb386871ca72fe28e740446c62edaa2a2ae16"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Oracle/Simulation.lean",
+      "source_sha256": "3d189fc6e89edd32b6542a5aea425c7a5bf974755b9dada43cab4244befdbaf8",
+      "olean_sha256": "500af74110b00d8e206ccfc15b3aa28d76c25b736ebd3c7d306474687277dd78"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Oracle/Support.lean",
+      "source_sha256": "b27d1db821a6b07e61dcc3cf92194a056b1181aebdb7ea054f6f6cb8d759bce0",
+      "olean_sha256": "9426d42d4f45a5190bc44d5d9186669554103c4ac5a514e98a09363be3c99015"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Oracle/Transcript.lean",
+      "source_sha256": "b53c82a99e6d98570662e0caa6dcf13fce1db905a782c97abde7526d0806ca53",
+      "olean_sha256": "4985a4d84f9efa55a8a131801019c0b1c3c9716a3f109eefd47da0755cbfbf41"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/QueryCount.lean",
+      "source_sha256": "bdea89bc9808d6be7e21570923a5d7e292b41b024be02d833e80001d6b62d56a",
+      "olean_sha256": "7f2eadf300398512e4cd4d0e9bbda98757da7ed1d47a9afe082c3c09d0f5f769"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Semantics.lean",
+      "source_sha256": "cd7d5107ff3b199fb881535b4075119a84a0c0dbc001d354ce27bd7bbc693e9e",
+      "olean_sha256": "90897d3885408093bf9400418590ec03b470abfc14aba2f6151b55be92448894"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Simulation.lean",
+      "source_sha256": "9d3acca5103a7ae30fc3a7e458409ea982809bf3d6ab4cb3ddbfb401164cbb28",
+      "olean_sha256": "19d96ed3f2bd5199a29f9beba36e1445b7f636c2d50579f457eefb591cc8cce0"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Sum.lean",
+      "source_sha256": "a02931278214c4eac6b39ad6547dc4b5e904dd3e94651c1077590e8dd2f38e59",
+      "olean_sha256": "13397d176aed54414aaa221084823c1e8441343d51783346b80d21d6123f55e8"
+    },
+    {
+      "path": "Complexity/Languages/Probabilistic/Transcript.lean",
+      "source_sha256": "788cd378d63eb89356305a11fcaa603b2a698306468595b9b8179cf798611cf7",
+      "olean_sha256": "d14dd5749f3fa5566eb414dfdd660cba78210b14f704208d12b5efafbce482a0"
+    },
+    {
+      "path": "Complexity/Probability/BitString.lean",
+      "source_sha256": "f5d4ff208ac5afbdbd3d14dae858c213054bbf9311592e4074fe2b986ed0ac38",
+      "olean_sha256": "19d9514946a6d75263963817b94f9bfe3e91219b1f32eb0b1768aa1d1e435d3a"
+    },
+    {
+      "path": "Complexity/Probability/PMF.lean",
+      "source_sha256": "1b47c9c9ff3675e5b77a28f5418095fc22d5aed1379d81440886f00eb4693982",
+      "olean_sha256": "4bd6ab939364c9a4cbc3b482052b602a64f4128d265f063ea652683bdf71e334"
+    },
+    {
+      "path": "Complexity/Probability/PMF/Bind.lean",
+      "source_sha256": "18a2ee06c0338f349354967c717544dcbe45139fd6826d4562e0db666edb2569",
+      "olean_sha256": "4686b9c61f282c1ddded088a1d764f75d059226ab728f5ed80c90bb9d7715971"
+    },
+    {
+      "path": "Complexity/Probability/PMF/Event.lean",
+      "source_sha256": "b6eb1752dc40137e0fab3476b7068ccace1501b705c968c74d835fcf956e8809",
+      "olean_sha256": "72f81f29b66c2ddd6461836e9f86ec506e630faaeb5c0cc9540e7ccf71519326"
+    },
+    {
+      "path": "Complexity/Probability/PMF/Map.lean",
+      "source_sha256": "a2c3ba470057004b4a60ab724a26ee5c6eef47fbf4c0b2b2319d4c07e6c0c65b",
+      "olean_sha256": "e1475e80251ee9b197d408368ea62af1648e5a34a3f18dff2ff1f3c1256e51e1"
+    },
+    {
+      "path": "Complexity/Probability/PMF/Uniform.lean",
+      "source_sha256": "251f9a7c6981ebb768798f42ed94a3d0a4501c44b0d4018fe01d16c92cc39e26",
+      "olean_sha256": "a3dfe0152fd23117b02fadb1453b39027f1809b4e34762852aa2727568121dc5"
+    },
+    {
+      "path": "Complexity/Tactic/PolyTime/Init.lean",
+      "source_sha256": "f6ec6e214be4ce3a7ac4c8fc160723365763b947cbe3ad8c3e6829a3eab14914",
+      "olean_sha256": "912acab68c12308d380cb5d4dce832d7b4f07c1cddd5a6e13546a5c22221e493"
+    }
+  ],
+  "exit_code": 0,
+  "log_sha256": "f82280fac8542beb1cdbf51fd74d3a98162308d5e2edd6b03e6a3aa3fd1ba2eb",
+  "build_config_sha256": "1ca4d9d5a49c78f4c301da8b7b2e82f1cd8cf72f42b35b7489432ca315e395ae",
+  "script_sha256": "b6bf5157c5dfea237d50f7b9cba9f49479b7955a97d4cf057a627754c49ad590",
+  "scope": "Selected compiler/hierarchy dependencies, checked with our local build configuration",
+  "downloaded_eth_projects_executed": false,
+  "counting_simulation_or_fast_contraction_modules_built": false
+}

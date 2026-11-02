@@ -1,0 +1,635 @@
+Lean (version 4.23.0, arm64-apple-darwin23.6.0, commit 50aaf682e9b74ab92880292a25c68baa1cc81c87, Release)
+Checking NtimeDspace/PolynomialFacts.lean
+Checking NtimeDspace/BooleanMobius.lean
+Checking NtimeDspace/TaylorTruncation.lean
+Checking NtimeDspace/DeformationTaylor.lean
+Checking NtimeDspace/Projector.lean
+Checking NtimeDspace/ScalarRecovery.lean
+Checking NtimeDspace/HermiteRecovery.lean
+Checking NtimeDspace/HermiteGlobal.lean
+Checking NtimeDspace/AlgebraicCounter.lean
+Checking NtimeDspace/CoefficientRecursion.lean
+Checking NtimeDspace/ReciprocalCoefficients.lean
+Checking NtimeDspace/BalancedCoefficients.lean
+Checking NtimeDspace/CanonicalPlacement.lean
+Checking NtimeDspace/SpectralDeformation.lean
+Checking NtimeDspace/ParityInterpolation.lean
+Checking NtimeDspace/CenteredWindow.lean
+Checking NtimeDspace/DeformationConstruction.lean
+Checking NtimeDspace/MatrixLocality.lean
+Checking NtimeDspace/MatrixSpectralBridge.lean
+Checking NtimeDspace/TensorBasisField.lean
+Checking NtimeDspace/FiniteFieldDeformation.lean
+Checking NtimeDspace/Counting.lean
+Checking NtimeDspace/CountingPolynomial.lean
+Checking NtimeDspace/FormulaCounter.lean
+Checking NtimeDspace/IncidenceDeformation.lean
+Checking NtimeDspace/FiniteFieldCounter.lean
+Checking NtimeDspace/GroupedCounting.lean
+Checking NtimeDspace/GroupedDeformation.lean
+Checking NtimeDspace/RestrictedMeasurements.lean
+Checking NtimeDspace/ConcreteGroupedDeformation.lean
+Checking NtimeDspace/HashSchedules.lean
+Checking NtimeDspace/HashVariance.lean
+Checking NtimeDspace/FiberPlacement.lean
+Checking NtimeDspace/FiniteProductTail.lean
+Checking NtimeDspace/FormulaInput.lean
+Checking NtimeDspace/FormulaIncidences.lean
+Checking NtimeDspace/GroupedCounter.lean
+Checking NtimeDspace/Parameters.lean
+Checking NtimeDspace/ParameterChoice.lean
+Checking NtimeDspace/SpectralPairCount.lean
+Checking NtimeDspace/SpectralTail.lean
+Checking NtimeDspace/SupportEncoding.lean
+Checking NtimeDspace/SupportBounds.lean
+Checking NtimeDspace/TailParameters.lean
+Checking NtimeDspace/TensorBasis.lean
+Checking NtimeDspace/Audit.lean
+'NtimeDspace.PolynomialFacts.eval_finset_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.PolynomialFacts.coeff_finset_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.BooleanMobius.finiteDifference_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.BooleanMobius.finiteDifference_insert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.BooleanMobius.finiteDifference_reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.BooleanMobius.finiteDifference_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.BooleanMobius.finiteDifference_eq_zero_of_irrelevant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.BooleanMobius.finiteDifference_booleanMonomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.BooleanMobius.finiteDifference_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.BooleanMobius.finiteDifference_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.BooleanMobius.finiteDifference_monomial_sum_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.BooleanMobius.boolean_monomial_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TaylorTruncation.exponent_support_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TaylorTruncation.scaled_monomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TaylorTruncation.scaledEval_monomial_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TaylorTruncation.scaled_difference_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TaylorTruncation.scaled_polynomial_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TaylorTruncation.powerset_eq_filter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TaylorTruncation.taylorData_eq_sum_differences' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TaylorTruncation.taylorData_congruence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.divX_taylor_mul_X' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.correctedForm_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.correctedForm_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.expandedPolynomial_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.deformation_taylor_congruence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.eval_natDegree_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.expandedPolynomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.correctedForm_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.expandedPolynomial_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.countingPolynomial_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationTaylor.taylorData_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.projector_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.coefficient_projector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.coefficient_projector_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.projector_first_alias' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.weighted_taylor_projector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.scalarRecover_eq_of_hermite_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.reciprocalWeight_degree_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.reciprocalWeight_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.coeff_mul_trunc_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.truncatedInverse_degree_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.truncatedInverse_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.local_inverse_product_trunc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeDenominator_constant_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeWeight_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeWeight_degree_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeWeight_inverse_mod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.linear_factor_trunc_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.single_node_polynomial_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.coeff_mul_eq_of_X_pow_dvd_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.single_node_hermite_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.single_node_scalar_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeProduct_monic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeProduct_natDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeProduct_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.cofactor_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.cofactor_divisible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.eq_top_coeff_mul_of_monic_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.recovery_of_local_numerators' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.taylor_cofactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.coeff_taylor_of_natDegree_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.multi_node_hermite_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.multi_node_scalar_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.AlgebraicCounter.scalarExpression_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.sumLoop_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CoefficientTree.coefficient_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CoefficientTree.coefficient_correct_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.linear_power_inverse_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.reciprocalCoefficient_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.reciprocalCoefficient_representsBelow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.ReciprocalFactorTree.coefficient_correct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.ReciprocalFactorTree.ofList_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.ReciprocalFactorTree.ofList_denominator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeCoefficientTree_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeCoefficientTree_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeCoefficientTree_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeWeightEvaluation_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.ReciprocalFactorTree.balanced_depth' depends on axioms: [propext]
+'NtimeDspace.HermiteRecovery.ReciprocalFactorTree.balanced_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.ReciprocalFactorTree.balanced_denominator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.ReciprocalFactorTree.balanced_coefficient_correct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.ReciprocalFactorTree.balanced_queryCalls_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.balancedNodeCoefficientTree_depth' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.HermiteRecovery.balancedNodeCoefficientTree_queryCalls_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.nodeFactors_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.balancedNodeCoefficientTree_correct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.balancedNodeWeightEvaluation_correct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.otherNodes_length_add_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HermiteRecovery.balancedNodeCoefficientTree_depth_eq_clog_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HermiteRecovery.balancedNodeCoefficientTree_queryCalls_le_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.CanonicalPlacement.predecessors_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CanonicalPlacement.copyNumber_lt_bucket' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CanonicalPlacement.copyNumber_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CanonicalPlacement.placement_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CanonicalPlacement.bounded_placement_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.orthogonal_repr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.rational_basis_norm_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.operator_eigen_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.residual_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.residual_entry_bad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.operator_power_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.polynomialOperator_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.filteredOperator_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.filtered_residual_add_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.pairSwap_single' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.pairSwap_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.pairSwap_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.pairSwap_antisymmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.pairSwap_involution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.pairSymmetric_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.pairAntisymmetric_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.pairSymmetric_orthogonal_antisymmetric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.SpectralDeformation.swapCoordinate_involution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.swapCoordinate_commute' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.SpectralDeformation.coordinateSwap_commute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.coordinateSwap_tensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.simultaneousSwap_tensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.antisymmetryOperator_tensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.swapSign_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.swapSign_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.simultaneousSwap_tensor_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.SpectralDeformation.antisymmetryOperator_tensor_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.SpectralDeformation.tensorVector_dotProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralDeformation.tensorVector_orthogonal_of_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ParityInterpolation.mem_integerWindow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.integerWindow_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.integerWindow_difference_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.parityPolynomial_eval_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.parityPolynomial_eval_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.parityPolynomial_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.parityPolynomial_degree_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.not_mem_badIndices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.parityPolynomial_good' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.parity_filtered_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.integerWindow_cast_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ParityInterpolation.parityPolynomialMod_eval_int' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ParityInterpolation.parityPolynomialMod_eval_nat' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ParityInterpolation.parityPolynomialMod_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.parityPolynomialMod_good' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParityInterpolation.parity_filtered_residual_mod' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.CenteredWindow.mem_of_distance_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CenteredWindow.distance_le_of_not_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CenteredWindow.bad_indices_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.nodeFactor_eval_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.nodeFactor_eval_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.phi_eval_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.phi_eval_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.nodeFactor_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.phi_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.coefficient_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.coefficient_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.occupiedForm_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.occupiedForm_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.DeformationConstruction.occupiedForm_at_node' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixLocality.supportBound_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixLocality.supportBound_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixLocality.matrixPolynomial_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixLocality.matrixPolynomial_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixLocality.swapAt_distance' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.MatrixLocality.Wmatrix_one_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixLocality.Amatrix_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixLocality.mismatch_card_le_distance' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.MatrixLocality.Amatrix_locality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixSpectralBridge.operatorEntry_toLin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixSpectralBridge.matrixPolynomial_toLin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixSpectralBridge.swapAt_eq_swapCoordinate' does not depend on any axioms
+'NtimeDspace.MatrixSpectralBridge.swapAt_involution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixSpectralBridge.swapAt_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixSpectralBridge.swapMatrix_toLin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixSpectralBridge.Wmatrix_toLin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixSpectralBridge.Vmatrix_toLin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixSpectralBridge.Amatrix_toLin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.MatrixSpectralBridge.Amatrix_eq_operatorEntry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.pairVector_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.pairVector_norm_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.pairVector_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.pairVector_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.linearIndependent_of_orthogonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.TensorBasisField.pairVector_linearIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.pairBasis_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.pairVector_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.tensorFamily_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.tensorFamily_norm_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.tensorFamily_linearIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.tensorBasis_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.tensorFamily_local_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.tensorBasis_V_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.tensorBasis_W_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.tensorFamily_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.tensorFamily_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasisField.tensor_residual_add_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteFieldDeformation.residual_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteFieldDeformation.entry_locality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteFieldDeformation.coefficient_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteFieldDeformation.coefficient_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteFieldDeformation.occupied_at_node' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Formula.eval_eq_true_iff' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.assignmentList_complete' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.assignmentList_nodup' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.assignmentList_length' depends on axioms: [propext]
+'NtimeDspace.assignmentList_toFinset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.satisfyingCount_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.assignmentList_contribution_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.modularAccumulator_invariant' depends on axioms: [propext]
+'NtimeDspace.modularAccumulator_lt' depends on axioms: [propext]
+'NtimeDspace.countModP_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.countModP_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CountingPolynomial.literalValue_bool' depends on axioms: [propext]
+'NtimeDspace.CountingPolynomial.complement_product_bool' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.CountingPolynomial.product_bool' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.CountingPolynomial.clauseValue_bool' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.CountingPolynomial.formulaValue_bool' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.CountingPolynomial.clauseValue_empty' depends on axioms: [propext]
+'NtimeDspace.CountingPolynomial.sum_formulaValue_eq_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CountingPolynomial.incidenceForm_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CountingPolynomial.deformedLiteral_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CountingPolynomial.prod_positions_eq_list' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CountingPolynomial.deformedClause_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CountingPolynomial.deformedFormula_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.CountingPolynomial.countingPolynomial_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.linearValue_eq_incidenceForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.literalPolynomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.clausePolynomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.factorPolynomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.countingPolynomial_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.literalPolynomial_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.totalDegree_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.clausePolynomial_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.factorPolynomial_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.incidenceCount_le_three_clauses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.scalarFormulaExpression_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaCounter.scalarFormulaExpression_correct_of_incidence_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.IncidenceDeformation.incidenceCoefficient_origin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.IncidenceDeformation.incidenceCoefficient_weighted_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.IncidenceDeformation.incidenceCoefficient_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.IncidenceDeformation.formula_incidenceForm_eq_occupied_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.IncidenceDeformation.formulaCoefficients_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.IncidenceDeformation.formulaCoefficients_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.IncidenceDeformation.scalarFormulaExpression_correct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.FiniteFieldCounter.coefficients_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteFieldCounter.coefficients_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteFieldCounter.scalarFormulaExpression_correct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.FiniteFieldCounter.scalarFormulaExpression_correct_at_nodes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.GroupedCounting.fixed_measurement_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.GroupedCounting.unique_measurement_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.GroupedCounting.grouped_counting_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.GroupedDeformation.support_constraint_iff' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.GroupedDeformation.integerMeasurement_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.GroupedDeformation.boundedMeasurement_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.GroupedDeformation.boundedValue_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.GroupedDeformation.measurementTuple_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.GroupedDeformation.clausePolynomial_eval_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.GroupedDeformation.factorPolynomial_eq_product_groupFactor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.GroupedDeformation.grouped_formula_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.GroupedDeformation.expandedPolynomial_formula_eval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.GroupedDeformation.support_subset_iff_assignment' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.GroupedDeformation.taylor_inner_eq_groupedFormulaSum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.GroupedDeformation.taylorData_eq_groupedTaylorData' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.RestrictedMeasurements.pairSign_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.RestrictedMeasurements.pairSign_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.RestrictedMeasurements.pairSign_cast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.RestrictedMeasurements.tensorSign_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.RestrictedMeasurements.tensorSign_cast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.RestrictedMeasurements.sum_local_fibers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.RestrictedMeasurements.coefficient_norm_le_group_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.RestrictedMeasurements.coefficient_norm_le_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.RestrictedMeasurements.coefficient_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.RestrictedMeasurements.tensor_coefficient_norm_le_dimension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.RestrictedMeasurements.integerMeasurement_eq_restricted_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.RestrictedMeasurements.integerMeasurement_cast_eq_restricted_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.RestrictedMeasurements.tensor_integerMeasurement_cast' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.RestrictedMeasurements.integerMeasurement_abs_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.RestrictedMeasurements.sum_groups_integerMeasurement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.RestrictedMeasurements.sum_groups_tensor_integerMeasurement_cast' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.RestrictedMeasurements.restricted_row_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.RestrictedMeasurements.restricted_row_finset_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.localCoefficient_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.occupied_at_node_grouped' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.measurementRow_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.measurement_term_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.occupied_localRepresentation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.incidence_sum_eq_occupied' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.storedVariable_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.occupiedPositions_groups_match' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.formula_incidenceForm_eq_occupied' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.formula_localRepresentation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.taylorData_eq_concrete_grouped' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.ConcreteGroupedDeformation.formula_localRepresentation_of_placement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HashSchedules.affineEval_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashSchedules.affinePairHom_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashSchedules.affine_pair_fiber_card_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashSchedules.binary_affine_pair_fiber_card_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashSchedules.binary_affine_seed_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashSchedules.exists_simultaneous_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashSchedules.squaredDeviation_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashSchedules.deviation_square_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashSchedules.le_twice_mean_of_square_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashSchedules.occupancy_bound_of_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashSchedules.exists_balanced_seed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.sum_bucketCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.bucketCount_comp_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.sum_bucketCount_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.squaredDeviation_eq_collisions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.collisionCount_le_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.sum_squaredDeviation_eq_collisions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.sum_squaredDeviation_le_exceptional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HashVariance.pairFiberCount_eq_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.sum_pairFiberCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.sum_diagonal_pairFiberCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.collision_sum_of_uniform_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.affine_collisionCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.collisionCount_productHash' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.exceptional_incidence_pairs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.incidence_second_moment_le_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.pairwise_second_moment_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.group_second_moment_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.affine_incidence_second_moment_le_six' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HashVariance.projectedAffinePairHom_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.projected_affine_collisionCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.affine_group_second_moment_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.HashVariance.affine_joint_group_second_moment_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.HashVariance.exists_balanced_affine_seed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiberPlacement.placementEmbedding_label' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiberPlacement.copyIndex_injective_placement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiberPlacement.bucketCount_eq_fiber_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiberPlacement.fiber_bound_of_bucketCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiberPlacement.exists_copyIndex_of_occupancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteProductTail.integral_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteProductTail.uniformMeasure_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteProductTail.product_uniform_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteProductTail.uniformMeasure_real_finset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteProductTail.centered_subgaussian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteProductTail.product_centered_subgaussian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteProductTail.product_tail_measure_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FiniteProductTail.product_tail_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.sum_positions_eq_list' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.sum_literal_indicator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.literal_variable_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.unused_variable_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.variableDegree_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.variableDegree_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.variableDegree_le_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.factorDegree_clause' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.factorDegree_dummy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.factorDegree_le_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.sum_variableDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.variables_le_population' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.population_le_three_variables' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.literal_card_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.population_eq_literals_add_unused' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.FormulaIncidences.literalCount_le_population' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.variable_bucketCount_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.factor_bucketCount_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.variable_bucketCount_le_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.factor_bucketCount_le_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.FormulaIncidences.literal_endpoints_injective' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.FormulaIncidences.endpoints_injective' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.GroupedCounter.groupedNodePolynomial_eq_taylorData' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.GroupedCounter.groupedScalarExpression_eq_scalarFormulaExpression' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.GroupedCounter.groupedScalarExpression_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.s_pos' depends on axioms: [propext]
+'NtimeDspace.Parameters.Q_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.D_binary' depends on axioms: [propext]
+'NtimeDspace.Parameters.D_pow_eight' depends on axioms: [propext]
+'NtimeDspace.Parameters.D_pow_eight_le' depends on axioms: [propext]
+'NtimeDspace.Parameters.q_eq' depends on axioms: [propext]
+'NtimeDspace.Parameters.degree_below_QJ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.incidence_budget' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.Parameters.sixty_four_le_s' depends on axioms: [propext]
+'NtimeDspace.Parameters.thirty_two_le_R' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.six_mul_R_le_Q' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.Parameters.s_le_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.two_le_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.Q_le_log2' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.Parameters.R_le_log2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.Q_le_N' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.Parameters.R_le_N' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.s_le_R' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.Parameters.q_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.q_mul_s_le' depends on axioms: [propext]
+'NtimeDspace.Parameters.q_le_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.schedule_budget_of_D_pow_eight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.construction_incidence_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.construction_schedule_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.log_budget_implies_N_ge_256' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.taylor_order_le_N' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.degree_plus_order_lt_four_N_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.scalar_parameter_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.q_le_prime_sub_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.schedule_bits_log_budget' depends on axioms: [propext]
+'NtimeDspace.Parameters.D_log2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.measurementBits_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.Parameters.measurement_tuple_scaled_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParameterChoice.le_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParameterChoice.admissible' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.ParameterChoice.selected_le_log2' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.ParameterChoice.maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParameterChoice.six_le_selected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParameterChoice.next_inadmissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParameterChoice.next_cost_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.ParameterChoice.log2_lt_sixteen_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralPairCount.antisymmetricBit_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralPairCount.antisymmetricBit_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralPairCount.antisymmetricCount_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralTail.antisymmetricBit_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralTail.antisymmetricCount_tail_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SpectralTail.badIndices_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.binaryValue_binaryTail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.binaryTail_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.takeBits_append' depends on axioms: [propext]
+'NtimeDspace.SupportEncoding.scanZeros_replicate' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.SupportEncoding.gammaDecode_encode_append' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.gammaDecode_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.gammaEncode_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.gammaEncode_injective_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.gammaEncode_unique_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.gammaEncode_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.decodeGapsFuel_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.encodeGaps_length_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.decodeGaps_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.encodeGaps_injective_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.encodeGaps_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.supportFromGaps_gt' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.SupportEncoding.supportFromGaps_strict' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.SupportEncoding.gapsFromSupport_supportFromGaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.gapsFromSupport_pos' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.SupportEncoding.supportFromGaps_gapsFromSupport' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.SupportEncoding.decodeSupport_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportEncoding.encodeSupport_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportBounds.log_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportBounds.gammaEncode_length_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportBounds.encodeGaps_tangent_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportBounds.tangent_slope_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportBounds.encodeGaps_length_le_real_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportBounds.encodeGaps_length_le_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.SupportBounds.encodeGaps_length_le_parameter_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NtimeDspace.SupportBounds.encodeGaps_length_le_supportLimit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TailParameters.exponent_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TailParameters.six_mul_s_pow_five_le_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TailParameters.exponential_tail_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TailParameters.exponential_tail_le_tau' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TailParameters.badCount_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TailParameters.badCount_le_tau' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TailParameters.badCount_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TailParameters.measurementRow_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TailParameters.measurement_rows_scaled_of_bounds' depends on axioms: [propext, Quot.sound]
+'NtimeDspace.TailParameters.measurementRow_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TailParameters.measurementRow_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.pairVector_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.pairVector_norm_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.pairVector_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.pairVector_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.pairVector_abs_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.linearIndependent_of_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.pairVector_linearIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.pairBasis_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.pairVector_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensorFamily_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensorFamily_norm_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensorFamily_linearIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensorBasis_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensorFamily_local_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensorBasis_V_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensorBasis_W_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensorFamily_abs_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensorFamily_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensorFamily_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NtimeDspace.TensorBasis.tensor_residual_add_entry' depends on axioms: [propext, Classical.choice, Quot.sound]

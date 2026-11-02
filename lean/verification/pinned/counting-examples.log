@@ -1,0 +1,51 @@
+PASS positive unit: 1
+PASS negative unit: 1
+PASS contradiction: 0
+PASS repeated occurrence: 1
+PASS tautology: 2
+PASS empty clause: 0
+PASS unused declared variables: 4
+PASS count reduced modulo 7: 1
+PASS total counter empty formula n=0: 1
+PASS total counter empty clause n=0: 0
+PASS total counter positive unit: 1
+PASS total counter modular reduction: 1
+PASS population includes unused dummy: 2
+PASS scalar used-variable occurrences: 1
+PASS scalar unused-variable occurrences: 0
+PASS explicit seed search balances tiny instance: 1
+PASS joint seed bit-layout roundtrip: 61
+PASS offset-only seed roundtrip: 3
+PASS gamma zero bound rejects leading one: none
+PASS gamma nonzero cursor preserves suffix: some (5, 7)
+PASS gamma payload overflow rejects: none
+PASS gamma truncated payload rejects: none
+PASS gamma starting cursor beyond EOF: none
+PASS gamma excessive leading zeros reject: none
+PASS gamma long prefix rejects early with every prefix bounded: 1
+PASS support empty zero universe and capacity: some 0
+PASS support empty with unused capacity: some 0
+PASS support nonempty zero capacity: none
+PASS support actual width below capacity: some 3
+PASS support exactly full capacity accepts EOF: some 3
+PASS support capacity overflow rejects extra entry: none
+PASS support cumulative index overflow: none
+PASS support valid prefix with truncated final codeword: none
+PASS support zero universe rejects positive entry: none
+PASS support rejects long malformed prefix: none
+PASS spectral coefficient (0, 0)/(0, 0): 1
+PASS spectral coefficient (0, 0)/(0, 1): 0
+PASS spectral coefficient (0, 0)/(1, 0): 0
+PASS spectral coefficient (0, 0)/(1, 1): 0
+PASS spectral coefficient (0, 1)/(0, 0): 0
+PASS spectral coefficient (0, 1)/(0, 1): 1
+PASS spectral coefficient (0, 1)/(1, 0): 0
+PASS spectral coefficient (0, 1)/(1, 1): 0
+PASS spectral coefficient (1, 0)/(0, 0): 0
+PASS spectral coefficient (1, 0)/(0, 1): 0
+PASS spectral coefficient (1, 0)/(1, 0): 1
+PASS spectral coefficient (1, 0)/(1, 1): 0
+PASS spectral coefficient (1, 1)/(0, 0): 0
+PASS spectral coefficient (1, 1)/(0, 1): 0
+PASS spectral coefficient (1, 1)/(1, 0): 0
+PASS spectral coefficient (1, 1)/(1, 1): 1

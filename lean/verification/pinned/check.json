@@ -1,0 +1,1602 @@
+{
+  "checked_at_utc": "2026-11-01T08:55:29.240924+00:00",
+  "success": true,
+  "compiler_version": "Lean (version 4.36.0-rc2, arm64-apple-darwin24.6.0, commit b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a, Release)",
+  "compiler_githash": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a",
+  "project_manifest_sha256": "ab4ac556d1688fa59bd859a29797bbb83648e601f6b6571c42b58e2e1f4c2f4f",
+  "source_provenance_sha256": "cc998ff9177e41e9ee11fb30f7ab928806de10ccc6ae8cb16897ab54340f6367",
+  "complexitylib_subset_check_sha256": "2df9fc688d5ac089d1b22fb7a4121c95498837a89cb242fd2b4004dbbf8b259e",
+  "scope": "New project sources on exact pinned trusted dependencies via local path environment",
+  "excluded_modules": [
+    "Audit"
+  ],
+  "modules": {
+    "BinaryCounterMachine": {
+      "source_sha256": "c9e8ed36d9ac6cbe730b90f99df307b8a20eab1a016d18ed48942f9f6f582042",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "e58f4045813a9f5cd33bc3c9b462ee24f33a36eea195190960e20b40360b05b5",
+      "log": "lean/verification/pinned/BinaryCounterMachine.log"
+    },
+    "RewoundBinaryCounter": {
+      "source_sha256": "9091b45ae0b77d61ed997aef94387bae7be5a0908952d5a3d16207e6a00a7df2",
+      "dependencies": [
+        "BinaryCounterMachine"
+      ],
+      "status": "reused",
+      "olean_sha256": "56b716cf3ce510ad301478a789ac1f364d09775bbab71c84cffa3bf2beace414",
+      "log": "lean/verification/pinned/RewoundBinaryCounter.log"
+    },
+    "CopyRegisterMachine": {
+      "source_sha256": "788aef7ffb7bda89b4bc479c6b2ea7524bf11d0a58ef643620c93516740a74b8",
+      "dependencies": [
+        "RewoundBinaryCounter"
+      ],
+      "status": "reused",
+      "olean_sha256": "2317f9783e9b1f427dad6c40399b8ded3388709ed4b72982d960f0f1be169d12",
+      "log": "lean/verification/pinned/CopyRegisterMachine.log"
+    },
+    "CompareRegistersMachine": {
+      "source_sha256": "001342d6469f075a5aada102badd9cd548c59b370fe08991a38a1f71b7888d09",
+      "dependencies": [
+        "CopyRegisterMachine"
+      ],
+      "status": "reused",
+      "olean_sha256": "ffee6816b9ba0e1ec34a80a9aeff274be1c616f85d3cc5eb17e140ac2460b6f4",
+      "log": "lean/verification/pinned/CompareRegistersMachine.log"
+    },
+    "AddRegistersMachine": {
+      "source_sha256": "43e088dd8bc0fe99c99ce9a92ef3de23812954af0901b69af42162603e30c6df",
+      "dependencies": [
+        "CompareRegistersMachine"
+      ],
+      "status": "reused",
+      "olean_sha256": "7a9b36de05acb36b8143db8729cbdc7c53299704714a4484c6965d62cd1c26f2",
+      "log": "lean/verification/pinned/AddRegistersMachine.log"
+    },
+    "PolynomialFacts": {
+      "source_sha256": "51a1fd921a886a81824fc7b92bb4fb41d1fd5145e34691b375535c7cc64fa3d2",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "86355fa09b114252a1da57d6e250110660fe9b1abe67121d90ac9c65f26834f1",
+      "log": "lean/verification/pinned/PolynomialFacts.log"
+    },
+    "Counting": {
+      "source_sha256": "39f7ccfd09bd5a834f87e7c9a1c484bbd03332b192a3d5f91ec330ff0bebf10c",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "23a3304c3af35806490b234572e06b5721962400b62a8e359124d66af40dc2f1",
+      "log": "lean/verification/pinned/Counting.log"
+    },
+    "CountingPolynomial": {
+      "source_sha256": "62943a4cfa1ad7eecb4c9288d142fb1d6efd5c0571e354fbf15859dd8404abd0",
+      "dependencies": [
+        "PolynomialFacts",
+        "Counting"
+      ],
+      "status": "reused",
+      "olean_sha256": "0e4f7f79efeb41e7b538713220e052e4ed860568d2ad3d3bc3f7c8a741a18059",
+      "log": "lean/verification/pinned/CountingPolynomial.log"
+    },
+    "BooleanMobius": {
+      "source_sha256": "bf3afa1cc39ead6321eb819ae515d3b4f239dcd729b589ff14a7d1d46ec6586c",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "fee98fa583c7e5023a1ed37fb7ffa088969a07099a3346a37c7e3274e5d2798b",
+      "log": "lean/verification/pinned/BooleanMobius.log"
+    },
+    "TaylorTruncation": {
+      "source_sha256": "037156641bbad5302bec4c5d5228265b9eb17b6919db87b09d5f6bcaea41d016",
+      "dependencies": [
+        "BooleanMobius"
+      ],
+      "status": "reused",
+      "olean_sha256": "0e2543c28bdaae9cf1758340f125e8485ff601ce612a389801df866d5ae84bc6",
+      "log": "lean/verification/pinned/TaylorTruncation.log"
+    },
+    "DeformationTaylor": {
+      "source_sha256": "73d62823c40cb6e8774c486b49be07e2d38fe6130847a3c720eed67acadf8f1e",
+      "dependencies": [
+        "PolynomialFacts",
+        "TaylorTruncation"
+      ],
+      "status": "reused",
+      "olean_sha256": "68b1663172d575d1c0bbf633226ad2ef70ffabae3e764b05eb76e2ecc7acc73a",
+      "log": "lean/verification/pinned/DeformationTaylor.log"
+    },
+    "Projector": {
+      "source_sha256": "e5b8f65805d0ad0e109b2bef0382c16a7f7c452c2115c950fae2453b630d4823",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "a94ec25f159ded3f7a2e51503594e29adbadf189b34eda7200d7f38ade989ef5",
+      "log": "lean/verification/pinned/Projector.log"
+    },
+    "ScalarRecovery": {
+      "source_sha256": "a5722b566bab1131f95af56144f7d0877f478f13e3672076b435ed95204079fa",
+      "dependencies": [
+        "Projector"
+      ],
+      "status": "reused",
+      "olean_sha256": "9f45da2bae6e0c2474812b41ffbc54df0d2f943b2271dcd2944920fb0f0a7f9d",
+      "log": "lean/verification/pinned/ScalarRecovery.log"
+    },
+    "HermiteRecovery": {
+      "source_sha256": "b37d76c91766bb7e9a92d02445491edd4f0d73fc2d1b3cbd53506587bd0c69fd",
+      "dependencies": [
+        "ScalarRecovery"
+      ],
+      "status": "reused",
+      "olean_sha256": "862f4de241d6dc798ca1714b96e812e02fa17ee9aae20422ecff1a1c8710b823",
+      "log": "lean/verification/pinned/HermiteRecovery.log"
+    },
+    "HermiteGlobal": {
+      "source_sha256": "58d0f604ab6a849f9e313e8096420e2b35d0ed7fbd14227795f06ea532024f26",
+      "dependencies": [
+        "PolynomialFacts",
+        "HermiteRecovery"
+      ],
+      "status": "reused",
+      "olean_sha256": "dc87f0fa900591cb87821ae8233fbc7282048a2472210d123cbf2e3e65fb6c0f",
+      "log": "lean/verification/pinned/HermiteGlobal.log"
+    },
+    "AlgebraicCounter": {
+      "source_sha256": "6eed324ebf1b5de44c2a6abf12a73094cca7c44bcc21adde252c5589bb137bb8",
+      "dependencies": [
+        "DeformationTaylor",
+        "HermiteGlobal"
+      ],
+      "status": "reused",
+      "olean_sha256": "0550604d8f217baa0c929244b979acebb48b3860746f92c77e9ab4f3a964d52d",
+      "log": "lean/verification/pinned/AlgebraicCounter.log"
+    },
+    "FormulaCounter": {
+      "source_sha256": "98c2de5e53cdd6fc423f5264d0a732c2c4a5439050d956abb98ff9c84b3336c1",
+      "dependencies": [
+        "CountingPolynomial",
+        "AlgebraicCounter"
+      ],
+      "status": "reused",
+      "olean_sha256": "8d3033d7a3ff5707ee21ce2084a83db91cf5db89e268620ccd6efd90db27e1a6",
+      "log": "lean/verification/pinned/FormulaCounter.log"
+    },
+    "GroupedCounting": {
+      "source_sha256": "0e448dc1d99d3583c49d67846ee48237dc786650c4cc94f26cbf2b5c6fcf3c58",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "a8b3116139274c0ff1eff96b49a37d5b8db557461d2abacc6ee1db70f1294013",
+      "log": "lean/verification/pinned/GroupedCounting.log"
+    },
+    "GroupedDeformation": {
+      "source_sha256": "f6a4874131edd4eda34eb4e7e3051d26e8a81268266e24a94ecac01d24335519",
+      "dependencies": [
+        "FormulaCounter",
+        "GroupedCounting"
+      ],
+      "status": "reused",
+      "olean_sha256": "7265271404a9a8289cdd0573bed8dc4791a8a5eb39af6fb8274f80526de48ea0",
+      "log": "lean/verification/pinned/GroupedDeformation.log"
+    },
+    "CoefficientRecursion": {
+      "source_sha256": "bff70edb276e3fa2e37df54c4fe2d843f6d58ac08dfab935e8a2f2a28e2d2681",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "80ec5c4f4453179cbe5056fdb65cca4e4a28b4786a47fac0844cb897777422b6",
+      "log": "lean/verification/pinned/CoefficientRecursion.log"
+    },
+    "MeasurementEnumeration": {
+      "source_sha256": "75dbb605c5736582fce3e7a57a99f970ef345ba7a555737342a263372c15e598",
+      "dependencies": [
+        "GroupedDeformation",
+        "CoefficientRecursion"
+      ],
+      "status": "reused",
+      "olean_sha256": "73fc135e64b22ea9abc0596fd3b06c44cfa46da43e9f4511c40a37e5b7bb206c",
+      "log": "lean/verification/pinned/MeasurementEnumeration.log"
+    },
+    "AssignmentLoop": {
+      "source_sha256": "182710005ab5ca5c431bbd7d2c87f252d2642ce397a65ce76653aab2940911d6",
+      "dependencies": [
+        "Counting",
+        "CoefficientRecursion"
+      ],
+      "status": "reused",
+      "olean_sha256": "6c4c57b5e2d2a5828f625b3c37c1a4e01d2d6d89da3ddf024b8f2e2e2b8b19e2",
+      "log": "lean/verification/pinned/AssignmentLoop.log"
+    },
+    "FormulaInput": {
+      "source_sha256": "6788c4ffb93696a2f240ea6622edd1a61e608ef282e6c45e583ec6b08efae3a7",
+      "dependencies": [
+        "Counting"
+      ],
+      "status": "reused",
+      "olean_sha256": "eab3bba41c0a231038bed2fdfc63bf3c463cd6b1762db71cdc311401f705ff06",
+      "log": "lean/verification/pinned/FormulaInput.log"
+    },
+    "HashSchedules": {
+      "source_sha256": "c0e92b45cc8ba36839dc65cbbf071b68b7efd2dbb45fe30c623a254d72940123",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "900914833108a3136c365f99f4796e9f16b5fda036c99eb0c0c36637b6ef8968",
+      "log": "lean/verification/pinned/HashSchedules.log"
+    },
+    "HashVariance": {
+      "source_sha256": "ce205483b4ea2657196d6f8b71c3e0d5e119d1d34990d5c12b0fd5faa32697c5",
+      "dependencies": [
+        "HashSchedules"
+      ],
+      "status": "reused",
+      "olean_sha256": "87197caae12fa0ff5eabbc84d9bc65ddc535e605c260278c0296ed76e0c021bb",
+      "log": "lean/verification/pinned/HashVariance.log"
+    },
+    "FormulaIncidences": {
+      "source_sha256": "345b5cdf0bd00a3f209209a944e6e18ad1fdcb6047c825c9f94fe8f2eb642c78",
+      "dependencies": [
+        "FormulaInput",
+        "FormulaCounter",
+        "HashVariance"
+      ],
+      "status": "reused",
+      "olean_sha256": "084910696a50f970bd59197e57d70e9d6e51ae37f21d7af5f1a09e9b0d30e12c",
+      "log": "lean/verification/pinned/FormulaIncidences.log"
+    },
+    "CanonicalPlacement": {
+      "source_sha256": "f3de63bcf211ce52dbb3e36a013e9e27172ab007aa0850049a71fc5d2fc6293a",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "ad2656315032c52297c4d1857a77f37d0be21533370dcedfe3f1c424185e3f14",
+      "log": "lean/verification/pinned/CanonicalPlacement.log"
+    },
+    "DeformationConstruction": {
+      "source_sha256": "91054702880c96557db0effc379b49dbe85a4af80adfa689cb1ba56585cff661",
+      "dependencies": [
+        "PolynomialFacts"
+      ],
+      "status": "reused",
+      "olean_sha256": "b74c90b4c756ec771266a55b4ce851d401bd96234f55e32da873abc02c5fb33d",
+      "log": "lean/verification/pinned/DeformationConstruction.log"
+    },
+    "MatrixLocality": {
+      "source_sha256": "cb46fe22e67c5f53e18da0f6933342d7d609c2eca0185315627ff1ea98081a68",
+      "dependencies": [
+        "DeformationConstruction"
+      ],
+      "status": "reused",
+      "olean_sha256": "18e3900e6d7564556ec239e66dedf7fb5b70a557e169648daa5d93db50722794",
+      "log": "lean/verification/pinned/MatrixLocality.log"
+    },
+    "SpectralDeformation": {
+      "source_sha256": "eafa398d7917855f5e0e804552063c16607894c2bf6f42506849b3954ba0035d",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "c6279aeb571cfee571200856d5efabdfd224c5c03b33ded1a8507b24de027681",
+      "log": "lean/verification/pinned/SpectralDeformation.log"
+    },
+    "MatrixSpectralBridge": {
+      "source_sha256": "20f3d008c2a732e82b40a69a350846adcc925fc2922f34382030c364b19ebd48",
+      "dependencies": [
+        "MatrixLocality",
+        "SpectralDeformation"
+      ],
+      "status": "reused",
+      "olean_sha256": "bff463f9d8d491515dfd162a956b9f201be57e673400fc97e3749afa70aefea8",
+      "log": "lean/verification/pinned/MatrixSpectralBridge.log"
+    },
+    "TensorBasisField": {
+      "source_sha256": "5d9268ae259cf18aa45a19914a4afbced40735a80a695dd7c36db5647b2f3ecd",
+      "dependencies": [
+        "SpectralDeformation"
+      ],
+      "status": "reused",
+      "olean_sha256": "2c7031f631f96a94422d619da42030ee73da992b41ab7b685b3e809ce190eab7",
+      "log": "lean/verification/pinned/TensorBasisField.log"
+    },
+    "ParityInterpolation": {
+      "source_sha256": "d8c90c91526f2de4a1cbd33666ed40b92e824d33df9f160874aa9b304b85ca89",
+      "dependencies": [
+        "SpectralDeformation"
+      ],
+      "status": "reused",
+      "olean_sha256": "94840e08586779600ef37717fa565a4a70e3ea89d2c6886277c9034ab56429b3",
+      "log": "lean/verification/pinned/ParityInterpolation.log"
+    },
+    "FiniteFieldDeformation": {
+      "source_sha256": "2c709db963abee6f499bc4b82d029d2cff4ca0a48c531b22fd3ac50f7dd59db1",
+      "dependencies": [
+        "MatrixSpectralBridge",
+        "TensorBasisField",
+        "ParityInterpolation"
+      ],
+      "status": "reused",
+      "olean_sha256": "b77079ff778cdf1fbb8743cdc8d3f5f587eaf2f0648a706ad9522033e9322fb1",
+      "log": "lean/verification/pinned/FiniteFieldDeformation.log"
+    },
+    "IncidenceDeformation": {
+      "source_sha256": "3e4b406128824de59999d82859a04faf0bce7e2262ad99cc9dd23374020d750f",
+      "dependencies": [
+        "PolynomialFacts",
+        "FormulaCounter"
+      ],
+      "status": "reused",
+      "olean_sha256": "e1c80fa7fe142cc70f3a543095ec459c2c5d25d76bb30eadb0258593f7484171",
+      "log": "lean/verification/pinned/IncidenceDeformation.log"
+    },
+    "FiniteFieldCounter": {
+      "source_sha256": "83f633f59356869899349d1aa912b123c7b94b2d4689d95b62cbba935128eaae",
+      "dependencies": [
+        "FiniteFieldDeformation",
+        "IncidenceDeformation"
+      ],
+      "status": "reused",
+      "olean_sha256": "000b0e3b18b8351c0082858387db435130d7a0f4de208e2504c13f2c6922a7b7",
+      "log": "lean/verification/pinned/FiniteFieldCounter.log"
+    },
+    "RestrictedMeasurements": {
+      "source_sha256": "cdf73aed060d783c0780a9697a83eef04d16c2aaffe57ee51a2fa0426ba9ffdc",
+      "dependencies": [
+        "GroupedDeformation",
+        "TensorBasisField"
+      ],
+      "status": "reused",
+      "olean_sha256": "7629ae8c488b5409cccc7b8267de95432441ce33a2cda930f89a5674c2656025",
+      "log": "lean/verification/pinned/RestrictedMeasurements.log"
+    },
+    "ConcreteGroupedDeformation": {
+      "source_sha256": "f500652ed602992e92d79b78537197378119eca9ea5acace4bcf0c1af2a3b71a",
+      "dependencies": [
+        "FiniteFieldCounter",
+        "RestrictedMeasurements"
+      ],
+      "status": "reused",
+      "olean_sha256": "20b47acd4c2d8b6b1174ff716a0b370280856aff56a8b2aa52cfbd40a164c231",
+      "log": "lean/verification/pinned/ConcreteGroupedDeformation.log"
+    },
+    "GroupedCounter": {
+      "source_sha256": "c9c56aa51983970c850bcefb9a963d3c3c472ec520234aca05b5c79abc4aa39d",
+      "dependencies": [
+        "ConcreteGroupedDeformation"
+      ],
+      "status": "reused",
+      "olean_sha256": "22e2ba7555be444ae58674eeaa180cfd5c22728e8e821e0e0d3f01edd653823c",
+      "log": "lean/verification/pinned/GroupedCounter.log"
+    },
+    "Parameters": {
+      "source_sha256": "2fad3ad4294efe3cc540f96dc3ec28293a644d6d502566461f10cb5cd81b333d",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "d4f95bc80ad9aaa2b874a1119503f6d0c4f594b6c6e5552e77ba6ba97b6e4412",
+      "log": "lean/verification/pinned/Parameters.log"
+    },
+    "ParameterChoice": {
+      "source_sha256": "e316c1d925e5ad9cb9b5b670bc4d811558a199d3a1ff8614d8ba982f9d1529a7",
+      "dependencies": [
+        "Parameters"
+      ],
+      "status": "reused",
+      "olean_sha256": "48dba562beacb6fff0f5d89ccaef45bfa6789111d780fc0bb342082bd3f60996",
+      "log": "lean/verification/pinned/ParameterChoice.log"
+    },
+    "FiniteProductTail": {
+      "source_sha256": "ab84d7289c84fc4897c5d9c3094d2635199b5ef222ef405ecf3cc0d5db8474ae",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "eb38f0179f60d24113f3ed4c50ee1c86b17aaab2d4d27ba0cafcab2a4c6cab39",
+      "log": "lean/verification/pinned/FiniteProductTail.log"
+    },
+    "SpectralPairCount": {
+      "source_sha256": "3baa51bdcaa1b7d78ee831b883b47e3561edd5a69ccd034a7147e3292db4559a",
+      "dependencies": [
+        "TensorBasisField"
+      ],
+      "status": "reused",
+      "olean_sha256": "fbeee886edb20126a2bd94f2c4e19b40cd5e040007bd563015cc77b98748bc5d",
+      "log": "lean/verification/pinned/SpectralPairCount.log"
+    },
+    "CenteredWindow": {
+      "source_sha256": "24a8354ad9f3ce2e1da61ba734ef44a13ef19c212ea32fef6a5ec08200bda86f",
+      "dependencies": [
+        "ParityInterpolation"
+      ],
+      "status": "reused",
+      "olean_sha256": "8acbc5afb139e3687c7174e913ed4a525c428ccb9733fe192c1999d5c1e498f3",
+      "log": "lean/verification/pinned/CenteredWindow.log"
+    },
+    "SpectralTail": {
+      "source_sha256": "df3ee82d42a64d001dc955104a3e4ae71b839ea6b46409a98bf848b513b5b021",
+      "dependencies": [
+        "FiniteProductTail",
+        "SpectralPairCount",
+        "CenteredWindow"
+      ],
+      "status": "reused",
+      "olean_sha256": "f5caba2fb0fe7aef9aa95f9a00f230ab0c8e9958f21cc4832a44b6fe62166c69",
+      "log": "lean/verification/pinned/SpectralTail.log"
+    },
+    "TailParameters": {
+      "source_sha256": "3ff8511cbc0de1b2f67bdb852b71af48a14362c5946a47355a5e32e36757cd09",
+      "dependencies": [
+        "Parameters",
+        "SpectralTail"
+      ],
+      "status": "reused",
+      "olean_sha256": "af3cc8b87bb05c56df8bc3c72926093aa81531dde8d77f8bc07ca7a136bafea8",
+      "log": "lean/verification/pinned/TailParameters.log"
+    },
+    "SchedulePlacement": {
+      "source_sha256": "2fa993625a4e9753d97182ea1018ca825e7ce8d8ef4eb4abab80b1f0872e9f56",
+      "dependencies": [
+        "FormulaIncidences",
+        "CanonicalPlacement",
+        "GroupedCounter",
+        "ParameterChoice",
+        "TailParameters"
+      ],
+      "status": "reused",
+      "olean_sha256": "daac962447be17c251f48ace9b274979cc52e35d4beba566967a25d02329cec1",
+      "log": "lean/verification/pinned/SchedulePlacement.log"
+    },
+    "LocalAssignmentLoop": {
+      "source_sha256": "870c20178977a3feb610515e49fe5f70c884fe17d06b5a3b3b6c9a0bd0774370",
+      "dependencies": [
+        "AssignmentLoop",
+        "SchedulePlacement"
+      ],
+      "status": "reused",
+      "olean_sha256": "9a54e8cf727d18ea2e4c27d0e5e8734c39679f32e026441d0b4768c95226b35c",
+      "log": "lean/verification/pinned/LocalAssignmentLoop.log"
+    },
+    "SpectralIndexing": {
+      "source_sha256": "0a5e9c2102594eb774df00c204a566192824dc678ffe271df063293fea55bd5b",
+      "dependencies": [
+        "MeasurementEnumeration",
+        "LocalAssignmentLoop",
+        "ConcreteGroupedDeformation"
+      ],
+      "status": "reused",
+      "olean_sha256": "daef7659b1d752eefd75095dc0be7d53a67ee98133af4958894da01e5ea21688",
+      "log": "lean/verification/pinned/SpectralIndexing.log"
+    },
+    "GroupedAssignmentEvaluation": {
+      "source_sha256": "253186c8889f15ce2ea23f362303adebca12c41bfe117393678bdb61f5236455",
+      "dependencies": [
+        "LocalAssignmentLoop"
+      ],
+      "status": "reused",
+      "olean_sha256": "55e7ce0e939356b4e611d8ab3f88b22c6d02ce437c0ccba5c57ece9c459aaaee",
+      "log": "lean/verification/pinned/GroupedAssignmentEvaluation.log"
+    },
+    "AffineScheduleEvaluation": {
+      "source_sha256": "24d1fc8955ed15fe2df9f6e585ebb57d54e3c11a5a507a129a707c590bae6774",
+      "dependencies": [
+        "SpectralIndexing",
+        "GroupedAssignmentEvaluation"
+      ],
+      "status": "reused",
+      "olean_sha256": "d8acc0df2b66cb1991e54c64cce4581c267d0b9940574069b72fa29842f53d9a",
+      "log": "lean/verification/pinned/AffineScheduleEvaluation.log"
+    },
+    "AffineSeedEncoding": {
+      "source_sha256": "e07714938d51ffd64b936e48afa7073d21915e9d3782561d83beabc8294fb61d",
+      "dependencies": [
+        "AffineScheduleEvaluation"
+      ],
+      "status": "reused",
+      "olean_sha256": "6bb6950138fd767b5df47c5969351d63f7e0c9fb773e9d683af3a9359f404b95",
+      "log": "lean/verification/pinned/AffineSeedEncoding.log"
+    },
+    "ReciprocalCoefficients": {
+      "source_sha256": "9ff1d2467590c0e1e97faa3fabf45dbe96b77800139e05a6d288bacfe0889075",
+      "dependencies": [
+        "HermiteRecovery",
+        "CoefficientRecursion"
+      ],
+      "status": "reused",
+      "olean_sha256": "780dc293f37b2bbcdccff80f2327387eae1573e43e7fa0304624091ce5939b1c",
+      "log": "lean/verification/pinned/ReciprocalCoefficients.log"
+    },
+    "BalancedCoefficients": {
+      "source_sha256": "dbc2f35cf911745b4b795e0ea5dd071e2087c7e70f6a8989d82e3bdd7bc618ea",
+      "dependencies": [
+        "ReciprocalCoefficients"
+      ],
+      "status": "reused",
+      "olean_sha256": "b0810034aaa6390eda6520012967d8cb4a3bd1fdf61a50c02748cefecbb9c04e",
+      "log": "lean/verification/pinned/BalancedCoefficients.log"
+    },
+    "SupportEncoding": {
+      "source_sha256": "e6e77b277983bdaae64d20f6cde790d9b9247907849d46f72df50443e5567c31",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "b51521f64d7ab62c93cd2df640239498be03a134d9df051ae72ec26a883a942c",
+      "log": "lean/verification/pinned/SupportEncoding.log"
+    },
+    "BoundedSupportParser": {
+      "source_sha256": "95966940b1ba3282d65de0d9da4913b92ec2c2a7ab14f3d2d6cd5ce46fe8ce3f",
+      "dependencies": [
+        "SupportEncoding"
+      ],
+      "status": "reused",
+      "olean_sha256": "bc87778292116225e6eb0dbf44a3d454fb6e45b7371e65d3e5ef15770975df0b",
+      "log": "lean/verification/pinned/BoundedSupportParser.log"
+    },
+    "BoundedGammaPayload": {
+      "source_sha256": "4aa22a8a8e8ea631a16d50fb80e60f9f3b7f90c403af0e1b5a71f7a1a07ef689",
+      "dependencies": [
+        "BoundedSupportParser"
+      ],
+      "status": "reused",
+      "olean_sha256": "922cceb36f5e1b3a1b836e4746a08d04dc939f5e6475a4cd0ea89dd17be8871d",
+      "log": "lean/verification/pinned/BoundedGammaPayload.log"
+    },
+    "BoundedGammaPayloadSpace": {
+      "source_sha256": "1e606e5477c474971b7fe2b0cfaa2435cd4688ba78c81255b9bab937c426d564",
+      "dependencies": [
+        "BoundedGammaPayload"
+      ],
+      "status": "reused",
+      "olean_sha256": "947ca34aa2ffefe21836794376f7f13031510ed4dbfc91f5928f2a099a385155",
+      "log": "lean/verification/pinned/BoundedGammaPayloadSpace.log"
+    },
+    "InitializedQueryCompiler": {
+      "source_sha256": "973ba4ac60581aaa5e95db10cc0b15f6743ea55c0286aa3e91a8b4eb5cbc2915",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "32682fc693557ad57439e69c003c632de4ec95eafdf2d30cbfa877c537f2c3b1",
+      "log": "lean/verification/pinned/InitializedQueryCompiler.log"
+    },
+    "BoundedGammaQuery": {
+      "source_sha256": "bb76707704ce505995d5c81465b6b2162459a30c06f3547b816e7191b145966a",
+      "dependencies": [
+        "BoundedGammaPayloadSpace",
+        "InitializedQueryCompiler"
+      ],
+      "status": "reused",
+      "olean_sha256": "6f8997661587648b13bef6111b0b9483b79a0556f23a9cafb1b17fdc3f4dbe1c",
+      "log": "lean/verification/pinned/BoundedGammaQuery.log"
+    },
+    "BoundedGammaQueryBudget": {
+      "source_sha256": "33ac07795a03fd88b61f51b12892b2594e6e2af66ec334de757afc1ccc45b438",
+      "dependencies": [
+        "BoundedGammaQuery"
+      ],
+      "status": "reused",
+      "olean_sha256": "3c410a92c6eb43b08e7f2b3eb2c19059d100dccea15b667bab3a6f8846196acb",
+      "log": "lean/verification/pinned/BoundedGammaQueryBudget.log"
+    },
+    "SmallHeaderProjection": {
+      "source_sha256": "34f020067fab3264c7d8bab7e7dd3da5c2513aa8073528d16680191923f4b466",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "50692f579e769a81df2f132aff084ab212676fda5b13fb489f6b9b51b421b9ab",
+      "log": "lean/verification/pinned/SmallHeaderProjection.log"
+    },
+    "BoundedGammaQuerySpace": {
+      "source_sha256": "5469bc92222d08fc25c2f5971f968ea30e424685d93a02866ecd4c6f14334ece",
+      "dependencies": [
+        "BoundedGammaQuery",
+        "SmallHeaderProjection"
+      ],
+      "status": "reused",
+      "olean_sha256": "a76524192b0bcaf2754320771c30058f9e52a7752083421f2025b82fc1cc090b",
+      "log": "lean/verification/pinned/BoundedGammaQuerySpace.log"
+    },
+    "ComplexityReuse": {
+      "source_sha256": "cb68ac464720081de948310db3ce8ed8cb3979d1fe88456e23b79c29f8f8f23a",
+      "dependencies": [
+        "Parameters"
+      ],
+      "status": "reused",
+      "olean_sha256": "fd9a281b6c7544191471025eb7f4051207980d2d254ca426dc6e1973324933d7",
+      "log": "lean/verification/pinned/ComplexityReuse.log"
+    },
+    "BoundedGammaQueryMachine": {
+      "source_sha256": "9fba069b366fe29c56ab9ac015acb19f0f35bde361aef60f14820338c74a33c6",
+      "dependencies": [
+        "BoundedGammaQuerySpace",
+        "BoundedGammaQueryBudget",
+        "ComplexityReuse"
+      ],
+      "status": "reused",
+      "olean_sha256": "ad7647b0bde594f3ed9853a6d36ab56eb8952626f71273312f788ae73f5d66e1",
+      "log": "lean/verification/pinned/BoundedGammaQueryMachine.log"
+    },
+    "SupportAssignment": {
+      "source_sha256": "c5aea43a984467091a0f88c79c15467aec6c61003556262777af21de5f11e698",
+      "dependencies": [
+        "BoundedSupportParser"
+      ],
+      "status": "reused",
+      "olean_sha256": "6cc8c3e0338f6a52823f7ffb5335f7e263f5b1bead47c745c2398571e062653d",
+      "log": "lean/verification/pinned/SupportAssignment.log"
+    },
+    "SupportBounds": {
+      "source_sha256": "7f7efb8be24898c42d8e59f6f3255b9b3a9ef4af62058849e9ae6ad4b6573436",
+      "dependencies": [
+        "SupportEncoding",
+        "Parameters"
+      ],
+      "status": "reused",
+      "olean_sha256": "f2a1a0107d30c8106bbd4e19bb22e7139aed56603d6b3e0582d68e4834599350",
+      "log": "lean/verification/pinned/SupportBounds.log"
+    },
+    "SupportEnumeration": {
+      "source_sha256": "3ab469d5b4813365deb147c2beba679be31179ea262f20f146f6af38b0fcf009",
+      "dependencies": [
+        "SupportAssignment",
+        "SupportBounds"
+      ],
+      "status": "reused",
+      "olean_sha256": "6755ea02bcb04c6e2d97785fff3e8b86c5b39917d5b07108d2dc90e0233af416",
+      "log": "lean/verification/pinned/SupportEnumeration.log"
+    },
+    "SupportCardinality": {
+      "source_sha256": "b7758a76413d3fffac2ff0fa396668a4eb2b2833bca042b4daae4425286cfe26",
+      "dependencies": [
+        "SupportEnumeration"
+      ],
+      "status": "reused",
+      "olean_sha256": "1af54ba695bcc44f4d123b5edc54dfb7a4d28e81bec3f3608ea5ed5c25e80687",
+      "log": "lean/verification/pinned/SupportCardinality.log"
+    },
+    "SupportScanSemantics": {
+      "source_sha256": "00ac469be5284d07a816471b02846264dd9f65aff7ad38aba001dbb15245add3",
+      "dependencies": [
+        "BoundedSupportParser"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "log": "lean/verification/pinned/SupportScanSemantics.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "517af5d9854c54bf44c0029dc2eca4128330ae8024195b4f3aa99b4d0434b06d"
+    },
+    "GammaCursorProgress": {
+      "source_sha256": "b14ce840813cae3f6c94181fb7d26eb469c21d7712f1b4819adf2f64c52a50ac",
+      "dependencies": [
+        "BoundedGammaPayload"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "log": "lean/verification/pinned/GammaCursorProgress.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "a4473bdcdf5e965ba3bbb4108a05796c563e2a29958826a6c90ad1f3f68837b6"
+    },
+    "BoundedSupportPayload": {
+      "source_sha256": "24783f56079de14fe0522ec8fcf64d299dd3b4f8977679f5520c7914fd6ee8d1",
+      "dependencies": [
+        "BoundedGammaPayload",
+        "SupportCardinality",
+        "SupportScanSemantics",
+        "GammaCursorProgress"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "log": "lean/verification/pinned/BoundedSupportPayload.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "11614874618634ad60a2a7532a5dc2bc48e85212f646454a1afbe3fe9cd9bd65"
+    },
+    "BoundedSupportPayloadSpace": {
+      "source_sha256": "a9f1f29a6229856cfd86ea90386b7480d182c2a76c00249c3b4384d090fae176",
+      "dependencies": [
+        "BoundedSupportPayload",
+        "BoundedGammaPayloadSpace"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "log": "lean/verification/pinned/BoundedSupportPayloadSpace.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "75d036f29b979e469978deef2f1ff1e5329bf12569be3728de5c8f0967dd2fa9"
+    },
+    "BoundedSupportQuery": {
+      "source_sha256": "d110c9ac4123418002c181d9d7f6c07b702146f9fd7329a420e6ef48a7dae846",
+      "dependencies": [
+        "BoundedSupportPayloadSpace",
+        "InitializedQueryCompiler"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "log": "lean/verification/pinned/BoundedSupportQuery.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "3251cbf898524bab6a447df5a7731f5cee98edceb9bec306bcd013a7c009cf86"
+    },
+    "BoundedSupportQueryBudget": {
+      "source_sha256": "9abcbb40bb14573421c7049db2e7d01e129dfeffa92a18c3b168d699728fc28b",
+      "dependencies": [
+        "BoundedSupportQuery"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "log": "lean/verification/pinned/BoundedSupportQueryBudget.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "c2c67e2569fb8eff2b2cf71a3ca01dcc1469fffb9f1a3015eba7721e9203e83b"
+    },
+    "BoundedSupportQuerySpace": {
+      "source_sha256": "e19609359d1124b3332be85a5380614a416be10e0c672e683ab4c6548b9c2198",
+      "dependencies": [
+        "BoundedSupportQuery",
+        "BoundedGammaQuerySpace"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "log": "lean/verification/pinned/BoundedSupportQuerySpace.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "1e87ed7325b8d5de0ee979f692fa177f611f7c61d407bb7eec9bfa47015190f3"
+    },
+    "BoundedSupportQueryMachine": {
+      "source_sha256": "22e302030be19b59881416df7a3d8b8ca81ad5942e163a6be7ea6450eaec54ce",
+      "dependencies": [
+        "BoundedSupportQuerySpace",
+        "BoundedSupportQueryBudget",
+        "ComplexityReuse"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "log": "lean/verification/pinned/BoundedSupportQueryMachine.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "a21b1ed4757b1e68247d726e9c83fc3e95e57f36a92b7b23ecfc4ea51f856a11"
+    },
+    "BranchOnBit": {
+      "source_sha256": "1e5819a06ac8d5447446467bd1529244d3410bb0e55abcd0a315e69043fc9870",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "c03048da451b611dd192e2e86a2b61cf0a5f4dda0c93e18df2037b692db08be6",
+      "log": "lean/verification/pinned/BranchOnBit.log"
+    },
+    "PadRegisterMachine": {
+      "source_sha256": "abb974efc5b8da67d02a917e40499550702fc0a7825729c258b7b59898e5de70",
+      "dependencies": [
+        "CompareRegistersMachine"
+      ],
+      "status": "reused",
+      "olean_sha256": "3d08fd94f9ac45829f0d58f1b444f29582b7d385f0954a1396ba3b34bec3907c",
+      "log": "lean/verification/pinned/PadRegisterMachine.log"
+    },
+    "SubtractRegistersMachine": {
+      "source_sha256": "42e185adf05273e20b27a08441feb54a7f9d0bbfdee761fa3925fa12ae95dce0",
+      "dependencies": [
+        "AddRegistersMachine"
+      ],
+      "status": "reused",
+      "olean_sha256": "83ac1aa45c4d40580063b0a12076d449f2f18122395b9edbe819d9662138f377",
+      "log": "lean/verification/pinned/SubtractRegistersMachine.log"
+    },
+    "TapeEmbedding": {
+      "source_sha256": "c5db73bbd798d45f3bdd338f9e98f6751556dccdb3fc9d94c9fbfe9081e5bc81",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "15b0165094c681fa89961b033dc5e9c50df1cc40d04d0f8757405105b798a473",
+      "log": "lean/verification/pinned/TapeEmbedding.log"
+    },
+    "ModularAddMachine": {
+      "source_sha256": "61c1a609e1335ffa1067377f124a19bcc6b8f977db808a1822a029e54c512a78",
+      "dependencies": [
+        "AddRegistersMachine",
+        "PadRegisterMachine",
+        "CompareRegistersMachine",
+        "SubtractRegistersMachine",
+        "CopyRegisterMachine",
+        "TapeEmbedding",
+        "BranchOnBit"
+      ],
+      "status": "reused",
+      "olean_sha256": "d07a490db09bb9d4be14de5f3011dcb5ae64bfae1dfdd90486fdc70b198bdabd",
+      "log": "lean/verification/pinned/ModularAddMachine.log"
+    },
+    "ClearRegisterMachine": {
+      "source_sha256": "b0bd603e569f81a9df4c739deabe14c2c202bd81ade3b2e0b669f1d36a9daf13",
+      "dependencies": [
+        "CopyRegisterMachine"
+      ],
+      "status": "reused",
+      "olean_sha256": "d1afc8aae0c173771552aac67ab4624c3d191384db566fb333ba6a72bcff2549",
+      "log": "lean/verification/pinned/ClearRegisterMachine.log"
+    },
+    "NormalizeRegisterMachine": {
+      "source_sha256": "bccc3f9de1ff7f55eaaa3d4dc228b57171720fbdb0810b93e5accffa71d5ef9a",
+      "dependencies": [
+        "CompareRegistersMachine"
+      ],
+      "status": "reused",
+      "olean_sha256": "eccf6b92af9196df9155d93a73898617b656fa2203c82b86481a6f54c9825f1c",
+      "log": "lean/verification/pinned/NormalizeRegisterMachine.log"
+    },
+    "CleanModularAddMachine": {
+      "source_sha256": "874487d09a5d49ba45b7904fa7d0aea8afed25c5c0074bb45e219269aa109a5d",
+      "dependencies": [
+        "ModularAddMachine",
+        "ClearRegisterMachine",
+        "NormalizeRegisterMachine"
+      ],
+      "status": "reused",
+      "olean_sha256": "342d2658f2edc4d453b0b08fcc3c833a25d8ea3b13ba7465da4654658e7cc2f9",
+      "log": "lean/verification/pinned/CleanModularAddMachine.log"
+    },
+    "ModularPowerSpace": {
+      "source_sha256": "5de8584437d22c8c143dd270eedb4ce4d1f4344b09993b09456f5747df09b45a",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "60e7a6d1240a58ab080e4de8edc481f4c1d0ae6bb28724f62c0dfd6bd303c30e",
+      "log": "lean/verification/pinned/ModularPowerSpace.log"
+    },
+    "ModularBinomial": {
+      "source_sha256": "c14b837ea1cc6975504072524e87c2d52299dcd15a876e57f4bf6ae0e7e32df1",
+      "dependencies": [
+        "ReciprocalCoefficients"
+      ],
+      "status": "reused",
+      "olean_sha256": "40c9c20b160fa5be1eba26330977989250b627295cdc9ea8d9a7b00a94c632be",
+      "log": "lean/verification/pinned/ModularBinomial.log"
+    },
+    "IntervalCoefficients": {
+      "source_sha256": "8d2d798896c3cf66324b0c884d62a6fe71e7146a5eff4001a7656005adaef468",
+      "dependencies": [
+        "ModularBinomial",
+        "BalancedCoefficients"
+      ],
+      "status": "reused",
+      "olean_sha256": "187bfd1e54c588c747724493be1d455a451639b97231e981468c0556c6c5bb5f",
+      "log": "lean/verification/pinned/IntervalCoefficients.log"
+    },
+    "CoefficientStack": {
+      "source_sha256": "fc4e5ff83fbc67bb7ae1440d928f58611f62a6cc77170afef679da2abddfd787",
+      "dependencies": [
+        "IntervalCoefficients"
+      ],
+      "status": "reused",
+      "olean_sha256": "ca94b596cab0a4211a85d9eb9a73332452f55542040f8f8d05526d1f55f8fdc7",
+      "log": "lean/verification/pinned/CoefficientStack.log"
+    },
+    "SpanCoefficientStack": {
+      "source_sha256": "1c78b1ca1938c3e0651f22fd7c3515a204af329060a7d2320bdcd123508c05fb",
+      "dependencies": [
+        "CoefficientStack"
+      ],
+      "status": "reused",
+      "olean_sha256": "ef24350aad28ec240bf83c6fe01fe1cb33182080fbad16fcb215dad2ad8dacf1",
+      "log": "lean/verification/pinned/SpanCoefficientStack.log"
+    },
+    "CoefficientStackEncoding": {
+      "source_sha256": "94e68ab7891bfcf922c7918dfd8945ec520fdc15980249d90385e92179c0b23c",
+      "dependencies": [
+        "SpanCoefficientStack"
+      ],
+      "status": "reused",
+      "olean_sha256": "2239a0270cbdd77098afdbb9db8532aa86641d778a80731951513bbe4dcd1d10",
+      "log": "lean/verification/pinned/CoefficientStackEncoding.log"
+    },
+    "CoefficientInitialization": {
+      "source_sha256": "8d31ef1206a576843aca11e898a132ec2b7ce74b57f5d23d1b0463b877e0c1ca",
+      "dependencies": [
+        "ModularPowerSpace",
+        "CoefficientStackEncoding"
+      ],
+      "status": "reused",
+      "olean_sha256": "d4f5a62fb13723acc010ebc25b8d723c95c950a5a51e044e4185f9b41f4e88ce",
+      "log": "lean/verification/pinned/CoefficientInitialization.log"
+    },
+    "ResidueArithmetic": {
+      "source_sha256": "6e159cee2ee4a0ce579076b5409d548a91211a78ff4a3da052ac721b39d27091",
+      "dependencies": [
+        "ModularPowerSpace"
+      ],
+      "status": "reused",
+      "olean_sha256": "cb0369c195dd6de3c600d6cdc11c97c93fe913f59f44c661378c9685f320e2a9",
+      "log": "lean/verification/pinned/ResidueArithmetic.log"
+    },
+    "ReciprocalLeafSpace": {
+      "source_sha256": "c13033b6a008b90305a2ee26e5b8dd428c4feb3bea04cdc4cc914922eeed40ce",
+      "dependencies": [
+        "ResidueArithmetic",
+        "ModularBinomial"
+      ],
+      "status": "reused",
+      "olean_sha256": "1cd3c62dd9679db7e5003adb053ffecc578fe46a70452aced9234a0de441d7dd",
+      "log": "lean/verification/pinned/ReciprocalLeafSpace.log"
+    },
+    "CoefficientTransition": {
+      "source_sha256": "2a3c0a836b3b765c1c65d9f26abf5c93cef6f8da6217021148f9f9fbc6c0fa74",
+      "dependencies": [
+        "CoefficientStackEncoding",
+        "ReciprocalLeafSpace"
+      ],
+      "status": "reused",
+      "olean_sha256": "bbda8141eedc6a3ce569ce0480c09831a539dd25f126302b831877f04f829799",
+      "log": "lean/verification/pinned/CoefficientTransition.log"
+    },
+    "CoefficientTransitionBounds": {
+      "source_sha256": "85b76da6462add6fe8d011d6b61a2bc4d5b3fa424811650958490c474621d450",
+      "dependencies": [
+        "CoefficientTransition"
+      ],
+      "status": "reused",
+      "olean_sha256": "825d8a0fb33ea07a59db174ea5bc2c5e041224506bdd9dc593ca76ce357c7148",
+      "log": "lean/verification/pinned/CoefficientTransitionBounds.log"
+    },
+    "CoefficientTransitionSpace": {
+      "source_sha256": "f54e49e36c7de98ec03602c41e0290a0b425276e43baad7e890f4b5dd0f4647c",
+      "dependencies": [
+        "CoefficientTransition"
+      ],
+      "status": "reused",
+      "olean_sha256": "6359bb9fa9e7c401c7e36b1eaab8e82061a52e75027be1f9e838fecaa0f02638",
+      "log": "lean/verification/pinned/CoefficientTransitionSpace.log"
+    },
+    "ScalarRecoveryLoop": {
+      "source_sha256": "20984ae3d30ec3947fa9c4424c9640656cd494497ff0553055e873f3b3aa6637",
+      "dependencies": [
+        "IntervalCoefficients",
+        "GroupedCounter",
+        "GroupedAssignmentEvaluation"
+      ],
+      "status": "reused",
+      "olean_sha256": "7fe0312e3ee5c75c82317507ffd00569fda3fd07ee57b83363ae252d567b2849",
+      "log": "lean/verification/pinned/ScalarRecoveryLoop.log"
+    },
+    "GroupedInnerLoop": {
+      "source_sha256": "e9c3ffa865786a884ba5d0a4123d2671f4aaa773e1d2c34ebe4807f255a1620d",
+      "dependencies": [
+        "GroupedAssignmentEvaluation"
+      ],
+      "status": "reused",
+      "olean_sha256": "28d27140e333cb2e0530499efd860483b165e41e781b8690c77b3720c0df858a",
+      "log": "lean/verification/pinned/GroupedInnerLoop.log"
+    },
+    "GroupedFormulaLoop": {
+      "source_sha256": "8b95dfe3723089c3c7a7f126dd1dfae3b54c613f72ea7756313ce5c10de1a8b7",
+      "dependencies": [
+        "GroupedInnerLoop",
+        "MeasurementEnumeration"
+      ],
+      "status": "reused",
+      "olean_sha256": "9a7d2bb90811aeeed476737178968e4c3647729e107c4654338159d7b10ead64",
+      "log": "lean/verification/pinned/GroupedFormulaLoop.log"
+    },
+    "SparseCorrection": {
+      "source_sha256": "0761853d6909750b90831de71360e95825f60a4dad78012cd4e36e7a21918cae",
+      "dependencies": [
+        "GroupedAssignmentEvaluation",
+        "SupportAssignment"
+      ],
+      "status": "reused",
+      "olean_sha256": "2733f84f53ac9c74e9f2f814d519afca7fce81ce821841efc37fd4c9c0807575",
+      "log": "lean/verification/pinned/SparseCorrection.log"
+    },
+    "SupportSubsetLoop": {
+      "source_sha256": "ac1505e70f003a61d182c47213619602ac0c734e990379f614d7bbe1e69d1a23",
+      "dependencies": [
+        "AssignmentLoop",
+        "SparseCorrection"
+      ],
+      "status": "reused",
+      "olean_sha256": "8363ae361e91a2b2135154300d622c8d596becf466c16577a7bbf50fca06371b",
+      "log": "lean/verification/pinned/SupportSubsetLoop.log"
+    },
+    "SupportBudget": {
+      "source_sha256": "e6861a81c624be0d96f7d8f19e680cdfe98b32ac94a7b917a0923ff629fef4f6",
+      "dependencies": [
+        "SupportBounds"
+      ],
+      "status": "reused",
+      "olean_sha256": "7d50902f13e816acabfad9f680290eaa333c18661c07177d9f9f86f53cef7943",
+      "log": "lean/verification/pinned/SupportBudget.log"
+    },
+    "CompressedTaylorLoop": {
+      "source_sha256": "fb0cf32afb0dd4792fd73224edb1d95f452cbee8ed34641fa697f9ab472c35dc",
+      "dependencies": [
+        "GroupedFormulaLoop",
+        "SupportCardinality",
+        "SupportSubsetLoop",
+        "SupportBudget"
+      ],
+      "status": "reused",
+      "olean_sha256": "48abb3d02912fb49af71a3002685cfc8e2cd7f410ebbffbf13241cbfeacb4598",
+      "log": "lean/verification/pinned/CompressedTaylorLoop.log"
+    },
+    "CompressedRecoveryLoop": {
+      "source_sha256": "c0057bc84ae0894cb5f7243551568111a500b5f666f11e37c5c552ef0c3acb40",
+      "dependencies": [
+        "ScalarRecoveryLoop",
+        "CompressedTaylorLoop"
+      ],
+      "status": "reused",
+      "olean_sha256": "d2e406c8f281d6df3a4745d598aa160ab21a80ec2ec91e90d6ba256946ba9d1e",
+      "log": "lean/verification/pinned/CompressedRecoveryLoop.log"
+    },
+    "TensorEvaluation": {
+      "source_sha256": "eebb5106ce3d19fc80ffe1ed97636f28a387dbd58aadecc947a6fa3a7c29a471",
+      "dependencies": [
+        "GroupedInnerLoop",
+        "SpectralIndexing"
+      ],
+      "status": "reused",
+      "olean_sha256": "3f44f52f1d309c7bcb77812b4f144a5836de9e066d6e36abdb7b7e770040c0db",
+      "log": "lean/verification/pinned/TensorEvaluation.log"
+    },
+    "ParityEvaluation": {
+      "source_sha256": "27162dd6bc5e9deced0adecd9d51107815455bddf589b909fbb489803bf61212",
+      "dependencies": [
+        "ParityInterpolation",
+        "CoefficientRecursion"
+      ],
+      "status": "reused",
+      "olean_sha256": "383d41e7a2caf8dc0b4d39f272dc19c5ee0580b1abfe2733c9febf1e2d058365",
+      "log": "lean/verification/pinned/ParityEvaluation.log"
+    },
+    "DeformationEvaluation": {
+      "source_sha256": "053df1bab68f797a9848397f763c099b70339eaec3bcd1e8747a98d1569061b0",
+      "dependencies": [
+        "TensorEvaluation",
+        "ParityEvaluation"
+      ],
+      "status": "reused",
+      "olean_sha256": "0886fea74c2746e9544af1da32941ceff4c7c200479219bb8c106ecd369412f1",
+      "log": "lean/verification/pinned/DeformationEvaluation.log"
+    },
+    "IncidenceEvaluation": {
+      "source_sha256": "35a7d173697219886e0f14f65d8925a6075541de6b2411d64df3a88201f56472",
+      "dependencies": [
+        "GroupedAssignmentEvaluation",
+        "IncidenceDeformation",
+        "FiniteFieldCounter",
+        "DeformationEvaluation"
+      ],
+      "status": "reused",
+      "olean_sha256": "5637f572a31c9eb2c7127faf451aa35a3fcf8e46b66c52a552e446e47fe12e6f",
+      "log": "lean/verification/pinned/IncidenceEvaluation.log"
+    },
+    "GroupedAccessorEvaluation": {
+      "source_sha256": "386cbaa274198e1cace9f9cd0913f6414923792c527b834606a807a682754f80",
+      "dependencies": [
+        "IncidenceEvaluation"
+      ],
+      "status": "reused",
+      "olean_sha256": "ba1490a89574ff808aaa7c1e33150f23706c00ac475da3ef211002fe958b05e3",
+      "log": "lean/verification/pinned/GroupedAccessorEvaluation.log"
+    },
+    "ConcreteCountingLoop": {
+      "source_sha256": "6aad777cf44ad6bdcc4395dfbc69a1072ee314cbe3c0c49e400cf061919a6c0e",
+      "dependencies": [
+        "CompressedRecoveryLoop",
+        "GroupedAccessorEvaluation"
+      ],
+      "status": "reused",
+      "olean_sha256": "0cf3b295d5b916e1deaeca831cdc192fe684dc6cc50c0c54a0a74b0c4c48a236",
+      "log": "lean/verification/pinned/ConcreteCountingLoop.log"
+    },
+    "DropFirstRegisterMachine": {
+      "source_sha256": "8c536f54c12ed65a6346e8f4ef15356d620ee83a00bd138ce4d8e01bedfbf5da",
+      "dependencies": [
+        "RewoundBinaryCounter"
+      ],
+      "status": "reused",
+      "olean_sha256": "0e09b861e12e331b15b2250c3ec365053eae9e14c0134ffca9cd4b8e61378087",
+      "log": "lean/verification/pinned/DropFirstRegisterMachine.log"
+    },
+    "FiberPlacement": {
+      "source_sha256": "793acfc481c6986d8c514b490397ec035730dafe82ad8ef2ea15bd126bb7222c",
+      "dependencies": [
+        "IncidenceDeformation",
+        "HashVariance"
+      ],
+      "status": "reused",
+      "olean_sha256": "8169a56cd73ca817f8ee2151647ac8d63e2442ab6df6d95ca3f0f5273733db01",
+      "log": "lean/verification/pinned/FiberPlacement.log"
+    },
+    "GammaQueryMachine": {
+      "source_sha256": "b1c33a483f2e83f735f136f63f399ecb5d7fb26cd638ece1603183fca941d5e4",
+      "dependencies": [
+        "BoundedSupportParser"
+      ],
+      "status": "reused",
+      "olean_sha256": "1cc92c011fda6789d57a691ec1ad092b29e0cd84480af0ef6693df06bd439c23",
+      "log": "lean/verification/pinned/GammaQueryMachine.log"
+    },
+    "GammaQueryResources": {
+      "source_sha256": "76475a1b6ad40e54bc52c54c150d4c71af45f119c52e2370c9335aa6fc008b8c",
+      "dependencies": [
+        "GammaQueryMachine",
+        "ComplexityReuse"
+      ],
+      "status": "reused",
+      "olean_sha256": "b4ed64ddc640d4731cacba0c038b11338dc308da6d654f1a80bb143daaf1ac82",
+      "log": "lean/verification/pinned/GammaQueryResources.log"
+    },
+    "HaltingStateCompiler": {
+      "source_sha256": "293e47ccf45d8daa8f5e9fe93202d1b7fb67762315f03f7584d511d83a939cbc",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "ea5db094eff58970e513bfa18c351fec86df465ce06cbb070a21a0163f8c943a",
+      "log": "lean/verification/pinned/HaltingStateCompiler.log"
+    },
+    "HaltingBudgetCompiler": {
+      "source_sha256": "8cac0c0d6aab2ae1ef8b4ee012a6b0fa024d146d34b53c7daf6bd4019198c339",
+      "dependencies": [
+        "HaltingStateCompiler"
+      ],
+      "status": "reused",
+      "olean_sha256": "e461ddfe5242a3dd089e41e56fc32eb3e9f227e98eba5f9181bc215850104490",
+      "log": "lean/verification/pinned/HaltingBudgetCompiler.log"
+    },
+    "HermiteFactorSpace": {
+      "source_sha256": "d93f17a9566e03ee8aea8eadf054f94e5a21911adbe0c8cd5e78b286fc32b23f",
+      "dependencies": [
+        "ResidueArithmetic",
+        "ScalarRecoveryLoop"
+      ],
+      "status": "reused",
+      "olean_sha256": "3926f8bc03213f3d90d6b6522205a19943beb14a5a74e85688c718915296e1ac",
+      "log": "lean/verification/pinned/HermiteFactorSpace.log"
+    },
+    "HermiteCoefficientLoop": {
+      "source_sha256": "6048d0bf5ae18002100a91a8a744a3d3edd81700ccd7d9abb83d9eec5e3677e4",
+      "dependencies": [
+        "HermiteFactorSpace",
+        "CoefficientInitialization",
+        "CoefficientTransitionBounds"
+      ],
+      "status": "reused",
+      "olean_sha256": "da5c211dc375656ad6ccecd40d9540023b267e2889d411a576d29e92dcbc9985",
+      "log": "lean/verification/pinned/HermiteCoefficientLoop.log"
+    },
+    "HermiteCoefficientBudget": {
+      "source_sha256": "b510fe2009b765e401fe0f3ac09ec9f2cb7cefff3458f66b1bef9e0d41cb7ae0",
+      "dependencies": [
+        "HermiteCoefficientLoop"
+      ],
+      "status": "reused",
+      "olean_sha256": "1c3f011d6c0fa324aaa989b5c7e7b5cb25a9537802e0bd2ff66a38e212a993b6",
+      "log": "lean/verification/pinned/HermiteCoefficientBudget.log"
+    },
+    "HermiteCoefficientSpace": {
+      "source_sha256": "2b04419cd8ad5c929fbaeb58ead57994e6a095a60a3b34d216f767d54f615510",
+      "dependencies": [
+        "HermiteCoefficientLoop",
+        "CoefficientTransitionSpace"
+      ],
+      "status": "reused",
+      "olean_sha256": "1d472f3397324c8a1887fcdc2c0728c75d9a4a750b49ab6f3ac9192c057a8dd9",
+      "log": "lean/verification/pinned/HermiteCoefficientSpace.log"
+    },
+    "HermiteCoefficientMachine": {
+      "source_sha256": "b170a9ff3b794900a2570dd5340d993c8a08accc4979ab1abe35ba5ab442b29d",
+      "dependencies": [
+        "HermiteCoefficientSpace",
+        "HermiteCoefficientBudget",
+        "HaltingStateCompiler",
+        "ComplexityReuse"
+      ],
+      "status": "reused",
+      "olean_sha256": "55c0fc2ca001e350ff8976b09ed293b156e7bbf67795bb84140b97fb7508f321",
+      "log": "lean/verification/pinned/HermiteCoefficientMachine.log"
+    },
+    "SelectedCounter": {
+      "source_sha256": "8acf2842d6c475365a2605b761bc5011f3b54b9f2442e00ccc1a3eb7e0dc509c",
+      "dependencies": [
+        "SchedulePlacement"
+      ],
+      "status": "reused",
+      "olean_sha256": "8e61d2a755342a6a853607b76ee4a30aba7458f20b4a948d72ebf8380be5efc3",
+      "log": "lean/verification/pinned/SelectedCounter.log"
+    },
+    "HermiteCoefficientCorrectness": {
+      "source_sha256": "db8a5757b255aceee149a7296c607e2725becf4a16496a5bcbe517b343e9bba7",
+      "dependencies": [
+        "HermiteCoefficientMachine",
+        "SelectedCounter"
+      ],
+      "status": "reused",
+      "olean_sha256": "a09dfc4d6fbc567cbe59ce07caa5d44d696197c005d5f2ea9dbb7aa1e895646e",
+      "log": "lean/verification/pinned/HermiteCoefficientCorrectness.log"
+    },
+    "HermiteWeightLoop": {
+      "source_sha256": "26a87e714063fceedc49711c5152a7e08feadd7082c9ea1ec500efec6a726f10",
+      "dependencies": [
+        "HermiteCoefficientCorrectness"
+      ],
+      "status": "reused",
+      "olean_sha256": "e5736047901243f18735a3641f5dc4700d79518e254d4a2d1d1cde2f885d9649",
+      "log": "lean/verification/pinned/HermiteWeightLoop.log"
+    },
+    "HermiteWeightBudget": {
+      "source_sha256": "49722f2ef0f19b145ce9d53a9e2579ec754d23f6e90225c3fd2083cee1cd62eb",
+      "dependencies": [
+        "HermiteWeightLoop"
+      ],
+      "status": "reused",
+      "olean_sha256": "5af9542ceb52ec95118f677f4fb8b57283eb486bc0151c6731681d076e6dc053",
+      "log": "lean/verification/pinned/HermiteWeightBudget.log"
+    },
+    "HermiteWeightSpace": {
+      "source_sha256": "a11983c33fa5c519c7f6c1f327201688a60ed6e0274274b2dc82517855f8c961",
+      "dependencies": [
+        "HermiteWeightBudget"
+      ],
+      "status": "reused",
+      "olean_sha256": "28d162f5e809c6ba2e0d5b71eaa16db91c6b94fd0a3f8d737273965085c845e3",
+      "log": "lean/verification/pinned/HermiteWeightSpace.log"
+    },
+    "HermiteWeightMachine": {
+      "source_sha256": "4274561cf133479e011ea69c6be9be31f774d137a7d077fcc94df5c9d9b99338",
+      "dependencies": [
+        "HermiteWeightSpace",
+        "HaltingBudgetCompiler"
+      ],
+      "status": "reused",
+      "olean_sha256": "ecafeb86b059fd894b6bddeffa0c0cc4373563caa904e5f196651b25dc39bb08",
+      "log": "lean/verification/pinned/HermiteWeightMachine.log"
+    },
+    "MachineContract": {
+      "source_sha256": "21c53a01e26067be5c0ce0f665a28e83c47d33e108e2f6fc0678594d5514edf8",
+      "dependencies": [
+        "FormulaInput"
+      ],
+      "status": "reused",
+      "olean_sha256": "9465c9326ff37ce489fa765cadb0ea411185e9fd7c89d93c25c68b27881f3adb",
+      "log": "lean/verification/pinned/MachineContract.log"
+    },
+    "InputEncoding": {
+      "source_sha256": "bdcdbd9bdb1070777ad9e1a6547f0e864a2b66cab17f4c23d08b781eb6b5bb62",
+      "dependencies": [
+        "MachineContract",
+        "SupportEncoding",
+        "FormulaIncidences"
+      ],
+      "status": "reused",
+      "olean_sha256": "d62735c2381844ddfcd87bb3b3d213517e5b91763aa919d4ded3f79b20dc8fd3",
+      "log": "lean/verification/pinned/InputEncoding.log"
+    },
+    "IntegerWindow": {
+      "source_sha256": "6b208d067f42cf2e522d9cfc4d626dcd3cdd1b4e5bfbc48625011c16a745e897",
+      "dependencies": [
+        "TailParameters"
+      ],
+      "status": "reused",
+      "olean_sha256": "635f57fcfff2faa3dfb26e846290ef74fc0cf4359b39156c5cf65a6f98a5e908",
+      "log": "lean/verification/pinned/IntegerWindow.log"
+    },
+    "MapRegisterMachine": {
+      "source_sha256": "acef4696b7b6b56dcf64b6059921971cca1ac3f65ee0a0ccf7bf594ee2f2cb5d",
+      "dependencies": [
+        "RewoundBinaryCounter"
+      ],
+      "status": "reused",
+      "olean_sha256": "d6cc5c1469a0e2d08e87a4b769367151159c44854f699ee7049e1a1ffb2720ad",
+      "log": "lean/verification/pinned/MapRegisterMachine.log"
+    },
+    "PopulationAccess": {
+      "source_sha256": "334faeeebbca864cea6677101d06258aff897888cb09e7add224fb96dd283175",
+      "dependencies": [
+        "IncidenceEvaluation",
+        "FormulaIncidences",
+        "InputEncoding"
+      ],
+      "status": "reused",
+      "olean_sha256": "95b0bee4ccf4b732b6e97ae35d8187a1c861fa085b162d37346a2d19477fec2c",
+      "log": "lean/verification/pinned/PopulationAccess.log"
+    },
+    "RankedPopulationPlacement": {
+      "source_sha256": "26f7a8e51a33113a393a1e1a5c63e01fae08c417325cddc838d80aeb2bbfe84c",
+      "dependencies": [
+        "PopulationAccess",
+        "TensorEvaluation"
+      ],
+      "status": "reused",
+      "olean_sha256": "bb9f6525020391ce3f0732e5f1d44622032a6bfb629c2dfcb4c4cfb9164c587a",
+      "log": "lean/verification/pinned/RankedPopulationPlacement.log"
+    },
+    "UniformSchedules": {
+      "source_sha256": "2bb6f19a6acef06f59cfa1d20ca3ed0ac3382d503ac1180425cf4000c2b061d1",
+      "dependencies": [
+        "RankedPopulationPlacement",
+        "AffineScheduleEvaluation"
+      ],
+      "status": "reused",
+      "olean_sha256": "83066d251e6e0ad5846041565417154810bc8c7f8e596eb3e191993c585e50c5",
+      "log": "lean/verification/pinned/UniformSchedules.log"
+    },
+    "ScheduleSearch": {
+      "source_sha256": "7466039fec4e45c53e78e3c80a63a8b5633c2e02bcff66b3ce5e14a3c4ff8747",
+      "dependencies": [
+        "UniformSchedules",
+        "AffineSeedEncoding",
+        "SpectralIndexing"
+      ],
+      "status": "reused",
+      "olean_sha256": "0a4d47d3565c63d372e11ad998e1d430c8ad11438c83a8753c9f7481016c1fe0",
+      "log": "lean/verification/pinned/ScheduleSearch.log"
+    },
+    "UniformCountingLoop": {
+      "source_sha256": "1b7812ad663d15b90c968fec85682dadeba238397b6bce986d770ca2ee1b8544",
+      "dependencies": [
+        "ConcreteCountingLoop",
+        "ScheduleSearch",
+        "IntegerWindow",
+        "SelectedCounter"
+      ],
+      "status": "reused",
+      "olean_sha256": "f9294bfec9ee9b454b2c3c994eba434e9d3fa218b7c9605656b7a8f2a14fe852",
+      "log": "lean/verification/pinned/UniformCountingLoop.log"
+    },
+    "ModularCounting": {
+      "source_sha256": "b6ca74ff9e2b9ab52595d50e3e85e01ff336d432eccf4c556681108e2c4f2518",
+      "dependencies": [
+        "UniformCountingLoop"
+      ],
+      "status": "reused",
+      "olean_sha256": "f413b9d22d1190f8284825688258a82a4eb4774785b913daf38ab99835f6428e",
+      "log": "lean/verification/pinned/ModularCounting.log"
+    },
+    "ModularMultiplication": {
+      "source_sha256": "666c610256647dd39e7494c00a7ac90245854bc035d684cdd5e64c973e8638ed",
+      "dependencies": [
+        "BinaryCounterMachine"
+      ],
+      "status": "reused",
+      "olean_sha256": "895dbe8efb51a77a42ad0919670e3f05f4393cfc0869b24f3aaf97bab2954d2d",
+      "log": "lean/verification/pinned/ModularMultiplication.log"
+    },
+    "ReplaceRegisterMachine": {
+      "source_sha256": "d90169db826b9e2519b8fe1ae84f70e0b2877374043e8e22a007201de86edb4d",
+      "dependencies": [
+        "ClearRegisterMachine",
+        "CopyRegisterMachine",
+        "TapeEmbedding"
+      ],
+      "status": "reused",
+      "olean_sha256": "9f7c1918bb21dbea50fd9dacbb4e57aa99eaeee57b8166143e6a4a6925a0e901",
+      "log": "lean/verification/pinned/ReplaceRegisterMachine.log"
+    },
+    "ModularMultiplyBody": {
+      "source_sha256": "94f0a4d2ac76753f2295e8f9006c7bc737e02b47a679126f636fa871e418d921",
+      "dependencies": [
+        "CleanModularAddMachine",
+        "ReplaceRegisterMachine",
+        "DropFirstRegisterMachine",
+        "ModularMultiplication"
+      ],
+      "status": "reused",
+      "olean_sha256": "0960528e862952141a4de413a787aad89bf174f8bfc1d85719d24eaada99c278",
+      "log": "lean/verification/pinned/ModularMultiplyBody.log"
+    },
+    "ModularMultiplyInitialization": {
+      "source_sha256": "2437ab3c6ee2d5406c79f12a055ae1649dcb0ecb07b5be57293f89d5ea5b6ccc",
+      "dependencies": [
+        "CopyRegisterMachine",
+        "MapRegisterMachine",
+        "TapeEmbedding"
+      ],
+      "status": "reused",
+      "olean_sha256": "63c55ff718f54cfa7f73a3663af68bbf2d62bec8d0f7df5a3b8c759b12c29d75",
+      "log": "lean/verification/pinned/ModularMultiplyInitialization.log"
+    },
+    "RegisterLoop": {
+      "source_sha256": "e6f01943e34adc202a75b4d45e4916cc8c396d466fd54e859010ac8c1f35dd51",
+      "dependencies": [],
+      "status": "reused",
+      "olean_sha256": "2ec9e23233ac6a2d68d6a98a0eeaf917fa4b9ad628252cdac7635738bb4bc59c",
+      "log": "lean/verification/pinned/RegisterLoop.log"
+    },
+    "ModularMultiplyMachine": {
+      "source_sha256": "b61dad4111788ec0545144a8916237e3bde5199022ad9d0267f630d57befd4e9",
+      "dependencies": [
+        "ModularMultiplyInitialization",
+        "ModularMultiplyBody",
+        "RegisterLoop"
+      ],
+      "status": "reused",
+      "olean_sha256": "18201629a5c28558c562034f7bacfacfe91bedbc54aeed5ed529769731b50406",
+      "log": "lean/verification/pinned/ModularMultiplyMachine.log"
+    },
+    "ParameterAsymptotics": {
+      "source_sha256": "6cfa5e4640da7ca375152d7f5bbd68af0e8826217725078a640d2897d777b309",
+      "dependencies": [
+        "ParameterChoice",
+        "SupportBounds"
+      ],
+      "status": "reused",
+      "olean_sha256": "5e709ebe5ac3bac1447a625a8a49baf48d2320651564a15984e354cc7bcea983",
+      "log": "lean/verification/pinned/ParameterAsymptotics.log"
+    },
+    "PrimeWindow": {
+      "source_sha256": "b54f46ef752ed3b5d4896db3b506cbc7397643d386bcb0d195ce8eea600e00d4",
+      "dependencies": [
+        "MachineContract"
+      ],
+      "status": "reused",
+      "olean_sha256": "9f843be2b184b769cafe968860f5e27a99e7cff373c1b54c5c3fb8dc94ef4639",
+      "log": "lean/verification/pinned/PrimeWindow.log"
+    },
+    "ScheduleResources": {
+      "source_sha256": "5ad9503c06ccc2e6ad7e1cbc15eaaf59b5d03c412493bfd4139755c2d41639d2",
+      "dependencies": [
+        "ScheduleSearch"
+      ],
+      "status": "reused",
+      "olean_sha256": "654cb04ae2cba0b202a3419162bc6b8b8a463f16effe4f23a904ff8010e0cc84",
+      "log": "lean/verification/pinned/ScheduleResources.log"
+    },
+    "TensorBasis": {
+      "source_sha256": "1dc02cde08c9805fcb8553151d5d2c761fbcda82aec2d2581e65999eb4453f5c",
+      "dependencies": [
+        "SpectralDeformation"
+      ],
+      "status": "reused",
+      "olean_sha256": "b3240c20b92b35c84c2cd5b0d5a9f5e4ddb9bb0482a6f93bea7e17bb267e7122",
+      "log": "lean/verification/pinned/TensorBasis.log"
+    }
+  },
+  "root_aggregate": {
+    "source_sha256": "a0e54cbe01c6e16f5b3c6531d526ed3b58fe01b49196456d5fbd5c42e197de59",
+    "imports": [
+      "AlgebraicCounter",
+      "BalancedCoefficients",
+      "BooleanMobius",
+      "CanonicalPlacement",
+      "CenteredWindow",
+      "CoefficientRecursion",
+      "ConcreteGroupedDeformation",
+      "Counting",
+      "CountingPolynomial",
+      "DeformationConstruction",
+      "DeformationTaylor",
+      "FiberPlacement",
+      "FiniteFieldCounter",
+      "FiniteFieldDeformation",
+      "FiniteProductTail",
+      "FormulaCounter",
+      "FormulaIncidences",
+      "FormulaInput",
+      "GroupedCounter",
+      "GroupedCounting",
+      "GroupedDeformation",
+      "HashSchedules",
+      "HashVariance",
+      "HermiteGlobal",
+      "HermiteRecovery",
+      "IncidenceDeformation",
+      "MachineContract",
+      "MatrixLocality",
+      "MatrixSpectralBridge",
+      "ParameterChoice",
+      "Parameters",
+      "ParityInterpolation",
+      "PolynomialFacts",
+      "Projector",
+      "ReciprocalCoefficients",
+      "RestrictedMeasurements",
+      "ScalarRecovery",
+      "SpectralDeformation",
+      "SpectralPairCount",
+      "SpectralTail",
+      "SupportBounds",
+      "SupportEncoding",
+      "TailParameters",
+      "TaylorTruncation",
+      "TensorBasis",
+      "TensorBasisField",
+      "BinaryCounterMachine",
+      "RewoundBinaryCounter",
+      "ModularBinomial",
+      "ParameterAsymptotics",
+      "SchedulePlacement",
+      "SelectedCounter",
+      "AssignmentLoop",
+      "BoundedSupportParser",
+      "CoefficientStack",
+      "CopyRegisterMachine",
+      "GroupedAssignmentEvaluation",
+      "InputEncoding",
+      "IntervalCoefficients",
+      "LocalAssignmentLoop",
+      "PrimeWindow",
+      "SupportAssignment",
+      "CompareRegistersMachine",
+      "CompressedTaylorLoop",
+      "GroupedFormulaLoop",
+      "GroupedInnerLoop",
+      "MeasurementEnumeration",
+      "SparseCorrection",
+      "SpectralIndexing",
+      "SupportBudget",
+      "SupportCardinality",
+      "SupportEnumeration",
+      "SupportSubsetLoop",
+      "TensorEvaluation",
+      "ParityEvaluation",
+      "ScalarRecoveryLoop",
+      "AddRegistersMachine",
+      "SubtractRegistersMachine",
+      "DeformationEvaluation",
+      "IncidenceEvaluation",
+      "CompressedRecoveryLoop",
+      "GroupedAccessorEvaluation",
+      "ConcreteCountingLoop",
+      "ClearRegisterMachine",
+      "AffineScheduleEvaluation",
+      "AffineSeedEncoding",
+      "BranchOnBit",
+      "IntegerWindow",
+      "ModularAddMachine",
+      "ModularCounting",
+      "PadRegisterMachine",
+      "PopulationAccess",
+      "RankedPopulationPlacement",
+      "ScheduleResources",
+      "ScheduleSearch",
+      "TapeEmbedding",
+      "UniformCountingLoop",
+      "UniformSchedules",
+      "RegisterLoop",
+      "MapRegisterMachine",
+      "ModularMultiplication",
+      "ReplaceRegisterMachine",
+      "NormalizeRegisterMachine",
+      "CleanModularAddMachine",
+      "DropFirstRegisterMachine",
+      "ModularMultiplyInitialization",
+      "ModularMultiplyBody",
+      "ModularMultiplyMachine",
+      "ComplexityReuse",
+      "GammaQueryMachine",
+      "GammaQueryResources",
+      "SpanCoefficientStack",
+      "ModularPowerSpace",
+      "ResidueArithmetic",
+      "ReciprocalLeafSpace",
+      "CoefficientStackEncoding",
+      "CoefficientTransition",
+      "CoefficientTransitionSpace",
+      "CoefficientTransitionBounds",
+      "CoefficientInitialization",
+      "HermiteFactorSpace",
+      "HermiteCoefficientLoop",
+      "HermiteCoefficientSpace",
+      "HermiteCoefficientBudget",
+      "HaltingStateCompiler",
+      "HermiteCoefficientMachine",
+      "HermiteCoefficientCorrectness",
+      "HaltingBudgetCompiler",
+      "HermiteWeightLoop",
+      "HermiteWeightBudget",
+      "HermiteWeightSpace",
+      "HermiteWeightMachine",
+      "BoundedGammaPayload",
+      "BoundedGammaPayloadSpace",
+      "SmallHeaderProjection",
+      "InitializedQueryCompiler",
+      "BoundedGammaQuery",
+      "BoundedGammaQueryBudget",
+      "BoundedGammaQuerySpace",
+      "BoundedGammaQueryMachine",
+      "SupportScanSemantics",
+      "GammaCursorProgress",
+      "BoundedSupportPayload",
+      "BoundedSupportPayloadSpace",
+      "BoundedSupportQuery",
+      "BoundedSupportQueryBudget",
+      "BoundedSupportQuerySpace",
+      "BoundedSupportQueryMachine"
+    ],
+    "status": "passed",
+    "exit_code": 0,
+    "log": "lean/verification/pinned/NtimeDspace.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "olean_sha256": "5351d59558cab7c86241afc11a7fe608a687b8e1d88d8601764d51b3b76206fa"
+  },
+  "theorems_inspected": 1603,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "unexpected_axioms": [],
+  "missing_axiom_reports": [],
+  "axiom_audit_exit_code": 0,
+  "changed_after_check": [],
+  "root_aggregate_changed_after_check": false,
+  "validation_script_sha256": "fc16f7ad21a63c3c46947ec6b82029f7566cf0077644d24fd45ce47cff1f3090",
+  "checker_script_sha256": "1079e95bcc66916ac2fbd0d9b21180fb3de73c704b928d92dbb28a0b537f67b4",
+  "axiom_log": "lean/verification/pinned/axioms.log",
+  "axiom_log_sha256": "7b8da059721dd23b68698504d210a939274d5207daa00e5e784f1590e17b3c24",
+  "root_project_lake_build_run": false,
+  "downloaded_eth_projects_executed": false,
+  "machine_resource_claim_proved": false
+}

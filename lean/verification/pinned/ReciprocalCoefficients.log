@@ -1,0 +1,8 @@
+/Users/charlie/Projects/math/ntime.dspace/lean/NtimeDspace/ReciprocalCoefficients.lean:84:49: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+/Users/charlie/Projects/math/ntime.dspace/lean/NtimeDspace/ReciprocalCoefficients.lean:213:59: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲

@@ -1,0 +1,82 @@
+[
+  {
+    "name": "cslib",
+    "rev": "82db31eec215b6843be6df283304cc02e736ddef",
+    "url": "https://github.com/leanprover/cslib",
+    "archive_sha256": "f5d0f0eba997c00ccd76029522f748a942c2a6de0d0718db3490f30391045b67",
+    "archive_bytes": 572725,
+    "source": "GitHub codeload pinned commit archive"
+  },
+  {
+    "name": "mathlib",
+    "rev": "69552756cd8a2d2d48763cf7279fd814d6a1224d",
+    "url": "https://github.com/leanprover-community/mathlib4",
+    "archive_sha256": "c238805db23625a8f2bf12bf89508298741cc2a94e26b7de1c2be8c287b277f2",
+    "archive_bytes": 24126180,
+    "source": "GitHub codeload pinned commit archive"
+  },
+  {
+    "name": "plausible",
+    "rev": "129d1ba9a16bc0660f46c79e9fb041ef5d5d80de",
+    "url": "https://github.com/leanprover-community/plausible",
+    "archive_sha256": "8273fd504a15f28e0c0eafce657549c09e061bebc553880ee53d0f706242ae7e",
+    "archive_bytes": 43039,
+    "source": "GitHub codeload pinned commit archive"
+  },
+  {
+    "name": "LeanSearchClient",
+    "rev": "c61286b7b63cbfd563b28e11e81d0a18233a044a",
+    "url": "https://github.com/leanprover-community/LeanSearchClient",
+    "archive_sha256": "641cee1ebf781ea292c1570f522d449788465f30b047d0fb8bb3854cf9b47176",
+    "archive_bytes": 13229,
+    "source": "GitHub codeload pinned commit archive"
+  },
+  {
+    "name": "importGraph",
+    "rev": "b8cc5dd0a36233b88a6ed5a7dbf1207d09338c60",
+    "url": "https://github.com/leanprover-community/import-graph",
+    "archive_sha256": "0e4a820fe07262275f7f589e5a6d8df41684cc6b84bf10c79fd827e9f6182875",
+    "archive_bytes": 188585,
+    "source": "GitHub codeload pinned commit archive"
+  },
+  {
+    "name": "proofwidgets",
+    "rev": "16259c0d07d61ee37d999d05b5cf96338b8daa11",
+    "url": "https://github.com/leanprover-community/ProofWidgets4",
+    "archive_sha256": "98751e51c5a256ce52ea4a2757c24c075fa680100959aede20501605fb8839fc",
+    "archive_bytes": 3900399,
+    "source": "GitHub codeload pinned commit archive"
+  },
+  {
+    "name": "aesop",
+    "rev": "7d11bfa88558f8d3d90afdf6bd877ed70001498d",
+    "url": "https://github.com/leanprover-community/aesop",
+    "archive_sha256": "d30a6255d0ae0a7dcd0b3d6224c658aafb1e3f02f3a0fe8fdbaef925bc790224",
+    "archive_bytes": 207952,
+    "source": "GitHub codeload pinned commit archive"
+  },
+  {
+    "name": "Qq",
+    "rev": "b0256621cb88178e9ad932a53633077b3029e621",
+    "url": "https://github.com/leanprover-community/quote4",
+    "archive_sha256": "289746302db6bc06be1aedea9e747900db1a5e5eb4a7edd308571acf37212aa4",
+    "archive_bytes": 33015,
+    "source": "GitHub codeload pinned commit archive"
+  },
+  {
+    "name": "batteries",
+    "rev": "d4c39b228d4a06f3b00748c2c445a7b9f056a6e3",
+    "url": "https://github.com/leanprover-community/batteries",
+    "archive_sha256": "35b25b14e9f915c1466164640e30f9915bf599e6c1061addf5e63a43cf50522a",
+    "archive_bytes": 395783,
+    "source": "GitHub codeload pinned commit archive"
+  },
+  {
+    "name": "Cli",
+    "rev": "c09cb1e4f1e6e1c231a1175a12b681b075054a1b",
+    "url": "https://github.com/leanprover/lean4-cli",
+    "archive_sha256": "4f6ee4b7337502e88b98ecb5871b68f038e455a4cf0241c504f12281999fba6d",
+    "archive_bytes": 23877,
+    "source": "GitHub codeload pinned commit archive"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "completed_at_utc": "2026-11-02T04:08:39.314040+00:00",
+  "status": "passed",
+  "execution_mode": "User-authorized local export-based checking on macOS; Comparator sandbox disabled",
+  "toolchain": "Lean 4.36.0-rc2 (b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a)",
+  "statement_comparisons": {
+    "count": 3,
+    "targets": [
+      "NtimeDspace.ModularCounting.countModP_correct",
+      "NtimeDspace.HermiteCoefficientCorrectness.weightCoefficient_simultaneous_bounds",
+      "NtimeDspace.HermiteWeightMachine.polynomialWeight_simultaneous_bounds"
+    ],
+    "result": "all accepted"
+  },
+  "full_proof_replay": {
+    "project_modules": 148,
+    "theorem_roots": 1603,
+    "result": "all accepted"
+  },
+  "kernels": [
+    "Lean paranoid",
+    "lean4lean",
+    "nanoda",
+    "con-leche",
+    "con-ron",
+    "Lean default"
+  ],
+  "permitted_and_observed_axioms": [
+    "Quot.sound",
+    "propext",
+    "Classical.choice"
+  ],
+  "negative_controls": {
+    "changed_statement": "rejected as expected",
+    "admitted_proof": "sorryAx rejected as expected"
+  },
+  "sources_and_artifacts_unchanged": true,
+  "limitations": [
+    "The standard sandboxed run could not start because bwrap requires Linux namespaces.",
+    "The three contracts freeze existing source definitions and theorem types; they are not an independent formalization of the paper.",
+    "The whole-theorem replay checks proofs and axioms, without independently restating every theorem.",
+    "The full sublinear-space counting machine and complexity separation remain unproved."
+  ],
+  "records": [
+    "check.json",
+    "all-theorems.json",
+    "negative-controls.json",
+    "harness-review.json",
+    "environment-hashes.json"
+  ]
+}

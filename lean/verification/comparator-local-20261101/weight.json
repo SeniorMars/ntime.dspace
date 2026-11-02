@@ -1,0 +1,12 @@
+{
+  "challenge_module": "ChallengeHermiteWeightMachine",
+  "solution_module": "NtimeDspace.HermiteWeightMachine",
+  "theorem_names": [
+    "NtimeDspace.HermiteWeightMachine.polynomialWeight_simultaneous_bounds"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

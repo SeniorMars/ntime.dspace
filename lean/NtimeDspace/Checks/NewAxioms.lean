@@ -1,0 +1,10 @@
+import NtimeDspace.StructuredProgram
+import NtimeDspace.SemanticReduction
+import NtimeDspace.NetworkSystem
+import NtimeDspace.WGroupedCounter
+#print axioms NtimeDspace.BigCounterProgram.simultaneous_bounds_of_reaches
+#print axioms NtimeDspace.Structured.decidable_of_exec
+#print axioms NtimeDspace.SemanticReduction.exists_networks_of_mem_NTIME
+#print axioms NtimeDspace.WeightedSystem.scalarExpression_correct
+#print axioms NtimeDspace.NetworkSystem.count_toSystem
+#print axioms NtimeDspace.WGroupedCounter.groupedScalarExpression_correct

@@ -1,0 +1,29 @@
+{
+  "checked_at_utc": "2026-11-01T08:56:13.649558+00:00",
+  "success": true,
+  "exit_code": 0,
+  "scope": "Tiny executable examples of the new scalar counter, bounded gamma reader, and full support validator/cardinality reader; no ETH execution",
+  "example_source_sha256": "72a2b260acc5afc722fadd8920e470100423e9fff88031925424d1caf3a3b979",
+  "pinned_theorem_record_sha256": "9435c69a6a2d01afb7bba77d1d38f4e64ff3b2f67baf2d683db7d9cc79017ed3",
+  "direct_dependencies": {
+    "ConcreteCountingLoop": {
+      "source_sha256": "6aad777cf44ad6bdcc4395dfbc69a1072ee314cbe3c0c49e400cf061919a6c0e",
+      "olean_sha256": "0cf3b295d5b916e1deaeca831cdc192fe684dc6cc50c0c54a0a74b0c4c48a236"
+    },
+    "ModularCounting": {
+      "source_sha256": "b6ca74ff9e2b9ab52595d50e3e85e01ff336d432eccf4c556681108e2c4f2518",
+      "olean_sha256": "f413b9d22d1190f8284825688258a82a4eb4774785b913daf38ab99835f6428e"
+    },
+    "BoundedGammaQuery": {
+      "source_sha256": "bb76707704ce505995d5c81465b6b2162459a30c06f3547b816e7191b145966a",
+      "olean_sha256": "6f8997661587648b13bef6111b0b9483b79a0556f23a9cafb1b17fdc3f4dbe1c"
+    },
+    "BoundedSupportQuery": {
+      "source_sha256": "d110c9ac4123418002c181d9d7f6c07b702146f9fd7329a420e6ef48a7dae846",
+      "olean_sha256": "3251cbf898524bab6a447df5a7731f5cee98edceb9bec306bcd013a7c009cf86"
+    }
+  },
+  "checks_passed": 51,
+  "checks_expected": 51,
+  "log_sha256": "9a65d4bd05edfa68e99bbf31fa3113948da6e31384c6741f906e7103c7652000"
+}

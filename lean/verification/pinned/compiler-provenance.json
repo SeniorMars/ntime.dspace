@@ -1,0 +1,8 @@
+{
+  "url": "https://github.com/leanprover/lean4/releases/download/v4.36.0-rc2/lean-4.36.0-rc2-darwin_aarch64.tar.zst",
+  "bytes": 637514990,
+  "sha256": "800c09adb81ac667fd9e8e4211d54bdc5cc5e193b107599f6ae72f69ee9b91ad",
+  "verified": true,
+  "version": "4.36.0-rc2",
+  "lean_commit": "b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a"
+}

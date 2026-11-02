@@ -1,0 +1,76 @@
+info: complexitylib: materializing new dependency
+info: complexitylib: fetching revision 'a696d7b149f95e241251ed0f575645d6468a9ccc' from https://github.com/cslib-community/complexitylib
+info: complexitylib: checking out revision 'a696d7b149f95e241251ed0f575645d6468a9ccc'
+info: mathlib: materializing new dependency
+info: mathlib: fetching revision '69552756cd8a2d2d48763cf7279fd814d6a1224d' from https://github.com/leanprover-community/mathlib4
+info: mathlib: checking out revision '69552756cd8a2d2d48763cf7279fd814d6a1224d'
+info: cslib: materializing new dependency
+info: cslib: fetching revision '82db31eec215b6843be6df283304cc02e736ddef' from https://github.com/leanprover/cslib
+info: cslib: checking out revision '82db31eec215b6843be6df283304cc02e736ddef'
+info: plausible: materializing new dependency
+info: plausible: fetching revision '129d1ba9a16bc0660f46c79e9fb041ef5d5d80de' from https://github.com/leanprover-community/plausible
+info: plausible: checking out revision '129d1ba9a16bc0660f46c79e9fb041ef5d5d80de'
+info: LeanSearchClient: materializing new dependency
+info: LeanSearchClient: fetching revision 'c61286b7b63cbfd563b28e11e81d0a18233a044a' from https://github.com/leanprover-community/LeanSearchClient
+info: LeanSearchClient: checking out revision 'c61286b7b63cbfd563b28e11e81d0a18233a044a'
+info: importGraph: materializing new dependency
+info: importGraph: fetching revision 'b8cc5dd0a36233b88a6ed5a7dbf1207d09338c60' from https://github.com/leanprover-community/import-graph
+info: importGraph: checking out revision 'b8cc5dd0a36233b88a6ed5a7dbf1207d09338c60'
+info: proofwidgets: materializing new dependency
+info: proofwidgets: fetching revision '16259c0d07d61ee37d999d05b5cf96338b8daa11' from https://github.com/leanprover-community/ProofWidgets4
+info: proofwidgets: checking out revision '16259c0d07d61ee37d999d05b5cf96338b8daa11'
+info: aesop: materializing new dependency
+info: aesop: fetching revision '7d11bfa88558f8d3d90afdf6bd877ed70001498d' from https://github.com/leanprover-community/aesop
+info: aesop: checking out revision '7d11bfa88558f8d3d90afdf6bd877ed70001498d'
+info: Qq: materializing new dependency
+info: Qq: fetching revision 'b0256621cb88178e9ad932a53633077b3029e621' from https://github.com/leanprover-community/quote4
+info: Qq: checking out revision 'b0256621cb88178e9ad932a53633077b3029e621'
+info: batteries: materializing new dependency
+info: batteries: fetching revision 'd4c39b228d4a06f3b00748c2c445a7b9f056a6e3' from https://github.com/leanprover-community/batteries
+info: batteries: checking out revision 'd4c39b228d4a06f3b00748c2c445a7b9f056a6e3'
+info: Cli: materializing new dependency
+info: Cli: fetching revision 'c09cb1e4f1e6e1c231a1175a12b681b075054a1b' from https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision 'c09cb1e4f1e6e1c231a1175a12b681b075054a1b'
+✔ [5/62] Built Cache.Cli (11s)
+✔ [7/62] Built Cache.Env (10s)
+✔ [9/62] Built Cache.Lean (12s)
+✔ [11/62] Built Cache.Cli:c.o (2.2s)
+✔ [12/62] Built Cache.Env:c.o (2.1s)
+✔ [13/62] Built Cache.Lean:c.o (1.4s)
+✔ [14/62] Built Batteries.Tactic.OpenPrivate (19s)
+✔ [16/62] Built Batteries.Tactic.OpenPrivate:c.o (1.2s)
+✔ [17/62] Built Cache.Infra (15s)
+✔ [19/62] Built Cache.Infra:c.o (292ms)
+✔ [20/62] Built Cache.Location (11s)
+✔ [22/62] Built Cache.Location:c.o (354ms)
+✔ [23/62] Built Cache.IO (21s)
+✔ [25/62] Built Cache.IO:c.o (1.3s)
+✔ [26/62] Built Cache.Hashing (13s)
+✔ [28/62] Built Cache.Hashing:c.o (739ms)
+✔ [29/62] Built Cache.Requests (13s)
+✔ [31/62] Built Cache.Requests:c.o (1.9s)
+✔ [32/62] Built Cache.Marker (12s)
+✔ [34/62] Built Cache.Marker:c.o (279ms)
+✔ [35/62] Built Cache.Upload.Curl (15s)
+✔ [37/62] Built Cache.Upload.Rclone (15s)
+✔ [39/62] Built Cache.Query (15s)
+✔ [41/62] Built Cache.Upload.Curl:c.o (284ms)
+✔ [42/62] Built Cache.Upload.Rclone:c.o (343ms)
+✔ [43/62] Built Cache.Query:c.o (365ms)
+✔ [44/62] Built Cache.Upload.Azure (19s)
+✔ [46/62] Built Cache.Warning (19s)
+✔ [48/62] Built Cache.Upload.S3 (19s)
+✔ [50/62] Built Cache.Upload.Azure:c.o (264ms)
+✔ [51/62] Built Cache.Warning:c.o (398ms)
+✔ [52/62] Built Cache.Upload.S3:c.o (416ms)
+✔ [53/62] Built Cache.Upload.Defs (12s)
+✔ [55/62] Built Cache.Upload.Defs:c.o (370ms)
+✔ [56/62] Built Cache.Upload (14s)
+✔ [58/62] Built Cache.Upload:c.o (468ms)
+✔ [59/62] Built Cache.Main (20s)
+✔ [61/62] Built Cache.Main:c.o (1.2s)
+✔ [62/62] Built cache:exe (11s)
+
+real	194m20.432s
+user	45m19.472s
+sys	14m30.557s

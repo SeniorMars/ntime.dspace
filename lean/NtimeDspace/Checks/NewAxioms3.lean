@@ -1,0 +1,5 @@
+import NtimeDspace.ProgLength
+import NtimeDspace.LocalIntervalCount
+#print axioms NtimeDspace.ProgLang.decidable_of_prog_len
+#print axioms NtimeDspace.LocalSim.localIntervalCount_eq
+#print axioms NtimeDspace.LocalSim.intervalCountT_denote

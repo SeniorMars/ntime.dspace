@@ -1,0 +1,23 @@
+{
+  "reviewer": "/root/comparator_harness_review",
+  "review_kind": "independent non-authoring agent review of harness fidelity",
+  "verdict": "approved",
+  "reviewed_scripts_sha256": {
+    "run.py": "4b6933d27dbb5f63754ee370bbf2fb7f4298b60954b675c3800758617c840675",
+    "all_theorems.py": "2c83059358b9fee1355efd5032b234a801683a68d5bcd233cdc07377d8ebe87f",
+    "negative_controls.py": "1dd3270a85514299da2715143f79cc5a0ad5550e6428deeca6f2a1fc51edc487"
+  },
+  "findings": [
+    "Three separate frozen source-based challenges match endpoint definitions and types.",
+    "Export roots and six-kernel invocation match the pinned Comparator.",
+    "Project source and compiled-artifact hashes are checked before and after runs.",
+    "All-theorem target-list provenance was strengthened to require ordered equality with declarations regenerated from hash-checked sources.",
+    "Both negative controls were rejected for the intended reasons."
+  ],
+  "limitations": [
+    "This is not human review.",
+    "This is not independent review of the paper semantics.",
+    "The user authorized local export-based execution without Comparator sandbox isolation."
+  ],
+  "recorded_at_utc": "2026-11-02T04:04:24.608484+00:00"
+}

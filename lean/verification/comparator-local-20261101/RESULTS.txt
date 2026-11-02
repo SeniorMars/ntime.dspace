@@ -1,0 +1,47 @@
+Lean Comparator: PASSED (authorized local export-based mode)
+
+Three source-based endpoint statement comparisons passed all six kernels:
+- NtimeDspace.ModularCounting.countModP_correct
+- NtimeDspace.HermiteCoefficientCorrectness.weightCoefficient_simultaneous_bounds
+- NtimeDspace.HermiteWeightMachine.polynomialWeight_simultaneous_bounds
+
+A separate lake check --paranoid replay passed all six kernels for all 1603
+previously audited top-level project theorem roots across 148 modules, together
+with their transitive proof dependencies. Only propext, Quot.sound, and
+Classical.choice were observed. Source and compiled-artifact hashes remained
+unchanged throughout the checks.
+
+The negative controls correctly rejected a changed statement and an admitted
+proof (sorryAx). A separate non-authoring agent reviewed the harness; this was
+not human review or a semantic review of the paper.
+
+Scope and limits:
+The standard Comparator invocation exited 2 because bwrap needs Linux
+namespaces. The user then authorized the local export-based mode, with
+Comparator's sandbox disabled. All successful commands used that mode.
+The three challenge files freeze existing source definitions and statements;
+they do not independently reconstruct the paper's claims. The whole-theorem
+replay checks proof validity and permitted axioms, not semantic correspondence
+with the paper. The full sublinear-space counting machine and complexity
+separation remain unproved.
+
+Evidence:
+result.json: combined result and scope.
+check.json: endpoint comparisons, input hashes, exports, commands, and timings.
+all-theorems.json: full theorem replay and source-derived target verification.
+all-theorem-targets.json: exact 1603 theorem roots.
+negative-controls.json and matching logs: expected rejection checks.
+harness-review.json: independent agent review of harness fidelity.
+environment-hashes.json: pinned tool binaries, dependency manifests, helpers,
+and manuscript hashes. The *.log files retain all checker output.
+
+Reproduction:
+Exact runner copies are stored here as evidence. From the repository root,
+place these three copies in tmp/comparator-root-20261101/ and run:
+  /usr/bin/python3 tmp/comparator-root-20261101/run.py
+  /usr/bin/python3 tmp/comparator-root-20261101/negative_controls.py
+  /usr/bin/python3 tmp/comparator-root-20261101/all_theorems.py
+The scripts use the existing pinned local environment and checked artifacts.
+They must be run from that scratch layout, not directly from this evidence
+folder. Original NDJSON exports remain in tmp/comparator-root-20261101/;
+their paths and SHA-256 digests are recorded in the JSON logs.

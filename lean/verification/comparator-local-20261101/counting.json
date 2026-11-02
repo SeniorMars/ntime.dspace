@@ -1,0 +1,12 @@
+{
+  "challenge_module": "ChallengeModularCounting",
+  "solution_module": "NtimeDspace.ModularCounting",
+  "theorem_names": [
+    "NtimeDspace.ModularCounting.countModP_correct"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

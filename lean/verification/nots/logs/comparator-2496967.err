@@ -1,0 +1,8 @@
+con-leche: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+
+real	178m40.662s
+user	0m16.929s
+sys	0m3.419s
+error: Challenge and solution theorem statement do not match: 'NtimeDspace.ntime_ssubset_dspace'
+error: Illegal axiom detected: 'sorryAx'

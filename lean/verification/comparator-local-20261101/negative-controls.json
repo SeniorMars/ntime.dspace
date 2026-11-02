@@ -1,0 +1,36 @@
+{
+  "wrong-statement": {
+    "passed": true,
+    "exit_code": 1,
+    "expected_diagnostic": "Challenge and solution theorem statement do not match: 'NtimeDspace.ModularCounting.countModP_correct'",
+    "command": [
+      "/Users/charlie/Projects/math/ntime.dspace/.toolchains/lean-4.36.0-rc2-darwin_aarch64/bin/lake",
+      "comparator",
+      "--paranoid",
+      "--inadvisably-no-sandbox",
+      "--config=/Users/charlie/Projects/math/ntime.dspace/lean/verification/comparator-local-20261101/counting.json",
+      "--challenge-from-export=/Users/charlie/Projects/math/ntime.dspace/tmp/comparator-root-20261101/counting-challenge.ndjson",
+      "--solution-from-export=/Users/charlie/Projects/math/ntime.dspace/tmp/comparator-root-20261101/wrong-statement.ndjson"
+    ],
+    "log_sha256": "4bfc49948fb971cd8487c673e599cf67aa514e8e900ff6adde6c04965a6257fa",
+    "challenge_export_sha256": "92573bbe6c30958fdd4d08b93164c0c4419e553e388bd4a7219a44056120eb02",
+    "solution_export_sha256": "18953d57705aa5bc27de3a18cba09e4997b288876186a485376af9e89b0576d1"
+  },
+  "admitted-proof": {
+    "passed": true,
+    "exit_code": 1,
+    "expected_diagnostic": "sorryAx",
+    "command": [
+      "/Users/charlie/Projects/math/ntime.dspace/.toolchains/lean-4.36.0-rc2-darwin_aarch64/bin/lake",
+      "comparator",
+      "--paranoid",
+      "--inadvisably-no-sandbox",
+      "--config=/Users/charlie/Projects/math/ntime.dspace/lean/verification/comparator-local-20261101/counting.json",
+      "--challenge-from-export=/Users/charlie/Projects/math/ntime.dspace/tmp/comparator-root-20261101/counting-challenge.ndjson",
+      "--solution-from-export=/Users/charlie/Projects/math/ntime.dspace/tmp/comparator-root-20261101/counting-challenge.ndjson"
+    ],
+    "log_sha256": "f92af1651064174af2ddd537c7df77820b1bec2985886c34bb8b5a4838878700",
+    "challenge_export_sha256": "92573bbe6c30958fdd4d08b93164c0c4419e553e388bd4a7219a44056120eb02",
+    "solution_export_sha256": "92573bbe6c30958fdd4d08b93164c0c4419e553e388bd4a7219a44056120eb02"
+  }
+}

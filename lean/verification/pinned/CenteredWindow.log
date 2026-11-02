@@ -1,0 +1,4 @@
+/Users/charlie/Projects/math/ntime.dspace/lean/NtimeDspace/CenteredWindow.lean:2:0: warning: 
+'Mathlib.Data.Real.Archimedean' has been deprecated: please replace this import by
+
+import Mathlib.Algebra.Order.Archimedean.Real.Basic
