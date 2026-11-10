@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.Walk
 import Mathlib.Data.Finsupp.Weight
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §5.2)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §5.2)
 
 /-!
 # Grades, evaluation at one and transposition (§5.2: the grade bound, Lemmas 5.2 and 5.3)

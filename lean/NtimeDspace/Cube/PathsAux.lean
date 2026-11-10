@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.Formula
 import Mathlib.Algebra.Order.Chebyshev
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §6.3)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §6.3)
 
 /-!
 # The budget of the formula (proof of Lemma 6.3)

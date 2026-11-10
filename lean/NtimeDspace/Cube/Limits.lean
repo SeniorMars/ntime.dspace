@@ -5,12 +5,12 @@ Authors: Charlie Cruz
 -/
 import Mathlib.LinearAlgebra.Matrix.Rank
 
--- upstream: local-only (paper.tex §8: limits of the method)
+-- upstream: local-only (separating-ntime-from-space.tex §8: limits of the method)
 
 /-!
 # Limits of the method: pieces of the crossing over OR and AND, and over the integers
 
-This file formalizes the two lower bounds of `paper.tex`, §8 ("Limits and open problems"), on
+This file formalizes the two lower bounds of `separating-ntime-from-space.tex`, §8 ("Limits and open problems"), on
 the number of bits through which pieces of the crossing must factor.
 
 Following §8, a function `Γ` of two arguments *factors through `c` bits* if
@@ -63,13 +63,13 @@ namespace NtimeDspace.Cube
 
 open Finset
 
-/-- `Γ` *factors through `c` bits* (`paper.tex`, §8): `Γ z z' = ∑_θ φ z θ * φ' z' θ` over
+/-- `Γ` *factors through `c` bits* (`separating-ntime-from-space.tex`, §8): `Γ z z' = ∑_θ φ z θ * φ' z' θ` over
 `θ ∈ {0,1}^c`. -/
 def FactorsThrough {α β : Type*} (Γ : α → β → ℤ) (c : ℕ) : Prop :=
   ∃ φ : α → (Fin c → Bool) → ℤ, ∃ φ' : β → (Fin c → Bool) → ℤ,
     ∀ z z', Γ z z' = ∑ θ, φ z θ * φ' z' θ
 
-/-- `Γ` *factors over OR and AND through `c` bits* (`paper.tex`, §8):
+/-- `Γ` *factors over OR and AND through `c` bits* (`separating-ntime-from-space.tex`, §8):
 `Γ z z' = ⋁_θ (φ z θ ∧ φ' z' θ)` over `θ ∈ {0,1}^c`. -/
 def FactorsThroughOr {α β : Type*} (Γ : α → β → Bool) (c : ℕ) : Prop :=
   ∃ φ : α → (Fin c → Bool) → Bool, ∃ φ' : β → (Fin c → Bool) → Bool,

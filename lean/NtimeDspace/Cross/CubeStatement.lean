@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cross.NetFamily
 import NtimeDspace.Cross.SqrtLogSublinear
 
--- upstream: local-only (paper.tex Theorem 2.3 in bit form: the statement)
+-- upstream: local-only (separating-ntime-from-space.tex Theorem 2.3 in bit form: the statement)
 
 /-!
 # The statement of Theorem 2.3 in bit form
@@ -31,7 +31,7 @@ The statement lives apart from its consequences (`CubeCounting.lean`) and its pr
 
 ## References
 
-* The paper (`paper.tex`), §2, Definition 2.1 (`def:access`) and Theorem 2.3 (`thm:counting`).
+* The paper (`separating-ntime-from-space.tex`), §2, Definition 2.1 (`def:access`) and Theorem 2.3 (`thm:counting`).
 -/
 
 namespace NtimeDspace.Cross

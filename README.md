@@ -1,6 +1,6 @@
-# Simulating Nondeterministic Time in Sublinear Deterministic Space
+# Separating Nondeterministic Time from Deterministic Space
 
-Charlie Cruz · draft of November 8, 2026 · [PDF](paper.pdf) · [LaTeX source](paper.tex)
+Charlie Cruz · November 10, 2026 · [PDF](separating-ntime-from-space.pdf) · [LaTeX source](separating-ntime-from-space.tex)
 
 Every nondeterministic multitape Turing machine running in time `t(n) ≥ n` can be simulated
 deterministically in space `O(t/√log t)`. By the space hierarchy theorem,
@@ -36,14 +36,14 @@ confirms that the main endpoints prove statements written against Complexitylib 
 ## Building
 
 ```sh
-latexmk -pdf paper.tex
+latexmk -pdf separating-ntime-from-space.tex
 cd lean && lake exe cache get && lake build
 ```
 
 ## Files
 
-- `paper.tex`, `paper.pdf`: the paper.
+- `separating-ntime-from-space.tex`, `separating-ntime-from-space.pdf`: the paper.
 - `lean/`: the formalization (see [lean/README.md](lean/README.md)).
 
-The paper and the formalization were developed with assistance from Anthropic's
+The paper and the formalization were developed with substantial assistance from Anthropic's
 Claude and OpenAI's ChatGPT. The author is responsible for all claims.

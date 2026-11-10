@@ -7,7 +7,7 @@ import NtimeDspace.Cube.CodeTerm
 import NtimeDspace.Cube.FirstNum
 import NtimeDspace.TameV
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: the first clique)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: the first clique)
 
 /-!
 # Reading a network, and the counts of the first clique, as terms (Lemma 4.3 (c))

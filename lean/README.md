@@ -1,7 +1,7 @@
 # Lean formalization
 
 This development proves Theorem 1.1, Corollary 1.2, Theorem 7.1, Corollary 7.2, Propositions 8.1
-and 8.2 and Remark 8.3 of [the paper](../paper.tex) for every `t(n) ≥ n`. Machines and
+and 8.2 and Remark 8.3 of [the paper](../separating-ntime-from-space.tex) for every `t(n) ≥ n`. Machines and
 complexity classes are [Complexitylib](https://github.com/cslib-community/complexitylib)'s, on
 Mathlib and CSLib. The proofs use only `propext`, `Classical.choice` and `Quot.sound`.
 
@@ -37,7 +37,8 @@ imports. Comparator checks the proofs against them.
 
 ## Paper to Lean
 
-[NtimeDspace.lean](NtimeDspace.lean) has the full list.
+[NtimeDspace.lean](NtimeDspace.lean) indexes the main results. The one-bit example and its
+matrix ranks over `ℚ` are in [Cube/Examples.lean](NtimeDspace/Cube/Examples.lean#L355).
 
 | Paper | Lean |
 | --- | --- |
@@ -61,7 +62,14 @@ imports. Comparator checks the proofs against them.
 | §8, counting and 3-SAT | `Cross.ThreeSat.smallBits_of_scale`, `smallBits_nlog`, `smallBits_rpow` |
 | §8, counting and PPTIME | `Cross.ntime_subset_dspace_of_blockBitsAt`, `Cross.pptime_subset_dspace_of_blockBitsAt`, `Crossing.pptime_subset_dspace_divLog_of_blockBitsAt` |
 | §8, after Propositions 8.1, 8.2 | `Cube.prop_boolean_sq`, `Cube.prop_barrier_sq`, `Cube.equalWidth_sum` |
-| §5, the examples | `Cube.ex_piece`, `Cube.ex_rowSplit`, `Cube.ex_colSplit`, `Cube.ex_mixed` |
+| §5, full one-bit routing formula | [Cube.oneBit_piece](NtimeDspace/Cube/Examples.lean#L365) |
+| §5, one-bit coefficients and support | [Cube.oneBit_coeff_zero](NtimeDspace/Cube/Examples.lean#L377), [Cube.oneBit_coeff_two](NtimeDspace/Cube/Examples.lean#L386), [Cube.oneBit_coeff_neg_two](NtimeDspace/Cube/Examples.lean#L394), [Cube.oneBit_coeff_eq_zero](NtimeDspace/Cube/Examples.lean#L402) |
+| §5, transpose of encoded one-bit views | [Cube.oneBitViews_transpose](NtimeDspace/Cube/Examples.lean#L412), [Cube.oneBitViews_true_transpose](NtimeDspace/Cube/Examples.lean#L430) |
+| §5, `Π₂` row/column ranks `(4, 1)` | [Cube.oneBitRow_two_rank](NtimeDspace/Cube/Examples.lean#L502), [Cube.oneBitCol_two_rank](NtimeDspace/Cube/Examples.lean#L510) |
+| §5, `Π₀` row/column ranks `(3, 3)` | [Cube.oneBitRow_zero_rank](NtimeDspace/Cube/Examples.lean#L546), [Cube.oneBitCol_zero_rank](NtimeDspace/Cube/Examples.lean#L555) |
+| §5, `Π₋₂` row/column ranks `(1, 4)` | [Cube.oneBitRow_neg_two_rank](NtimeDspace/Cube/Examples.lean#L521), [Cube.oneBitCol_neg_two_rank](NtimeDspace/Cube/Examples.lean#L532) |
+| §5, one-bit crossing ranks `(4, 4)` | [Cube.oneBitCrossingRow_rank](NtimeDspace/Cube/Examples.lean#L583), [Cube.oneBitCrossingCol_rank](NtimeDspace/Cube/Examples.lean#L593) |
+| §5, specialized examples and split contributions | `Cube.ex_piece`, `Cube.ex_rowSplit`, `Cube.ex_colSplit`, `Cube.ex_mixed` |
 | §5.1, the Walsh–Hadamard remark | `Cube.C_eq_prod`, `Cube.cMat_mul_self`, `Cube.hadamard_mul_self`, `Cube.hadamard_diagonalizes` |
 
 Two statements differ in form from the paper:
@@ -115,6 +123,7 @@ challenge statements and use only the standard axioms. The configs are
 changes a statement and `-sorry` replaces a proof by `sorry`. The runs need more memory than a
 laptop and were done on a computing cluster.
 
-A run on 9 November 2026, on this revision, passed: both main checks succeeded, with Lean's
+A run on 9 November 2026 passed: both main checks succeeded, with Lean's
 paranoid kernel, and all four controls failed as they should (the changed statements as mismatches,
-the `sorry` proofs for `sorryAx`).
+the `sorry` proofs for `sorryAx`). Later commits changed only comments and
+`Cube/Examples.lean`, which the checked statements do not import.

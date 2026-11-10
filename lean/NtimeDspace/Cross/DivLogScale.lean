@@ -5,7 +5,7 @@ Authors: Charlie Cruz
 -/
 import NtimeDspace.Cross.ColumnAdderAt
 
--- upstream: local-only (the scale n / log n of the remark of paper.tex §8)
+-- upstream: local-only (the scale n / log n of the remark of separating-ntime-from-space.tex §8)
 
 /-!
 # The scale `n / log n`

@@ -7,7 +7,7 @@ import NtimeDspace.Cube.BudgetTerm
 import NtimeDspace.Cube.CodeTerm
 import NtimeDspace.Cube.EntryNum
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: entries and copies)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: entries and copies)
 
 /-!
 # The entry and range states as terms (Lemma 6.4)

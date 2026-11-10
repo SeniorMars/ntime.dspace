@@ -5,7 +5,7 @@ Authors: Charlie Cruz
 -/
 import NtimeDspace.Cross.CubeStatement
 
--- upstream: local-only (paper.tex §8: Theorem 2.3 in bit form at a general space bound)
+-- upstream: local-only (separating-ntime-from-space.tex §8: Theorem 2.3 in bit form at a general space bound)
 
 /-!
 # Theorem 2.3 in bit form at a general space bound
@@ -28,7 +28,7 @@ evaluation below `2^(C · D s)` (so space `O(D s)` and time `2^{O(D s)}` after c
 
 ## References
 
-* The paper (`paper.tex`), §2, Theorem 2.3 (`thm:counting`); §8, first paragraph.
+* The paper (`separating-ntime-from-space.tex`), §2, Theorem 2.3 (`thm:counting`); §8, first paragraph.
 -/
 
 namespace NtimeDspace.Cross

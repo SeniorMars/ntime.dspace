@@ -8,7 +8,7 @@ import NtimeDspace.Cross.CubeStatement
 import NtimeDspace.Cube.GenPar
 import NtimeDspace.Cube.GenSize
 
--- upstream: local-only (paper.tex Theorem 2.3 in bit form, and the bits of the block networks)
+-- upstream: local-only (separating-ntime-from-space.tex Theorem 2.3 in bit form, and the bits of the block networks)
 
 /-!
 # Theorem 2.3 in bit form, by the walks on the cube

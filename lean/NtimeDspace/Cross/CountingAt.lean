@@ -8,7 +8,7 @@ import NtimeDspace.Cross.CountingPP
 import NtimeDspace.Cross.GeneralTheorem
 import NtimeDspace.Cross.Corollaries
 
--- upstream: local-only (the remark of paper.tex §8: the method does not separate NTIME from PP)
+-- upstream: local-only (the remark of separating-ntime-from-space.tex §8: the method does not separate NTIME from PP)
 
 /-!
 # Theorem 2.3 at a scale `D` gives `NTIME[t]`, `PPTIME[t]` and `BPTIME[t]` in space `O(D(t))`

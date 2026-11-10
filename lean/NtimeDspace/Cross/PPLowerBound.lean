@@ -31,7 +31,7 @@ Writing this against `PPSimulation` ensures that pipeline refactors cannot break
 
 ## References
 
-* The paper (`paper.tex`), §1, Corollary 1.2 (iv) (`cor:sep`).
+* The paper (`separating-ntime-from-space.tex`), §1, Corollary 1.2 (iv) (`cor:sep`).
 -/
 
 namespace NtimeDspace.Cross

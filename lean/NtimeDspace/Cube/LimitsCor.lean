@@ -6,12 +6,12 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.Limits
 import Mathlib.Analysis.SpecialFunctions.Log.Base
 
--- upstream: local-only (paper.tex §8: consequences of the limits of the method)
+-- upstream: local-only (separating-ntime-from-space.tex §8: consequences of the limits of the method)
 
 /-!
 # Consequences of Propositions 8.1 and 8.2
 
-This file formalizes the three consequences that `paper.tex`, §8, draws from Proposition 8.1
+This file formalizes the three consequences that `separating-ntime-from-space.tex`, §8, draws from Proposition 8.1
 (`prop_boolean`) and Proposition 8.2 (`prop_barrier`). Here `log N` is `Real.logb 2 N`, and the
 numbers of bits `r i`, `c i` are those of `Limits.lean` (`FactorsThroughOr`, `FactorsThrough`).
 

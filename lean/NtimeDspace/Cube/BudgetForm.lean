@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.BudgetNum
 import NtimeDspace.Cube.Formula
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: budget arrays)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: budget arrays)
 
 /-!
 # Index widths of the formula from budget arrays

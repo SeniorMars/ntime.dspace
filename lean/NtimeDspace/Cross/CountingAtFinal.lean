@@ -7,7 +7,7 @@ import NtimeDspace.Cross.CountingAt
 import NtimeDspace.Cross.DivLogScale
 import NtimeDspace.Cross.CubeFinal
 
--- upstream: local-only (the remark of paper.tex §8 at the scales `√log` and `log`)
+-- upstream: local-only (the remark of separating-ntime-from-space.tex §8 at the scales `√log` and `log`)
 
 /-!
 # The remark of §8 at `D = SqrtLog` and at `D = n / log n`

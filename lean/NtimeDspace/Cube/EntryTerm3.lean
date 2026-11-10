@@ -5,7 +5,7 @@ Authors: Charlie Cruz
 -/
 import NtimeDspace.Cube.EntryTerm2
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: tiers of the entry programs)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: tiers of the entry programs)
 
 /-!
 # Tiers of the child programs of the entry states (Lemma 6.4)

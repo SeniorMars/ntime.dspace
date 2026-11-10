@@ -20,12 +20,12 @@ import NtimeDspace.Cube.Examples
 import NtimeDspace.Cube.Walsh
 import NtimeDspace.Cube.LimitsCor
 
--- upstream: local-only (project scaffolding: axiom audit of the route of paper.tex)
+-- upstream: local-only (project scaffolding: axiom audit of the route of separating-ntime-from-space.tex)
 
 /-!
 # Axiom audit of the current paper
 
-For each statement of `paper.tex` (the route of §§2–8: crossing pieces from walks on the cube, the
+For each statement of `separating-ntime-from-space.tex` (the route of §§2–8: crossing pieces from walks on the cube, the
 merge, the explicit formula, and the transfer), the declarations that formalize it, with a check that
 each depends only on Lean's standard axioms `propext`, `Classical.choice` and `Quot.sound`. Each check
 is a `#guard_msgs`, so the build fails if a declaration is missing or picks up any other axiom

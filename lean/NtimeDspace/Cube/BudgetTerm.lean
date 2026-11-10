@@ -7,7 +7,7 @@ import NtimeDspace.Cross.ExactClocked
 import NtimeDspace.Cube.BudgetNum
 import NtimeDspace.TameV
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: budget arrays)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: budget arrays)
 
 /-!
 # Budget arrays as terms (Lemma 6.4)

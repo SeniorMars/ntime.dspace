@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.EntryTerm
 import NtimeDspace.SumProduct.StepTerm
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: entries and copies)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: entries and copies)
 
 /-!
 # The entry and range states as terms, part 2 (Lemma 6.4)

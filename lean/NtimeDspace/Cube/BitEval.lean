@@ -5,7 +5,7 @@ Authors: Charlie Cruz
 -/
 import NtimeDspace.SumProduct.GenQuery
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, Proposition 3.2 at one input)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, Proposition 3.2 at one input)
 
 /-!
 # The bit evaluator at one parameter

@@ -5,7 +5,7 @@ Authors: Charlie Cruz
 -/
 import NtimeDspace.Cube.Codes
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §6.4: programs on label codes)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §6.4: programs on label codes)
 
 /-!
 # Label codes read and written as numbers

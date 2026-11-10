@@ -5,7 +5,7 @@ Authors: Charlie Cruz
 -/
 import NtimeDspace.Cube.PathsAux
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §6.3)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §6.3)
 
 /-!
 # Index lengths (Lemma 6.3)

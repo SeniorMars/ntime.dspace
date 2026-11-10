@@ -7,7 +7,10 @@
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{aliascnt}
-\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=green!40!black,urlcolor=blue!50!black]{hyperref}
+\usepackage[colorlinks=true]{hyperref}
+\definecolor{linkred}{rgb}{0.75,0,0.25}
+\definecolor{refgreen}{cmyk}{0.64,0,0.95,0.4}
+\hypersetup{linkcolor=refgreen,citecolor=linkred,urlcolor=linkred,pdftitle={Separating Nondeterministic Time from Deterministic Space},pdfauthor={Charlie Cruz}}
 \usepackage[capitalise,nameinlink]{cleveref}
 
 \theoremstyle{definition}
@@ -55,7 +58,7 @@
 \makeatletter\@beginparpenalty=0 \@endparpenalty=0 \makeatother
 \makeatletter\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}{1.5ex plus .5ex minus .2ex}{-1em}{\normalfont\itshape}}\makeatother
 
-\title{Simulating Nondeterministic Time\\ in Sublinear Deterministic Space}
+\title{Separating Nondeterministic Time\\ from Deterministic Space}
 \author{Charlie Cruz\\[2pt]\normalsize\texttt{cjh16@rice.edu}}
 \date{\vspace{-2em}}
 
@@ -64,7 +67,7 @@
 
 \begin{abstract}
 We show that every nondeterministic multitape Turing machine running in time $t(n)\ge n$ can be simulated deterministically in space $O(t/\sqrt{\log t})$. By the space hierarchy theorem, $\NTIME[n]\subsetneq\SPACE[n]$.
-In 1975, Hopcroft, Paul and Valiant simulated deterministic time $t$ in space $O(t/\log t)$ by recomputing intermediate configurations rather than storing them. For nondeterministic machines this fails, because a second run may make different choices. We recompute counts instead. The number of ways a stretch of the computation can run depends only on what crosses its boundary, so it comes out the same every time. These counts are values of sparse networks, and we compute them with the grid recursion behind Anthropic's refutation of the Exponential Time Hypothesis, using new pieces built from walks on the Boolean cube. The resulting formula is evaluated depth first over the integers, one bit at a time. Since every bit of the count is available, the same bound holds for unbounded-error probabilistic time, and $\PPTIME[n]\subsetneq\SPACE[n]$. Pushing the method to space $t/\log t$ would count the satisfying assignments of $3$-CNF formulas faster than any known algorithm.
+In 1975, Hopcroft, Paul and Valiant simulated deterministic time $t$ in space $O(t/\log t)$ by recomputing intermediate configurations rather than storing them. For nondeterministic machines this fails, because a second run may make different choices. We recompute counts instead. The number of ways a stretch of the computation can run depends only on what crosses its boundary, so it comes out the same every time. These counts are values of sparse networks, and we compute them with the grid recursion behind Anthropic's refutation of the Exponential Time Hypothesis, using a new algebraic decomposition built from walks on the Boolean cube, and evaluate the resulting integer formula depth first, one bit at a time. Since every bit of the count is available, the same bound holds for unbounded-error probabilistic time, and $\PPTIME[n]\subsetneq\SPACE[n]$. Pushing the method to space $t/\log t$ would count the satisfying assignments of $3$-CNF formulas faster than any known algorithm. The proofs are formally verified in Lean.
 \end{abstract}
 
 \section{Introduction}
@@ -73,7 +76,7 @@ A nondeterministic machine running in time $t$ can be simulated deterministicall
 
 For nondeterministic machines, recomputation raises a consistency problem. As Hopcroft, Paul and Valiant observed, a computation run a second time may make different choices, and then the two runs need not fit together~\cite[\S2]{HPV75}. They asked whether $\NTIME[t\log t]\subseteq\NSPACE[t]$, and Santhanam later studied whether $\NTIME[t]=\NSPACE[t]$ for constructible $t$~\cite{San01}.
 
-Paterson simulated nondeterministic time $t\ge n^2$ in deterministic space $O(\sqrt t)$ for single-tape machines~\cite{Pat72}. For multitape machines, we know of no $o(t)$-space simulation of nondeterministic time $t$ that predates the recent refutations of the Exponential Time Hypothesis. Earlier lower bounds against small space restrict time and space together, as in $\NTIME[n]\not\subseteq\mathsf{DTISP}[n^c,n^{o(1)}]$ for $c>1$~\cite{vM06}. We show that the algebraic decompositions in those refutations give deterministic space $O(t/\sqrt{\log t})$.
+Paterson simulated nondeterministic time $t\ge n^2$ in deterministic space $O(\sqrt t)$ for single-tape machines~\cite{Pat72}. For multitape machines, we know of no $o(t)$-space simulation of nondeterministic time $t$ that predates the recent refutations of the Exponential Time Hypothesis. Earlier lower bounds against small space restrict time and space together, as in $\NTIME[n]\not\subseteq\mathsf{DTISP}[n^c,n^{o(1)}]$ for some $c>1$~\cite{vM06}. We show that the algebraic decompositions in those refutations give deterministic space $O(t/\sqrt{\log t})$.
 
 \begin{theorem}\label{thm:main}
 \postdisplaypenalty=10000
@@ -105,13 +108,11 @@ counts the compatible pairs. Each factor depends on $z$ alone. It can be recompu
 
 This makes recomputation consistent, but does not yet save space: the boundary data $z$ can be as long as the computation. To shorten the sums, we use algebraic decompositions from the refutations of the Exponential Time Hypothesis~\cite{Ope26,Ant26}, the conjecture that $3$-SAT on $n$ variables needs time $2^{\Omega(n)}$~\cite{IP01}. Before these works, no algorithm was known to count the satisfying assignments of a $3$-CNF formula with $m$ clauses in time $2^{o(m)}$; their algorithms take time $2^{O(m/\sqrt{\log m})}$~\cite[App.~D.2]{Ope26},~\cite[Main Theorem]{Ant26}.
 
-These counting bounds do not directly give our simulation. The standard encodings of a computation of length $t$ as a formula have about $t\log t$ variables~\cite{PF79,Coo88}; substituting this size into the counting bound gives no saving over brute force. The blocking of Hopcroft, Paul and Valiant gives $O(t)$ variables instead, but its constraints have arity $\Theta(\log t)$, and the network they form is too large to store. This running-time bound alone does not give the required space bound. We need a counting algorithm that reads the network through local queries and computes each bit of its value in space $O(t/\sqrt{\log t})$; \cref{thm:transfer} reduces \cref{thm:main} to exactly this problem.
+These counting bounds do not directly give our simulation. Standard reductions encode a computation of length $t$ by a formula of size $O(t\log t)$~\cite{PF79,Coo88}; substituting this size into the counting bound gives no saving over brute force. The blocking of Hopcroft, Paul and Valiant gives $O(t)$ variables instead, but its constraints have arity $\Theta(\log t)$, and the network they form is too large to store. This running-time bound alone does not give the required space bound. We need a counting algorithm that reads the network through local queries and computes each bit of its value in space $O(t/\sqrt{\log t})$; \cref{thm:transfer} reduces \cref{thm:main} to exactly this problem.
 
-We obtain such an algorithm from the grid recursion of Anthropic~\cite{Ant26}, using new pieces and an additive form of a potential of Zhuang~\cite{Zhu26}. The potential controls the unequal label weights created by successive merges. Evaluating the recursion depth first over the integers then gives space about the logarithm of its running time.
+We obtain such an algorithm from the grid recursion of Anthropic~\cite{Ant26}, using new pieces and an additive form of a potential of Zhuang~\cite{Zhu26}. The potential controls the unequal label weights created by successive merges. Evaluating the recursion depth first over the integers then gives space about the logarithm of its running time. The square-root saving comes from about $\log\log t$ merges, each halving a quadratic measure of the shared information.
 
 Because the simulator computes any bit of the exact number of accepting choice strings, it handles unbounded error as well. So $\PPTIME[t]$ and $\BPTIME[t]$ lie in $\SPACE[t/\sqrt{\log t}\,]$ (\cref{thm:counting-classes}), which gives part~(iv).
-
-The square root in the bound has one source, the fact that a multiset of positive integers with sum $W$ can be written down in $O(\sqrt W)$ bits. We do not know how to reach $t/\log t$, and \cref{sec:discussion} shows that doing so by counting would count $3$-SAT faster than any known algorithm.
 
 \subsection{Overview of the proof}\label{sec:overview}
 
@@ -127,34 +128,25 @@ Over a ring, the crossing comes apart. For single bits $x,y,u,v$, the one-bit id
 \begin{equation}\label{eq:onebit}
 [x=v][y=u]=[x=u][y=v]-\varepsilon(x,y)\,\varepsilon(u,v),
 \end{equation}
-where $\varepsilon(0,1)=1$, $\varepsilon(1,0)=-1$ and $\varepsilon$ vanishes on equal bits. At $(x,y,u,v)=(0,1,0,1)$ both diagonals disagree, and the right side is $1-1=0$: the two terms cancel on this inconsistent assignment. The first term is a function of $(x,u)$ times a function of $(y,v)$, so no bit crosses the column cut, and in the second term no bit crosses the row cut. This use of subtraction matters: polynomially many pieces combined by OR and AND cannot achieve the same saving (\cref{prop:boolean}). For longer strings, multiplying~\eqref{eq:onebit} over the coordinates gives terms that are just as cheap, but naming one of them costs a bit per coordinate, as much as the strings themselves. Anthropic found polynomially many pieces built from operators on polynomials~\cite[Appendix~B]{Ant26}. Ours come from walks on the cube, described once it is clear what the recursion needs.
+where $\varepsilon(0,1)=1$, $\varepsilon(1,0)=-1$ and $\varepsilon$ vanishes on equal bits. At $(x,y,u,v)=(0,1,0,1)$ both diagonals disagree, and the right side is $1-1=0$: the two terms cancel on this inconsistent assignment. The first term is a function of $(x,u)$ times a function of $(y,v)$, so no bit crosses the column cut, and in the second term no bit crosses the row cut. This use of subtraction matters: polynomially many pieces combined by OR and AND cannot achieve the same saving (\cref{prop:boolean}). For longer strings, multiplying~\eqref{eq:onebit} over the coordinates gives terms that are just as cheap, but naming one of them costs a bit per coordinate, as much as the strings themselves. Anthropic found polynomially many pieces built from operators on polynomials~\cite[Appendix~B]{Ant26}. We construct ours from walks on the cube.
 
-To compare the two cuts, we will bound the squares of their message lengths by quantities with a fixed sum. This is why we introduce weights. A label is a pair of multisets of requests, and a request of type $i$ weighs $i+1$. A string of $r$ bits becomes a label of weight $r(r+1)/2$, while a label of weight at most $W$ takes $O(\sqrt W)$ bits to write down. Thus a weight budget gives a bound on squared code length. Let the two diagonals of a rectangle carry labels of weights $a$ and $b$, and put $H=a+b$. We shall write the crossing as a sum of pieces $\Pi_k$, one for each even grade $k$ with $|k|\le2H$, such that
+The pieces replace the two labels of a crossing by one message. To measure the saving, we use weights that control squared code lengths. A label is a pair of multisets of requests, with type $i$ weighing $i+1$. A string of $r$ bits becomes a label of weight $r(r+1)/2$, while a label of weight at most $W$ has an $O(\sqrt W)$-bit code. Let the diagonal labels have weights $a,b$, and put $H=a+b$. We write the crossing as a sum of pieces $\Pi_k$, for even grades $|k|\le2H$, whose factorizations use messages of weight at most
 \[
-\Pi_k\ \text{factors across the row cut through messages of weight at most}\ H+k/2,
+H+k/2\quad\text{across rows},\qquad H-k/2\quad\text{across columns}
 \]
-and across the column cut through messages of weight at most $H-k/2$ (\cref{cor:cuts}). These budgets add to exactly $2H$, regardless of the grade. Their codes have lengths $O(\sqrt{H+k/2})$ and $O(\sqrt{H-k/2})$; a coefficient split costs another $O(\log(H+2))$ bits. In the language of communication complexity, a piece that factors across a cut through a set of messages has rank at most the size of that set. The exact sum of the weight budgets will let us prove that the merge halves the potential.
+(\cref{cor:cuts}). A coefficient split adds $O(\log(H+2))$ index bits; the merge records it alongside the grade, so only the message is packed. Each message is one label. At grade $0$, its code-length bound is $O(\sqrt{a+b})$, compared with $O(\sqrt a+\sqrt b)$ for two separate labels. Other grades move weight between the cuts, but the budgets always add to $2H$, just as the two original labels would weigh $H$ at each cut.
 
-Expand the crossing of every rectangle into pieces, fix one piece in each, and merge the rows or the columns, whichever is cheaper for that whole term. After a merge the budgets differ from pair to pair. We track these unequal weight budgets through the recursion and convert them to code lengths when estimating the space. Zhuang~\cite{Zhu26} uses the quadratic potential $q\norm w_2$, the number of nodes times the Euclidean norm of the vector $w$ of widths. We use its square, written additively, with a weight budget $a_{uv}$ in place of each squared width:
+The pieces come from a signed sum over routings, weighted by powers of a formal variable $z$. A shared message does not record which diagonal sent a request, so matching requests across the cut also creates connections along the sides. An identity for walks on the cube preserves the diagonal equality tests. Every other routing contains a factor that vanishes at $z=1$. The coefficients of the resulting Laurent polynomial are the pieces. For the row cut, a step to a heavy intermediate type costs a high power of $z$, which bounds the message weight in terms of the grade; transposition exchanges the cuts and reverses the grade (\cref{sec:pieces}).
+
+We compare the two merges by the potential
 \[
-\Phi=(q-1)^2\sum_{\{u,v\}}a_{uv}.
+\Phi=(q-1)^2\sum_{\{u,v\}}a_{uv}
 \]
+of the pair budgets $a_{uv}$. For each choice of pieces, merge all rows or all columns and pack what each pair of new nodes shares into one label. Packing scales the total weight budget by a factor $L$, the number of fields plus one for padding. Two rows share the labels of their vertical pairs and one message per rectangle, so $L=q/2+O(\sqrt q)$, compared with $q+1$ without pieces. A straight pair is carried by only one merge, and a rectangle's budgets add to $2H$ across both. Together these give $\Phi_\row+\Phi_\col\le\Phi$ (\cref{lem:energy}).
 
-To repeat the merge, each pair of new nodes must again share one label. We pack the labels and messages between two rows into a single label of prescribed weight. The packing factor is $q/2+O(\sqrt q)$, a straight pair is carried by only one of the two merges, and the budgets of a rectangle add up to $2H$. Together these give $\Phi_\row+\Phi_\col\le\Phi$ (\cref{lem:energy}). So the cheaper merge halves the potential as it halves the length $h$ of the names,
-\[
-\frac{\Phi'}{h/2}\le\frac\Phi h,
-\]
-and the normalized potential $\Phi/h$ never increases.
+Initially $\Phi=O(s^2)$ and $h=h_*=\Theta(\log s)$ (\cref{lem:top}). Choosing the cheaper merge at every stage halves the potential as it halves the name length $h$, so $\Phi/h$ never increases. The accounting must be exact: losing a constant factor at each of the $\log\log s$ merges would cost a power of $\log s$. At $h=1$, the two remaining nodes share a label of weight $O(s^2/\log s)$, with a code of $O(s/\sqrt{\log s})$ bits.
 
-At the start $\Phi=O(s^2)$ and $h=h_*=\Theta(\log s)$; the first bound holds because the first clique spreads the edges between groups of vertices evenly over many pairs of nodes (\cref{lem:top}). After $\log h_*$ merges only two nodes remain, joined by one label of weight $O(s^2/\log s)$, and that label takes $O(s/\sqrt{\log s})$ bits. Since the potential is a sum of weights, the square root enters only when this last label is written in bits.
-
-The pieces themselves come from walks on the cube. For nonnegative integers $i,j$, let $d(i,j)=i\oplus j$ be their bitwise exclusive or, read as an integer, and let $C_{i,j}(z)=(-1)^{\ip ij}z^{d(i,j)}$, where $\ip ij$ is the parity of the number of common one-bits. Then
-\begin{equation}\label{eq:bitflip}
-(1-z^2)\sum_{n\ge0}C_{i,n}(z)\,C_{n,j}(z)=[i=j].
-\end{equation}
-For $i\ne j$ the walks $i\to n\to j$ cancel in pairs, by flipping a bit of $n$ in a position where $i$ and $j$ differ; for $i=j$ the factor $1-z^2$ cancels the one walk of each even length. An equality test thus splits at an intermediate type $n$ into one step on each side, and since $n\le i+d(i,n)$, a heavy intermediate type costs a long step. A piece is a signed count of routings, which send the requests at each corner of the rectangle to other corners by such steps along its sides. A grade is an exponent of $z$ in which vertical length counts positively and horizontal length negatively, and the pieces add up to the crossing (\cref{sec:pieces}). Splitting the requests that cross the row cut by~\eqref{eq:bitflip} gives the row budget $H+k/2$. Transposing the rectangle exchanges vertical and horizontal and turns the row cut into the column cut, so the column budget $H-k/2$ follows with no further work.
-
-\begin{figure}[!t]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[x=1cm,y=0.6cm,
   nd/.style={rectangle,rounded corners=2pt,draw,inner sep=2.5pt,font=\small},
@@ -174,29 +166,26 @@ For $i\ne j$ the walks $i\to n\to j$ cancel in pairs, by flipping a bit of $n$ i
 \node[anchor=east,align=right,font=\small] at (1.0,-3.5) {clique values\\[-1pt]{\footnotesize\color{black!70}$o(F/\log h_*)$ per level}};
 \node[anchor=west,align=left,font=\small] at (8.2,-3.5) {table entries\\[-1pt]{\footnotesize\color{black!70}$O(F/2)+O(F/4)+\dots$}};
 \node[ann,below] at (e.south) {$O(F)$};
-\draw[->,black!35] (-1.3,-5.75)--(10.1,-5.75) node[midway,below,ann] {every arrow goes to a child, deeper in the formula};
 \end{tikzpicture}
-\caption{A root-to-leaf path, as in Zhuang's analysis~\cite[\S5]{Zhu26}. The V records clique name lengths: they decrease through choices of pieces and increase through table entries. Every arrow goes deeper in the formula; a table entry never calls a clique value. With $F=s/\sqrt{h_*}$, the index lengths total $O(F)$, including any coefficient recursion at the end (\cref{lem:paths}).}
+\caption{A root-to-leaf path. The V records clique name lengths: they decrease through choices of pieces and increase through table entries. Every arrow goes deeper in the formula; a table entry never calls a clique value. With $F=s/\sqrt{h_*}$, the index lengths total $O(F)$, including any coefficient recursion at the end (\cref{lem:paths}).}
 \label{fig:path}
 \end{figure}
 
-The simulator never writes out the network or the clique tables. A merged table entry is evaluated from its definition each time it is needed, as in Anthropic's algorithm~\cite[Algorithm~1]{Ant26}: it sums over the old labels of one row or column and evaluates the old entries one at a time. The potential bounds label lengths; the remaining issue is how many indices the evaluator holds at once. As in Zhuang's analysis~\cite[\S5]{Zhu26}, a path chooses pieces through successive merges, reaches the last label, and then follows at most one table entry per name length, never returning to a clique value (\cref{fig:path}).
+The simulator never writes out the network or the clique tables. A merged table entry is evaluated from its definition each time it is needed, as in Anthropic's algorithm~\cite[Algorithm~1]{Ant26}: it sums over the old labels of one row or column and evaluates the old entries one at a time. The potential bounds label lengths; the remaining issue is how many indices the evaluator holds at once. A path chooses pieces through successive merges, reaches the last label, and then follows at most one table entry per name length, never returning to a clique value (\cref{fig:path}). The bounds on the table-entry indices form a summable geometric series, and the remaining indices fit in the same $O(s/\sqrt{\log s})$ budget (\cref{lem:paths}).
 
-Put $F=s/\sqrt{h_*}$. Along the table-entry chain, the potential gives index bounds $O(F/h)$ at parent name lengths $h=2,4,8,\dots$, totaling $O(F)$. Piece choices add $o(F)$ bits, the last label $O(F)$, and a final coefficient recursion another $O(F)$ (\cref{lem:transport}). Thus every path fits in $O(F)$ bits (\cref{lem:paths}).
-
-\Cref{sec:networks} reduces \cref{thm:main} to computing the bits of $Z(G)$ (\cref{thm:counting}). \Cref{sec:formulas,sec:labels,sec:pieces,sec:halving} prove the counting theorem from scratch, using ideas from~\cite{Ant26,Zhu26} but none of their results. The merge lemmas give an exact formula for $Z(G)$, \cref{lem:paths} bounds its path cost, and \cref{lem:explicit} shows that each addressed node can be recovered within the same space bound. The evaluator of \cref{lem:formula} then computes its bits. \Cref{sec:consequences,sec:discussion} give the consequences for counting classes and the limits of the method.
+\Cref{sec:networks} reduces the simulation to counting. \Cref{sec:formulas,sec:labels,sec:pieces,sec:halving} prove the counting theorem from scratch, using ideas from~\cite{Ant26,Zhu26} but none of their results. \Cref{sec:consequences,sec:discussion} give the counting-class consequences and the limits of the method.
 
 \subsection{Contributions and related work}
 
-The building blocks come from classical complexity theory and from the recent refutations of the Exponential Time Hypothesis by OpenAI~\cite{Ope26} and, independently, by Anthropic~\cite{Ant26}. The tape blocking is that of Hopcroft, Paul and Valiant~\cite{HPV77}. From Anthropic we take the grid of nodes, the merging of rows or columns chosen separately for each term, and the expansion of each crossing into signed pieces graded by an integer. We arrived independently at the halving of node names and the invariant of \cref{sec:halving}; Zhuang's manuscript~\cite{Zhu26} develops related ideas, including a quadratic potential and pieces from the one-bit identity~\eqref{eq:onebit}.
+The building blocks come from classical complexity theory and from the recent refutations of the Exponential Time Hypothesis by OpenAI~\cite{Ope26} and, independently, by Anthropic~\cite{Ant26}. The tape blocking is that of Hopcroft, Paul and Valiant~\cite{HPV77}. From Anthropic we take the grid of nodes, the merging of rows or columns chosen separately for each term, and the expansion of each crossing into signed pieces graded by an integer. We arrived independently at the halving of node names and the invariant of \cref{sec:halving}; Zhuang's manuscript~\cite{Zhu26} develops related ideas, including a quadratic potential and pieces built from the one-bit identity~\eqref{eq:onebit}.
 
-Our contributions are the application to nondeterministic time and a self-contained proof of the counting bound it needs. We obtain logspace-accessible networks of size $O(t)$ from blocked computations (\cref{sec:networks}) and construct new crossing pieces from the cube walks of~\eqref{eq:bitflip} (\cref{sec:pieces}). Their two factorizations follow from elementary inequalities for the cube distance and transposition, with message-weight budgets summing to exactly twice the weight of the crossing. The simulation uses explicit multiset codes, a deterministic construction of the first clique, and direct evaluation of integer bits. These ingredients let us carry out the recursion in small space from local access to the network.
+Our contributions are the application to nondeterministic time, a more elementary algebra for the crossing pieces and a self-contained proof of the counting bound the simulation needs. We obtain logspace-accessible networks of size $O(t)$ from blocked computations (\cref{sec:networks}) and construct new crossing pieces from the cube-walk identity of \cref{lem:test}. Their two factorizations follow from elementary inequalities for the cube distance and from transposition, with message-weight budgets summing to exactly twice the weight of the crossing. The simulation uses explicit multiset codes, a deterministic construction of the first clique, and direct evaluation of integer bits. These ingredients let us carry out the recursion in small space from local access to the network.
 
-Sam McGuire independently found the bound $t/\sqrt{\log t}$ of \cref{thm:main} (personal communication); his note~\cite{McG26a} simulates nondeterministic and bounded-error probabilistic time $t$ in deterministic time $2^{O(t/\sqrt{\log t})}$. Rain Yang, working with Toniann Pitassi on extending Williams's low-space simulation~\cite{Wil25} to nondeterministic time, found a similar result: using ideas from OpenAI's refutation, and with the assistance of Claude Opus~5.5, Yang obtained a proof that $\NTIME[T]$ is contained in $\SPACE\bigl[T(\log\log T)^2/\sqrt{\log T}\,\bigr]$.
+Rain Yang, working with Toniann Pitassi on extending Williams's low-space simulation~\cite{Wil25} to nondeterministic time, found a similar result: using ideas from OpenAI's refutation, and with the assistance of Claude Opus~5.5, Yang obtained a proof that $\NTIME[T]$ is contained in $\SPACE\bigl[T(\log\log T)^2/\sqrt{\log T}\,\bigr]$. Sam McGuire independently found the bound $t/\sqrt{\log t}$ of \cref{thm:main} (personal communication); for time-constructible $t\ge n$, his note~\cite{McG26a} simulates nondeterministic and bounded-error probabilistic time $t$ in deterministic time $2^{O(t/\sqrt{\log t})}$.
 
 \subsection{Formal verification}\label{sec:lean}
 
-The proof in this paper is formally verified. A Lean~4 development~\cite{dMU21} on Mathlib~\cite{Mat20}, CSLib~\cite{CSL} and Complexitylib~\cite{Cplx}, at \url{https://github.com/SeniorMars/ntime.dspace}, proves \cref{thm:main}, \cref{cor:sep} and \cref{thm:counting-classes} for every $t(n)\ge n$, and \cref{cor:3sat}, from Complexitylib's definitions of machines and classes and with only Lean's standard axioms; $\ParTIME$, $\ModTIME$ and $\CeqTIME$, which Complexitylib lacks, are defined in the development as in \cref{sec:consequences}. It follows the paper section by section, except that the halting test and the counts of computations of \cref{lem:block} are taken as accept counts of modified machines. \Cref{prop:boolean,prop:barrier} and \cref{rem:relativize}, for the oracle used there, are verified as well, and so are the implications of \cref{sec:discussion}. The machine of \cref{lem:explicit}, which follows an address of the formula, becomes a program whose intermediate values stay below $2^{O(F)}$; this gives space $O(F)$ and time $2^{O(F)}$ at once. Machines and resources are those of CSLib and Complexitylib: multitape Turing machines whose binary input sits on a read-only tape, with space counted as the number of work-tape cells visited.
+The proof in this paper is formally verified. A Lean~4 development~\cite{dMU21} on Mathlib~\cite{Mat20}, CSLib~\cite{CSL} and Complexitylib~\cite{Cplx}, at \url{https://github.com/SeniorMars/ntime.dspace}, proves \cref{thm:main}, \cref{cor:sep} and \cref{thm:counting-classes} for every $t(n)\ge n$, and \cref{cor:3sat}, from Complexitylib's definitions of machines and classes and with only Lean's standard axioms; $\ParTIME$, $\ModTIME$ and $\CeqTIME$, which Complexitylib lacks, are defined in the development as in \cref{sec:consequences}. It follows the paper section by section, except that the halting test and the counts of computations of \cref{lem:block} are taken as accept counts of modified machines. \Cref{prop:boolean,prop:barrier} and \cref{rem:relativize}, for the oracle used there, are verified as well, and so are the implications of \cref{sec:discussion}. Machines and resources are those of CSLib and Complexitylib: multitape Turing machines whose binary input sits on a read-only tape, with space counted as the number of work-tape cells visited.
 
 Comparator~\cite{Cmp} confirms that the proved statements of \cref{thm:main}, \cref{cor:sep}~(i)--(iii) and the bounds for $\PPTIME$ and $\BPTIME$ match statements written against Complexitylib alone, and that their proofs use only the standard axioms.
 
@@ -224,7 +213,7 @@ A family of networks has \emph{logspace access at size $s$} if, with constants u
 \end{enumerate}
 \end{definition}
 
-This is a succinct representation in the sense of Galperin and Wigderson~\cite{GW83,Wag86}, with logspace decoding. Both an argument $x|_{\delta(v)}$ of a vertex function and its value take $O(\log s)$ bits, so they fit in the workspace. And since $G$ has $O(s)$ edges and $s^{O(1)}$ vertices with polynomially bounded values, $0\le Z(G)<2^{s^{O(1)}}$.
+This is an implicit representation with logspace decoding, related to the succinct representations studied by Galperin and Wigderson~\cite{GW83} and Wagner~\cite{Wag86}. Both an argument $x|_{\delta(v)}$ of a vertex function and its value take $O(\log s)$ bits, so they fit in the workspace. And since $G$ has $O(s)$ edges and $s^{O(1)}$ vertices with polynomially bounded values, $0\le Z(G)<2^{s^{O(1)}}$.
 
 \subsection{Blocked computations as networks}
 
@@ -342,7 +331,7 @@ The evaluator's space bound depends on the lengths of its indices. To shorten th
 
 \subsection{Labels and their codes}
 
-Labels need short codes and weights that pay for changes of type during routing. We use multisets of requests, assigning type $i$ weight $i+1$. Weight $W$ gives an $O(\sqrt W)$-bit code, while $j+1\le(i+1)+(i\oplus j)$ bounds the weight gained by the length of the step, the bitwise exclusive or $i\oplus j$ (\cref{eq:metric}).
+A label is what two nodes share: initially a string of bits, and after a merge the information shared by two rows or columns. A single label of weight budget $a+b$ has an $O(\sqrt{a+b})$-bit code, compared with $O(\sqrt a+\sqrt b)$ for two separate labels.
 
 A request has a type $i\in\N=\{0,1,2,\dots\}$ and the weight $i+1$. A multiset $\sigma$ of requests has a multiplicity $\mu_\sigma(i)\in\N$ for every type, almost all zero, and its weight is
 \[
@@ -370,8 +359,6 @@ bits. In all, $\sigma$ takes at most $(4+\frac4{\sqrt2-1})\sqrt{2W}+1\le19.4\sqr
 For $a\ge1$, encode a label $(\sigma_1,\sigma_2)\in\Lambda_{\le}(a)$ by the codes of $\sigma_1$ and $\sigma_2$, followed by zeros up to length $w(a)$. Since $\sqrt{a_1}+\sqrt{a_2}\le\sqrt{2a}$ when $a_1+a_2\le a$, the two codes take at most $19.4\sqrt{2a}+2\le28\sqrt a+2$ bits. A string is a code if it parses into two such codes of total weight at most $a$, followed by zeros. The multiplicity of the type $i$ is the multiplicity listed for the weight $i+1$, or $0$. All of this is computed by scanning the string with counters of $O(\log(a+2))$ bits, rejecting as soon as a running total exceeds $a$.
 \end{proof}
 
-A multiset of requests of weight $W$ is an integer partition of $W$, whose parts are the weights of its requests. There are $2^{\Theta(\sqrt W)}$ partitions of $W$~\cite{HR18}, so the length in \cref{lem:codes} is optimal up to the constant, although the proof does not use this estimate. Sumigawa and Sadakane give a data structure for partitions in $O(\sqrt W)$ bits~\cite{SS18}.
-
 \subsection{Cliques and their potential}\label{sec:cliques}
 
 The recursion acts on cliques, networks in which every pair of nodes shares a label of a prescribed weight.
@@ -394,7 +381,7 @@ The potential controls the cost of writing the labels down. By \cref{lem:codes} 
 \[
 \sum_{\{u,v\}}w(a_{uv})\le30\sqrt{\tbinom q2\sum a_{uv}}\le30\sqrt{\Phi(\mathcal C)}
 \]
-bits, so brute force over the labels of a clique uses an index of $O(\sqrt\Phi)$ bits. The potential is the square of Zhuang's quadratic potential $q\norm w_2$, the number of nodes times the Euclidean norm of the vector of widths~\cite{Zhu26}, written additively, with a weight budget in place of each squared width; a string of $b$ bits will be encoded in a label of weight $b(b+1)/2$. The factor $(q-1)^2$ rather than $q^2$ absorbs the factor by which packing scales weights (\cref{lem:energy}).
+bits, so brute force over the labels of a clique uses an index of $O(\sqrt\Phi)$ bits. Our potential uses the square of Zhuang's potential $q\norm w_2$, the number of nodes times the Euclidean norm of the vector of widths~\cite{Zhu26}, written additively, with a weight budget in place of each squared width; a string of $b$ bits will be encoded in a label of weight $b(b+1)/2$. The factor $(q-1)^2$ rather than $q^2$ absorbs the factor by which packing scales weights (\cref{lem:energy}).
 
 For the merge, it helps to write the two copies of a label separately, $\theta_{uv}$ in the argument of $T_u$ and $\theta_{vu}$ in that of $T_v$. Then $Z(\mathcal C)$ is a sum over all copies, each an independent variable ranging over the label set of its pair, of $\prod_vT_v$ times one equality test for each pair.
 
@@ -423,11 +410,11 @@ Merging rows or columns reduces the number of nodes, but a crossing still carrie
 
 Fix a rectangle with corners $x,y$ in its upper row and $u,v$ in its lower row, so that $x,v$ are the ends of one diagonal and $y,u$ of the other, as in \cref{fig:rules}. Each corner sees the label of its diagonal as a pair $(\out,\inn)$, and we identify a corner with this view, whose weight $\wt\out+\wt\inn$ is that of the label. Following Zhuang's treatment of rectangles whose diagonals have different lengths~\cite[\S\S3--4]{Zhu26}, we let the labels at $x$ and $v$ have weight $a$ and those at $y$ and $u$ weight $b$, and put $H=a+b$. The crossing is $[x=v][y=u]$, where $[x=v]$ means that $\out_x=\inn_v$ and $\inn_x=\out_v$.
 
-The row cut separates $(x,y)$ from $(u,v)$, and the column cut separates $(x,u)$ from $(y,v)$. A function of the four views \emph{factors across a cut through messages} from a set $\mathcal S$ if it is a sum, over $m\in\mathcal S$, of a function of $m$ and the views on one side times a function of $m$ and the views on the other, as in a protocol in which the two sides agree on one message. When $\mathcal S=\{0,1\}^c$ this is Anthropic's notion of factoring through $c$ bits~\cite{Ant26}. Each message contributes an outer product to the matrix indexed by the views on the two sides, so its rank is at most $|\mathcal S|$. The recursion needs the factorization explicitly: messages must have short codes and controlled weights, and the factors must be computable in small space (\cref{lem:transport}).
+The row cut separates $(x,y)$ from $(u,v)$, and the column cut separates $(x,u)$ from $(y,v)$. A function of the four views \emph{factors across a cut through messages} from a set $\mathcal S$ if it is a sum, over $m\in\mathcal S$, of a function of $m$ and the views on one side times a function of $m$ and the views on the other, as in a protocol in which the two sides agree on one message. When $\mathcal S=\{0,1\}^c$ this is Anthropic's notion of factoring through $c$ bits~\cite{Ant26}. Each message contributes an outer product to the matrix indexed by the views on the two sides, so its rank is at most $|\mathcal S|$. The recursion needs more than a rank bound. There are two cuts, with budgets traded between them, and a message becomes part of a new label that will be cut again. Messages must therefore be labels of controlled weight, and their factors must be computable in small space (\cref{lem:transport}).
 
-The one-bit identity~\eqref{eq:onebit} shows why a sum helps. As $4\times4$ matrices with rows indexed by $(x,y)$ and columns by $(u,v)$, its first term $[x=u][y=v]$ is a permutation of rank $4$ and its second term an outer product of rank $1$; across the column cut the two ranks are exchanged. The crossing itself has rank $4$ across both cuts. For strings of $\lambda$ bits, multiplying~\eqref{eq:onebit} over the coordinates gives $2^\lambda$ terms, each passing $2\lambda$ bits through the two cuts together instead of $4\lambda$. But naming one term takes $\lambda$ bits per rectangle, as many as the strings themselves, and that would wipe out the saving. Grouping the terms by the number of coordinates that take the first term gives polynomially many pieces~\cite[Appendix~H]{Ant26}, and Anthropic's operators give better ones~\cite[Appendix~B]{Ant26}.
+The one-bit identity~\eqref{eq:onebit} shows why a sum helps. As $4\times4$ matrices with rows indexed by $(x,y)$ and columns by $(u,v)$, its first term $[x=u][y=v]$ is a permutation of rank $4$ and its second term an outer product of rank $1$; across the column cut the two ranks are exchanged. The crossing itself has rank $4$ across both cuts. For strings of $\lambda$ bits, multiplying~\eqref{eq:onebit} over the coordinates gives $2^\lambda$ terms, each passing $2\lambda$ bits through the two cuts together instead of $4\lambda$, but naming a term takes $\lambda$ bits and wipes out the saving. Grouping the terms by the number of coordinates that take the first term gives polynomially many pieces~\cite[Appendix~H]{Ant26}, and Anthropic's operators give better ones~\cite[Appendix~B]{Ant26}.
 
-Ours come from walks on the cube. An equality test whose two copies lie on opposite sides of a cut must be split into a part on each side. The identity~\eqref{eq:bitflip} splits $[i=j]$ at an intermediate type $n$ into a step from $i$ to $n$ and a step from $n$ to $j$, and since a heavy intermediate type costs a long step, the weight a message carries is paid for in length. A piece is a signed count of routings that make such steps along the sides of the rectangle, and its grade $k$ is an exponent of $z$ in which vertical length counts positively and horizontal length negatively.
+We construct pieces from walks on the cube: the identity below splits an equality test at an intermediate type and charges its weight to the length of the steps. Summing routings made from these steps will give the pieces.
 
 \subsection{Walks on the cube}
 
@@ -435,7 +422,16 @@ For $i,j\in\N$, let $i\oplus j$ be the bitwise exclusive or of their binary expa
 \[
 C_{i,j}(z)=(-1)^{\ip ij}\,z^{d(i,j)},
 \]
-a step of length $d(i,j)$ and sign $(-1)^{\ip ij}$, and for a Laurent polynomial $f$ write $\bar f(z)=f(1/z)$. The last bit of $i\oplus j$ is the parity of $i+j$, so $d(i,j)\equiv i+j\pmod 2$. Beyond this parity, the accounting below uses only
+a step of length $d(i,j)$ and sign $(-1)^{\ip ij}$, and for a Laurent polynomial $f$ write $\bar f(z)=f(1/z)$.
+
+On types below $2^b$, the matrix $C$ is the tensor product over $e<b$ of $\bigl(\begin{smallmatrix}1&z^{2^e}\\z^{2^e}&-1\end{smallmatrix}\bigr)$: a Walsh--Hadamard matrix with entry $(i,j)$ multiplied by $z^{d(i,j)}$~\cite{SWS90}. Each factor squares to $(1+z^{2^{e+1}})I$, so the product squares to
+\[
+\prod_{e<b}(1+z^{2^{e+1}})\,I
+=(1+z^2+\dots+z^{2^{b+1}-2})\,I.
+\]
+At $z=1$ this is $\mathcal H^2=2^bI$. As $b$ grows, the scalar converges coefficientwise to $1/(1-z^2)$, giving \cref{lem:test}, which we prove directly below.
+
+The last bit of $i\oplus j$ is the parity of $i+j$, so $d(i,j)\equiv i+j\pmod 2$. Beyond this parity, the accounting below uses only
 \begin{equation}\label{eq:metric}
 d(i,j)\le i+j\qquad\text{and}\qquad j\le i+d(i,j).
 \end{equation}
@@ -449,11 +445,9 @@ For all $i,j\in\N$, $(1-z^2)\sum_{n\in\N}C_{i,n}(z)\,C_{n,j}(z)=[i=j]$ in the ri
 The term for $n$ has exponent $d(i,n)+d(n,j)\ge n-i$ by~\eqref{eq:metric}, so each coefficient of the series receives finitely many terms; the sign of the term is $(-1)^{\ip{i\oplus j}n}$. Suppose $i\ne j$. Fix a position where $i$ and $j$ differ, and let $n'$ be $n$ with that bit flipped. In that position exactly one of $i\oplus n$ and $n\oplus j$ has a one, both for $n$ and for $n'$, so the flip moves the length of that bit from one step to the other and keeps the exponent. The sign changes, because $i\oplus j$ has a one in that position. The terms of each exponent therefore cancel in pairs. If $i=j$, the term for $n$ is $z^{2(i\oplus n)}$, and $i\oplus n$ runs over $\N$ as $n$ does, so the sum is $\sum_{c\ge0}z^{2c}=1/(1-z^2)$.
 \end{proof}
 
-The lemma has a familiar shape. Restricted to types below $2^b$, the matrix $(C_{i,j})$ is the tensor product over the bit positions $e<b$ of the matrices $\bigl(\begin{smallmatrix}1&z^{2^e}\\z^{2^e}&-1\end{smallmatrix}\bigr)$, each of which squares to $1+z^{2^{e+1}}$ times the identity. At $z=1$ it is the Walsh--Hadamard matrix $\mathcal H$ of order $2^b$, so \cref{lem:test} is a form of the identity $\mathcal H^2=2^bI$ graded by the length of walks. In general $C$ is the entrywise product of the Walsh--Hadamard matrix with the dyadic convolution matrix $(z^{i\oplus j})$, which $\mathcal H$ diagonalizes~\cite{SWS90}.
-
 \subsection{Routing pieces}
 
-Pieces combine the steps $C_{i,j}$ over the four corners of a rectangle, and the row cut dictates how. Consider a single request between the two rows. To cross the cut it meets an intermediate type $n$, with a factor at each end, a step $C_{i,n}$ or a copy $[i=n]$, and the factors are summed over $n$ (\cref{fig:rules}, middle). The diagonals must carry equality tests. On $yu$ let both ends copy, and on $xv$ let both ends step, putting the factor $1-z^2$ of \cref{lem:test} at $x$. With $I=([i=j])$, the upper corners $x,y$ indexing rows and the lower corners $u,v$ indexing columns, the four ways to cross multiply out as
+The cut carries one message for the rectangle, with no mark recording which corner sent a request or which corner will receive it. Consider a single request between the two rows. To cross the cut it meets an intermediate type $n$, with a factor at each end, a step $C_{i,n}$ or a copy $[i=n]$, and the factors are summed over $n$ (\cref{fig:rules}(b)). Sharing the message joins every upper corner to every lower corner, with a rule given by the product of their half-rules. If all corners copied, the sides would carry equality tests as well as the diagonals. Instead, on $yu$ let both ends copy, and on $xv$ let both ends step, putting the factor $1-z^2$ of \cref{lem:test} at $x$. With $I=([i=j])$, the upper corners $x,y$ indexing rows and the lower corners $u,v$ indexing columns, the four ways to cross multiply out as
 \begin{equation}\label{eq:rules}
 \begin{pmatrix}(1-z^2)\,C\\ I\end{pmatrix}\begin{pmatrix}I&C\end{pmatrix}=\begin{pmatrix}(1-z^2)\,C&I\\ I&C\end{pmatrix},
 \end{equation}
@@ -474,6 +468,11 @@ summed over all routings. There are finitely many routings, so $\Pi_{x,y,u,v}$ i
 \begin{figure}[htb]
 \centering
 \begin{tikzpicture}[x=1cm,y=0.85cm]
+\node[font=\small] at (1.1,3.25) {(a) Routing rules};
+\node[font=\small] at (6.55,3.25) {(b) Splitting a diagonal};
+\node[font=\small] at (11.27,3.25) {(c) One-bit pairings};
+\draw[black!25] (4.45,-1.0)--(4.45,3.55);
+\draw[black!25] (8.65,-1.0)--(8.65,3.55);
 \coordinate (x) at (0,2.2); \coordinate (y) at (3.2,2.2); \coordinate (u) at (0,0); \coordinate (v) at (3.2,0);
 \draw[thick] (x)--(v); \draw[thick] (y)--(u);
 \draw (x)--(y) node[midway,above,font=\small] {$(1-z^{-2})\,\bar C_{i,j}$};
@@ -485,7 +484,8 @@ summed over all routings. There are finitely many routings, so $\Pi_{x,y,u,v}$ i
 \begin{scope}[xshift=5.0cm]
 \coordinate (x) at (0,2.2); \coordinate (y) at (2.6,2.2); \coordinate (u) at (0,0); \coordinate (v) at (2.6,0); \coordinate (n) at (1.3,1.1);
 \draw[black!25] (x)--(y)--(v)--(u)--cycle;
-\draw[dashed,black!55] (-0.35,1.1)--(2.95,1.1) node[right,font=\scriptsize,text=black!70] {row cut};
+\draw[dashed,black!55] (-0.35,1.1)--(3.4,1.1);
+\node[anchor=south east,font=\scriptsize,text=black!70,inner sep=1.5pt] at (3.4,1.12) {row cut};
 \draw[thick] (x)--(n) node[pos=0.3,right=4pt,font=\small] {$(1-z^2)\,C_{i,n}$};
 \draw[thick] (n)--(v) node[pos=0.7,left=4pt,font=\small] {$C_{n,j}$};
 \fill[white] (n) circle (2.6pt); \draw (n) circle (2.6pt);
@@ -493,22 +493,24 @@ summed over all routings. There are finitely many routings, so $\Pi_{x,y,u,v}$ i
 \foreach \p/\l/\a in {x/x/above left,y/y/above right,u/u/below left,v/v/below right}{\fill (\p) circle (2.5pt) node[\a] {$\l$};}
 \node[font=\small] at (1.3,-0.75) {$\sum_n(\cdot)=[i=j]$};
 \end{scope}
-\begin{scope}[xshift=9.4cm,yshift=0.35cm,scale=0.75]
-\coordinate (x) at (0,2.0); \coordinate (y) at (2.0,2.0); \coordinate (u) at (0,0); \coordinate (v) at (2.0,0);
+\begin{scope}[xshift=8.95cm]
+\foreach \dx/\kind/\val in {0/0/{1},1.75/1/{1-z^2},3.5/2/{1-z^{-2}}}{
+\begin{scope}[xshift=\dx cm]
+\coordinate (x) at (0,1.95); \coordinate (y) at (1.15,1.95); \coordinate (u) at (0,0.25); \coordinate (v) at (1.15,0.25);
 \draw[black!25] (x)--(y)--(v)--(u)--cycle;
-\draw[->,thick,shorten <=3pt,shorten >=3pt] (x)--(v); \draw[->,thick,shorten <=3pt,shorten >=3pt] (y)--(u);
-\foreach \p/\l/\a in {x/x/above left,y/y/above right,u/u/below left,v/v/below right}{\fill (\p) circle (2pt) node[\a,font=\small] {$\l$};}
-\node[font=\small] at (1.0,-0.85) {$1$};
-\begin{scope}[xshift=3.3cm]
-\coordinate (x) at (0,2.0); \coordinate (y) at (2.0,2.0); \coordinate (u) at (0,0); \coordinate (v) at (2.0,0);
-\draw[black!25] (x)--(y)--(v)--(u)--cycle;
-\draw[->,thick,shorten <=3pt,shorten >=3pt] (x)--(u); \draw[->,thick,shorten <=3pt,shorten >=3pt] (y)--(v);
-\foreach \p/\l/\a in {x/x/above left,y/y/above right,u/u/below left,v/v/below right}{\fill (\p) circle (2pt) node[\a,font=\small] {$\l$};}
-\node[font=\small] at (1.0,-0.85) {$1-z^2$};
-\end{scope}
+\ifnum\kind=0
+\draw[thick] (x)--(v); \draw[thick] (y)--(u);
+\else\ifnum\kind=1
+\draw[thick] (x)--(u); \draw[thick] (y)--(v);
+\else
+\draw[thick] (x)--(y); \draw[thick] (u)--(v);
+\fi\fi
+\foreach \p/\l/\a in {x/x/above,y/y/above,u/u/below,v/v/below}{\fill (\p) circle (2.2pt) node[\a,font=\small] {$\l$};}
+\node[font=\small] at (0.575,-0.75) {$\val$};
+\end{scope}}
 \end{scope}
 \end{tikzpicture}
-\caption{Left: the rules of a routing, vertical lengths counted positively and horizontal ones negatively; transposing the rectangle exchanges the two kinds of sides and replaces $z$ by $1/z$. Middle: the row cut splits a request along the diagonal $xv$ where it meets the cut, at an intermediate type $n$, into a step on each side; summing over $n$ gives back the equality test (\cref{lem:test}). Right: the two routings when $x$ and $y$ each send one request of type $0$ and $v$ and $u$ each receive one; at $z=1$ only the diagonal routing remains.}
+\caption{(a) Routing rules; transposition exchanges vertical and horizontal sides and replaces $z$ by $1/z$. (b) Splitting the diagonal $xv$ at an intermediate type $n$; summing over $n$ recovers equality (\cref{lem:test}). (c) The three possible pairings for one-bit labels, with their values when the endpoint directions permit them. At $z=1$ only the diagonal pairing remains.}
 \label{fig:rules}
 \end{figure}
 
@@ -532,7 +534,13 @@ $\Pi_{x,y,u,v}(z)=\Pi_{x,u,y,v}(1/z)$.
 On the right, $u$ plays the part of the upper corner $y$ and $y$ that of the lower corner $u$: we transpose the rectangle, reflecting it in its diagonal $xv$. A routing for $(x,y,u,v)$ is also a routing for $(x,u,y,v)$, since no source or target changes. Its requests keep their ends, but vertical sides become horizontal and horizontal sides vertical, so the rule of every request becomes the same rule in $1/z$, and $\mathrm{val}(\rho)(z)$ becomes $\mathrm{val}(\rho)(1/z)$.
 \end{proof}
 
-A small example shows both lemmas at work. Let $x$ and $y$ each send one request of type $0$, and let $v$ and $u$ each receive one (\cref{fig:rules}, right). The diagonal routing has value $1$. The other routing sends $x$ to $u$ and $y$ to $v$, with value $(1-z^2)C_{0,0}\cdot C_{0,0}=1-z^2$. So $\Pi_{x,y,u,v}=2-z^2$. The pieces are $\Pi_0=2$ and $\Pi_2=-1$, and their sum is the crossing. Transposed, the second routing travels along the horizontal sides, and $\Pi_{x,u,y,v}=2-z^{-2}$.
+For one-bit labels, the pieces can be written explicitly. In this paragraph let $x,y,u,v$ denote the encoded bits: a $1$ is a source at an upper corner and a target at a lower corner. Every request has type $0$. A pairing is allowed when its endpoint bits agree on a diagonal or vertical side, and differ on a horizontal side. The three possible pairings (\cref{fig:rules}(c)) therefore give
+\[
+\Pi(z)=[x=v][y=u]+(1-z^2)[x=u][y=v]+(1-z^{-2})[x\ne y][u\ne v].
+\]
+Thus $\Pi_2=-[x=u][y=v]$, $\Pi_{-2}=-[x\ne y][u\ne v]$, and $\Pi_0=2[x+y=u+v]$: the constant coefficient counts the two matchings whenever the two sources and two targets balance. Their row and column ranks over $\mathbb Q$ are $(4,1)$, $(1,4)$ and $(3,3)$, respectively, compared with $(4,4)$ for the crossing. For $\Pi_0$, the three rank-one blocks are indexed by $x+y=u+v$ across rows and by $x-u=v-y$ across columns. These pieces differ from the two terms of~\eqref{eq:onebit}.
+
+When all four encoded bits are $1$, $x,y$ send and $u,v$ receive, so $\Pi(z)=2-z^2$ and $\Pi_2=-1$. Transposing the views exchanges a source and a target; the encoded bits become $(1,0,0,1)$, giving $2-z^{-2}$.
 
 \subsection{Factoring across the two cuts}
 
@@ -573,15 +581,7 @@ Put $\delta=\wt m-H$. By \cref{lem:rowcut}, a pair of monomials of $\Nup(x,y;m)$
 
 The full index of each factorization in \cref{cor:cuts} is the pair $(m,c)$, where the split $c$ has $O(\log(H+2))$ bits; the merge of \cref{sec:merge} records $c$ in its choice and packs $m$ into the label shared by two rows.
 
-The example after \cref{lem:symmetry} shows the two cuts producing the same piece, $\Pi_2=-1$, with $H=2$. On the row cut, $x$ and $y$ receive nothing, so both of their requests cross downward: $y$ copies type $0$, and $x$ steps to some type $n$, with the half-rule $(1-z^2)\,z^n$. The message $\eta=\{0,n\}$ weighs $n+2\le H+1$, so $n\le1$. For $n=0$ the lower half sends the two requests of $\eta$ to $u$ and $v$ in either order, so $\Nup=1-z^2$ and $\Ndown=2$. For $n=1$ the request of type $1$ cannot be copied at $u$ and must go to $v$, so $\Nup=(1-z^2)\,z$ and $\Ndown=z$; type $1$ occurs at no corner, yet it contributes. On the column cut the cap is $H-1=1$. Each column holds one source and one target, so a nonempty message would cross in both directions and weigh at least $2$. Only the empty message remains, with $\Nup(x,u;\emptyset)=1-z^{-2}$ and $\Ndown(y,v;\emptyset)=1$. Split by split, the contributions are
-\[
-\begin{array}{lrrr}
-&c=0&c=1&\text{total}\\
-\text{row cut}&-2&1&-1\\
-\text{column cut}&-1&0&-1
-\end{array}
-\]
-The two cuts agree only after the sum over the splits: the column cut at $c=0$ and the row cut at $c=1$ would give $0$. So a merge may choose its cut by the grades, but must keep it for all the splits.
+The example after \cref{lem:symmetry} shows the two cuts producing the same piece, $\Pi_2=-1$, with $H=2$. On the row cut, $x$ and $y$ receive nothing, so both of their requests cross downward: $y$ copies type $0$, and $x$ steps to some type $n$, with the half-rule $(1-z^2)\,z^n$. The message $\eta=\{0,n\}$ weighs $n+2\le H+1$, so $n\le1$. For $n=0$ the lower half sends the two requests of $\eta$ to $u$ and $v$ in either order, so $\Nup=1-z^2$ and $\Ndown=2$. For $n=1$ the request of type $1$ cannot be copied at $u$ and must go to $v$, so $\Nup=(1-z^2)\,z$ and $\Ndown=z$; type $1$ occurs at no corner, yet it contributes. On the column cut the cap is $H-1=1$. Each column holds one source and one target, so a nonempty message would cross in both directions and weigh at least $2$. Only the empty message remains, with $\Nup(x,u;\emptyset)=1-z^{-2}$ and $\Ndown(y,v;\emptyset)=1$. The contributions at splits $c=0,1$ are $-2,1$ on the row cut and $-1,0$ on the column cut. Both sum to $-1$, but choosing the column cut at $c=0$ and the row cut at $c=1$ would give $0$. So a merge may choose its cut by the grades, but must keep it for all the splits.
 
 \subsection{Computing the factors}
 
@@ -591,7 +591,7 @@ A table entry of a merged clique needs the factors $\Nup$ and $\Ndown$ only at s
 Let $W=\wt x+\wt y+\wt m$. For every integer $c$, the coefficient $[z^c]\Nup(x,y;m)$ is the value of a formula with $\ell$-cost $O\bigl(\sqrt W+(\ell+\log(W+2))\log(W+2)\bigr)$ for every $\ell\ge1$, which is $O(\sqrt W+\log^2(W+2))$-explicit given read access to the codes of $x$, $y$ and $m$. The same holds for $[z^c]\Ndown(u,v;m)$, with $W=\wt u+\wt v+\wt m$.
 \end{lemma}
 
-The idea is a balanced split. The factor $\Nup(x,y;m)$ is a signed count of maps from the sources $\out_x$, $\out_y$ and $\zeta$ to the targets $\inn_x$, $\inn_y$ and $\eta$. The formula splits such a map at the first source at which the running weight of the sources and their targets reaches half of the total, so that both halves weigh at most $W/2$. The targets used by the first half form a multiset of weight at most $W$, which takes $O(\sqrt W)$ bits by \cref{lem:codes}, and the weight halves at every level. The proof is in Appendix~\ref{app:proofs}.
+The idea is a balanced split. The factor $\Nup(x,y;m)$ is a signed count of maps from the sources $\out_x$, $\out_y$ and $\zeta$ to the targets $\inn_x$, $\inn_y$ and $\eta$. The formula splits such a map at the first source at which the running weight of the sources and their targets reaches half of the total; setting that source and its target aside, the parts before and after it weigh at most $W/2$. The targets used by the first half form a multiset of weight at most $W$, which takes $O(\sqrt W)$ bits by \cref{lem:codes}, and the weight halves at every level. The proof is in Appendix~\ref{app:proofs}.
 
 \section{Halving node names}\label{sec:halving}
 
@@ -611,7 +611,7 @@ x=(A,B),\qquad y=(A,B'),\qquad u=(A',B),\qquad v=(A',B'),
 \]
 and the diagonals $\{x,v\}$ and $\{y,u\}$. Every pair of nodes in different rows and different columns is a diagonal of exactly one rectangle. The copies of the diagonal labels at the four corners, seen from their corners, are the views of \cref{sec:pieces}, and $H_R$ is the sum of the budgets of the two diagonals.
 
-\noindent\emph{Separating the rows.}\quad A choice $\iota$ picks for every rectangle $R$ two integers, an even grade $k_R$ with $|k_R|\le2H_R$ and a split $c_R$ with $|c_R|\le3H_R$. To see what a merged clique must hold, expand $Z(\mathcal C)$. Writing out the copies, $Z(\mathcal C)$ is the sum over all copies of $\prod_vT_v$ times the equality tests of all pairs. The tests of the two diagonals of each rectangle multiply to its crossing, and since every copy has the exact weight of its pair, by \cref{lem:atone} and the parity of grades the crossing is $\sum_k\Pi_k$, over even $k$ with $|k|\le2H_R$. Expanding the product over rectangles gives $Z(\mathcal C)=\sum_{\mathbf k}Z_{\mathbf k}$, over the lists $\mathbf k=(k_R)_R$ of grades, where $Z_{\mathbf k}$ is the sum over all copies of $\prod_vT_v$ times the tests of the straight pairs times $\prod_R\Pi_{k_R}$.
+A choice $\iota$ picks for every rectangle $R$ two integers, an even grade $k_R$ with $|k_R|\le2H_R$ and a split $c_R$ with $|c_R|\le3H_R$. To see what a merged clique must hold, expand $Z(\mathcal C)$. Writing out the copies, $Z(\mathcal C)$ is the sum over all copies of $\prod_vT_v$ times the equality tests of all pairs. The tests of the two diagonals of each rectangle multiply to its crossing, and since every copy has the exact weight of its pair, by \cref{lem:atone} and the parity of grades the crossing is $\sum_k\Pi_k$, over even $k$ with $|k|\le2H_R$. Expanding the product over rectangles gives $Z(\mathcal C)=\sum_{\mathbf k}Z_{\mathbf k}$, over the lists $\mathbf k=(k_R)_R$ of grades, where $Z_{\mathbf k}$ is the sum over all copies of $\prod_vT_v$ times the tests of the straight pairs times $\prod_R\Pi_{k_R}$.
 
 Fix $\mathbf k$ and take the row cut of every piece. The horizontal tests stay inside their rows. A vertical test with budget $a$ compares copies $p,p'$ held in two different rows, and we write it as
 \[
@@ -632,7 +632,7 @@ Z_{\mathbf k}=\sum_{\mathbf c}\ \sum_{(\chi_{A,A'})_{A<A'}}\ \prod_A\Xi^{\mathbf
 \end{equation}
 over $\chi_{A,A'}\in \mathcal S_{A,A'}$ for every pair of rows. For each $\mathbf c$ the inner sum is already the value of a clique on the rows, except that two rows share a tuple instead of a label. The column cut gives the same with rows and columns exchanged: columns $B<B'$ share the labels of their horizontal pairs and the messages $m_R\in\Lambda_{\le}(H_R-k_R/2)$ of their rectangles, with the first multiset of $m_R$ sent from $B$ to $B'$, and the factors $\Psi_R=[z^{-k_R-c_R}]\Nup(x,u;m_R)$ in the left column and $\Psi_R=[z^{c_R}]\Ndown(y,v;m_R)$ in the right.
 
-\noindent\emph{Packing the shared labels.}\quad The rows are now separated, but two rows share a tuple of labels and messages. To apply the same construction again, we must encode this tuple as one label of exact weight and account for the increase in weight. Put $L=1+g+\binom g2$, one residue modulo $L$ for each entry of a tuple and the residue $0$ for padding. Between rows $A<A'$, number the vertical pairs by their columns and then the rectangles by their pairs of columns in lexicographic order, as streams $\nu=1,\dots,L-1$, and let a request of type $i$ in stream $\nu$ become a packed request of type $Li+\nu$, in the same direction. Its weight satisfies
+The rows are now separated, but two rows share a tuple of labels and messages. To apply the same construction again, we must encode this tuple as one label of exact weight and account for the increase in weight. Put $L=1+g+\binom g2$, one residue modulo $L$ for each entry of a tuple and the residue $0$ for padding. Between rows $A<A'$, number the vertical pairs by their columns and then the rectangles by their pairs of columns in lexicographic order, as streams $\nu=1,\dots,L-1$, and let a request of type $i$ in stream $\nu$ become a packed request of type $Li+\nu$, in the same direction. Its weight satisfies
 \begin{equation}\label{eq:pack}
 Li+\nu+1\le L(i+1).
 \end{equation}
@@ -643,7 +643,7 @@ a^\col_{B,B'}&=L\Bigl(\sum_Aa_{(A,B),(A,B')}+\sum_{A<A'}\bigl(H_R-k_R/2\bigr)\Bi
 \end{align*}
 leave room for every tuple of $\mathcal S_{A,A'}$ and of its column counterpart. They depend only on the grades.
 
-\noindent\emph{Choosing the orientation.}\quad We choose one orientation for the whole clique by comparing the two potentials.
+We choose one orientation for the whole clique by comparing the two potentials.
 
 \begin{lemma}\label{lem:energy}
 For every choice $\iota$, let $\Phi_\row$ and $\Phi_\col$ be the potentials of cliques with name length $h/2$ and the budgets $a^\row$ and $a^\col$. Then $\Phi_\row+\Phi_\col\le \Phi(\mathcal C)$.
@@ -657,7 +657,7 @@ A clique with name length $h/2$ has $g$ nodes. Every vertical pair and every rec
 because every pair is straight or a diagonal of exactly one rectangle. Finally $2L=g^2+g+2\le(g+1)^2$, and $(g-1)^2(g+1)^2=(q-1)^2$.
 \end{proof}
 
-Thus the change in the factor $(q-1)^2$ pays for both the packing factor $L$ and the two-cut budget factor $2$.
+Without pieces, two rows would share $g^2$ labels, and packing would use $L_0=g^2+1$. The same calculation gives only $\Phi_\row+\Phi_\col\le2\Phi$, since $L_0\le(g+1)^2$. The pieces replace each rectangle's two labels by one message, reducing the packing factor to $L=1+g+\binom g2$, asymptotically half as large. Their combined budget across the two orientations is still $2H_R$. This smaller packing factor gives the uniform halving of the potential.
 
 With the budgets fixed, we must define the merged tables so that packing preserves the clique value. Fix a choice $\iota$. The row clique $\mathcal C^\row_\iota$ has name length $h/2$, nodes the rows, and budgets $a^\row$. Its table at row $A$ is $0$ if one of its labels is invalid, and otherwise the sum~\eqref{eq:table} at the tuples $\chi_A$ unpacked from its labels, with every factor $\Psi_R$ multiplied by the weight test $[\wt m_R\le H_R+k_R/2]$. On tuples in $\mathcal S_{A,A'}$ this is $\Xi^{\mathbf c}_A(\chi_A)$, and outside them it vanishes: a vertical label of the wrong weight fails its test against every copy, which has the exact weight of its pair, and a heavier message fails its weight test.
 
@@ -735,7 +735,7 @@ Computing the bits of an exact count allows threshold, parity, modular and equal
 
 A probabilistic machine is a nondeterministic machine that flips a fair coin at each step with two applicable transitions. If all its computations halt within $\bar t$ steps, it accepts $x$ with probability $2^{-\bar t}$ times the number of accepting choice strings in $\{0,1\}^{\bar t}$. A language $\mathcal L$ is in $\PPTIME[t]$ if a probabilistic machine with running time $O(t)$ accepts exactly the members of $\mathcal L$ with probability above $1/2$, and in $\BPTIME[t]$ if moreover the error is at most $1/3$ on every input.
 
-A language $\mathcal L$ is in $\ParTIME[t]$, $\ModTIME[t]$ or $\CeqTIME[t]$ if a nondeterministic machine with running time $O(t)$, all of whose computations halt, has on input $x$ a number of accepting computations that is odd, that is nonzero modulo $q$, or that equals its number of rejecting computations, respectively, exactly when $x\in\mathcal L$. These are the time-bounded versions of $\mathsf{PP}$ and $\mathsf{BPP}$~\cite{Gil77}, $\oplus\mathsf P$~\cite{PZ83}, $\mathsf{Mod}_q\mathsf P$~\cite{BG92} and $\mathsf C_=\mathsf P$~\cite{Wag86}.
+A language $\mathcal L$ is in $\ParTIME[t]$, $\ModTIME[t]$ or $\CeqTIME[t]$ if a nondeterministic machine with running time $O(t)$, all of whose computations halt, has on input $x$ a number of accepting computations that is odd, nonzero modulo $q$, or equal to its number of rejecting computations, respectively, exactly when $x\in\mathcal L$. These are the time-bounded versions of $\mathsf{PP}$ and $\mathsf{BPP}$~\cite{Gil77}, $\oplus\mathsf P$~\cite{PZ83}, $\mathsf{Mod}_q\mathsf P$~\cite{BG92} and $\mathsf C_=\mathsf P$~\cite{Wag86}.
 
 \begin{theorem}\label{thm:counting-classes}
 For every $t(n)\ge n$, $\PPTIME[t]\subseteq\SPACE[t/\sqrt{\log t}\,]$, and hence $\BPTIME[t]\subseteq\SPACE[t/\sqrt{\log t}\,]$. The same holds for $\CeqTIME[t]$, $\ParTIME[t]$, and $\ModTIME[t]$ for fixed $q$. The simulating machines run in time $2^{O(t/\sqrt{\log t})}$.
@@ -763,9 +763,7 @@ There are at most $3m$ edges to clauses and at most $3m$ edges on paths, every d
 
 \section{Limits and open problems}\label{sec:discussion}
 
-Our simulation computes the number of accepting choice strings exactly, and that ties its speed to the speed of counting. A procedure that computes the value of every network with logspace access in space $D(s)$ also counts the satisfying assignments of a $3$-CNF formula with $m$ clauses in time $2^{O(D(O(m)))}$, by the reduction of \cref{cor:3sat}. Proving $\NTIME[t]\subseteq\SPACE[t/\log t]$ that way would therefore count them in time $2^{O(m/\log m)}$, while the best known bound is $2^{O(m/\sqrt{\log m})}$~\cite{Ope26,Ant26}. Space $t^{1-\varepsilon}$ would count them in time $2^{O(m^{1-\varepsilon})}$. Williams's $O(\sqrt{t\log t})$-space simulation of deterministic time~\cite{Wil25} achieves a polynomial saving without computing acceptance counts, so this connection to faster counting is specific to our method.
-
-Our method also cannot tell nondeterminism from counting: it puts $\PPTIME[t]$ in the same space as $\NTIME[t]$ (\cref{thm:counting-classes}), so improving \cref{thm:main} this way would improve the simulation of $\PPTIME[t]$ as well.
+Our simulation computes exact counts, so a stronger space bound would give a faster counting algorithm. By \cref{cor:3sat}, for $D(s)\ge\log s$, a $D(s)$-space evaluator for networks with logspace access counts $3$-CNF formulas with $m$ clauses in time $2^{O(D(O(m)))}$. Bounds $D(s)=s/\log s$ or $s^{1-\varepsilon}$ would therefore improve the known $2^{O(m/\sqrt{\log m})}$ counting time~\cite{Ope26,Ant26}. This limitation is specific to counting: Williams's simulation of deterministic time achieves a polynomial space saving without computing acceptance counts~\cite{Wil25}. Our method also places $\PPTIME[t]$ in the same space as $\NTIME[t]$ (\cref{thm:counting-classes}).
 
 We next examine the crossing decomposition itself. Replacing the signed sum by OR and AND would avoid cancellation, but would also force large factorization widths. Write $r_i$ and $c_i$ for the number of bits through which a piece $\Pi_i$ of the crossing of two strings factors row-wise and column-wise. As in~\cite{Ant26}, a function $\Gamma$ factors through $e$ bits if $\Gamma(z,z')=\sum_{\theta\in\{0,1\}^e}\varphi(z,\theta)\varphi'(z',\theta)$, and over OR and AND if the same holds with $\bigvee$ and $\wedge$. The following proposition bounds the widths of Boolean pieces directly in bits; we then compare this with the weight budgets of our signed pieces.
 
@@ -787,11 +785,9 @@ Let $\Pi_1,\dots,\Pi_N\colon\{0,1\}^a\times\{0,1\}^a\to\Z$ satisfy $\sum_i\Pi_i(
 This is the crossing in which $y$ and $u$ are empty, so that both cuts separate $x$ from $v$. The ranks of the $\Pi_i$ over $\mathbb Q$ add up to at least the rank $2^a$ of the equality matrix, so some $\Pi_i$ has rank at least $2^a/N$, and a function that factors through $e$ bits has rank at most $2^e$.
 \end{proof}
 
-For $\log N=o(a)$, some piece therefore passes nearly all $a$ bits through each cut, and the sum of its squared widths is at least $2a^2-o(a^2)$, twice the squared width of the crossing to leading order. If polynomially many pieces are to keep their squared widths within a fixed multiple of the squared width of the crossing for every shape of rectangle, that multiple must be at least $2$. Measured in weights, the budgets of our pieces meet the analogous limit exactly.
+For $\log N=o(a)$, some piece therefore passes nearly all $a$ bits through each cut, and the sum of its squared widths is at least $2a^2-o(a^2)$, twice the squared width of the crossing to leading order. If polynomially many pieces are to keep their squared widths within a fixed multiple of the squared width of the crossing for every shape of rectangle, that multiple must be at least $2$. Our row and column weight budgets likewise sum to exactly $2H$.
 
-The bound concerns pieces that must be cheap for every shape, however, and it does not say that every recursion stops at $\sqrt{\log t}$. Anthropic's recursion~\cite{Ant26} works with equal widths $\lambda$ on all edges and asks only that $r_i+c_i\le4\rho\lambda+O(\log\lambda)$. Fixing $y=u=0^\lambda$ turns the equal-width crossing into the equality matrix of \cref{prop:barrier}, since both cuts then separate $x$ from $v$ and the factorizations restrict. Some piece therefore has $r_i+c_i\ge2\lambda-2\log N$, and polynomially many pieces need $\rho\ge\frac12$.
-
-With balanced regrouping after each merge, such pieces should give space $O(s/(\log s)^{\alpha})$ for every $\alpha<\log(1/\rho)$; we have not written out this calculation. Anthropic's pieces have $\rho=1/\sqrt2$~\cite[Theorem~B]{Ant26}, which would come within a factor $(\log s)^{\varepsilon}$ of the bound of \cref{thm:main}, and a decomposition of the equal-width crossing with $\rho<1/\sqrt2$ would improve on it. Whether one exists is a question about a single tensor, close to Hurwitz's problem on compositions of quadratic forms~\cite{Hur98,Sha00} and to partition rank~\cite{Nas20}, whose connection to the crossing Anthropic points out~\cite{Ant26}. None of this rules out recursions tailored to the networks of \cref{lem:block}, or proofs that do not count.
+The requirement that pieces be cheap for every rectangle shape is essential. In Anthropic's equal-width recursion~\cite{Ant26}, the condition is instead $r_i+c_i\le4\rho\lambda+O(\log\lambda)$. Restricting $y=u=0^\lambda$ and applying \cref{prop:barrier} gives only $\rho\ge1/2$, while the known pieces have $\rho=1/\sqrt2$. The barrier therefore leaves room for better equal-width pieces and different recursions. Anthropic relates this question to compositions of quadratic forms~\cite{Hur98,Sha00} and partition rank~\cite{Nas20}. It also leaves open methods tailored to blocked computations or methods that do not count.
 
 \begin{remark}[Relativization]\label{rem:relativize}
 In the sense of Baker, Gill and Solovay~\cite{BGS75}, \cref{thm:main} and the separation of \cref{cor:sep}(i) do not relativize. Conventions for space-bounded oracle machines differ~\cite{LL76,RST84}. Give oracle machines a query tape that counts toward space, and let $\mathsf{BSA}$ be the set of strings $\langle\mathcal M'\rangle\#x\#1^b$ such that $2^{|\langle\mathcal M'\rangle|}\le b$ and the deterministic multitape machine $\mathcal M'$ accepts $x$ in space $b$, in the sense that each of its configurations on $x$ before it accepts, given by the state, the input head position in binary and the visited work cells, has a description of at most $b$ bits. The padding lets $\langle\mathcal M'\rangle$ be decoded in space $O(b)$. A machine with this oracle that uses space $s(n)\ge\log n$ asks queries of length at most $s(n)$, and it can answer each of them in space $O(s(n))$ without the oracle, so $\SPACE^{\mathsf{BSA}}[s]=\SPACE[s]$. One query decides any language in $\SPACE[n]$ in linear time, and trying the choice strings one at a time gives $\NTIME^A[n]\subseteq\SPACE^A[n]$ for every oracle $A$. Together,
@@ -805,7 +801,7 @@ The most direct open problem is whether $\NTIME[t]\subseteq\SPACE[t/\log t]$. Th
 I thank my undergraduate advisor, Moshe Vardi, for introducing me to \#SAT and for his help along the way. I also thank the organizers of the ETH Repository for collecting the work on refuting the Exponential Time Hypothesis.
 
 \section*{AI methodology statement}\phantomsection\label{sec:ai}
-This work was developed with assistance from Anthropic's Claude and OpenAI's ChatGPT. They contributed to the exploration of proof strategies, including the routing pieces of \cref{sec:pieces}, to checking proofs, to the exposition, and to the Lean formalization. The author is responsible for all claims.
+The idea of the result is my own, and the work that followed was done jointly with Anthropic's Claude and OpenAI's ChatGPT. The models first helped me work through Anthropic's paper~\cite{Ant26}. I then proposed ideas that simplified the proofs and made the argument coherent, and the models contributed to exploring proof strategies, including the routing pieces of \cref{sec:pieces}, to checking proofs, to the exposition and to the Lean formalization. I am responsible for all claims.
 
 \begin{thebibliography}{PPST83}\small\setlength{\itemsep}{1.5pt}
 
@@ -855,7 +851,7 @@ S.~A. Cook.
 
 \bibitem[Cplx]{Cplx}
 \newblock {\em Complexitylib}: computational complexity theory in {L}ean, built on {CSLib}.
-\newblock Software, \url{https://github.com/cslib-community/complexitylib}.
+\newblock Software, revision \href{https://github.com/cslib-community/cslib-frontier/tree/a696d7b149f95e241251ed0f575645d6468a9ccc}{\texttt{a696d7b1}} (now CSLib Frontier).
 
 \bibitem[CSL]{CSL}
 \newblock {\em CSLib}: a {L}ean library for computer science.
@@ -896,11 +892,6 @@ J.~Hopcroft, W.~Paul, and L.~Valiant.
 \newblock On time versus space.
 \newblock {\em J.\ ACM}, 24(2):332--337, 1977.
 
-\bibitem[HR18]{HR18}
-G.~H. Hardy and S.~Ramanujan.
-\newblock Asymptotic formulae in combinatory analysis.
-\newblock {\em Proc.\ London Math.\ Soc.}, s2-17(1):75--115, 1918.
-
 \bibitem[Hur98]{Hur98}
 A.~Hurwitz.
 \newblock Ueber die {C}omposition der quadratischen {F}ormen von beliebig vielen {V}ariabeln.
@@ -934,7 +925,7 @@ The mathlib Community.
 \bibitem[McG26]{McG26a}
 S.~McGuire.
 \newblock Non-trivial simulation of {BPTIME}.
-\newblock Note, October 30, 2026. ETH Repository.
+\newblock Note, October 30, 2026. \href{https://drive.google.com/file/d/1baDrwOwTmXhucsBidIVig4VnKNj0TSMl/view}{ETH Repository}.
 
 \bibitem[Nas20]{Nas20}
 E.~Naslund.
@@ -944,7 +935,7 @@ E.~Naslund.
 \bibitem[Ope26]{Ope26}
 OpenAI.
 \newblock The {E}xponential {T}ime {H}ypothesis is false.
-\newblock Manuscript, October 17, 2026; revised October 25, 2026. \url{https://github.com/openai/math}.
+\newblock Manuscript, October 17, 2026; revised October 25, 2026. \href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf}{OpenAI Math Release}.
 
 \bibitem[Pat72]{Pat72}
 M.~S. Paterson.
@@ -991,15 +982,10 @@ R.~E. Stearns, J.~Hartmanis, and P.~M. Lewis~II.
 \newblock Hierarchies of memory limited computations.
 \newblock In {\em Proc.\ 6th Annual Symposium on Switching Circuit Theory and Logical Design}, pages 179--190, 1965.
 
-\bibitem[SS18]{SS18}
-K.~Sumigawa and K.~Sadakane.
-\newblock An efficient representation of partitions of integers.
-\newblock In {\em Proc.\ 29th IWOCA}, volume 10979 of {\em LNCS}, pages 361--373, 2018.
-
 \bibitem[SWS90]{SWS90}
 F.~Schipp, W.~R. Wade, and P.~Simon.
 \newblock {\em Walsh Series: An Introduction to Dyadic Harmonic Analysis}.
-\newblock Adam Hilger, Bristol, 1990.
+\newblock With the collaboration of J.~P\'al. Adam Hilger, Bristol, 1990.
 
 \bibitem[Val79]{Val79}
 L.~G. Valiant.
@@ -1032,7 +1018,6 @@ S.~Zhuang.
 \newblock Manuscript, October 31, 2026. \url{https://github.com/suquark/NotETHSimplified}.
 
 \end{thebibliography}
-\clearpage
 \appendix
 
 \section{Deferred proofs}\label{app:proofs}

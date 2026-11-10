@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cross.EdgeNetBasic
 import NtimeDspace.Cube.Clique
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §4.3 and Appendix A)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §4.3 and Appendix A)
 
 /-!
 # The first clique (Lemma 4.3)

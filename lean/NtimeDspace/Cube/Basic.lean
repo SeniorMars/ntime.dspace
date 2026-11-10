@@ -6,13 +6,13 @@ Authors: Charlie Cruz
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Nat.Bitwise
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §§4–6)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §§4–6)
 
 /-!
 # Requests, labels and walks on the cube: the basic objects
 
 This file fixes the representations used throughout `NtimeDspace.Cube`, the formalization of the
-current proof of Theorem 2.3 (`paper.tex`, §§3–6).
+current proof of Theorem 2.3 (`separating-ntime-from-space.tex`, §§3–6).
 
 * A *request* has a *type* `i : ℕ` and the weight `i + 1`. A multiset of requests is a
   `Multiset ℕ` of types, with weight `wt σ = ∑ (i + 1)` (§4.1).

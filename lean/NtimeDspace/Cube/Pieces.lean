@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.Basic
 import Mathlib.RingTheory.MvPolynomial.Basic
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §5)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §5)
 
 /-!
 # Routing pieces and half-routings: definitions (§5.2–§5.3)

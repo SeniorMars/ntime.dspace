@@ -9,7 +9,7 @@ import NtimeDspace.Cube.GenNum
 import NtimeDspace.Cube.TransTerm
 import NtimeDspace.SumProduct.GenQuery
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: the explicit formula)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: the explicit formula)
 
 /-!
 # The programs of the formula (Lemma 6.4)

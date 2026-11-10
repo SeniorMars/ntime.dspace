@@ -99,7 +99,7 @@ import NtimeDspace.Checks.SolutionCountingFinal
 # NTIME(t) ⊆ SPACE(t / √log t) and its Separations
 
 This is the top-level aggregator module for the `ntimeDspace` Lean 4 library. It formalizes the
-current `paper.tex` (crossing pieces from walks on the cube, the merge of §6, the explicit formula
+current `separating-ntime-from-space.tex` (crossing pieces from walks on the cube, the merge of §6, the explicit formula
 and the transfer); `Checks/CubeAxioms.lean` audits each statement for the standard axioms only.
 
 * **Theorem 1.1**: `Crossing.ntime_decidable_sqrtLog_general`, `Crossing.ntime_subset_dspace_sqrtLog_general`

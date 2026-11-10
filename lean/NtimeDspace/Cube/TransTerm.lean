@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.CodeTerm
 import NtimeDspace.Cube.TransNum
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: the transport machine)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: the transport machine)
 
 /-!
 # Programs of the transport machine

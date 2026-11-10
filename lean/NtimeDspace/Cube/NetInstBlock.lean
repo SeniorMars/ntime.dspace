@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cross.NetTerm
 import NtimeDspace.Cube.NetInst
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex: network access instances)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex: network access instances)
 
 /-!
 # Network access for the block networks (Lemma 2.2)

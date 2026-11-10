@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cross.CubeStatement
 import NtimeDspace.Cross.ThreeSatFinal
 
--- upstream: local-only (paper.tex Theorem 2.3 in bit form, and its residue form)
+-- upstream: local-only (separating-ntime-from-space.tex Theorem 2.3 in bit form, and its residue form)
 
 /-!
 # Theorem 2.3 in bit form, and the residues it gives
@@ -41,7 +41,7 @@ the values of the bit program. This is the residue form `ThreeSat.Theorem41` of 
 
 ## References
 
-* The paper (`paper.tex`), §2, Definition 2.1 (`def:access`) and Theorem 2.3 (`thm:counting`);
+* The paper (`separating-ntime-from-space.tex`), §2, Definition 2.1 (`def:access`) and Theorem 2.3 (`thm:counting`);
   §7, Corollary 7.2 (`cor:3sat`).
 -/
 

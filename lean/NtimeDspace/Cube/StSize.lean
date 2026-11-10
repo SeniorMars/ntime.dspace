@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.GenNum
 import NtimeDspace.Cube.Paths
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: sizes of the states)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: sizes of the states)
 
 /-!
 # The sizes of the states (proof of Lemma 6.4)
@@ -29,7 +29,7 @@ Lemma 6.4 ("since `q_*² ≤ s^{2/3}`, the total workspace is `O(F)`").
   multisets of targets of weight `Wm` (`O(√Wm)` bits), `Λ + Ξ`, and the bit size of a polynomial
   bound on the counters, so the code is below `2^(28 N + 15)`.
 * `state_size`: the asymptotics, `N = O(s / √log s)`. The vertex functions are assumed to take
-  values of absolute value at most `(s + 2)^C₁` (Definition 2.1 (a) of `paper.tex`), since their
+  values of absolute value at most `(s + 2)^C₁` (Definition 2.1 (a) of `separating-ntime-from-space.tex`), since their
   values appear as literals of the formula.
 
 ## Main results

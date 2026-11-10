@@ -8,7 +8,7 @@ import NtimeDspace.Cross.NetFamily
 import NtimeDspace.Cube.NetTerms
 import NtimeDspace.SumProduct.Eval
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex: network access instances)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex: network access instances)
 
 /-!
 # Network access for a logspace family (Definition 2.1)

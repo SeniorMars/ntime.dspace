@@ -57,7 +57,7 @@ the current one (`Cube/NetInst.lean`) can both import it.
 
 ## References
 
-* The paper (`paper.tex`), §2, Definition 2.1 (`def:access`).
+* The paper (`separating-ntime-from-space.tex`), §2, Definition 2.1 (`def:access`).
 -/
 
 namespace NtimeDspace.Cross

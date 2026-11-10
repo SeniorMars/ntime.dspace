@@ -7,7 +7,7 @@ import NtimeDspace.Cube.Basic
 import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Data.Nat.Log
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §4.1)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §4.1)
 
 /-!
 # Codes for labels (Lemma 4.1)

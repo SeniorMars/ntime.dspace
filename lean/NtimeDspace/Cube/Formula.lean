@@ -9,7 +9,7 @@ import NtimeDspace.Cube.FirstClique
 import NtimeDspace.Cube.Gen
 import NtimeDspace.Cube.Transport
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §6.2)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §6.2)
 
 /-!
 # The formula (§6.2)

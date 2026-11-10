@@ -5,7 +5,7 @@ Authors: Charlie Cruz
 -/
 import NtimeDspace.Cube.Basic
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §4.2 and §6.1)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §4.2 and §6.1)
 
 /-!
 # Cliques, their potential, and packing (Definition 4.2, Lemma 6.1, (eq:pack))

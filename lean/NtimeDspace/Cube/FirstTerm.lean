@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.BudgetTerm
 import NtimeDspace.Cube.NetTerms
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: the first clique)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: the first clique)
 
 /-!
 # The first clique as terms: the budget array and the leaf factors (Lemma 4.3 (c))

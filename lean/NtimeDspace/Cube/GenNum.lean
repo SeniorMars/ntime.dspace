@@ -7,7 +7,7 @@ import NtimeDspace.Cube.EntryNum
 import NtimeDspace.Cube.FirstNum
 import NtimeDspace.Cube.TransNum
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: the explicit formula)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: the explicit formula)
 
 /-!
 # The numeric generator of the formula (Lemma 6.4)

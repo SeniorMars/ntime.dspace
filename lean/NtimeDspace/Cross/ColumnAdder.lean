@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cross.ExactClocked
 import Complexity.Computability.Complexity.Classes.CountingSimulation.BlockNetworks
 
--- upstream: local-only (the column adder of paper.tex, proof of Theorem 7.1)
+-- upstream: local-only (the column adder of separating-ntime-from-space.tex, proof of Theorem 7.1)
 
 /-!
 # The column adder: bits of the accept count from bits of the block networks

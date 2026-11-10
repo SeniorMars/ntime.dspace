@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.BitEval
 import NtimeDspace.Cube.GenTier
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, Theorem 2.3: the bits of `Z(G)`)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, Theorem 2.3: the bits of `Z(G)`)
 
 /-!
 # The bits of `Z(G)` from the programs of the formula

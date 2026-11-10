@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.SoundCopies
 import NtimeDspace.Cube.SoundTr
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §6.2)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §6.2)
 
 /-!
 # The entries of the tables of the formula

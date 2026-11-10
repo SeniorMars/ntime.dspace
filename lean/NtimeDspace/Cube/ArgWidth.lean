@@ -5,7 +5,7 @@ Authors: Charlie Cruz
 -/
 import NtimeDspace.Cube.EntryTerm3
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: the widths of argument codes)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: the widths of argument codes)
 
 /-!
 # The widths of argument codes, from the potential

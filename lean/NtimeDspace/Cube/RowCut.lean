@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.PieceFacts
 import Mathlib.Data.Int.Interval
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §5.3)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §5.3)
 
 /-!
 # Two cuts (Lemma 5.4 and Corollary 5.5)

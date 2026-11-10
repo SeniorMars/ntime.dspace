@@ -7,7 +7,7 @@ import NtimeDspace.Cube.BudgetNum
 import NtimeDspace.Cube.Formula
 import NtimeDspace.Cube.NumBasic
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §6.4: the state codes)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §6.4: the state codes)
 
 /-!
 # The codes of the states of the formula

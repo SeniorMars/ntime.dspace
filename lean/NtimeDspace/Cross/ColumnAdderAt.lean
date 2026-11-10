@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cross.ColumnAdder
 import NtimeDspace.Cross.ScaleInterface
 
--- upstream: local-only (the column adder of paper.tex at a general space scale, §8)
+-- upstream: local-only (the column adder of separating-ntime-from-space.tex at a general space scale, §8)
 
 /-!
 # The column adder at a general scale

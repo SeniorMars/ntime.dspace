@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.Pieces
 import NtimeDspace.SumProduct.NatList
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §6.4: numeric conventions)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §6.4: numeric conventions)
 
 /-!
 # Numbers for the data of the formula

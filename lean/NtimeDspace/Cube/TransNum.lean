@@ -8,12 +8,12 @@ import NtimeDspace.Cube.SoundTr
 import NtimeDspace.Cube.StCode
 import NtimeDspace.SumProduct.PathTerm
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: the transport machine)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: the transport machine)
 
 /-!
 # The transport machine on state codes (Lemma 5.6)
 
-The explicit machine of Lemma 5.6 (appendix of `paper.tex`, last paragraph) follows an address from
+The explicit machine of Lemma 5.6 (appendix of `separating-ntime-from-space.tex`, last paragraph) follows an address from
 the root keeping only the current source interval and the current multiset of targets. This file
 gives its steps as plain functions on the codes of the transport states (`Setup.code` of `tr`,
 `trm`, `trr`, kinds `7`, `8`, `9`), with the agreement lemmas against `Setup.gen`. Labels are never

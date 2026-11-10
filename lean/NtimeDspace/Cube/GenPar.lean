@@ -7,7 +7,7 @@ import NtimeDspace.Cube.GenTerm
 import NtimeDspace.Cube.NetInstBlock
 import NtimeDspace.Cube.StSize
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: tiers of the explicit formula)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: tiers of the explicit formula)
 
 /-!
 # The parameter of the programs of the formula (Lemma 6.4)

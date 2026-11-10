@@ -10,7 +10,7 @@ import NtimeDspace.Cube.Sound
 import NtimeDspace.Cube.StCode
 import NtimeDspace.SumProduct.ListTerm
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, §6.4: entries and copies)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, §6.4: entries and copies)
 
 /-!
 # The entry and range states as numbers (Lemma 6.4)

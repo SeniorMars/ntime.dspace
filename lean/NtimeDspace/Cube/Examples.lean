@@ -4,16 +4,26 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Charlie Cruz
 -/
 import NtimeDspace.Cube.RowCut
+import NtimeDspace.Cube.FirstClique
+import Mathlib.LinearAlgebra.Matrix.Rank
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §5)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §5)
 
 /-!
-# The worked examples of §5 (after Lemma 5.3 and after Corollary 5.5)
+# The one-bit routing polynomial and the worked examples of §5
 
-Both examples of `paper.tex`, §5, use the views `exV`: `x` and `y` each send one request of type
+The specialized examples use the views `exV`: `x` and `y` each send one request of type
 `0`, and `u` and `v` each receive one. In Lean a view is `(out, in)`, so
 `exV = views ({0}, ∅) ({0}, ∅) (∅, {0}) (∅, {0})` in the corner order `x, y, u, v`; every view has
 weight `1`, so `a = b = 1` and `H = 2`.
+
+The general one-bit example uses `oneBitViews`, with `enc 1` at the upper corners and reversed
+labels at the lower corners. `oneBit_piece` proves the three-pairing formula. Its only nonzero
+coefficients are at `-2, 0, 2`; `oneBit_coeff_zero` is twice the indicator that the two row sums
+agree. The six `oneBitRow_*_rank` and `oneBitCol_*_rank` theorems give the ranks of their rational
+flattenings, and `oneBitCrossingRow_rank` and `oneBitCrossingCol_rank` give rank four for the
+crossing. The proofs use surjective pullbacks of diagonal matrices. `oneBitViews_transpose`
+records the complemented exchanged bits required when transposing encoded views.
 
 ## The example after Lemma 5.3 ("A small example shows both lemmas at work")
 
@@ -341,5 +351,249 @@ theorem ex_colCut_total :
 the row cut at `c = 1` would give `0`, not `Π_2 = -1`. -/
 theorem ex_mixed : colSplit exV 2 2 0 + rowSplit exV 2 2 1 = 0 := by
   rw [ex_colSplit, ex_rowSplit]; norm_num
+
+/-! ### All one-bit views -/
+
+/-- The one-bit views use `enc` at the upper corners and its reversal at the lower corners.
+Thus `true` sends a request upstairs and receives a request downstairs. -/
+def oneBitViews (x y u v : Bool) : Corner → Label :=
+  views (enc 1 (fun _ => x)) (enc 1 (fun _ => y))
+    (enc 1 (fun _ => u)).swap (enc 1 (fun _ => v)).swap
+
+/-- The one-bit routing polynomial is the sum of the three pairings of the four requests.
+The vertical and horizontal pairings carry `1-z²` and `1-z⁻²`, respectively. -/
+theorem oneBit_piece (x y u v : Bool) :
+    piece (oneBitViews x y u v) =
+      (if x = v ∧ y = u then 1 else 0) +
+      (1 - T 2) * (if x = u ∧ y = v then 1 else 0) +
+      (1 - T (-2)) * (if x ≠ y ∧ u ≠ v then 1 else 0) := by
+  cases x <;> cases y <;> cases u <;> cases v <;>
+    simp [piece, oneBitViews, enc, sourcesOf, targetsOf, views, located,
+      transport_cons, transport_singleton, transport_zero, rule, eqL, C_zero_zero, bar,
+      oneSubZ2, oneSubZm2] <;>
+    ring
+
+/-- The central coefficient is twice the indicator of conservation of the two input bits. -/
+theorem oneBit_coeff_zero (x y u v : Bool) :
+    (piece (oneBitViews x y u v)).coeff 0 =
+      if x.toNat + y.toNat = u.toNat + v.toNat then 2 else 0 := by
+  rw [oneBit_piece]
+  cases x <;> cases y <;> cases u <;> cases v <;>
+    norm_num [AddMonoidAlgebra.coeff_add, AddMonoidAlgebra.coeff_sub,
+      Finsupp.add_apply, Finsupp.sub_apply, coeff_one_Lp, T_apply]
+
+/-- The positive coefficient is minus the vertical-pairing indicator. -/
+theorem oneBit_coeff_two (x y u v : Bool) :
+    (piece (oneBitViews x y u v)).coeff 2 = if x = u ∧ y = v then -1 else 0 := by
+  rw [oneBit_piece]
+  split_ifs <;>
+    norm_num [AddMonoidAlgebra.coeff_add, AddMonoidAlgebra.coeff_sub,
+      Finsupp.add_apply, Finsupp.sub_apply, coeff_one_Lp, T_apply]
+
+/-- The negative coefficient is minus the horizontal-pairing indicator. -/
+theorem oneBit_coeff_neg_two (x y u v : Bool) :
+    (piece (oneBitViews x y u v)).coeff (-2) = if x ≠ y ∧ u ≠ v then -1 else 0 := by
+  rw [oneBit_piece]
+  split_ifs <;>
+    norm_num [AddMonoidAlgebra.coeff_add, AddMonoidAlgebra.coeff_sub,
+      Finsupp.add_apply, Finsupp.sub_apply, coeff_one_Lp, T_apply]
+
+/-- There are no other coefficients in the one-bit routing polynomial. -/
+theorem oneBit_coeff_eq_zero (x y u v : Bool) (k : ℤ)
+    (h0 : k ≠ 0) (h2 : k ≠ 2) (hn2 : k ≠ -2) :
+    (piece (oneBitViews x y u v)).coeff k = 0 := by
+  rw [oneBit_piece]
+  split_ifs <;>
+    simp [AddMonoidAlgebra.coeff_add, AddMonoidAlgebra.coeff_sub,
+      Finsupp.add_apply, Finsupp.sub_apply, coeff_one_Lp, T_apply,
+      Ne.symm h0, Ne.symm h2, Ne.symm hn2]
+
+/-- In bit coordinates, transposing views complements the two exchanged bits. -/
+theorem oneBitViews_transpose (x y u v : Bool) :
+    transposeView (oneBitViews x y u v) = oneBitViews x (!u) (!y) v := by
+  funext c
+  cases c <;> cases y <;> cases u <;>
+    simp [transposeView, oneBitViews, views, swapYU, enc]
+
+/-- The crossing predicate on these encoded bits is the usual pair of diagonal equalities. -/
+theorem oneBit_crossing (x y u v : Bool) :
+    crossing (oneBitViews x y u v) ↔ x = v ∧ y = u := by
+  cases x <;> cases y <;> cases u <;> cases v <;>
+    simp [crossing, oneBitViews, views, enc]
+
+/-- The original example is the all-true bit assignment. -/
+theorem oneBitViews_true : oneBitViews true true true true = exV := by
+  funext c
+  cases c <;> simp [oneBitViews, exV, views, enc]
+
+/-- Its transpose has bits `(1,0,0,1)`, rather than the unchanged all-true assignment. -/
+theorem oneBitViews_true_transpose :
+    transposeView exV = oneBitViews true false false true := by
+  rw [← oneBitViews_true, oneBitViews_transpose]
+  rfl
+
+/-! ### Ranks of the two flattenings over the rationals -/
+
+/-- The row flattening, with rows `(x,y)` and columns `(u,v)`. -/
+noncomputable def oneBitRow (k : ℤ) : Matrix (Bool × Bool) (Bool × Bool) ℚ :=
+  fun r c => ((piece (oneBitViews r.1 r.2 c.1 c.2)).coeff k : ℚ)
+
+/-- The column flattening, with rows `(x,u)` and columns `(y,v)`. -/
+noncomputable def oneBitCol (k : ℤ) : Matrix (Bool × Bool) (Bool × Bool) ℚ :=
+  fun r c => ((piece (oneBitViews r.1 c.1 r.2 c.2)).coeff k : ℚ)
+
+/-- Pulling a matrix back along surjective row and column maps preserves its rank:
+the original matrix is recovered by choosing one representative of each index. -/
+private theorem rank_submatrix_surjective {m n m' n' : Type}
+    [Fintype m] [Fintype n] [Fintype m'] [Fintype n']
+    (A : Matrix m n ℚ) (r : m' → m) (c : n' → n)
+    (hr : Function.Surjective r) (hc : Function.Surjective c) :
+    (A.submatrix r c).rank = A.rank := by
+  obtain ⟨r', hr'⟩ := hr.hasRightInverse
+  obtain ⟨c', hc'⟩ := hc.hasRightInverse
+  apply le_antisymm (A.rank_submatrix_le r c)
+  have h := (A.submatrix r c).rank_submatrix_le r' c'
+  have heq : (A.submatrix r c).submatrix r' c' = A := by
+    ext i j
+    exact congrArg₂ A (hr' i) (hc' j)
+  rwa [heq] at h
+
+/-- The number of ones in a pair of bits. Its three fibers are the three row blocks. -/
+private def bitSum (p : Bool × Bool) : Fin 3 :=
+  ⟨p.1.toNat + p.2.toNat, by rcases p with ⟨a, b⟩; cases a <;> cases b <;> decide⟩
+
+private theorem bitSum_surjective : Function.Surjective bitSum := by
+  intro i
+  fin_cases i
+  · exact ⟨(false, false), rfl⟩
+  · exact ⟨(false, true), rfl⟩
+  · exact ⟨(true, true), rfl⟩
+
+private def bitEqual (p : Bool × Bool) : Bool := p.1 == p.2
+
+private theorem bitEqual_surjective : Function.Surjective bitEqual := by
+  intro i
+  cases i
+  · exact ⟨(false, true), rfl⟩
+  · exact ⟨(false, false), rfl⟩
+
+private def bitDifferent (p : Bool × Bool) : Bool := !(p.1 == p.2)
+
+private theorem bitDifferent_surjective : Function.Surjective bitDifferent := by
+  intro i
+  cases i
+  · exact ⟨(false, false), rfl⟩
+  · exact ⟨(false, true), rfl⟩
+
+private theorem diagonal_pair_rank (c : ℚ) (hc : c ≠ 0) :
+    (Matrix.diagonal (fun _ : Bool × Bool => c)).rank = 4 := by
+  simp [Matrix.rank_diagonal, hc]
+
+private theorem diagonal_three_rank (c : ℚ) (hc : c ≠ 0) :
+    (Matrix.diagonal (fun _ : Fin 3 => c)).rank = 3 := by
+  simp [Matrix.rank_diagonal, hc]
+
+private theorem diagonal_true_rank :
+    (Matrix.diagonal (fun b : Bool => if b then (-1 : ℚ) else 0)).rank = 1 := by
+  rw [Matrix.rank_diagonal]
+  norm_num [Fintype.card_subtype]
+
+/-- `Π₂` is minus the identity on the row cut. -/
+theorem oneBitRow_two_rank : (oneBitRow 2).rank = 4 := by
+  have h : oneBitRow 2 = Matrix.diagonal (fun _ : Bool × Bool => (-1 : ℚ)) := by
+    ext ⟨x, y⟩ ⟨u, v⟩
+    simp [oneBitRow, oneBit_coeff_two, Matrix.diagonal, Prod.mk.injEq]
+  rw [h]
+  exact diagonal_pair_rank _ (by norm_num)
+
+/-- On the column cut `Π₂` has just one nonzero rectangular block. -/
+theorem oneBitCol_two_rank : (oneBitCol 2).rank = 1 := by
+  have h : oneBitCol 2 =
+      (Matrix.diagonal (fun b : Bool => if b then (-1 : ℚ) else 0)).submatrix
+        bitEqual bitEqual := by
+    ext ⟨x, u⟩ ⟨y, v⟩
+    cases x <;> cases y <;> cases u <;> cases v <;>
+      simp [oneBitCol, oneBit_coeff_two, Matrix.submatrix, Matrix.diagonal, bitEqual]
+  rw [h, rank_submatrix_surjective _ _ _ bitEqual_surjective bitEqual_surjective]
+  exact diagonal_true_rank
+
+/-- On the row cut `Π₋₂` has just one nonzero rectangular block. -/
+theorem oneBitRow_neg_two_rank : (oneBitRow (-2)).rank = 1 := by
+  have h : oneBitRow (-2) =
+      (Matrix.diagonal (fun b : Bool => if b then (-1 : ℚ) else 0)).submatrix
+        bitDifferent bitDifferent := by
+    ext ⟨x, y⟩ ⟨u, v⟩
+    cases x <;> cases y <;> cases u <;> cases v <;>
+      simp [oneBitRow, oneBit_coeff_neg_two, Matrix.submatrix, Matrix.diagonal, bitDifferent]
+  rw [h, rank_submatrix_surjective _ _ _ bitDifferent_surjective bitDifferent_surjective]
+  exact diagonal_true_rank
+
+/-- On the column cut `Π₋₂` is a signed permutation matrix (complement both column bits). -/
+theorem oneBitCol_neg_two_rank : (oneBitCol (-2)).rank = 4 := by
+  let flip : Bool × Bool → Bool × Bool := fun p => (!p.1, !p.2)
+  have hf : Function.Surjective flip := by
+    intro p
+    exact ⟨flip p, by simp [flip]⟩
+  have h : oneBitCol (-2) =
+      (Matrix.diagonal (fun _ : Bool × Bool => (-1 : ℚ))).submatrix id flip := by
+    ext ⟨x, u⟩ ⟨y, v⟩
+    cases x <;> cases y <;> cases u <;> cases v <;>
+      simp [oneBitCol, oneBit_coeff_neg_two, Matrix.submatrix, Matrix.diagonal, flip]
+  rw [h, rank_submatrix_surjective _ _ _ Function.surjective_id hf]
+  exact diagonal_pair_rank _ (by norm_num)
+
+/-- The three nonzero blocks of the central row flattening are indexed by bit sum. -/
+theorem oneBitRow_zero_rank : (oneBitRow 0).rank = 3 := by
+  have h : oneBitRow 0 =
+      (Matrix.diagonal (fun _ : Fin 3 => (2 : ℚ))).submatrix bitSum bitSum := by
+    ext ⟨x, y⟩ ⟨u, v⟩
+    simp [oneBitRow, oneBit_coeff_zero, Matrix.submatrix, Matrix.diagonal, bitSum, Fin.ext_iff]
+  rw [h, rank_submatrix_surjective _ _ _ bitSum_surjective bitSum_surjective]
+  exact diagonal_three_rank _ (by norm_num)
+
+/-- The central column blocks are indexed by `1+x-u = 1+v-y`, taking three values. -/
+theorem oneBitCol_zero_rank : (oneBitCol 0).rank = 3 := by
+  let r : Bool × Bool → Fin 3 := fun p => bitSum (p.1, !p.2)
+  let c : Bool × Bool → Fin 3 := fun p => bitSum (!p.1, p.2)
+  have hr : Function.Surjective r := by
+    intro i
+    obtain ⟨⟨a, b⟩, h⟩ := bitSum_surjective i
+    exact ⟨(a, !b), by simpa [r] using h⟩
+  have hc : Function.Surjective c := by
+    intro i
+    obtain ⟨⟨a, b⟩, h⟩ := bitSum_surjective i
+    exact ⟨(!a, b), by simpa [c] using h⟩
+  have h : oneBitCol 0 =
+      (Matrix.diagonal (fun _ : Fin 3 => (2 : ℚ))).submatrix r c := by
+    ext ⟨x, u⟩ ⟨y, v⟩
+    cases x <;> cases y <;> cases u <;> cases v <;>
+      simp [oneBitCol, oneBit_coeff_zero, Matrix.submatrix, Matrix.diagonal, r, c, bitSum]
+  rw [h, rank_submatrix_surjective _ _ _ hr hc]
+  exact diagonal_three_rank _ (by norm_num)
+
+/-- The crossing on the row cut, with the encoded-view convention used above. -/
+noncomputable def oneBitCrossingRow : Matrix (Bool × Bool) (Bool × Bool) ℚ :=
+  fun r c => if crossing (oneBitViews r.1 r.2 c.1 c.2) then 1 else 0
+
+/-- The crossing on the column cut. -/
+noncomputable def oneBitCrossingCol : Matrix (Bool × Bool) (Bool × Bool) ℚ :=
+  fun r c => if crossing (oneBitViews r.1 c.1 r.2 c.2) then 1 else 0
+
+/-- The row crossing is a permutation matrix, exchanging the two column bits. -/
+theorem oneBitCrossingRow_rank : oneBitCrossingRow.rank = 4 := by
+  have h : oneBitCrossingRow =
+      (Matrix.diagonal (fun _ : Bool × Bool => (1 : ℚ))).submatrix id Prod.swap := by
+    ext ⟨x, y⟩ ⟨u, v⟩
+    simp [oneBitCrossingRow, oneBit_crossing, Matrix.submatrix, Matrix.diagonal, Prod.mk.injEq]
+  rw [h, rank_submatrix_surjective _ _ _ Function.surjective_id
+    (fun p => ⟨p.swap, rfl⟩)]
+  exact diagonal_pair_rank _ (by norm_num)
+
+/-- The column crossing is the same permutation matrix as the row crossing. -/
+theorem oneBitCrossingCol_rank : oneBitCrossingCol.rank = 4 := by
+  have h : oneBitCrossingCol = oneBitCrossingRow := by
+    ext ⟨x, u⟩ ⟨y, v⟩
+    simp [oneBitCrossingCol, oneBitCrossingRow, oneBit_crossing, eq_comm]
+  rw [h, oneBitCrossingRow_rank]
 
 end NtimeDspace.Cube

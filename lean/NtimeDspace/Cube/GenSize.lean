@@ -5,7 +5,7 @@ Authors: Charlie Cruz
 -/
 import NtimeDspace.Cube.GenBits
 
--- upstream: local-only (the walks-on-the-cube route of paper.tex, Theorem 2.3: the budget at size `s`)
+-- upstream: local-only (the walks-on-the-cube route of separating-ntime-from-space.tex, Theorem 2.3: the budget at size `s`)
 
 /-!
 # The bits of `Z(G)` at the budget `O(s / √log s)`

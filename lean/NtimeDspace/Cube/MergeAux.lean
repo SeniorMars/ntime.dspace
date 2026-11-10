@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.Clique
 import NtimeDspace.Cube.Pieces
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §6.1)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §6.1)
 
 /-!
 # Helpers for the merge (§6.1)

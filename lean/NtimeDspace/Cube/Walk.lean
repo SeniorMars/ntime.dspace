@@ -6,7 +6,7 @@ Authors: Charlie Cruz
 import NtimeDspace.Cube.Pieces
 import Mathlib.Algebra.Ring.GeomSum
 
--- upstream: local-only (the walks-on-the-cube route of `paper.tex`, §5.1)
+-- upstream: local-only (the walks-on-the-cube route of `separating-ntime-from-space.tex`, §5.1)
 
 /-!
 # Walks on the cube (Lemma 5.1)

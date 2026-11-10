@@ -8,7 +8,7 @@ import NtimeDspace.Cross.ScaleInterface
 import NtimeDspace.Cross.ThreeSatFinal
 import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 
--- upstream: local-only (paper.tex §8: counting 3-SAT from Theorem 2.3 at a general space bound)
+-- upstream: local-only (separating-ntime-from-space.tex §8: counting 3-SAT from Theorem 2.3 at a general space bound)
 
 /-!
 # Counting 3-SAT from Theorem 2.3 at a general space bound
@@ -51,7 +51,7 @@ instance. The results are conditional on `CubeCountingAt D`, as in the paper.
 
 ## References
 
-* The paper (`paper.tex`), §7, Corollary 7.2 (`cor:3sat`); §8 (`sec:discussion`), first
+* The paper (`separating-ntime-from-space.tex`), §7, Corollary 7.2 (`cor:3sat`); §8 (`sec:discussion`), first
   paragraph.
 -/
 
