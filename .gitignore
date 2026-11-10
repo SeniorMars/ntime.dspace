@@ -1,0 +1,7 @@
+lean/.lake/
+lean/.offline-check/
+tmp/
+__pycache__/
+
+.toolchains/
+.tooling/

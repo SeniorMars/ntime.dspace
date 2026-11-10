@@ -1,0 +1,42 @@
+name = "ntimeDspace"
+version = "0.1.0"
+defaultTargets = ["NtimeDspace"]
+
+[[require]]
+name = "cslib"
+git = "https://github.com/leanprover/cslib"
+rev = "82db31eec215b6843be6df283304cc02e736ddef"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "69552756cd8a2d2d48763cf7279fd814d6a1224d"
+
+[[require]]
+name = "complexitylib"
+git = "https://github.com/cslib-community/complexitylib"
+rev = "a696d7b149f95e241251ed0f575645d6468a9ccc"
+
+[[lean_lib]]
+name = "NtimeDspace"
+allowNonModules = true
+
+[[lean_lib]]
+name = "NtimeChallengeCross"
+
+[[lean_lib]]
+name = "NtimeChallengeCrossWrong"
+
+[[lean_lib]]
+name = "NtimeChallengeGeneral"
+
+[[lean_lib]]
+name = "NtimeChallengeGeneralWrong"
+
+# Anthropic's vendored 3-SAT statement (see Vendor/Ant26Ring/README.md),
+# with the options of their `eth/lakefile.toml`.
+[[lean_lib]]
+name = "Vendor"
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
+# Dotted option names go through raw arguments: a quoted TOML key becomes a single name component.
+moreLeanArgs = ["-Dpp.unicode.fun=true", "-Dexponentiation.threshold=2048"]

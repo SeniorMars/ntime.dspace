@@ -1,0 +1,6 @@
+{
+  "challenge_module": "NtimeChallengeCross",
+  "solution_module": "NtimeDspace.Cross.Theorem",
+  "theorem_names": ["NtimeDspace.Crossing.ntime_decidable_sqrtLog", "NtimeDspace.Crossing.ntime_subset_dspace_sqrtLog", "NtimeDspace.Crossing.ntime_ssubset_dspace"],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

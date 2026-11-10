@@ -1,0 +1,19 @@
+{
+  "challenge_module": "NtimeChallengeGeneral",
+  "solution_module": "NtimeDspace.Cross.CountingFinal",
+  "theorem_names": [
+    "NtimeDspace.Crossing.ntime_decidable_sqrtLog_general",
+    "NtimeDspace.Crossing.ntime_subset_dspace_sqrtLog_general",
+    "NtimeDspace.Crossing.ntime_ssubset_dspace_general",
+    "NtimeDspace.Crossing.ntime_ssubset_nspace_general",
+    "NtimeDspace.Crossing.ntime_mul_sqrtLog_subset_dspace_general",
+    "NtimeDspace.Crossing.exists_dspace_linear_ntime_lower_bound_general",
+    "NtimeDspace.Crossing.pptime_subset_dspace_sqrtLog_general",
+    "NtimeDspace.Crossing.bptime_subset_dspace_sqrtLog_general"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}
