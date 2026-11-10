@@ -45,5 +45,5 @@ cd lean && lake exe cache get && lake build
 - `separating-ntime-from-space.tex`, `separating-ntime-from-space.pdf`: the paper.
 - `lean/`: the formalization (see [lean/README.md](lean/README.md)).
 
-The paper and the formalization were developed with substantial assistance from Anthropic's
-Claude and OpenAI's ChatGPT. The author is responsible for all claims.
+The idea of the result is the author's; the paper and the formalization were then developed
+jointly with Anthropic's Claude and OpenAI's ChatGPT. The author is responsible for all claims.
